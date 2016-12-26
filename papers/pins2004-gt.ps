@@ -1,0 +1,2247 @@
+%!PS-Adobe-2.0
+%%Creator: dvips(k) 5.86e Copyright 2001 Radical Eye Software
+%%Title: master.dvi
+%%Pages: 8
+%%PageOrder: Ascend
+%%BoundingBox: 0 0 612 792
+%%DocumentFonts: Helvetica-Bold Helvetica Times-Bold Times-Roman CMSY9
+%%+ Times-Italic CMMI9 CMR9
+%%EndComments
+%DVIPSWebPage: (www.radicaleye.com)
+%DVIPSCommandLine: dvips -Ppdf -G0 -t letter master.dvi -o pins.ps
+%DVIPSParameters: dpi=8000, compressed
+%DVIPSSource:  TeX output 2004.06.26:2031
+%%BeginProcSet: tex.pro
+%!
+/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
+N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72
+mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0
+0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{
+landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize
+mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[
+matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round
+exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{
+statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]
+N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin
+/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array
+/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2
+array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N
+df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A
+definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get
+}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}
+B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr
+1 add N}if}B/CharBuilder{save 3 1 roll S A/base get 2 index get S
+/BitMaps get S get/Cd X pop/ctr 0 N Cdx 0 Cx Cy Ch sub Cx Cw add Cy
+setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx sub Cy .1 sub]{Ci}imagemask
+restore}B/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn
+/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put
+}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{
+bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A
+mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{
+SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{
+userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X
+1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4
+index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N
+/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{
+/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)
+(LaserWriter 16/600)]{A length product length le{A length product exch 0
+exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse
+end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask
+grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}
+imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round
+exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto
+fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p
+delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}
+B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{
+p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S
+rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: alt-rule.pro
+%!
+% Patch by TVZ
+% Makes dvips files draw rules with stroke rather than fill.
+% Makes narrow rules more predictable at low resolutions
+% after distilling to PDF.
+% May have unknown consequences for very thick rules.
+% Tested only with dvips 5.85(k).
+TeXDict begin
+/QV {
+  gsave newpath /ruleY X /ruleX X
+  Rx Ry gt
+  { ruleX ruleY Ry 2 div sub moveto Rx 0 rlineto Ry }
+  { ruleX Rx 2 div add ruleY moveto 0 Ry neg rlineto Rx }
+  ifelse
+  setlinewidth 0 setlinecap stroke grestore
+} bind def
+end
+
+%%EndProcSet
+%%BeginProcSet: texc.pro
+%!
+/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
+N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72
+mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0
+0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{
+landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize
+mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[
+matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round
+exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{
+statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]
+N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin
+/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array
+/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2
+array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N
+df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A
+definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get
+}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}
+B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr
+1 add N}if}B/id 0 N/rw 0 N/rc 0 N/gp 0 N/cp 0 N/G 0 N/CharBuilder{save 3
+1 roll S A/base get 2 index get S/BitMaps get S get/Cd X pop/ctr 0 N Cdx
+0 Cx Cy Ch sub Cx Cw add Cy setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx
+sub Cy .1 sub]/id Ci N/rw Cw 7 add 8 idiv string N/rc 0 N/gp 0 N/cp 0 N{
+rc 0 ne{rc 1 sub/rc X rw}{G}ifelse}imagemask restore}B/G{{id gp get/gp
+gp 1 add N A 18 mod S 18 idiv pl S get exec}loop}B/adv{cp add/cp X}B
+/chg{rw cp id gp 4 index getinterval putinterval A gp add/gp X adv}B/nd{
+/cp 0 N rw exit}B/lsh{rw cp 2 copy get A 0 eq{pop 1}{A 255 eq{pop 254}{
+A A add 255 and S 1 and or}ifelse}ifelse put 1 adv}B/rsh{rw cp 2 copy
+get A 0 eq{pop 128}{A 255 eq{pop 127}{A 2 idiv S 128 and or}ifelse}
+ifelse put 1 adv}B/clr{rw cp 2 index string putinterval adv}B/set{rw cp
+fillstr 0 4 index getinterval putinterval adv}B/fillstr 18 string 0 1 17
+{2 copy 255 put pop}for N/pl[{adv 1 chg}{adv 1 chg nd}{1 add chg}{1 add
+chg nd}{adv lsh}{adv lsh nd}{adv rsh}{adv rsh nd}{1 add adv}{/rc X nd}{
+1 add set}{1 add clr}{adv 2 chg}{adv 2 chg nd}{pop nd}]A{bind pop}
+forall N/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn
+/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put
+}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{
+bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A
+mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{
+SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{
+userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X
+1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4
+index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N
+/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{
+/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)
+(LaserWriter 16/600)]{A length product length le{A length product exch 0
+exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse
+end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask
+grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}
+imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round
+exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto
+fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p
+delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}
+B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{
+p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S
+rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: 8r.enc
+% @@psencodingfile@{
+%   author = "S. Rahtz, P. MacKay, Alan Jeffrey, B. Horn, K. Berry",
+%   version = "0.6",
+%   date = "1 July 1998",
+%   filename = "8r.enc",
+%   email = "tex-fonts@@tug.org",
+%   docstring = "Encoding for TrueType or Type 1 fonts
+%                to be used with TeX."
+% @}
+% 
+% Idea is to have all the characters normally included in Type 1 fonts
+% available for typesetting. This is effectively the characters in Adobe
+% Standard Encoding + ISO Latin 1 + extra characters from Lucida.
+% 
+% Character code assignments were made as follows:
+% 
+% (1) the Windows ANSI characters are almost all in their Windows ANSI
+% positions, because some Windows users cannot easily reencode the
+% fonts, and it makes no difference on other systems. The only Windows
+% ANSI characters not available are those that make no sense for
+% typesetting -- rubout (127 decimal), nobreakspace (160), softhyphen
+% (173). quotesingle and grave are moved just because it's such an
+% irritation not having them in TeX positions.
+% 
+% (2) Remaining characters are assigned arbitrarily to the lower part
+% of the range, avoiding 0, 10 and 13 in case we meet dumb software.
+% 
+% (3) Y&Y Lucida Bright includes some extra text characters; in the
+% hopes that other PostScript fonts, perhaps created for public
+% consumption, will include them, they are included starting at 0x12.
+% 
+% (4) Remaining positions left undefined are for use in (hopefully)
+% upward-compatible revisions, if someday more characters are generally
+% available.
+% 
+% (5) hyphen appears twice for compatibility with both 
+% ASCII and Windows.
+% 
+/TeXBase1Encoding [
+% 0x00 (encoded characters from Adobe Standard not in Windows 3.1)
+  /.notdef /dotaccent /fi /fl
+  /fraction /hungarumlaut /Lslash /lslash
+  /ogonek /ring /.notdef
+  /breve /minus /.notdef 
+% These are the only two remaining unencoded characters, so may as
+% well include them.
+  /Zcaron /zcaron 
+% 0x10
+ /caron /dotlessi 
+% (unusual TeX characters available in, e.g., Lucida Bright)
+ /dotlessj /ff /ffi /ffl 
+ /.notdef /.notdef /.notdef /.notdef
+ /.notdef /.notdef /.notdef /.notdef
+ % very contentious; it's so painful not having quoteleft and quoteright
+ % at 96 and 145 that we move the things normally found there to here.
+ /grave /quotesingle 
+% 0x20 (ASCII begins)
+ /space /exclam /quotedbl /numbersign
+ /dollar /percent /ampersand /quoteright
+ /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+% 0x30
+ /zero /one /two /three /four /five /six /seven
+ /eight /nine /colon /semicolon /less /equal /greater /question
+% 0x40
+ /at /A /B /C /D /E /F /G /H /I /J /K /L /M /N /O
+% 0x50
+ /P /Q /R /S /T /U /V /W
+ /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+% 0x60
+ /quoteleft /a /b /c /d /e /f /g /h /i /j /k /l /m /n /o
+% 0x70
+ /p /q /r /s /t /u /v /w
+ /x /y /z /braceleft /bar /braceright /asciitilde
+ /.notdef % rubout; ASCII ends
+% 0x80
+ /.notdef /.notdef /quotesinglbase /florin
+ /quotedblbase /ellipsis /dagger /daggerdbl
+ /circumflex /perthousand /Scaron /guilsinglleft
+ /OE /.notdef /.notdef /.notdef
+% 0x90
+ /.notdef /.notdef /.notdef /quotedblleft
+ /quotedblright /bullet /endash /emdash
+ /tilde /trademark /scaron /guilsinglright
+ /oe /.notdef /.notdef /Ydieresis
+% 0xA0
+ /.notdef % nobreakspace
+ /exclamdown /cent /sterling
+ /currency /yen /brokenbar /section
+ /dieresis /copyright /ordfeminine /guillemotleft
+ /logicalnot
+ /hyphen % Y&Y (also at 45); Windows' softhyphen
+ /registered
+ /macron
+% 0xD0
+ /degree /plusminus /twosuperior /threesuperior
+ /acute /mu /paragraph /periodcentered
+ /cedilla /onesuperior /ordmasculine /guillemotright
+ /onequarter /onehalf /threequarters /questiondown
+% 0xC0
+ /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+ /Egrave /Eacute /Ecircumflex /Edieresis
+ /Igrave /Iacute /Icircumflex /Idieresis
+% 0xD0
+ /Eth /Ntilde /Ograve /Oacute
+ /Ocircumflex /Otilde /Odieresis /multiply
+ /Oslash /Ugrave /Uacute /Ucircumflex
+ /Udieresis /Yacute /Thorn /germandbls
+% 0xE0
+ /agrave /aacute /acircumflex /atilde
+ /adieresis /aring /ae /ccedilla
+ /egrave /eacute /ecircumflex /edieresis
+ /igrave /iacute /icircumflex /idieresis
+% 0xF0
+ /eth /ntilde /ograve /oacute
+ /ocircumflex /otilde /odieresis /divide
+ /oslash /ugrave /uacute /ucircumflex
+ /udieresis /yacute /thorn /ydieresis
+] def
+
+%%EndProcSet
+%%BeginProcSet: texps.pro
+%!
+TeXDict begin/rf{findfont dup length 1 add dict begin{1 index/FID ne 2
+index/UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]/Metrics
+exch def dict begin Encoding{exch dup type/integertype ne{pop pop 1 sub
+dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get div def}
+ifelse}forall Metrics/Metrics currentdict end def[2 index currentdict
+end definefont 3 -1 roll makefont/setfont cvx]cvx def}def/ObliqueSlant{
+dup sin S cos div neg}B/SlantFont{4 index mul add}def/ExtendFont{3 -1
+roll mul exch}def/ReEncodeFont{CharStrings rcheck{/Encoding false def
+dup[exch{dup CharStrings exch known not{pop/.notdef/Encoding true def}
+if}forall Encoding{]exch pop}{cleartomark}ifelse}if/Encoding exch def}
+def end
+
+%%EndProcSet
+%%BeginFont: CMR9
+%!PS-AdobeFont-1.1: CMR9 1.0
+%%CreationDate: 1991 Aug 20 16:39:59
+% Copyright (C) 1997 American Mathematical Society. All Rights Reserved.
+11 dict begin
+/FontInfo 7 dict dup begin
+/version (1.0) readonly def
+/Notice (Copyright (C) 1997 American Mathematical Society. All Rights Reserved) readonly def
+/FullName (CMR9) readonly def
+/FamilyName (Computer Modern) readonly def
+/Weight (Medium) readonly def
+/ItalicAngle 0 def
+/isFixedPitch false def
+end readonly def
+/FontName /CMR9 def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] readonly def
+/Encoding 256 array
+0 1 255 {1 index exch /.notdef put} for
+dup 41 /parenright put
+readonly def
+/FontBBox{-39 -250 1036 750}readonly def
+/UniqueID 5000792 def
+currentdict end
+currentfile eexec
+D9D66F633B846A97B686A97E45A3D0AA052A014267B7904EB3C0D3BD0B83D891
+016CA6CA4B712ADEB258FAAB9A130EE605E61F77FC1B738ABC7C51CD46EF8171
+9098D5FEE67660E69A7AB91B58F29A4D79E57022F783EB0FBBB6D4F4EC35014F
+D2DECBA99459A4C59DF0C6EBA150284454E707DC2100C15B76B4C19B84363758
+469A6C558785B226332152109871A9883487DD7710949204DDCF837E6A8708B8
+2BDBF16FBC7512FAA308A093FE5CF7158F1163BC1F3352E22A1452E73FECA8A4
+87100FB1FFC4C8AF409B2067537220E605DA0852CA49839E1386AF9D7A1A455F
+D1F017CE45884D76EF2CB9BC5821FD25365DDEA6E45F332B5F68A44AD8A530F0
+92A36FADB679CF58BAFDD3E51DFDD314B91A605515D729EE20C42505FD4E0835
+3C9D365B14C003BC6DD352F0228A8C161F172D2551CD1C67CD0B1B21DED53203
+046FAFF9B1129167921DD82C5964F9DDDFE0D2686875BD075FC81831A941F20E
+C5CD90040A092E559F6D1D3B0E9BB71733595AE0EA6093F986377A96060BF12A
+A1B525CD9FA741FE051DD54A32BECD55A868DD63119A4370F8322CCBEC889BC2
+A723CB4015FC4AA90AE873EA14DE13382CA9CF0D8DFB65F0ABEDFD9A64BB3F4D
+731E2E1C9A1789228FF44116230A70C339C9819676022AB31B5C9C589AE9094B
+09882051AD4637C1710D93E8DD117B4E7B478493B91EA6306FDB3FA6D738AAB1
+49FBB21A00AC2A999C21445DE3177F21D8B6AAB33869C882613EA6B5EC56476B
+5634181ECBF03BFEDB57F079EACE3B334F6F384BDF9D70AEBD592C8ECF21378B
+54A8B5DBF7CB9282E16AA517E14843909339B5E7C55B038BF3BB493F3B884A1C
+C25F9E8FB912CBE23199AD9D2C3E573727701BA301526C66C3617B9514D6F11F
+11930B1D97C17816C85B1BFD9B973A191B33CC3B391815AD14F1CBE935942AEC
+D4004E6BEF379066FD72209DC88D2E634E79BCC2B98C766CBD92C561F2703F8A
+109E6C6CEC7B866F2FC7ADF646BF492E520319F3B949AB5D84AE990B33344A40
+3971F58DFDF8D8D67FA0B8F2A0D884F8C09A5A721319B911DBA0A35903877343
+C37BC36C5EB32353272D1E6ED5FCA611BE319A7E1E842CB7576E7CDAD2416819
+11B86BC0CFA2D1D39AED35229CBF331B5CC28DFBEFEEDF66F71A09FE53FA844B
+934C0F9CB1A9620CBFD0CFDB69EB0552B0CBCA4245F8206B16D38A310D7D6A70
+52D31A5949510FFFCB316E093878E2064BA6256A50657948F069032182E8713D
+8F399DCE9A2A7C1B895D37D5C0867BBE2F012C8FE50AD851B2997AE4C579DB80
+BD1596B870349A68E7F73BE11A6DFC0EEC9DF06BCD35C8F1D5AC8BA8A46B6A7C
+1AEDDD88B83405F4F0EC5F20BD29C1C0703CB996938E95BB9E8F1AE9AEE6DD1D
+1AE48A1B62D202DC1CC5C15A1CFABDF717A81129D8CA390CF20E0F64D12E4F96
+1D698807C873620E97C22C195C0EFEC3F8CF188EAA874A8ECC6CF23314B03ED6
+0E8E1B95401035FDF35609C568B2F2338294314212
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+cleartomark
+%%EndFont 
+%%BeginFont: CMMI9
+%!PS-AdobeFont-1.1: CMMI9 1.100
+%%CreationDate: 1996 Jul 23 07:53:55
+% Copyright (C) 1997 American Mathematical Society. All Rights Reserved.
+11 dict begin
+/FontInfo 7 dict dup begin
+/version (1.100) readonly def
+/Notice (Copyright (C) 1997 American Mathematical Society. All Rights Reserved) readonly def
+/FullName (CMMI9) readonly def
+/FamilyName (Computer Modern) readonly def
+/Weight (Medium) readonly def
+/ItalicAngle -14.04 def
+/isFixedPitch false def
+end readonly def
+/FontName /CMMI9 def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] readonly def
+/Encoding 256 array
+0 1 255 {1 index exch /.notdef put} for
+dup 105 /i put
+readonly def
+/FontBBox{-29 -250 1075 750}readonly def
+/UniqueID 5087384 def
+currentdict end
+currentfile eexec
+D9D66F633B846A97B686A97E45A3D0AA0529731C99A784CCBE85B4993B2EEBDE
+3B12D472B7CF54651EF21185116A69AB1096ED4BAD2F646635E019B6417CC77B
+532F85D811C70D1429A19A5307EF63EB5C5E02C89FC6C20F6D9D89E7D91FE470
+B72BEFDA23F5DF76BE05AF4CE93137A219ED8A04A9D7D6FDF37E6B7FCDE0D90B
+986423E5960A5D9FBB4C956556E8DF90CBFAEC476FA36FD9A5C8175C9AF513FE
+D919C2DDD26BDC0D99398B9F4D03D5993DFC0930297866E1CD0A319B6B1FD958
+9E394A533A081C36D6F5CA5FED4F9AC9ADE41E04F9FC52E758C9F45A92BED935
+86F9CFDB57732045913A6422AD4206418610C81D882EE493DE9523CC1BFE1505
+DD1390B19BC1947A01B93BC668BE9B2A0E69A968554239B88C00AF9FBDF09CCD
+67D3B2094C11A04762FE8CC1E91D020A28B3C122D24BEAACF82313F4604F2FEF
+6E176D730A879BE45DD0D4996EF0247AEB1CA0AB08FF374D99F06D47B36F9554
+FAD9A2D3CE451B7791C3709D8A1DDDEFBD840C1B42AB824D5A0DFF0E0F15B0B7
+22AEEB877FF489581DA6FA8DA64944555101EB16F7AB0B717E148B7B98D8DBFD
+730C52937E226545CF8DC3E07C5BA30739BAFCD0F2B44275A6D503F582C0FB4F
+449963D0AD2FAFDE33BA3D77BCA9D1DF878DDAFCA2E22CC4BACD542B282164C7
+97C2BDE318AF9D501CA21F6E662E7AAB75A5F24D2C182E598D175D44E88AB19A
+E7CD59584F95B389183EE21B525BF52A3F23C0FE5383A5565A19361D716F508C
+AAB78411CA5A4D27552CC1C435760D5A89D535B71C593E755C616661363308DA
+A683F54ED0C23FB2C225A008392B0B719F66F11A946A090B7C00B662A3C69599
+B4ECB0CC70C85C4BBBF207E0026F6C7A19F2ACFB7A60804FC98A4BFFD7BFFF2B
+9529E6D9D4238002BBC255BC62959D6F3381FE06E0621B879D5FE5B541D45A1E
+759A6E7DC32B1D1632368D09A97039DF255B6492B1B2B7E2C1434E8306ECA7D3
+5A79B6D614B4979F10988BC76ED53A5F45315CD7DA216221F842FD0F3E050DD2
+BAC23C984D506D8F7D614BCB6B244F5F41321549BB0BD041FBF3053307168680
+3435E9C9445A59A7C666418C4F2512C32058B1CE1EA4757EBE96C73DF3E50E88
+9DAC838D911A76FEBEB9B49576D695B416B40BE3D9D9A7AB3FD237C4DDC09E72
+75A514B157B43B36C9AE68BC13E31AA5EAB1E37B97C98C991BB2B81EBFEAAB68
+A927D7B580B63238E546736E69E822EC56B71ADDDAB34B988798F060181FFD49
+89CEB566C30A6353973C0999777E151C594C052CA0C84691C85C7688207316C5
+95316FF1A36C498218CEC154E4FECD67BBEC01A16A9A49517F85591CAD5F22AE
+39EC421842C21F7124E6D16DF9053AB09237352696A38E0BEA9DF1E3F8C77C1B
+16399096C16CEA7569A1D4D4DFC77D42060A4D372E520865D49446B4F462DF56
+E3EFB3A62B4DA576869B3DDB586132470F170E4658E91792E7BD52810FFF3167
+79C303A0AEA20EDCC10FB80249B7AE58D25EA84F9064B6AD177A7EA47635A93E
+B684CF772BBCAF5CD34AC2101D697A1D23EE39771F7DFFF2FE88EB
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+cleartomark
+%%EndFont 
+%%BeginFont: CMSY9
+%!PS-AdobeFont-1.1: CMSY9 1.0
+%%CreationDate: 1991 Aug 15 07:22:27
+% Copyright (C) 1997 American Mathematical Society. All Rights Reserved.
+11 dict begin
+/FontInfo 7 dict dup begin
+/version (1.0) readonly def
+/Notice (Copyright (C) 1997 American Mathematical Society. All Rights Reserved) readonly def
+/FullName (CMSY9) readonly def
+/FamilyName (Computer Modern) readonly def
+/Weight (Medium) readonly def
+/ItalicAngle -14.035 def
+/isFixedPitch false def
+end readonly def
+/FontName /CMSY9 def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] readonly def
+/Encoding 256 array
+0 1 255 {1 index exch /.notdef put} for
+dup 102 /braceleft put
+dup 103 /braceright put
+readonly def
+/FontBBox{-30 -958 1146 777}readonly def
+/UniqueID 5000819 def
+currentdict end
+currentfile eexec
+D9D66F633B846A97B686A97E45A3D0AA052F09F9C8ADE9D907C058B87E9B6964
+7D53359E51216774A4EAA1E2B58EC3176BD1184A633B951372B4198D4E8C5EF4
+A213ACB58AA0A658908035BF2ED8531779838A960DFE2B27EA49C37156989C85
+E21B3ABF72E39A89232CD9F4237FC80C9E64E8425AA3BEF7DED60B122A52922A
+221A37D9A807DD01161779DDE7D31FF2B87F97C73D63EECDDA4C49501773468A
+27D1663E0B62F461F6E40A5D6676D0037D33F24E2FAC2B0009AD3C8350CDF8CC
+65BCA87979C36D14CB552E9A985E48BE4E88ECA16DF418749AF04FDD2B0E1380
+D281BB2476BB45FF30946B247DFD7F57305FA87E50CA338121C71CDFDF927A9C
+77FF14CB4A1D6D80356FB1171ED38C37702350497B44E42CE31DB2F493807DAA
+15B887C671199A54C4C1294BC520F5538C15556BC43C9F62342B121C6DCD6C5F
+491DA47FF360201EE21C08A781ED0589A6DF91B99FE118B9B29E4F068672E52F
+1A06C514D91C4C937D4E642503392B1CD1BF5AF0BCA28EBD840AD76CC39AD7AA
+CF2C057239308AF5B66FC81B645B7631A135923EA24F2893A5409CEC8923BDEE
+47AFE90058EB41EEFA1AA8AC6CCF4A5E5882019D673B501A3F807EE207590962
+8CCFC7AC8338BBF0828113394C5513192BF1AD3647A222B65E233F4802EE8B6B
+94159FFF4EB48393F6EE60B1C8C27BD315CAC569196BFF41EE690D9D3FCB301B
+10D0E3030C63B602881B94E930B98708F2E576C8736226AB9697131E81287DAC
+BB6CA1121D65587A3AC6BA0BE244046B5AC2A4264D0F7E43DBAB87F1A5BEC44F
+3714775D771901B0BE079232C4341017F0518C64654566AF001F6AEDF649CDB5
+768146D878A7A6722FEF3434DFE2089EED50B81C0DAE24E198DE4E63FE8412B2
+C987623873C621A0D7EC33845D0553D4F36B585B214B640B46FEB19ADF5A5467
+A8A4A8C67D39363E5C36BD3E1E773953D7696061014C6DD797D341D6502FAF22
+32849E871C18498E62CC0258B4DFD8429099B35698C8DE277450EB0EA0620B5F
+472725A2D9A3C229C3779B6CE05FF4E11198A3C07F9A2F050B28DD2495ADC5D4
+16B64D2B7E01AB94D8CFFB34D9F17B25DD40BABB5292EF5A3227EF3D9D7DD61C
+8ACB2B93E9AC37E5C40E4195ED69965BF6515B6F198700D5C25DF46317CD7FFD
+E6F7266B034A09AF851355EEAD1E4BC86C27FAB9370613FCE36EF623694BB509
+B5E8C92A45B438CA460820405116C3926134CC0B3DBD2E49F6B07D1C06C984EA
+61BED067B7DE2A9BD7694F3BF14C4B5F
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+cleartomark
+%%EndFont 
+TeXDict begin 40258431 52099146 1000 8000 8000 (master.dvi)
+@start /Fa 214[398 41[{}1 996.264 /CMR9 rf /Fb 150[350
+105[{}1 996.264 /CMMI9 rf /Fc 134[541 541 812 541 609
+338 474 474 1[609 609 609 879 338 1[338 338 609 609 338
+541 609 541 609 609 13[609 2[744 879 1[1014 3[405 2[744
+744 879 812 744 744 12[609 609 609 609 2[304 46[{
+TeXBase1Encoding ReEncodeFont}39 1217.66 /Times-Italic
+rf /Fd 201[332 332 332 332 332 332 49[{TeXBase1Encoding ReEncodeFont}6
+664.176 /Times-Roman rf /Fe 139[246 11[492 4[443 1[492
+29[639 67[{TeXBase1Encoding ReEncodeFont}5 885.568 /Helvetica
+rf /Ff 137[498 554 332 1[442 2[498 554 830 277 554 1[277
+3[442 554 1[554 498 9[996 3[554 719 1[609 775 76[554
+2[{TeXBase1Encoding ReEncodeFont}20 996.264 /Times-Bold
+rf /Fg 133[388 442 1[665 442 498 277 388 388 1[498 498
+498 719 277 442 1[277 498 498 277 442 498 442 498 498
+9[830 2[554 498 2[609 719 665 830 1[665 442 332 719 719
+609 609 719 665 1[609 6[332 6[498 2[498 277 249 332 249
+4[332 39[{TeXBase1Encoding ReEncodeFont}48 996.264 /Times-Italic
+rf /Fh 140[344 344 1[443 443 3[393 2[443 16[738 3[443
+3[639 1[738 3[295 1[639 3[591 14[443 3[443 3[221 4[295
+39[{TeXBase1Encoding ReEncodeFont}17 885.568 /Times-Italic
+rf /Fi 82[295 51[443 1[639 443 443 246 344 295 443 443
+443 443 689 246 443 1[246 443 443 295 393 443 393 443
+393 8[639 2[639 541 492 2[492 639 1[787 9[591 1[639 7[443
+443 2[443 443 443 443 443 443 246 221 1[221 499 40[492
+2[{TeXBase1Encoding ReEncodeFont}46 885.568 /Times-Roman
+rf /Fj 152[512 512 102[{}2 996.264 /CMSY9 rf /Fk 104[996
+498 1[442 442 24[442 498 498 719 498 498 277 388 332
+498 498 498 498 775 277 498 277 277 498 498 332 442 498
+442 498 442 3[332 1[332 609 719 1[940 719 719 609 554
+665 1[554 719 719 886 609 719 388 332 719 719 554 609
+719 665 665 719 918 442 3[277 277 498 498 498 498 498
+498 498 498 498 498 277 249 332 249 2[332 332 332 2[498
+32[554 554 2[{TeXBase1Encoding ReEncodeFont}80 996.264
+/Times-Roman rf /Fl 82[442 51[664 1[959 664 739 442 517
+590 1[739 664 739 1107 369 739 442 369 1[664 442 590
+739 590 739 664 7[959 1[1328 1[959 886 739 959 1[812
+1033 959 1254 886 1033 1[517 1033 1033 812 886 959 959
+886 959 9[664 664 664 664 664 664 664 2[332 46[{
+TeXBase1Encoding ReEncodeFont}52 1328.35 /Times-Bold
+rf /Fm 134[664 2[664 739 369 664 442 2[739 739 1[295
+1[295 295 739 739 369 739 739 2[739 6[812 2[1254 1[959
+2[959 4[1107 2[664 5[959 68[{TeXBase1Encoding ReEncodeFont}24
+1328.35 /Helvetica rf /Fn 134[1108 1108 3[664 1108 775
+1[1217 1217 1217 1771 554 2[554 1217 1217 1[1108 1[1108
+1[1108 12[1217 1329 11[1550 1[1329 1439 2[1439 65[{
+TeXBase1Encoding ReEncodeFont}22 1992.53 /Helvetica-Bold
+rf end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 8000dpi
+TeXDict begin
+%%BeginPaperSize: Letter
+letter
+%%EndPaperSize
+
+%%EndSetup
+%%Page: 1 1
+1 0 bop 188 1424 a Fn(Experiences)554 b(Appl)-30 b(ying)555
+b(Game)f(Theor)20 b(y)555 b(to)f(System)g(Design)5080
+5935 y Fm(Ratul)368 b(Mahajan)2582 b(Ma)-40 b(y)-27 b(a)369
+b(Rodr)20 b(ig)2584 b(Da)-27 b(vid)369 b(W)-40 b(ether)-13
+b(all)2584 b(John)368 b(Zahorjan)18571 9081 y(Univ)-33
+b(ersity)369 b(of)g(W)-53 b(ashington)-2022 16021 y Fl(ABSTRA)-73
+b(CT)-2022 18733 y Fk(W)-80 b(e)237 b(applied)g(techniques)g(from)e(g)
+-5 b(ame)237 b(theory)g(to)f(help)g(formulate)h(and)f(an-)-2022
+19895 y(alyze)282 b(solutions)e(to)h(tw)-10 b(o)281 b(systems)f
+(problems:)373 b(discouraging)282 b(sel\002shness)-2022
+21058 y(in)381 b(multi-hop)h(wireless)f(netw)-10 b(orks)382
+b(and)g(enabling)g(cooperation)h(among)-2022 22220 y(ISPs)258
+b(in)h(the)g(Internet.)339 b(It)259 b(pro)-15 b(v)g(ed)260
+b(dif)-25 b(\002cult)259 b(to)g(do)h(so.)338 b(This)258
+b(paper)i(reports)-2022 23382 y(on)272 b(our)h(e)-15
+b(xperiences)274 b(and)f(e)-15 b(xplains)273 b(the)g(issues)e(that)i
+(we)g(encountered.)381 b(It)-2022 24545 y(describes)235
+b(the)g(w)-10 b(ays)235 b(in)h(which)f(the)h(straightforw)-10
+b(ard)235 b(use)g(of)g(results)f(from)-2022 25707 y(traditional)212
+b(g)-5 b(ame)213 b(theory)g(did)f(not)g(\002t)g(well)g(with)h(the)f
+(requirements)h(of)f(our)-2022 26869 y(problems.)384
+b(It)274 b(also)g(identi\002es)g(an)h(important)f(characteristic)i(of)e
+(the)g(solu-)-2022 28032 y(tions)348 b(we)i(did)f(e)-25
+b(v)-15 b(entually)350 b(adopt)g(that)f(distinguishes)g(them)g(from)g
+(those)-2022 29194 y(a)-20 b(v)-25 b(ailable)297 b(using)f(g)-5
+b(ame)297 b(theoretic)h(approaches.)451 b(W)-80 b(e)297
+b(hope)g(that)g(this)e(dis-)-2022 30356 y(cussion)320
+b(will)g(help)h(to)g(highlight)g(formulations)f(of)h(g)-5
+b(ame)321 b(theory)g(which)-2022 31518 y(are)249 b(well-suited)g(for)g
+(problems)g(in)-40 b(v)-20 b(olving)250 b(computer)g(systems.)-2022
+34976 y Fl(Categories)332 b(and)f(Subject)g(Descriptors)-888
+36220 y Fk(C.2.m)249 b([Computer)-20 b(-Communication)250
+b(Netw)-10 b(orks]:)309 b(Miscellaneous)-2022 38571 y
+Fl(General)331 b(T)-122 b(erms)-888 39815 y Fk(Design,)250
+b(Economics)-2022 42166 y Fl(K)-33 b(eyw)-13 b(ords)-807
+43410 y Fk(Game)332 b(Theory)-65 b(,)351 b(Incenti)-25
+b(v)-15 b(es,)351 b(System)331 b(Design,)351 b(W)-40
+b(ireless)330 b(Netw)-10 b(orks,)-2022 44572 y(Interdomain)249
+b(Routing)-2022 49770 y Fl(1.)1328 b(INTR)-40 b(ODUCTION)-2022
+53423 y Fk(Autonomous)323 b(agents)g(with)g(v)-25 b(aried)324
+b(interests)e(characterize)j(man)-15 b(y)323 b(com-)-2022
+54585 y(puter)197 b(systems)e(today)-65 b(.)293 b(Game)198
+b(theory)-65 b(,)207 b(a)197 b(branch)h(of)f(economics)g(that)g(deals)
+-2022 55747 y(with)358 b(strate)-15 b(gic)359 b(and)g(rational)g(beha)
+-20 b(vior)359 b([15],)386 b(appears)359 b(to)f(be)h(a)g(natural)-2022
+56909 y(tool)277 b(for)g(both)g(designing)g(and)h(analyzing)h(the)e
+(interactions)h(among)f(such)-2022 58072 y(agents.)570
+b(Consequently)-65 b(,)359 b(there)336 b(has)g(been)h(much)g(recent)g
+(interest)f(in)g(ap-)p -2022 59223 10627 45 v -1524 60258
+a(Authors')189 b(e-mails:)279 b Fj(f)p Fk(ratul,rodrig,djw)-65
+b(,zahorjan)p Fj(g)p Fk(@cs.w)-10 b(ashington.edu)-2022
+64971 y Fi(Permission)329 b(to)f(mak)-9 b(e)329 b(digital)g(or)f(hard)g
+(copies)h(of)f(all)h(or)f(part)g(of)g(this)h(w)-9 b(ork)328
+b(for)-2022 65967 y(personal)292 b(or)g(classroom)i(use)f(is)g(granted)
+f(without)h(fee)f(pro)-13 b(vided)292 b(that)g(copies)h(are)-2022
+66963 y(not)245 b(made)h(or)f(distrib)-18 b(uted)246
+b(for)f(pro\002t)h(or)f(commercial)h(adv)-22 b(antage)246
+b(and)f(that)h(copies)-2022 67960 y(bear)216 b(this)h(notice)g(and)f
+(the)h(full)f(citation)i(on)e(the)g(\002rst)i(page.)318
+b(T)-71 b(o)217 b(cop)-9 b(y)216 b(otherwise,)j(to)-2022
+68956 y(republish,)207 b(to)c(post)g(on)g(serv)-13 b(ers)204
+b(or)e(to)h(redistrib)-18 b(ute)204 b(to)f(lists,)209
+b(requires)204 b(prior)e(speci\002c)-2022 69952 y(permission)222
+b(and/or)f(a)g(fee.)-2022 70948 y Fh(SIGCOMM'04)149 b(W)-81
+b(orkshops,)165 b Fi(Aug.)296 b(30+Sept.)h(3,)165 b(2004,)f(Portland,)i
+(Ore)-13 b(gon,)164 b(USA.)-2022 71945 y(Cop)-9 b(yright)220
+b(2004)h(A)-35 b(CM)221 b(1\25558113\255942\255X/04/0008)d(...)p
+Fk($)p Fi(5.00.)27201 16021 y Fk(plying)282 b(g)-5 b(ame)283
+b(theory)f(to)f(systems)g(problems,)289 b(with)282 b(man)-15
+b(y)282 b(successes)g(re-)27201 17183 y(ported)250 b(\(e.g.,)f(see)h
+(references)f([20,)g(3,)h(18,)f(9]\).)27201 19453 y(Encouraged)351
+b(by)g(the)f(potential)h(this)e(approach,)377 b(we)350
+b(tried)g(to)h(use)e(g)-5 b(ame)27201 20615 y(theory)201
+b(to)g(help)g(formulate)g(and)g(analyze)h(solutions)e(to)h(tw)-10
+b(o)201 b(systems)e(prob-)27201 21777 y(lems)245 b(of)f(interest)g(to)h
+(us.)307 b(The)245 b(\002rst)e(problem)i(w)-10 b(as)245
+b(to)f(induce)i(autonomous)27201 22940 y(nodes)270 b(in)f(a)h
+(multi-hop)f(wireless)g(netw)-10 b(ork)270 b(to)g(forw)-10
+b(ard)269 b(pack)-10 b(ets)270 b(for)f(each)27201 24102
+y(other)301 b([11].)464 b(The)301 b(second)h(problem)f(w)-10
+b(as)301 b(to)g(impro)-15 b(v)g(e)301 b(the)g(routing)g(paths)27201
+25264 y(used)196 b(by)h(Internet)f(Service)h(Pro)-15
+b(viders)196 b(\(ISPs\))e(by)i(designing)h(mechanisms)27201
+26426 y(that)273 b(enable)g(inter)-20 b(-ISP)272 b(coordination)h
+([12].)378 b(Both)272 b(problems)g(in)-40 b(v)-20 b(olv)-15
+b(e)274 b(in-)27201 27589 y(teracting)363 b(autonomous)f(entities,)390
+b(and)362 b(ha)-20 b(v)-15 b(e)362 b(other)g(characteristics)g(that)
+27201 28751 y(in)-40 b(vite)305 b(application)f(of)g(g)-5
+b(ame)304 b(theoretic)h(approaches.)474 b(F)-15 b(or)303
+b(instance,)318 b(the)27201 29913 y(\002rst)366 b(problem)i(e)-15
+b(xhibits)367 b(the)g(classical)g(group)g(v)-15 b(ersus)367
+b(indi)-25 b(vidual)367 b(ratio-)27201 31076 y(nality)240
+b(tension:)303 b(nodes)240 b(need)f(to)g(forw)-10 b(ard)239
+b(pack)-10 b(ets)240 b(for)e(the)h(netw)-10 b(ork)240
+b(to)f(be)27201 32238 y(connected,)212 b(b)-20 b(ut)201
+b(an)g(indi)-25 b(vidual)201 b(node)g(decreases)g(its)e(ener)-18
+b(gy)201 b(and)g(through-)27201 33400 y(put)372 b(by)g(doing)h(so.)676
+b(Indeed,)404 b(v)-15 b(ersions)371 b(of)h(both)g(ha)-20
+b(v)-15 b(e)372 b(been)h(studied)f(by)27201 34563 y(other)229
+b(researchers)f(using)g(these)h(techniques)g(\(e.g,)k(see)228
+b(references)h(for)f(the)27201 35725 y(pack)-10 b(ets)334
+b(forw)-10 b(arding)333 b(problem)g([21,)354 b(23,)g(6,)g(5,)g(16,)g
+(8,)g(22])333 b(and)h(the)f(ISP)27201 36887 y(routing)250
+b(problem)f([9]\).)27201 39156 y(Ho)-25 b(we)g(v)-15
+b(er)-40 b(,)231 b(for)223 b(the)h(speci\002c)g(issues)e(we)i(wished)g
+(to)g(address)f(in)h(each)g(prob-)27201 40319 y(lem,)323
+b(we)309 b(found)f(a)g(straightforw)-10 b(ard)307 b(application)j(of)d
+(g)-5 b(ame)309 b(theory)f(to)g(be)27201 41481 y(dif)-25
+b(\002cult,)371 b(and)347 b(e)-25 b(v)-15 b(entually)348
+b(turned)f(to)f(less)g(formal)g(approaches)i(to)e(con-)27201
+42643 y(struct)218 b(and)g(analyze)i(solutions.)298 b(In)217
+b(the)i(body)f(of)g(the)g(paper)-40 b(,)225 b(we)218
+b(discuss)f(in)27201 43806 y(detail)321 b(the)g(issues)e(we)i
+(encountered.)523 b(Brie\003y)-65 b(,)338 b(supporting)320
+b(the)h(inherent)27201 44968 y(asymmetry)363 b(in)f(node)h(w)-10
+b(orkloads)362 b(and)h(topological)g(placement)h(pro)-15
+b(v)g(ed)27201 46130 y(hard)322 b(in)f(the)h(wireless)e(netw)-10
+b(ork)322 b(case,)340 b(and)322 b(simultaneously)f(supporting)27201
+47293 y(\003e)-15 b(xible)342 b(objecti)-25 b(v)-15 b(es)342
+b(and)g(incenti)-25 b(v)-15 b(e)342 b(compatibility)h(pro)-15
+b(v)g(ed)341 b(hard)h(in)f(the)27201 48455 y(ISP)249
+b(routing)g(case.)27201 50724 y(Despite)411 b(these)f(initial)g(dif)-25
+b(\002culties,)450 b(we)411 b(remain)f(optimistic)g(about)h(the)27201
+51887 y(long-term)297 b(bene\002ts)h(of)e(applying)i(g)-5
+b(ame)298 b(theory)f(to)g(system)g(design.)452 b(W)-80
+b(e)27201 53049 y(hope)393 b(that)g(the)g(discussion)e(of)i(our)f(e)-15
+b(xperiences)394 b(will)e(pro)-15 b(v)g(e)393 b(useful)f(to)27201
+54211 y(systems)345 b(researchers)h(using)g(g)-5 b(ame)347
+b(theory)f(in)g(their)g(designs,)370 b(by)346 b(alert-)27201
+55373 y(ing)319 b(them)f(to)g(potential)h(stumbling)f(blocks,)336
+b(and)318 b(to)h(g)-5 b(ame)318 b(theorists,)335 b(by)27201
+56536 y(highlighting)346 b(the)f(kind)g(of)f(formulations)g(that)h(are)
+g(needed)h(by)f(systems)27201 57698 y(applications.)525
+b(T)-80 b(o)-25 b(w)-10 b(ards)321 b(the)g(latter)g(goal,)339
+b(we)322 b(also)e(identify)h(a)g(common)27201 58860 y(characteristic)
+250 b(of)f(our)g(solutions)g(to)g(both)g(the)h(problems.)27201
+61130 y(The)369 b(rest)g(of)g(this)f(paper)i(is)e(or)-18
+b(g)-5 b(anized)371 b(as)e(follo)-25 b(ws.)668 b(In)369
+b(Section)h(2,)399 b(we)27201 62292 y(describe)317 b(our)g(tw)-10
+b(o)317 b(systems)f(problems)g(and)h(our)g(solutions)f(to)h(them.)511
+b(In)27201 63454 y(Sections)219 b(3)f(and)g(4)g(we)h(discuss)e(the)h
+(issues)f(that)h(we)h(f)-10 b(aced)219 b(while)f(applying)27201
+64617 y(g)-5 b(ame)364 b(theory)f(to)g(these)h(problems,)391
+b(di)-25 b(viding)363 b(them)h(along)f(the)h(lines)e(of)27201
+65779 y(model)210 b(formulation)f(and)g(solution)g(implementation.)297
+b(W)-80 b(e)210 b(conclude)g(with)27201 66941 y(a)250
+b(retrospecti)-25 b(v)-15 b(e)250 b(re\003ection)f(on)h(our)f(e)-15
+b(xperiences)250 b(in)f(Section)h(5.)p eop
+%%Page: 2 2
+2 1 bop -2022 -915 a Fl(2.)1328 b(CASE)332 b(STUDIES)-2022
+2738 y Fk(In)325 b(this)g(section,)345 b(we)326 b(pro)-15
+b(vide)326 b(an)g(o)-15 b(v)g(ervie)-25 b(w)326 b(of)g(the)f(tw)-10
+b(o)326 b(systems)f(prob-)-2022 3900 y(lems)241 b(that)i(we)f(tried)g
+(to)g(solv)-15 b(e)242 b(using)g(concepts)h(from)e(g)-5
+b(ame)243 b(theory)-65 b(,)244 b(along)-2022 5062 y(with)228
+b(our)f(resulting)h(designs.)301 b(Further)228 b(detail)g(can)h(be)f
+(found)g(in)f(the)i(corre-)-2022 6224 y(sponding)246
+b(technical)h(reports)e([11,)i(12].)308 b(W)-80 b(e)246
+b(defer)h(the)f(discussion)f(of)h(our)-2022 7387 y(e)-15
+b(xperiences)250 b(to)f(Sections)h(3)f(and)g(4.)-2022
+11261 y Fl(2.1)1328 b(Multi\255Hop)333 b(W)-24 b(ir)g(eless)332
+b(Netw)-13 b(orks)-2022 14914 y Fk(The)258 b(nodes)h(of)g(emer)-18
+b(ging)259 b(multi-hop)g(wireless)f(netw)-10 b(orks,)261
+b(such)e(as)f(com-)-2022 16076 y(munity)377 b(meshes)g([1,)410
+b(2],)f(may)378 b(belong)g(to)f(dif)-25 b(ferent)377
+b(users.)693 b(When)378 b(the)-2022 17239 y(source)283
+b(and)h(the)f(destination)h(nodes)g(for)e(a)i(pack)-10
+b(et)285 b(are)e(not)h(within)f(direct)-2022 18401 y(transmission)356
+b(range)i(of)f(each)h(other)-40 b(,)385 b(the)-15 b(y)358
+b(must)f(rely)g(on)g(intermediate)-2022 19563 y(nodes)372
+b(to)h(forw)-10 b(ard)372 b(pack)-10 b(ets)373 b(between)h(them.)680
+b(While)373 b(pack)-10 b(et)374 b(forw)-10 b(ard-)-2022
+20726 y(ing)346 b(impro)-15 b(v)g(es)346 b(connecti)-25
+b(vity)348 b(in)e(the)g(netw)-10 b(ork,)371 b(bene\002ting)347
+b(all)f(nodes)h(in)-2022 21888 y(the)340 b(long-run,)363
+b(it)340 b(is)f(not)i(indi)-25 b(vidually)341 b(rational)f(because)h
+(of)f(the)h(cost)f(to)-2022 23050 y(the)307 b(forw)-10
+b(arder)307 b(in)g(terms)g(of)g(ener)-18 b(gy)307 b(and)h(bandwidth.)
+484 b(Sel\002shness)306 b(thus)-2022 24213 y(incents)331
+b(nodes)h(to)f Fg(c)-15 b(heat)333 b Fk(by)e(a)-20 b(v)g(oiding)333
+b(pack)-10 b(et)333 b(forw)-10 b(arding.)556 b(The)331
+b(basic)-2022 25375 y(problem)231 b(is)f(to)h(moderate)h(this)f
+(sel\002sh)f(beha)-20 b(vior)232 b(in)f(a)g(w)-10 b(ay)231
+b(that)h(preserv)-15 b(es)-2022 26537 y(netw)-10 b(ork)249
+b(connecti)-25 b(vity)-65 b(.)-2022 28806 y Ff(Rele)-15
+b(v)-10 b(ant)246 b(Prior)g(W)-75 b(ork)1228 b Fk(Earlier)245
+b(w)-10 b(ork)246 b(on)g(this)f(problem)h(can)g(be)g(clas-)-2022
+29969 y(si\002ed)273 b(into)g(three)h(cate)-15 b(gories.)383
+b(The)274 b(\002rst)e(cate)-15 b(gory)275 b(is)e(currenc)-15
+b(y-based)275 b(in)-2022 31131 y(which)239 b(nodes)h(that)f(forw)-10
+b(ard)239 b(pack)-10 b(ets)240 b(are)g(paid)f(by)g(the)h(senders)f(or)f
+(recipi-)-2022 32293 y(ents)268 b(of)h(the)g(pack)-10
+b(ets.)369 b(The)268 b(amount)i(of)e(payment)i(can)g(be)f(either)g
+(\002x)-15 b(ed)269 b(by)-2022 33456 y(design)284 b([6,)293
+b(23])284 b(or)g(v)-25 b(ary)284 b(based)h(on)f(mark)-10
+b(et)285 b(forces)f([16,)293 b(8].)414 b(The)284 b(second)-2022
+34618 y(cate)-15 b(gory)254 b(uses)f(reputation)h(to)g(incent)g(nodes.)
+323 b(Nodes)253 b(acquire)i(reputation)-2022 35780 y(based)219
+b(on)h(their)g(forw)-10 b(arding)219 b(beha)-20 b(vior)221
+b(and)f(other)f(nodes)h(decide)h(whether)-2022 36943
+y(to)249 b(forw)-10 b(ard)250 b(pack)-10 b(ets)250 b(for)f(a)h(gi)-25
+b(v)-15 b(en)251 b(node)f(based)g(on)g(its)f(reputation.)311
+b(Exam-)-2022 38105 y(ples)255 b(of)h(this)f(approach)i(include)g
+(CONFID)-40 b(ANT)257 b([5])e(and)h(P)-15 b(athrater)257
+b([13].)-2022 39267 y(The)262 b(third)g(cate)-15 b(gory)263
+b(models)g(forw)-10 b(arding)262 b(as)g(a)h(strate)-15
+b(gic)262 b(g)-5 b(ame)263 b(and,)k(un-)-2022 40430 y(der)230
+b(certain)h(formal)g(assumptions,)i(deri)-25 b(v)-15
+b(es)231 b(a)g(forw)-10 b(arding)231 b(rate)f(for)g(nodes)-2022
+41592 y(that)i(is)g(a)h(Nash)g(equilibrium.)304 b(Generous)233
+b(T)-35 b(it-for)-20 b(-T)-80 b(at)232 b([21])g(is)g(an)h(e)-15
+b(xample)-2022 42754 y(of)323 b(this)g(approach.)533
+b(More)323 b(generally)-65 b(,)343 b(Urpi)323 b Fg(et)h(al.)g
+Fk([22])f(present)g(se)-25 b(v)-15 b(eral)-2022 43916
+y(results)304 b(characterizing)k(enforceable)f(policies)e(in)h(a)g
+(setting)f(where)h(each)-2022 45079 y(node')-55 b(s)249
+b(utility)g(function)h(includes)f(both)h(bandwidth)g(and)f(ener)-18
+b(gy)250 b(terms.)-2022 47348 y Ff(Re\002ned)203 b(Pr)-18
+b(oblem)202 b(Statement)1012 b Fk(The)203 b(particular)g(v)-15
+b(ersion)202 b(of)h(the)f(pack)-10 b(et)-2022 48510 y(forw)g(arding)433
+b(problem)h(we)g(w)-10 b(anted)435 b(to)e(solv)-15 b(e)434
+b(dif)-25 b(fered)433 b(from)g(pre)-25 b(vious)-2022
+49673 y(w)-10 b(ork)232 b(in)h(se)-25 b(v)-15 b(eral)233
+b(w)-10 b(ays)232 b(in)h(terms)f(of)g(the)h(properties)f(of)g(the)h
+(solution.)303 b(The)-2022 50835 y(primary)361 b(one)h(w)-10
+b(as)361 b(that)g(there)h(should)f(be)h(no)f(arti\002cial)h
+(restrictions)e(on)-2022 51997 y(ho)-25 b(w)194 b(man)-15
+b(y)194 b(pack)-10 b(ets)194 b(a)g(node)h(can)f(send.)290
+b(W)-40 b(ireless)194 b(netw)-10 b(orks)194 b(are)g(e)-15
+b(xpected)-2022 53160 y(to)267 b(be)g(highly)h(heterogeneous)g(in)f
+(terms)g(of)g(w)-10 b(orkload)268 b(and)g(placement)h(in)-2022
+54322 y(the)364 b(netw)-10 b(ork)365 b(topology:)539
+b(some)364 b(nodes)g(will)g(w)-10 b(ant)365 b(to)f(send)g(more)g(data,)
+-2022 55484 y(some)227 b(less;)233 b(some)228 b(will)f(recei)-25
+b(v)-15 b(e)228 b(man)-15 b(y)228 b(forw)-10 b(arding)227
+b(requests,)232 b(others)227 b(per)-20 b(-)-2022 56646
+y(haps)380 b(none.)705 b(Earlier)380 b(w)-10 b(ork)381
+b(e)-15 b(xplicitly)382 b(or)e(implicitly)h(tried)g(to)g(achie)-25
+b(v)-15 b(e)-2022 57809 y(f)-10 b(airness:)286 b(nodes)205
+b(should)h(not)f(ha)-20 b(v)-15 b(e)206 b(to)g(forw)-10
+b(ard)205 b(\(man)-15 b(y\))205 b(more)h(pack)-10 b(ets)206
+b(for)-2022 58971 y(others)314 b(than)h(the)-15 b(y)315
+b(send.)506 b(In)315 b(contrast,)331 b(we)315 b(w)-10
+b(anted)316 b(to)f(ensure)g(that)g(e)-25 b(v)-15 b(en)-2022
+60133 y(nodes)362 b(that)g(are)h(not)f(well)g(placed)h(to)f(forw)-10
+b(ard)363 b(pack)-10 b(ets)362 b(be)h(able)g(to)f(use)-2022
+61296 y(the)229 b(netw)-10 b(ork)231 b(without)e(signi\002cant)h
+(limitations.)302 b(Basically)-65 b(,)234 b(our)229 b(goal)h(w)-10
+b(as)-2022 62458 y(to)319 b(induce)i(beha)-20 b(vior)320
+b(that)g(results)f(in)h(netw)-10 b(ork)320 b(connecti)-25
+b(vity)321 b(as)f(equi)-25 b(v)g(a-)-2022 63620 y(lent)283
+b(as)h(possible)f(to)g(that)h(enjo)-10 b(yed)285 b(in)e(a)h(fully)f
+(cooperati)-25 b(v)-15 b(e)285 b(netw)-10 b(ork.)413
+b(As)-2022 64783 y(discussed)271 b(in)i(Section)g(3.1,)278
+b(this)272 b(is)g(not)g(a)h(natural)g(\002t)f(for)g(g)-5
+b(ame)273 b(theoretic)-2022 65945 y(approaches.)-2022
+68214 y(The)320 b(other)g(desirable)h(properties)f(of)f(the)i(solution)
+f(were)h(the)f(follo)-25 b(wing.)-2022 69377 y(First,)290
+b(it)282 b(should)h(be)g(v)-15 b(ery)283 b(hard,)291
+b(if)282 b(not)h(impossible,)291 b(for)282 b(a)h(node)g(to)g(cheat)
+-2022 70539 y(without)223 b(incurring)h(a)g(signi\002cant)g(penalty)-65
+b(.)301 b(Second,)230 b(the)223 b(more)h(e)-15 b(gre)g(gious)-2022
+71701 y(the)388 b(cheating,)424 b(the)389 b(f)-10 b(aster)388
+b(the)g(node)h(should)f(suf)-25 b(fer)388 b(its)f(consequences,)27201
+-915 y(which)300 b(guards)f(ag)-5 b(ainst)299 b(nodes)g(that)g(cheat)g
+(and)h(stay)e(in)h(the)g(netw)-10 b(ork)300 b(for)27201
+247 y(a)260 b(short)f(time.)340 b(Third,)262 b(there)e(should)f(be)h
+(minimal)g(startup)f(cost)g(for)g(nodes)27201 1409 y(entering)i(the)e
+(netw)-10 b(ork,)263 b(esche)-25 b(wing)261 b(the)f(kind)g(of)f
+(re-entry)h(penalties)g(em-)27201 2571 y(plo)-10 b(yed)381
+b(by)f(some)g(earlier)g(approaches.)702 b(Finally)-65
+b(,)413 b(the)380 b(implementation)27201 3734 y(o)-15
+b(v)g(erheads)250 b(of)f(the)h(solution)f(should)g(be)g(lo)-25
+b(w)-65 b(.)27201 6003 y Ff(Our)228 b(Solution)1137 b
+Fk(Initially)-65 b(,)232 b(we)c(hoped)g(to)g(pose)f(the)h(problem)g(as)
+f(a)h(mech-)27201 7165 y(anism)292 b(design)f(e)-15 b(x)g(ercise)292
+b(and)g(\002nd)g(a)f(pro)-15 b(v)-25 b(ably)292 b(strate)-15
+b(gy-proof)291 b(solution.)27201 8328 y(Ho)-25 b(we)g(v)-15
+b(er)-40 b(,)223 b(e)-25 b(v)-15 b(entually)216 b(the)e(problems)g
+(described)h(in)f(subsequent)g(sections)27201 9490 y(moti)-25
+b(v)g(ated)365 b(us)e(to)h(abandon)g(e)-25 b(v)-15 b(en)365
+b(the)f(attempt)g(to)f(formally)h(model)g(the)27201 10652
+y(problem,)250 b(and)g(we)g(used)f(an)h(informal)f(approach)i(to)e
+(\002nding)h(and)g(v)-25 b(alidat-)27201 11815 y(ing)231
+b(a)h(solution.)302 b(Our)232 b(protocol,)j Fe(Catch)q
+Fk(,)f(assumes)d(a)g(backdrop)h(of)f(cooper)-20 b(-)27201
+12977 y(ation)201 b(and)g(le)-25 b(v)-15 b(erages)202
+b(it)e(to)h(detect)g(and)g(punish)g(cheating)h([11].)292
+b Fe(Catch)202 b Fk(uses)27201 14139 y(anon)-15 b(ymous)223
+b(messages,)228 b(where)223 b(the)f(identity)h(of)f(the)h(sender)f(is)g
+(hidden,)228 b(to)27201 15302 y(disco)-15 b(v)g(er)216
+b(the)g(true)f(netw)-10 b(ork)216 b(connecti)-25 b(vity)217
+b(e)-25 b(v)-15 b(en)216 b(though)g(a)f(cheating)i(node)27201
+16464 y(may)281 b(try)e(to)h(hide)h(links)e(to)h(reduce)h(its)f(forw)
+-10 b(arding)280 b(oblig)-5 b(ations.)401 b(The)281 b(in-)27201
+17626 y(sight)198 b(here)g(is)f(that)h(the)g(cheating)h(node)g(w)-10
+b(ould)198 b(w)-10 b(ant)199 b(to)f(be)g(connected)h(to)f(at)27201
+18788 y(least)244 b(one)g(other)g(node)g(in)f(the)h(netw)-10
+b(ork,)245 b(and)f(because)h(it)e(cannot)i(infer)e(the)27201
+19951 y(sender)j(of)f(an)h(anon)-15 b(ymous)246 b(message,)g(it)f(is)g
+(forced)h(to)f(ackno)-25 b(wledge)248 b(con-)27201 21113
+y(necti)-25 b(vity)307 b(to)g(all)f(of)g(its)f(neighbors.)481
+b(Nodes)306 b(also)g(implements)h(a)f(kind)g(of)27201
+22275 y(w)-10 b(atchdog)306 b([13],)318 b(monitoring)305
+b(the)g(beha)-20 b(vior)305 b(of)g(their)f(neighbors)h(to)f(v)-15
+b(er)-20 b(-)27201 23438 y(ify)293 b(that)g(the)-15 b(y)294
+b(correctly)f(forw)-10 b(ard)293 b(pack)-10 b(ets.)441
+b(If)292 b(cheating)j(is)d(detected,)305 b(all)27201
+24600 y(neighbors)256 b(of)g(the)h(cheater)g(\(identi\002ed)f(in)g(the)
+h(topology)f(disco)-15 b(v)g(ery)257 b(step\))27201 25762
+y(are)296 b(noti\002ed.)449 b(Each)296 b(then)g(isolates)f(the)h
+(cheater)-40 b(,)308 b(which)297 b(ef)-25 b(fecti)g(v)-15
+b(ely)296 b(cuts)27201 26925 y(of)-25 b(f)348 b(its)g(netw)-10
+b(ork)349 b(connecti)-25 b(vity)-65 b(.)609 b(Thus,)372
+b(we)349 b(use)g(the)f(fear)h(of)f(being)h(dis-)27201
+28087 y(connected)292 b(as)d(a)h(disincenti)-25 b(v)-15
+b(e)290 b(ag)-5 b(ainst)290 b(cheating.)432 b(The)289
+b(design)h(of)f Fe(Catch)27201 29249 y Fk(re\003ects)j(tradeof)-25
+b(fs)292 b(that)g(mak)-10 b(e)293 b(its)e(implementation)i(possible)f
+(and)g(ef)-25 b(fec-)27201 30412 y(ti)g(v)-15 b(e)328
+b(in)f(the)h(heterogeneous)h(settings)d(we)i(w)-10 b(anted)329
+b(to)e(address,)346 b(while)328 b(in)27201 31574 y(turn)255
+b(sacri\002cing)h(the)g(absolute)f(guarantee)i(that)e(there)h(could)g
+(be)f(no)h(situa-)27201 32736 y(tions)294 b(under)f(which)i(a)f(node')
+-55 b(s)293 b(sel\002sh)g(bene\002t)i(might)e(be)h(maximized)h(by)27201
+33898 y(operating)250 b(in)f(violation)h(of)f(the)h(desired)f(social)g
+(goal.)27201 37182 y Fl(2.2)1329 b(ISP)331 b(Route)h(Negotiation)27201
+40835 y Fk(Our)352 b(second)f(problem)h(concerns)g(routing)f(between)i
+(ISPs)d(in)h(the)h(back-)27201 41997 y(bone)266 b(of)f(the)h(Internet.)
+357 b(ISPs)264 b(are)i(competing,)k(autonomous)c(entities,)j(b)-20
+b(ut)27201 43159 y(the)-15 b(y)259 b(must)f(cooperate)h(by)f(deli)-25
+b(v)-15 b(ering)259 b(pack)-10 b(ets)259 b(to)f(each)h(other)f(so)g
+(that)g(the)27201 44322 y(pack)-10 b(ets)195 b(are)f(able)g(to)g(reach)
+g(their)g(ultimate)g(destinations.)291 b(Currently)-65
+b(,)204 b(ISPs)27201 45484 y(mak)-10 b(e)290 b(unilateral)g(decisions)f
+(about)h(routing,)299 b(including)290 b(which)g(peering)53380
+45061 y Fd(1)27201 46646 y Fk(link)211 b(is)f(used)h(to)f(send)h(a)g
+(pack)-10 b(et)211 b(to)g(the)g(do)-25 b(wnstream)211
+b(ISP)-111 b(.)211 b(Unsurprisingly)-65 b(,)27201 47809
+y(the)246 b(ISPs')e(routing)h(decisions)g(are)h(dri)-25
+b(v)-15 b(en)245 b(by)h(self-interest,)f(and)h(often)f(do)27201
+48971 y(not)300 b(tak)-10 b(e)299 b(global)h(consequences)g(into)g
+(account.)460 b(F)-15 b(or)298 b(e)-15 b(xample,)313
+b(a)300 b(pre)-25 b(v)g(a-)27201 50133 y(lent)290 b(polic)-15
+b(y)289 b(is)f(\223early)i(e)-15 b(xit,)-70 b(\224)300
+b(where)290 b(the)f(upstream)g(ISP)f(routes)h(a)g(pack)-10
+b(et)27201 51296 y(through)255 b(the)f(peering)h(link)f(that)g(is)f
+(nearest)i(to)f(the)g(pack)-10 b(et')-55 b(s)255 b(source,)g(e)-25
+b(v)-15 b(en)27201 52458 y(though)233 b(this)f(may)g(lengthen)i(the)e
+(full)g(path)h(the)f(pack)-10 b(et)234 b(must)e(tak)-10
+b(e)232 b(relati)-25 b(v)-15 b(e)27201 53620 y(to)394
+b(other)g(a)-20 b(v)-25 b(ailable)395 b(choices.)743
+b(The)394 b(end)g(result)g(is)f(that)h(Internet)g(back-)27201
+54783 y(bone)273 b(routing)g(paths)f(can)h(be)g(sub-optimal)f(and)h(e)
+-25 b(v)-15 b(en)273 b(unstable,)278 b(with)273 b(the)27201
+55945 y(choices)286 b(made)g(unilaterally)g(by)f(one)h(ISP)e(impacting)
+i(another)-55 b(.)418 b(Anecdo-)27201 57107 y(tally)-65
+b(,)332 b(operators)314 b(spend)g(much)h(time)g(\002ne-tuning)g(their)f
+(routing)h(choices)27201 58269 y(gi)-25 b(v)-15 b(en)249
+b(the)f(indirect)h(impact)f(of)g(routing)g(decisions)g(made)h(by)f
+(their)g(neigh-)27201 59432 y(bors.)499 b(The)313 b(problem,)329
+b(then,)g(is)312 b(to)g(impro)-15 b(v)g(e)314 b(upon)f(this)f
+(situation)g(by)h(de-)27201 60594 y(signing)388 b(mechanisms)g(that)g
+(enable)h(ISPs)e(to)h(coordinate)g(their)g(routing)27201
+61756 y(decisions.)27201 64026 y Ff(Rele)-15 b(v)-10
+b(ant)251 b(Prior)g(W)-75 b(ork)1252 b Fk(Feigenbaum)252
+b Fg(et)e(al.)313 b Fk(formulate)250 b(the)h(problem)27201
+65188 y(of)371 b(computing)h(globally)f(shortest)f(paths,)402
+b(with)371 b(respect)g(to)g(the)g(cost)f(of)27201 66350
+y(carrying)221 b(the)f(pack)-10 b(et,)227 b(in)220 b(the)g(backbone)i
+(of)e(the)g(Internet)g(as)g(a)g(mechanism)27201 67513
+y(design)214 b(e)-15 b(x)g(ercise)215 b([9].)297 b(The)-15
+b(y)214 b(design)g(a)g(direct)h(mechanism)f(to)g(achie)-25
+b(v)-15 b(e)216 b(this)27201 68675 y(goal)250 b(and)g(pro)-15
+b(v)g(e)249 b(that)h(it)f(is)f(strate)-15 b(gy-proof.)p
+27201 69541 10627 45 v 27312 70282 a Fd(1)27699 70705
+y Fk(Interconnections)407 b(between)f(ISPs)e(are)i(called)g(peering)g
+(links.)776 b(Lar)-18 b(ge)27201 71701 y(ISPs)249 b(usually)g(ha)-20
+b(v)-15 b(e)250 b(multiple)f(peering)h(links)f(between)i(them.)p
+eop
+%%Page: 3 3
+3 2 bop -2022 -915 a Ff(Re\002ned)334 b(Pr)-18 b(oblem)335
+b(Statement)1671 b Fk(One)335 b(important)f(change)i(we)f(made)-2022
+247 y(to)381 b(the)g(problem)g(statement)h(w)-10 b(as)381
+b(to)g(modify)g(the)g(goal)g(of)g(achie)-25 b(ving)382
+b(a)-2022 1409 y(globally)295 b(optimal)h(set)f(of)g(paths.)447
+b(This)295 b(w)-10 b(as)295 b(moti)-25 b(v)g(ated)296
+b(by)g(the)f(observ)-25 b(a-)-2022 2571 y(tion)338 b(that)g(compared)h
+(to)f(the)g(current)g(situation)g(a)g(globally)h(optimal)f(so-)-2022
+3734 y(lution)273 b(is)g(often)g(disadv)-25 b(antageous)275
+b(to)e(some)g(of)g(the)h(ISPs)e(\226)h(the)-15 b(y)274
+b(suf)-25 b(fer)272 b(a)-2022 4896 y(penalty)324 b(under)g(it)f(relati)
+-25 b(v)-15 b(e)324 b(to)f(the)h(decisions)f(the)-15
+b(y)324 b(w)-10 b(ould)324 b(mak)-10 b(e)324 b(unilat-)-2022
+6058 y(erally)-65 b(.)311 b(Thus,)249 b(a)h(mechanism)h(that)f
+(computes)g(globally)h(optimal)f(solution)-2022 7221
+y(is)314 b(not)g(indi)-25 b(vidually)316 b(rational,)331
+b(and)315 b(some)g(ISPs)e(w)-10 b(ould)316 b(be)e(unwilling)i(to)-2022
+8383 y(adopt)252 b(it)g(without)g(introducing)h(side)f(payments)g
+(which)h(we)f(vie)-25 b(wed)253 b(as)f(an)-2022 9545
+y(unw)-10 b(anted)280 b(complication.)400 b(Rather)279
+b(than)h(global)f(optimality)-65 b(,)288 b(we)279 b(w)-10
+b(anted)-2022 10708 y(to)249 b(ensure)g(indi)-25 b(vidual)250
+b(rationality)-65 b(,)250 b(at)f(least)g(when)h(both)g(ISPs)e(so)h
+(desire.)-2022 12977 y(Additionally)-65 b(,)408 b(Feigenbaum)377
+b Fg(et)e(al.)p Fk(')-55 b(s)375 b(mechanism)h(is)f(direct:)562
+b(the)376 b(ISPs)-2022 14139 y(e)-15 b(xchange)375 b(accurate)h(cost)e
+(information)g(about)g(pack)-10 b(et)375 b(deli)-25 b(v)-15
+b(ery)375 b(within)-2022 15302 y(their)209 b(o)-25 b(wn)211
+b(netw)-10 b(orks.)296 b(Competiti)-25 b(v)-15 b(e)210
+b(concerns,)218 b(ho)-25 b(we)g(v)-15 b(er)-40 b(,)220
+b(ar)-18 b(gue)210 b(that)g(this)-2022 16464 y(may)225
+b(not)g(be)g(acceptable)i(to)e(the)h(ISPs)e(\(see)g(Section)i(3.2.1\).)
+301 b(W)-80 b(e)226 b(therefore)-2022 17626 y(w)-10 b(anted)250
+b(to)f(a)-20 b(v)g(oid)250 b(direct)f(mechanisms)h(as)f(part)g(of)g
+(our)g(solution.)-2022 19895 y(In)254 b(more)h(detail,)i(we)e(w)-10
+b(anted)256 b(a)f(ne)-15 b(gotiation)256 b(protocol)f(that)g(honored)h
+(four)-2022 21058 y(k)-10 b(e)-15 b(y)300 b(constraints,)311
+b(mentioned)301 b(here)f(in)f(a)h(prioritized)f(order)-55
+b(.)460 b(First,)311 b(com-)-2022 22220 y(petiti)-25
+b(v)-15 b(e)193 b(concerns)g(dictate)h(that)e(ISPs)g(should)h(not)f(be)
+h(required)g(to)g(disclose)-2022 23382 y(detailed)413
+b(information)f(about)h(their)f(netw)-10 b(orks,)454
+b(such)412 b(as)g(the)g(true)h(cost)-2022 24545 y(of)348
+b(carrying)g(traf)-25 b(\002c)349 b(between)g(tw)-10
+b(o)349 b(end)g(points.)606 b(Second,)374 b(the)348 b(protocol)-2022
+25707 y(should)274 b(support)f(ISPs)g(with)i(dif)-25
+b(ferent)274 b(objecti)-25 b(v)-15 b(e)275 b(functions,)280
+b(as)274 b(opposed)-2022 26869 y(to)286 b(a)g(\002x)-15
+b(ed)286 b(function)h(of)e(delay)i(and)g(utilization,)296
+b(because)287 b(ISPs)e(optimize)-2022 28032 y(their)299
+b(netw)-10 b(orks)299 b(for)g(dif)-25 b(ferent)299 b(criteria.)459
+b(Third,)311 b(the)300 b(protocol)f(should)g(be)-2022
+29194 y(\003e)-15 b(xible)375 b(in)g(the)g(nature)g(of)g(outcomes)g(it)
+g(can)g(compute)h([7].)685 b(Dif)-25 b(ferent)-2022 30356
+y(pairs)206 b(of)g(ISPs)f(ha)-20 b(v)-15 b(e)207 b(dif)-25
+b(ferent)207 b(relationships)f(such)g(as)g(customer)-20
+b(-pro)-15 b(vider)-2022 31518 y(and)320 b(peer)-20 b(-peer)321
+b(\(which)f(in)-40 b(v)-20 b(olv)-15 b(es)321 b(no)f(payment)h(in)e
+(either)i(direction\),)338 b(as)-2022 32681 y(a)318 b(result)g(dif)-25
+b(fering)318 b(willingness)g(to)g(accommodate)i(each)f(other)-55
+b(.)517 b(F)-15 b(or)318 b(in-)-2022 33843 y(stance,)262
+b(peers)c(might)h(w)-10 b(ant)260 b(a)f(f)-10 b(air)259
+b(solution)g(for)f(some)h(de\002nition)g(of)g(f)-10 b(air)-20
+b(-)-2022 35005 y(ness,)362 b(while)341 b(a)g(pro)-15
+b(vider)341 b(ISP)f(might)g(be)h(content)h(with)e(an)-15
+b(y)341 b(solution)g(in)-2022 36168 y(which)262 b(it)f(does)g(not)h
+(lose)f(compared)h(to)g(the)f(def)-10 b(ault)262 b(routing.)346
+b(F)-15 b(ourth,)264 b(the)-2022 37330 y(protocol)340
+b(should)f(be)h(strate)-15 b(gy-proof)339 b(\226)h(a)f(cheating)i(ISP)e
+(should)h(not)f(be)-2022 38492 y(able)249 b(to)h(manipulate)g(the)f
+(solution)g(in)h(its)e(f)-10 b(a)-20 b(v)g(or)-55 b(.)-2022
+40762 y Ff(Our)358 b(Solution)1788 b Fk(W)-80 b(e)359
+b(be)-15 b(g)-5 b(an)359 b(using)e(traditional)i(ne)-15
+b(gotiation)359 b(mecha-)-2022 41924 y(nisms)374 b([4,)407
+b(17])375 b(to)g(analyze)i(and)f(solv)-15 b(e)375 b(our)g(problem,)408
+b(b)-20 b(ut)375 b(for)g(reasons)-2022 43086 y(discussed)257
+b(in)h(Section)g(3.2)g(found)g(it)g(dif)-25 b(\002cult)258
+b(to)g(apply)g(the)h(e)-15 b(xisting)257 b(the-)-2022
+44249 y(ory)-65 b(.)309 b(Instead)248 b(of)g(being)h(pro)-15
+b(v)-25 b(ably)249 b(optimal)g(by)g(some)f(criterion,)h(our)f(solu-)
+-2022 45411 y(tion)230 b(is)g(simply)g(a)h(ne)-15 b(gotiation)231
+b(frame)-25 b(w)-10 b(ork)231 b(that)g(the)f(ISPs)g(can)h(use)f(so)g
+(that)-2022 46573 y(both)h(see)g(impro)-15 b(v)g(ement)232
+b(relati)-25 b(v)-15 b(e)231 b(to)g(the)g(def)-10 b(ault)232
+b(of)f(unilaterally)g(decided)-2022 47735 y(paths)301
+b([12].)464 b(In)301 b(this)g(frame)-25 b(w)-10 b(ork,)315
+b(using)301 b(their)g(o)-25 b(wn)301 b(optimization)i(crite-)-2022
+48898 y(ria,)320 b(ISPs)304 b(map)j(their)f(preference)h(for)e(a)h
+(peering)h(point)f(for)f(a)h(\003o)-25 b(w)306 b(to)g(an)-2022
+50060 y(opaque,)251 b(cardinal)f(utility)-65 b(.)311
+b(It)250 b(is)f(opaque)i(because)g(by)f(just)f(observing)h(this)-2022
+51222 y(utility)341 b(v)-25 b(alue,)364 b(the)342 b(other)f(ISP)f(can)i
+(infer)f(neither)h(the)f(optimization)h(cri-)-2022 52385
+y(teria)311 b(nor)f(the)i(v)-25 b(alue)311 b(of)g(the)g(metric)h
+(\(e.g.,)326 b(number)312 b(of)e(milliseconds)h(for)-2022
+53547 y(latenc)-15 b(y\).)424 b(ISPs)287 b(e)-15 b(xchange)289
+b(their)f(lists)e(of)h(preferences)h(for)f(each)i(peering)-2022
+54709 y(point)251 b(for)g(each)h(\003o)-25 b(w)-65 b(.)316
+b(The)-15 b(y)252 b(then)f(eng)-5 b(age)253 b(in)e(rounds)g(of)g
+(proposals,)g(each)-2022 55872 y(in)-40 b(v)-20 b(olving)303
+b(a)f(suggested)g(\003o)-25 b(w)303 b(and)g(peering)g(point)f(choice)i
+(made)f(by)f(one)-2022 57034 y(of)219 b(them.)300 b(The)220
+b(other)g(ISP)g(either)g(accepts)h(or)e(rejects)h(each)h(such)f
+(proposal.)-2022 58196 y(This)348 b(continues)i(until)f(all)h(\003o)-25
+b(ws)349 b(ha)-20 b(v)-15 b(e)350 b(been)g(ne)-15 b(gotiated)351
+b(or)e(one)h(of)f(the)-2022 59359 y(ISPs)280 b(w)-10
+b(ants)282 b(to)g(stop.)406 b(The)282 b(criteria)g(for)f(picking)h(the)
+g(proposing)g(ISP)-111 b(,)281 b(the)-2022 60521 y(\003o)-25
+b(w)273 b(to)g(propose,)280 b(and)273 b(acceptance)j(or)d(rejection)h
+(of)f(the)g(proposal)g(deter)-20 b(-)-2022 61683 y(mine)247
+b(the)g(nature)g(of)f(the)h(\002nal)g(outcome.)310 b(All)246
+b(these)h(decisions)g(are)g(left)g(to)-2022 62845 y(the)i(indi)-25
+b(vidual)250 b(ISPs)e(to)h(mak)-10 b(e)250 b(as)f(the)-15
+b(y)250 b(see)f(\002t.)-2022 65115 y(This)209 b(structure)g
+(satis\002es)g(the)h(\002rst)f(three)h(design)g(goals)g(mentioned)g
+(abo)-15 b(v)g(e.)-2022 66277 y(The)323 b(ISPs)f(do)h(not)g(need)h(to)f
+(disclose)g(transparent)h(measures)f(of)f(latenc)-15
+b(y)-2022 67439 y(or)274 b(cost)h(and)g(are)g(free)g(to)g(use)g(an)-15
+b(y)275 b(optimization)h(criteria.)386 b(The)275 b(objecti)-25
+b(v)-15 b(e)-2022 68602 y(of)355 b(the)g(ne)-15 b(gotiation,)383
+b(which)356 b(w)-10 b(ould)356 b(lik)-10 b(ely)356 b(be)g(decided)g(in)
+f(adv)-25 b(ance)357 b(by)-2022 69764 y(the)313 b(ne)-15
+b(gotiating)314 b(ISPs)d(depending)k(on)e(their)f(relationship,)329
+b(is)313 b(left)f(to)h(the)-2022 70926 y(ISPs)230 b(rather)h(than)g
+(being)h(imposed)f(by)g(an)g(e)-15 b(xternal)232 b(mechanism.)304
+b(V)-111 b(arious)27201 -915 y(objecti)-25 b(v)-15 b(es)360
+b(can)g(be)g(met)g(within)f(the)h(same)f(frame)-25 b(w)-10
+b(ork.)640 b(On)359 b(the)h(other)27201 247 y(hand,)326
+b(this)310 b(\003e)-15 b(xibility)310 b(comes)g(at)h(a)f(cost:)430
+b(our)310 b(solution)g(is)f(not)h(strate)-15 b(gy-)27201
+1409 y(proof)279 b(or)f(incenti)-25 b(v)-15 b(e)280 b(compatible)f(in)g
+(the)g(g)-5 b(ame)279 b(theoretic)g(sense.)397 b(Instead)27201
+2571 y(we)334 b(rely)e(on)h(the)g(fear)g(of)g(getting)g(caught)h(and)f
+(social)g(pressure)f(to)h(deter)27201 3734 y(ISPs)339
+b(from)g(cheating)i(\(by)e(being)h(dishonest)f(about)h(their)g
+(utilities\).)51972 3311 y Fd(2)52938 3734 y Fk(In)27201
+4896 y(an)-15 b(y)313 b(case,)327 b(an)313 b(ISP)e(can)h(al)-10
+b(w)g(ays)312 b(choose)h(to)e(not)h(ne)-15 b(gotiate)313
+b(if)e(it)h(loses)f(by)27201 6058 y(doing)250 b(so)f(compared)h(to)f
+(unilateral)h(routing.)27201 11076 y Fl(3.)1329 b(FORMULA)-126
+b(TION)332 b(ISSUES)27201 14729 y Fk(F)-15 b(or)320 b(both)g(problems,)
+338 b(we)320 b(were)h(hoping)f(that)g(g)-5 b(ame)321
+b(theory)f(w)-10 b(ould)321 b(help)27201 15891 y(us)358
+b(with)h(one)f(or)g(more)h(of)f(the)h(follo)-25 b(wing.)636
+b(First,)385 b(it)358 b(w)-10 b(ould)359 b(help)f(us)g(to)27201
+17054 y(realistically)321 b(model)f(the)h(problem,)338
+b(leading)321 b(to)f(a)g(better)h(understanding)27201
+18216 y(of)346 b(the)g(issues)e(in)-40 b(v)-20 b(olv)-15
+b(ed.)600 b(In)346 b(this)f(ef)-25 b(fort,)369 b(g)-5
+b(ame)347 b(theory)f(did)g(help)g(us)f(to)27201 19378
+y(some)280 b(e)-15 b(xtent,)288 b(and)280 b(certain)g(aspects)g(of)f
+(our)g(e)-25 b(v)-15 b(entual)281 b(solutions)e(resulted)27201
+20541 y(from)311 b(this)g(e)-15 b(x)g(ercise.)495 b(Second,)327
+b(we)312 b(hoped)g(that)f(a)g(good)h(solution)f(w)-10
+b(ould)27201 21703 y(become)376 b(apparent)f(from)f(the)h(model)g(abo)
+-15 b(v)g(e,)407 b(for)374 b(instance)h(by)g(e)-15 b(xtend-)27201
+22865 y(ing)388 b(one)f(of)g(the)g(e)-15 b(xisting)387
+b(results)g(in)g(the)g(theory)-65 b(.)723 b(This)387
+b(turned)g(out)g(to)27201 24027 y(be)286 b(o)-15 b(v)g(erly)285
+b(optimistic;)302 b(our)285 b(models)g(were)g(too)g(complicated)i
+(because)e(of)27201 25190 y(se)-25 b(v)-15 b(eral)248
+b(real-w)-10 b(orld)247 b(issues.)307 b(Third,)248 b(we)f(hoped)h(that)
+f(g)-5 b(ame)248 b(theory)g(w)-10 b(ould)27201 26352
+y(enable)261 b(us)e(to)g(analyze)i(our)f(solutions,)h(so)e(that)h(we)g
+(could)g(sho)-25 b(w)260 b(the)-15 b(y)260 b(ful-)27201
+27514 y(\002ll)249 b(certain)h(desired)f(properties.)309
+b(This)249 b(ag)-5 b(ain,)250 b(pro)-15 b(v)g(ed)249
+b(challenging.)27201 29784 y(W)-80 b(e)248 b(ha)-20 b(v)-15
+b(e)247 b(di)-25 b(vided)247 b(the)f(issues)f(we)i(f)-10
+b(aced)247 b(into)f(tw)-10 b(o)247 b(broad)f(groups.)308
+b(In)246 b(this)27201 30946 y(section,)347 b(we)328 b(discuss)d(the)j
+(basic)f(problems)g(encountered)h(while)g(formu-)27201
+32108 y(lating)307 b(our)g(tw)-10 b(o)307 b(problems)g(in)g(g)-5
+b(ame)307 b(theoretic)h(terms.)481 b(In)307 b(the)g(ne)-15
+b(xt)307 b(sec-)27201 33271 y(tion,)219 b(we)211 b(discuss)e(problems)i
+(related)g(to)f(anticipated)i(implementations)f(of)27201
+34433 y(g)-5 b(ame)250 b(theoretic)g(solutions.)27201
+38215 y Fl(3.1)1329 b(Multi\255Hop)333 b(W)-24 b(ir)g(eless)332
+b(Netw)-13 b(orks)27201 41868 y Fk(While)243 b(addressing)e(the)i(pack)
+-10 b(et)242 b(forw)-10 b(arding)242 b(problem,)i(we)e(\002rst)f
+(assumed)27201 43030 y(that)g(all)f(nodes)g(were)h(sel\002sh)e(and)h(e)
+-15 b(xplored)241 b(mechanisms)g(to)e(incent)i(such)27201
+44192 y(nodes)332 b(to)g(forw)-10 b(ard)331 b(pack)-10
+b(ets.)557 b(Sections)332 b(3.1.1-3.1.3)g(describe)g(the)g(tech-)27201
+45355 y(niques)354 b(we)g(considered)g(and)h(wh)-5 b(y)354
+b(we)g(did)g(not)f(adopt)h(them.)623 b(W)-80 b(e)355
+b(then)27201 46517 y(focused)292 b(on)g(preserving)g(cooperation)h(in)f
+(a)g(lar)-18 b(gely)292 b(cooperati)-25 b(v)-15 b(e)293
+b(setting)27201 47679 y(and)239 b(w)-10 b(anted)239 b(to)f(use)g(to)f
+(g)-5 b(ame)239 b(theory)f(to)g(pro)-15 b(v)g(e)239 b(certain)f(rob)-20
+b(ustness)237 b(prop-)27201 48842 y(erties)k(of)g(our)f(system.)306
+b(Section)242 b(3.1.4)f(e)-15 b(xplains)241 b(the)g(hurdles)g(we)h(f)
+-10 b(aced)241 b(in)27201 50004 y(doing)250 b(so.)27506
+53786 y Fc(3.1.1)1218 b(Barter)27201 57439 y Fk(The)354
+b(\002rst)f(incenti)-25 b(v)-15 b(e)355 b(technique)g(we)f(considered)h
+(w)-10 b(as)354 b(based)g(on)g(barter)-55 b(.)27201 58601
+y(A)280 b(node)h(w)-10 b(ould)280 b(forw)-10 b(ard)280
+b(a)g(pack)-10 b(et)281 b(for)f(another)g(node)h(only)f(if)f(that)i
+(node)27201 59763 y(returned)267 b(the)g(f)-10 b(a)-20
+b(v)g(or)267 b(by)g(forw)-10 b(arding)267 b(for)g(the)g(\002rst)e
+(node.)363 b(Such)267 b(a)g(scheme)27201 60926 y(is)284
+b(attracti)-25 b(v)-15 b(e)285 b(because)h(of)e(its)f(simplicity)h(and)
+h(lo)-25 b(w)285 b(implementation)g(cost)27201 62088
+y(compared)251 b(to)e(that)g(of)g(virtual)g(currenc)-15
+b(y)250 b(\(Section)g(4.2\).)27201 64357 y(But)338 b(it)f(turned)h(out)
+g(to)g(be)g(hard)g(to)g(b)-20 b(uild)338 b(a)g(real)g(system)f(on)h(a)g
+(bartering)27201 65519 y(primiti)-25 b(v)-15 b(e.)746
+b(This)393 b(is)h(because)i(barter)f(is)f(unable)h(to)g(satisf)-10
+b(actorily)394 b(deal)27201 66682 y(with)247 b(asymmetry)g(in)g(time)g
+(and)g(space,)h(which)f(leads)g(to)g(undesirable)g(sys-)p
+27201 68545 10627 45 v 27312 69285 a Fd(2)27699 69709
+y Fk(Raif)-25 b(f)-10 b(a)255 b(notes)f(that)h(when)g(parties)f(seek)h
+(joint)f(g)-5 b(ains)255 b(o)-15 b(v)g(er)254 b(a)h(def)-10
+b(ault)255 b(con-)27201 70705 y(tract,)249 b(as)g(is)e(the)i(case)g(in)
+g(our)f(setting,)h(\223there)g(is)f(a)h(great)g(deal)g(of)f(incenti)-25
+b(v)-15 b(e)27201 71701 y(for)249 b(each)h(party)g(to)f(act)g(honestly)
+h(and)f(non-strate)-15 b(gically)-65 b(.)-70 b(\224)251
+b([17].)p eop
+%%Page: 4 4
+4 3 bop -2022 -915 a Fk(tem)367 b(beha)-20 b(vior)-55
+b(.)3498 -1339 y Fd(3)4550 -915 y Fk(Asymmetry)367 b(in)h(time)f(means)
+h(that)f(tw)-10 b(o)368 b(nodes)f(might)-2022 247 y(not)227
+b(simultaneously)g(require)g(each)h(other')-55 b(s)227
+b(forw)-10 b(arding)227 b(services,)232 b(which)-2022
+1409 y(can)218 b(cause)g(an)g(unpredictable)h(delay)f(in)f(the)h(time)g
+(a)f(pack)-10 b(et)219 b(tak)-10 b(es)218 b(to)f(tra)-20
+b(v)-15 b(el)-2022 2571 y(through)286 b(the)g(netw)-10
+b(ork.)419 b(Asymmetry)286 b(in)g(space)h(is)e(w)-10
+b(orse.)419 b(It)285 b(means)h(that)-2022 3734 y(while)248
+b(one)g(node)g(may)g(require)f(the)h(services)f(of)h(a)f(second)h
+(node,)h(the)f(sec-)-2022 4896 y(ond)k(node)g(may)h(not)f(require)g
+(the)g(\002rst)f(node)h(for)g(forw)-10 b(arding.)317
+b(Such)252 b(a)g(sit-)-2022 6058 y(uation)222 b(can)g(arise)g(due)g(to)
+g(topological)g(asymmetry)g(in)g(the)g(position)g(of)f(the)-2022
+7221 y(tw)-10 b(o)317 b(nodes.)514 b(Multi-w)-10 b(ay)317
+b(transactions)g(\226)h(where)g(more)f(than)h(tw)-10
+b(o)317 b(nodes)-2022 8383 y(forw)-10 b(ard)267 b(for)g(each)i(other)e
+(\226)h(can)g(mitig)-5 b(ate)268 b(this)f(problem)h(to)f(some)h(e)-15
+b(xtent,)-2022 9545 y(b)-20 b(ut)339 b(not)g(entirely)h(if)f(some)g
+(nodes,)362 b(such)339 b(as)g(those)g(on)g(the)h(periphery)g(of)-2022
+10708 y(the)283 b(netw)-10 b(ork,)293 b(are)284 b(inherently)g(not)f
+(in)g(a)h(position)f(to)g(forw)-10 b(ard)284 b(for)f(others.)-2022
+11870 y(This)314 b(goes)i(ag)-5 b(ainst)316 b(our)g(goal)g(of)f
+(letting)h(all)g(nodes,)333 b(re)-15 b(g)-5 b(ardless)315
+b(of)h(their)-2022 13032 y(position)249 b(in)g(the)g(netw)-10
+b(ork,)250 b(send)f(their)g(pack)-10 b(ets.)-1718 16758
+y Fc(3.1.2)1218 b(Curr)-45 b(ency)-2022 20411 y Fk(T)-80
+b(o)322 b(o)-15 b(v)g(ercome)324 b(the)f(shortcomings)f(of)g(a)h
+(barter)g(based)g(system,)340 b(we)323 b(con-)-2022 21574
+y(sidered)261 b(the)g(use)g(of)g(virtual)g(currenc)-15
+b(y)-65 b(.)345 b(Currenc)-15 b(y)261 b(is)f(useful)h(when)h(an)f(ac-)
+-2022 22736 y(tion)251 b(and)i(its)e(re)-25 b(w)-10 b(ard)252
+b(are)g(not)g(simultaneous.)316 b(This)251 b(is)g(true)h(for)f
+(multi-hop)-2022 23898 y(wireless)286 b(netw)-10 b(orks:)383
+b(the)287 b(action)g(is)e(pack)-10 b(et)288 b(forw)-10
+b(arding)286 b(and)h(the)g(re)-25 b(w)-10 b(ard)-2022
+25061 y(is)274 b(being)i(able)h(to)e(send)g(your)h(o)-25
+b(wn)276 b(pack)-10 b(et.)389 b(Currenc)-15 b(y)275 b(pro)-15
+b(vides)276 b(an)g(intu-)-2022 26223 y(iti)-25 b(v)-15
+b(e)192 b(w)-10 b(ay)192 b(to)g(model)h(the)f(wireless)f(netw)-10
+b(ork)193 b(problem.)290 b(Man)-15 b(y)192 b(researchers)-2022
+27385 y(ha)-20 b(v)-15 b(e)319 b(adv)-20 b(ocated)320
+b(its)e(use)g(to)g(encourage)i(nodes)e(to)h(forw)-10
+b(ard)318 b(pack)-10 b(ets)319 b(for)-2022 28548 y(others)248
+b([8,)i(23,)f(16,)g(6],)g(and)h(we)g(considered)g(using)e(it)h(as)g
+(well.)-2022 30817 y(Ho)-25 b(we)g(v)-15 b(er)-40 b(,)350
+b(from)329 b(an)g(o)-15 b(v)g(erall)330 b(system)f(design)g(perspecti)
+-25 b(v)-15 b(e,)350 b(we)330 b(encoun-)-2022 31979 y(tered)275
+b(tw)-10 b(o)276 b(hurdles.)388 b(Both)275 b(of)g(these)g(arise)h(from)
+f(the)g(mismatch)h(between)-2022 33141 y(the)208 b(rate)g(at)h(which)f
+(currenc)-15 b(y)209 b(is)f(acquired)h(and)f(the)h(w)-10
+b(orkload)209 b(of)e(the)i(node.)-2022 34304 y(The)275
+b(\002rst)g(hurdle)h(results)f(from)g(the)h(assumption)g(that)g(e)-25
+b(v)-15 b(ery)276 b(node)h(in)e(the)-2022 35466 y(system)318
+b(is)g(capable)i(of)e(earning)i(suf)-25 b(\002cient)318
+b(currenc)-15 b(y)320 b(to)f(accomplish)g(its)-2022 36628
+y(goals)239 b(in)g(a)g(timely)h(manner)-55 b(.)307 b(In)239
+b(our)g(pack)-10 b(et)240 b(forw)-10 b(arding)240 b(problem,)h(nodes)
+-2022 37791 y(at)280 b(the)h(periphery)g(of)g(the)g(netw)-10
+b(ork)281 b(may)g(not)g(recei)-25 b(v)-15 b(e)281 b(suf)-25
+b(\002cient)281 b(\(or)f(an)-15 b(y\))-2022 38953 y(forw)-10
+b(arding)372 b(requests,)403 b(rendering)372 b(them)h(too)f(poor)g(to)g
+(be)h(able)f(to)g(send)-2022 40115 y(their)247 b(o)-25
+b(wn)247 b(pack)-10 b(ets.)309 b(This)247 b(situation)g(is)f
+(acceptable)j(if)e(the)g(system)g(goal)g(is)-2022 41278
+y(some)310 b(kind)g(of)g(f)-10 b(airness)310 b(between)h(sending)g(and)
+f(forw)-10 b(arding,)326 b(b)-20 b(ut)311 b(not)f(if)-2022
+42440 y(we)317 b(w)-10 b(ant)318 b(to)f(ensure)g(that)g(all)g(nodes)g
+(be)h(able)f(to)g(send)g(their)g(pack)-10 b(ets.)513
+b(A)-2022 43602 y(potential)278 b(solution)f(to)g(this)g(problem)h(is)f
+(to)g(periodically)h(gi)-25 b(v)-15 b(e)278 b(some)g(cur)-20
+b(-)-2022 44765 y(renc)-15 b(y)221 b(to)f(all)g(nodes.)300
+b(This)219 b(mitig)-5 b(ates)221 b(b)-20 b(ut)220 b(does)h(not)f(solv)
+-15 b(e)220 b(the)h(problem:)295 b(it)-2022 45927 y(allo)-25
+b(ws)267 b(the)g(poor)g(nodes)h(to)f(send)g(some)g(pack)-10
+b(ets)268 b(b)-20 b(ut)267 b(places)h(an)f(arti\002cial)-2022
+47089 y(and)285 b(arbitrary)f(limit)h(on)f(the)h(rate)g(at)g(which)g
+(such)g(nodes)f(can)i(do)e(so)h(e)-25 b(v)-15 b(en)-2022
+48251 y(when)250 b(the)f(netw)-10 b(ork)250 b(might)f(be)h(capable)g
+(of)f(carrying)h(more.)-2022 50521 y(The)212 b(second)h(hurdle)g
+(confronted)g(in)f(using)g(currenc)-15 b(y)214 b(is)d(the)i(opposite)g
+(side)-2022 51683 y(of)207 b(the)h(same)g(coin.)295 b(Consider)207
+b(a)h(situation)g(in)f(which)h(there)g(is)f(an)h(asymme-)-2022
+52845 y(try)225 b(in)g(the)h(rate)f(at)h(which)g(currenc)-15
+b(y)226 b(is)f(consumed)h(and)g(earned)g(by)f(a)h(node.)-2022
+54008 y(If)287 b(the)h(earning)h(rate)f(is)f(higher)h(than)h(the)f
+(consumption)g(rate,)298 b(as)288 b(it)f(might)-2022
+55170 y(be)247 b(for)g(a)g(particularly)g(well-placed)i(node,)f(that)f
+(node)h(will)f(start)g(accumu-)-2022 56332 y(lating)328
+b(currenc)-15 b(y)-65 b(.)547 b(At)329 b(some)f(point,)348
+b(it)328 b(may)h(no)f(longer)h(be)f(interested)h(in)-2022
+57495 y(earning)260 b(more,)j(at)c(least)h(until)g(it)f(can)i(use)e
+(those)h(already)h(acquired.)341 b(Such)-2022 58657 y(beha)-20
+b(vior)255 b(is)f(counter)i(to)f(the)g(traditional)g(economic)h
+(assumption)f(of)f(non-)-2022 59819 y(satiation)327 b(b)-20
+b(ut)328 b(is)f(possible)g(in)h(a)f(wireless)h(netw)-10
+b(ork.)544 b(Unless)328 b(the)f(virtual)-2022 60981 y(currenc)-15
+b(y)233 b(is)g(tied)g(to)g(something)h(of)e(v)-25 b(alue)234
+b(in)f(the)h(ph)-5 b(ysical)233 b(w)-10 b(orld,)237 b(a)c(node)-2022
+62144 y(has)277 b(no)h(incenti)-25 b(v)-15 b(e)279 b(to)f(accumulate)h
+(an)f(in\002nite)g(amount)g(of)g(it.)394 b(A)278 b(satiated)-2022
+63306 y(node)337 b(will)g(temporarily)g(stop)g(contrib)-20
+b(uting)337 b(to)g(the)g(system,)358 b(ef)-25 b(fecti)g(v)-15
+b(ely)-2022 64468 y(resulting)321 b(in)g(periods)h(of)f(disconnection)i
+(for)e(the)g(other)h(nodes)g(that)f(rely)-2022 65631
+y(on)263 b(it.)351 b(The)264 b(problem)g(can)g(be)f(addressed)h(by)f
+(rebalancing)i(the)f(e)-15 b(xcess)263 b(ac-)-2022 66793
+y(cumulated)257 b(currenc)-15 b(y)257 b([23,)h(6],)g(b)-20
+b(ut)256 b(this)g(simply)g(changes)h(the)f(timescales)p
+-2022 68545 10627 45 v -1911 69285 a Fd(3)-1524 69709
+y Fk(The)285 b(shortcomings)g(of)g(a)h(bartering)g(economy)g(are)g(f)
+-10 b(airly)285 b(well-kno)-25 b(wn.)-2022 70705 y(W)-80
+b(e)304 b(describe)g(them)g(here)h(to)e(highlight)h(that)g(the)-15
+b(y)304 b(carry)g(o)-15 b(v)g(er)304 b(to)g(system)-2022
+71701 y(b)-20 b(uilding)249 b(too.)27201 -915 y(o)-15
+b(v)g(er)330 b(which)f(the)g(problem)h(occurs.)548 b(Once)330
+b(ag)-5 b(ain,)349 b(the)330 b(problem)f(is)f(only)27201
+247 y(mitig)-5 b(ated,)250 b(not)g(solv)-15 b(ed.)27506
+3636 y Fc(3.1.3)1218 b(Str)-18 b(ate)-49 b(gic)304 b(F)-128
+b(orwar)-45 b(ding)27201 7289 y Fk(Another)287 b(potential)f(w)-10
+b(ay)287 b(to)e(address)h(our)f(wireless)g(netw)-10 b(ork)287
+b(problem)f(is)27201 8452 y(to)337 b(set)f(up)g(the)h(pack)-10
+b(et)338 b(forw)-10 b(arding)336 b(decision)h(as)f(a)h(g)-5
+b(ame)337 b(in)g(which)g(for)-20 b(-)27201 9614 y(w)-10
+b(arding)259 b(at)g(a)g(certain)g(rate)g(is)e(the)i(Nash)g
+(equilibrium.)337 b(The)259 b(intuition)f(be-)27201 10776
+y(hind)251 b(this)e(approach)j(is)d(that)i(if)e(a)i(node)g(cheats)f(by)
+h(forw)-10 b(arding)250 b(at)g(a)h(lo)-25 b(wer)27201
+11939 y(rate,)349 b(other)329 b(nodes)g(w)-10 b(ould)329
+b(observ)-15 b(e)329 b(a)g(lo)-25 b(wer)329 b(forw)-10
+b(arding)329 b(rate)g(for)f(their)27201 13101 y(pack)-10
+b(ets.)302 b(These)227 b(nodes)f(w)-10 b(ould)227 b(then)f(reduce)h
+(their)g(o)-25 b(wn)226 b(forw)-10 b(arding)227 b(rate,)27201
+14263 y(which)264 b(in)f(turn)f(w)-10 b(ould)263 b(hurt)g(the)g
+(cheating)h(node.)350 b(Such)263 b(an)g(approach)h(has)27201
+15426 y(been)250 b(proposed)g(by)f(Srini)-25 b(v)g(asan)249
+b Fg(et)h(al.)f Fk([21])g(and)g(Urpi)h Fg(et)f(al.)g
+Fk([22].)27201 17695 y(The)319 b(k)-10 b(e)-15 b(y)319
+b(problem)f(with)h(this)f(approach)h(is)f(that)g(it)h(assumes)e
+(symmetric)27201 18857 y(w)-10 b(orkloads,)274 b(with)269
+b(all)g(nodes)g(directly)g(or)f(indirectly)h(depending)h(on)f(each)
+27201 20020 y(other)-55 b(.)506 b(This)314 b(may)i(not)e(be)i(al)-10
+b(w)g(ays)315 b(true.)506 b(Ag)-5 b(ain,)332 b(consider)315
+b(a)g(peripheral)27201 21182 y(node)271 b(that)g(requires)f(a)h(fe)-25
+b(w)270 b(other)h(nodes)f(for)g(pack)-10 b(et)272 b(forw)-10
+b(arding,)276 b(b)-20 b(ut)270 b(no)27201 22344 y(other)336
+b(node)f(in)g(the)h(netw)-10 b(ork)335 b(requires)g(this)g(node.)567
+b(Other)336 b(nodes)f(in)g(the)27201 23506 y(netw)-10
+b(ork)262 b(w)-10 b(ould)262 b(be)f(able)h(to)f(drop)g(pack)-10
+b(ets)262 b(from)f(this)f(node)i(without)g(an)-15 b(y)27201
+24669 y(ne)g(g)-5 b(ati)-25 b(v)-15 b(e)372 b(consequences.)675
+b(As)371 b(before,)401 b(this)370 b(goes)h(ag)-5 b(ainst)371
+b(our)f(goal)h(of)27201 25831 y(enabling)250 b(all)g(nodes)f(to)g(use)g
+(the)h(netw)-10 b(ork.)27506 29221 y Fc(3.1.4)1218 b(Evolutionary)304
+b(Appr)-55 b(oac)-18 b(h)27201 32874 y Fk(So)264 b(f)-10
+b(ar)264 b(we)h(assumed)f(that)h(all)f(nodes)g(are)h(inherently)g
+(sel\002sh)e(and)i(tried)f(to)27201 34036 y(induce)k(cooperati)-25
+b(v)-15 b(e)268 b(beha)-20 b(vior)267 b(in)f(this)g(setting.)361
+b(The)266 b(subsections)g(abo)-15 b(v)g(e)27201 35198
+y(describe)270 b(the)h(dif)-25 b(\002culties)269 b(we)h(f)-10
+b(aced)271 b(in)f(doing)g(so.)45351 34775 y Fd(4)46109
+35198 y Fk(These)f(observ)-25 b(ations)27201 36361 y(prompted)273
+b(us)e(to)g(modify)h(our)g(goal)g(from)f Fg(inducing)h
+Fk(cooperati)-25 b(v)-15 b(e)273 b(beha)-20 b(v-)27201
+37523 y(ior)317 b(to)f Fg(pr)-37 b(eserving)317 b Fk(cooperati)-25
+b(v)-15 b(e)318 b(beha)-20 b(vior)-55 b(.)513 b(That)317
+b(is,)333 b(we)317 b(w)-10 b(anted)318 b(to)e(de-)27201
+38685 y(sign)396 b(a)g(system)f(that)h(stays)f(cooperati)-25
+b(v)-15 b(e)398 b(if)d(it)h(starts)f(with)h(cooperati)-25
+b(v)-15 b(e)27201 39848 y(nodes.)342 b(Cooperati)-25
+b(v)-15 b(e)260 b(nodes)g(forw)-10 b(ards)260 b(all)g(the)g(pack)-10
+b(ets)260 b(the)-15 b(y)261 b(recei)-25 b(v)-15 b(e)261
+b(for)27201 41010 y(forw)-10 b(arding.)27201 43279 y(W)-40
+b(ith)240 b(the)g(abo)-15 b(v)g(e)240 b(goal)g(in)g(mind)f(we)h
+(designed)g Fe(Catch)g Fk(for)f(a)h(lar)-18 b(gely)240
+b(coop-)27201 44441 y(erati)-25 b(v)-15 b(e)213 b(en)-40
+b(vironment.)298 b(Ne)-15 b(xt,)220 b(we)212 b(w)-10
+b(anted)213 b(to)f(use)f(techniques)i(from)e(g)-5 b(ame)27201
+45604 y(theory)269 b(to)f(pro)-15 b(v)g(e)269 b(that)g(cooperation)g(w)
+-10 b(as)269 b(an)f(e)-25 b(v)-20 b(olutionarily)270
+b(stable)e(strat-)27201 46766 y(e)-15 b(gy)298 b(\(ESS\))f(under)h
+Fe(Catch)q Fk(.)453 b(Ev)-20 b(olutionary)298 b(approaches)h(usually)e
+(proceed)27201 47928 y(as)281 b(follo)-25 b(ws.)406 b(First,)288
+b(consider)282 b(a)f(set)g(of)h(strate)-15 b(gies)281
+b(a)g(player)h(might)g(adopt,)27201 49091 y(such)415
+b(as)e(cooperate)j(or)e(cheat.)805 b(Second,)456 b(de\002ne)415
+b(a)f(single)g(interaction)27201 50253 y(round)330 b(of)f(the)g(strate)
+-15 b(gic)329 b(g)-5 b(ame)330 b(using)f(a)g(payof)-25
+b(f)330 b(matrix.)549 b(Each)329 b(player')-55 b(s)27201
+51415 y(payof)-25 b(f)364 b(depends)g(on)f(her)h(strate)-15
+b(gy)363 b(and)h(that)g(of)f(the)h(players)f(she)g(inter)-20
+b(-)27201 52578 y(acts)242 b(with)f(in)h(that)f(round.)307
+b(Third,)242 b(de\002ne)g(ho)-25 b(w)242 b(players)g(mutate)f(strate)
+-15 b(gies)27201 53740 y(across)335 b(rounds,)356 b(typically)335
+b(assuming)g(that)g(the)-15 b(y)335 b(try)g(to)f(maximize)i(their)27201
+54902 y(payof)-25 b(fs)302 b(by)h(tending)g(to)-25 b(w)-10
+b(ards)302 b(those)h(strate)-15 b(gies)302 b(with)g(highest)h(observ)
+-15 b(ed)27201 56064 y(return)268 b(in)h(the)f(pre)-25
+b(vious)268 b(round.)367 b(F)-15 b(ourth,)273 b(sho)-25
+b(w)268 b(that)g(the)h(system)f(e)-25 b(v)-20 b(olv)-15
+b(es)27201 57227 y(to)220 b(a)h(point)f(where)h(most)f(nodes)g(ha)-20
+b(v)-15 b(e)221 b(adopted)g(a)f(socially)h(desirable)f(strat-)27201
+58389 y(e)-15 b(gy)-65 b(,)250 b(or)f(at)h(least)f(that)g(such)g(a)h
+(situation)f(is)g(equilibrium)g(stable.)27201 60658 y(Our)239
+b(attempts)h(to)f(use)f(e)-25 b(v)-20 b(olutionary)240
+b(g)-5 b(ames)240 b(to)f(sho)-25 b(w)239 b(rob)-20 b(ustness)238
+b(ag)-5 b(ainst)27201 61821 y(cheating)252 b(in)e Fe(Catch)g
+Fk(were)h(lar)-18 b(gely)251 b(unsuccessful.)311 b(Pre)-25
+b(vious)250 b(w)-10 b(ork)250 b(of)g(this)27201 62983
+y(sort)340 b(considered)h(pairwise)g(interactions)f(of)h(nodes,)363
+b(a)341 b(notion)f(link)-10 b(ed)341 b(to)27201 64145
+y(the)303 b(social)f(goal)h(of)f(achie)-25 b(ving)303
+b(some)f(concept)i(of)e(balance)h(between)h(the)27201
+65308 y(pack)-10 b(ets)266 b(forw)-10 b(arded)266 b(by)g(those)g(nodes)
+f(for)g(each)i(other)-55 b(.)358 b(Recall,)270 b(ho)-25
+b(we)g(v)-15 b(er)-40 b(,)27201 66470 y(that)283 b(our)e(goal)i(w)-10
+b(as)282 b(that)g(all)g(pack)-10 b(ets)283 b(should)e(be)i(forw)-10
+b(arded,)291 b(because)282 b(of)p 27201 67548 V 27312
+68289 a Fd(4)27699 68712 y Fk(W)-80 b(e)313 b(do)f(not)f(discuss)g
+(reputation-based)i(systems)d(in)i(this)f(section.)496
+b(The)27201 69709 y(issues)227 b(we)h(f)-10 b(aced)228
+b(with)f(a)h(straightforw)-10 b(ard)227 b(application)i(of)e(such)g
+(systems,)27201 70705 y(such)h(as)e(the)i(requirement)g(of)f(global,)
+232 b(persistent)227 b(identities,)k(were)d(imple-)27201
+71701 y(mentation)250 b(related,)g(and)g(we)g(brie\003y)f(discuss)f
+(them)i(in)f(Section)h(4.)p eop
+%%Page: 5 5
+5 4 bop -2022 -915 a Fk(the)303 b(realization)h(that)f(some)g(poorly)h
+(placed)g(nodes)f(w)-10 b(ould)304 b(otherwise)f(be)-2022
+247 y(unable)274 b(to)g(communicate.)386 b(This)273 b(implies)h(that)g
+(a)g(node')-55 b(s)274 b(utility)g(function)-2022 1409
+y(must)246 b(assign)h(ef)-25 b(fecti)g(v)-15 b(ely)249
+b(zero)e(cost)g(to)h(forw)-10 b(arding,)247 b(since)h(it)f(must)g(ne)
+-25 b(v)-15 b(er)-2022 2571 y(be)235 b(pro\002table)g(for)g(a)g(node)h
+(to)f(refuse)f(to)h(forw)-10 b(ard,)238 b(irrespecti)-25
+b(v)-15 b(e)236 b(of)f(its)f(o)-25 b(wn)-2022 3734 y(rate)351
+b(of)g(pack)-10 b(et)352 b(transmission.)613 b(Thus,)376
+b(utilities)351 b(measure)g(positi)-25 b(v)-15 b(e)352
+b(out-)-2022 4896 y(comes,)248 b(such)f(as)h(pack)-10
+b(ets)248 b(deli)-25 b(v)-15 b(ered)249 b(by)e(the)h(netw)-10
+b(ork)249 b(for)e(that)g(node,)i(and)-2022 6058 y(consequently)328
+b(a)g(punishment)g(must)f(be)g(in)h(the)g(form)f(of)g(a)g(reduction)i
+(in)-2022 7221 y(deli)-25 b(v)-15 b(ered)294 b(pack)-10
+b(ets.)440 b(In)293 b(order)g(to)f(reduce)i(the)f(number)-40
+b(,)305 b(all)293 b(neighbors)g(of)-2022 8383 y(a)286
+b(node)h(must)f(agree)h(to)g(do)f(so,)295 b(because)288
+b(otherwise)e(the)h(of)-25 b(fending)287 b(node)-2022
+9545 y(could)237 b(simply)f(forw)-10 b(ard)236 b(all)h(traf)-25
+b(\002c)236 b(through)h(an)-15 b(y)236 b(willing)h(node,)j(escaping)
+-2022 10708 y(punishment.)-2022 12977 y(It)295 b(is)g(dif)-25
+b(\002cult)295 b(to)h(map)g(the)f(abo)-15 b(v)g(e)297
+b(interaction)f(directly)g(to)g(rounds)f(of)g(an)-2022
+14139 y(e)-25 b(v)-20 b(olutionary)365 b(g)-5 b(ame.)657
+b(The)365 b(payof)-25 b(f)365 b(matrix)g(must)f(account)i(for)e
+(interac-)-2022 15302 y(tions)266 b(between)i(a)f(node)h(and)f(all)g
+(of)g(its)f(neighbors.)363 b(It)266 b(must)h(also)f(account)-2022
+16464 y(for)272 b(uncertainty)h(in)g(the)g(occurrence)h(and)f(observ)
+-25 b(ation)273 b(of)g(certain)g(e)-25 b(v)-15 b(ents)-2022
+17626 y(such)243 b(as)g(pack)-10 b(et)244 b(losses)e(\(Section)h
+(4.3\).)307 b(At)243 b(this)g(detailed)h(le)-25 b(v)-15
+b(el,)245 b(the)f(num-)-2022 18788 y(ber)283 b(of)h(possible)f(strate)
+-15 b(gies)283 b(to)h(escape)g(detection)h(or)e(pre)-25
+b(v)-15 b(ent)285 b(consensus)-2022 19951 y(b)-20 b(uilding)322
+b(for)g(punishment)h(is)f(o)-15 b(v)g(erwhelming,)342
+b(as)322 b(a)g(strate)-15 b(gy)323 b(could)f(de-)-2022
+21113 y(pend)307 b(on)h(the)f(topology)-65 b(,)323 b(w)-10
+b(orkload,)322 b(routing)307 b(beha)-20 b(vior)308 b(of)f(the)h(netw)
+-10 b(ork,)-2022 22275 y(and)342 b(e)-25 b(v)-15 b(en)344
+b(f)-10 b(alsely)342 b(accusing)h(a)g(neighbor)g(of)f(misbeha)-20
+b(vior)-55 b(.)589 b(W)-80 b(e)344 b(do)e(not)-2022 23438
+y(kno)-25 b(w)315 b(ho)-25 b(w)316 b(to)f(b)-20 b(uild)316
+b(a)f(model)h(that)f(is)g(general)h(enough)g(to)f(capture)h(this)-2022
+24600 y(le)-25 b(v)-15 b(el)399 b(of)f(detail)h(and)h(still)d(be)i
+(amenable)i(to)d(analysis.)757 b(One)400 b(w)-10 b(orkable)-2022
+25762 y(simpli\002cation)277 b(is)f(to)h(simply)f(assume)h(that)g(the)g
+(detection)h(of)f(cheating)h(is)-2022 26925 y(reliable)295
+b(to)g(some)g(\002x)-15 b(ed)296 b(de)-15 b(gree,)307
+b(independent)297 b(of)e(the)g(particular)h(cheat-)-2022
+28087 y(ing)371 b(strate)-15 b(gy)-65 b(,)403 b(and)372
+b(that)g(enforcement)h(is)e(similarly)h(reliable.)677
+b(But)371 b(that)-2022 29249 y(abstracts)248 b(a)-15
+b(w)-10 b(ay)250 b(e)-15 b(xactly)250 b(the)f(problem)h(we)f(had)g
+(hoped)h(a)f(g)-5 b(ame)250 b(theoretic)-2022 30412 y(analysis)193
+b(w)-10 b(ould)195 b(help)g(with:)281 b(sho)-25 b(wing)195
+b(that)f(no)g(\(detailed\))h(strate)-15 b(gy)194 b(w)-10
+b(ould)-2022 31574 y(defeat)249 b(our)h(objecti)-25 b(v)-15
+b(e.)-2022 33843 y(From)301 b(a)h(system)f(design)g(perspecti)-25
+b(v)-15 b(e,)316 b(the)302 b(implication)g(of)f(the)h(inability)-2022
+35005 y(to)314 b(consider)h(all)g(possible)f(strate)-15
+b(gies)315 b(is)f(similar)g(to)g(that)h(f)-10 b(aced)316
+b(by)f(secu-)-2022 36168 y(rity)327 b(practitioners.)543
+b(One)328 b(cannot)g(pro)-15 b(v)g(e)328 b(that)f(the)h(system)e(is)h
+(absolutely)-2022 37330 y(secure,)342 b(b)-20 b(ut)324
+b(can)g(only)g(\223raise)g(the)f(bar\224)h(for)g(attack)-10
+b(ers)324 b(by)f(sho)-25 b(wing)324 b(that)-2022 38492
+y(the)249 b(system)g(can)h(resist)e(certain)i(well-kno)-25
+b(wn)250 b(attacks.)-2022 41592 y Fl(3.2)1328 b(ISP)331
+b(Route)h(Negotiation)-2022 45245 y Fk(The)g(k)-10 b(e)-15
+b(y)334 b(challenges)f(in)g(obtaining)h(a)f(strate)-15
+b(gy-proof)332 b(ne)-15 b(gotiation)334 b(pro-)-2022
+46407 y(tocol)248 b(were)g(competiti)-25 b(v)-15 b(e)249
+b(concerns,)g(which)g(limited)f(us)f(to)h(using)f(opaque)-2022
+47569 y(utilities,)422 b(and)388 b(the)h(presence)g(of)e(man)-15
+b(y)389 b(side)f(channels,)424 b(which)388 b(limited)-2022
+48732 y(us)263 b(to)h(incenti)-25 b(v)-15 b(e)265 b(compatible)g
+(mechanisms.)354 b(Incenti)-25 b(v)-15 b(e)265 b(compatibility)g(in)
+-2022 49894 y(turn)249 b(con\003icted)h(with)f(the)h(desire)f(for)g
+(\003e)-15 b(xibility)-65 b(.)-1718 52993 y Fc(3.2.1)1218
+b(Dir)-45 b(ect)304 b(Mec)-18 b(hanisms)304 b(vs.)439
+b(Competitive)305 b(Concerns)-2022 56646 y Fk(W)-80 b(e)190
+b(\002rst)e(considered)i(strate)-15 b(gy-proof,)202 b(direct)189
+b(mechanisms)h(in)g(which)g(ISPs)-2022 57809 y(re)-25
+b(v)-15 b(ealed)201 b(complete)f(and)g(accurate)h(information)f(about)g
+(their)g(utility)g(func-)-2022 58971 y(tions,)247 b(that)g(is,)g(the)h
+(true)f(costs)g(for)f(using)h(speci\002c)h(routes)f(as)g(the)g(basis)g
+(for)-2022 60133 y(route)228 b(selection.)303 b(This)228
+b(approach)i(w)-10 b(as)228 b(tak)-10 b(en)230 b(in)e(earlier)h(w)-10
+b(ork)229 b(on)g(lo)-25 b(west-)-2022 61296 y(cost)249
+b(BGP)f(routing)i([9].)-2022 63565 y(Ho)-25 b(we)g(v)-15
+b(er)-40 b(,)203 b(direct)189 b(mechanisms)h(are)g(problematic)g(gi)-25
+b(v)-15 b(en)190 b(real-w)-10 b(orld)190 b(com-)-2022
+64727 y(petiti)-25 b(v)-15 b(e)195 b(concerns:)282 b(ISPs)194
+b(are)h(unlik)-10 b(ely)195 b(to)g(re)-25 b(v)-15 b(eal)195
+b(their)g(costs)f(for)g(carrying)-2022 65890 y(pack)-10
+b(ets)345 b(to)f(their)g(potential)i(competitors)e(and)h(may)g(v)-25
+b(alue)345 b(this)f(secrec)-15 b(y)-2022 67052 y(more)281
+b(than)g(an)-15 b(y)281 b(potential)h(routing)e(impro)-15
+b(v)g(ements.)405 b(Kno)-25 b(wing)281 b(an)h(ISP')-55
+b(s)-2022 68214 y(operational)233 b(cost)f(and)h(major)f(sources)g(of)g
+(re)-25 b(v)-15 b(enue)234 b(\(e.g.,)i(carrying)c(traf)-25
+b(\002c)-2022 69377 y(between)334 b(San)f(Francisco)g(and)g
+(Melbourne\))h(enables)f(a)g(competing)h(ISP)-2022 70539
+y(to)256 b(pry)g(a)-15 b(w)-10 b(ay)257 b(customers)f(and)h(plan)g(its)
+f(o)-25 b(wn)256 b(netw)-10 b(ork)257 b(to)g(steal)f(a)g(share)h(of)
+-2022 71701 y(the)320 b(other)h(ISP')-55 b(s)319 b(pro\002ts.)522
+b(While)321 b(this)f(information)h(cannot)g(be)g(used)f(by)27201
+-915 y(competing)211 b(ISPs)e(to)h(bene\002t)g(themselv)-15
+b(es)210 b(in)g(the)g(g)-5 b(ame)211 b(in)f(the)g(short-term,)27201
+247 y(it)248 b(can)g(certainly)g(be)g(used)g(by)g(them)g(outside)f(the)
+h(g)-5 b(ame)249 b(in)e(the)h(long-term.)27201 2516 y(More)280
+b(generally)-65 b(,)288 b(much)280 b(incenti)-25 b(v)-15
+b(e)281 b(compatible)g(mechanism)f(design)g(fo-)27201
+3678 y(cuses)369 b(on)h(eliciting)g(truth)f(by)g(engineering)i
+(situations)d(in)i(which)g(truth-)27201 4841 y(telling)i(is)f(the)h
+(best)f(strate)-15 b(gy)372 b(because:)555 b Fb(i)p Fa(\))372
+b Fk(a)f(player)h(can)h(only)e(hurt)h(it-)27201 6003
+y(self)359 b(by)g(not)h(doing)f(so;)414 b(and)360 b Fb(ii)p
+Fa(\))g Fk(other)g(players)f(cannot)h(unf)-10 b(airly)359
+b(pro\002t)27201 7165 y(by)283 b(kno)-25 b(wing)284 b(this)e(player')
+-55 b(s)283 b(information.)410 b(Ho)-25 b(we)g(v)-15
+b(er)-40 b(,)292 b(the)283 b(latter)g(proof)g(is)27201
+8328 y(misleading)310 b(when)h(information)f(re)-25 b(v)-15
+b(ealed)311 b(as)e(part)h(of)f(the)h(g)-5 b(ame)311 b(can)f(be)27201
+9490 y(used)274 b(outside)g(of)g(the)g(g)-5 b(ame)275
+b(by)f(other)h(players)f(to)g(bene\002t)g(themselv)-15
+b(es)274 b(or)27201 10652 y(hurt)249 b(their)h(opponents.)27201
+12922 y(T)-80 b(o)221 b(address)f(the)h(concern)g(abo)-15
+b(v)g(e,)228 b(we)221 b(turned)f(to)h(the)g(e)-15 b(xchange)222
+b(of)e(opaque)27201 14084 y(utilities,)296 b(chosen)287
+b(arbitrarily)g(by)g(the)g(ISPs,)295 b(rather)287 b(than)g(true)g
+(costs.)421 b(Be-)27201 15246 y(cause)369 b(the)g(ISPs)e(are)i(free)g
+(to)f(compute)h(these)g(utilities)f(as)g(the)-15 b(y)369
+b(see)f(\002t,)27201 16408 y(the)-15 b(y)321 b(can)f(control)g(the)g
+(amount)h(of)f(information)g(the)-15 b(y)320 b(might)g(leak,)338
+b(with)27201 17571 y(no)230 b(e)-15 b(xternally)230 b(imposed)f
+(requirements.)303 b(W)-40 b(ith)230 b(that)f(change)i(we)e(hoped)h(to)
+27201 18733 y(mak)-10 b(e)247 b(use)f(of)g(mechanism)i(design,)f
+(stating)f(the)g(desired)g(objecti)-25 b(v)-15 b(e)248
+b(of)e(the)27201 19895 y(ne)-15 b(gotiation)339 b(in)f(terms)g(of)g
+(these)g(utilities.)42464 19472 y Fd(5)43427 19895 y
+Fk(The)g(ne)-15 b(xt)338 b(tw)-10 b(o)339 b(subsections)27201
+21058 y(describe)250 b(the)f(problems)h(we)f(encountered)i(in)e(doing)h
+(so.)27506 24452 y Fc(3.2.2)1218 b(Private)304 b(Information)h(vs.)440
+b(Side)304 b(Channels)27201 28105 y Fk(By)320 b(de\002nition,)339
+b(g)-5 b(ame)322 b(theoretic)f(solutions)f(account)i(only)e(for)g
+(informa-)27201 29267 y(tion)217 b(that)f(is)g(modeled)h(within)g(the)g
+(g)-5 b(ame.)298 b(Ho)-25 b(we)g(v)-15 b(er)-40 b(,)225
+b(it)216 b(can)h(be)g(dif)-25 b(\002cult)216 b(to)27201
+30429 y(capture)j(all)e(of)h(the)g(k)-10 b(e)-15 b(y)218
+b(f)-10 b(actors)217 b(in)h(straightforw)-10 b(ard)217
+b(models,)224 b(resulting)217 b(in)27201 31592 y(a)286
+b(solution)g(that)g(is)f(vulnerable)i(to)f(e)-15 b(xtra-g)-5
+b(ame)287 b(issues.)418 b(F)-15 b(or)285 b(our)h(ISP)f(ne-)27201
+32754 y(gotiation)254 b(problem,)g(we)f(confronted)h(this)e(problem)h
+(when)h(attempting)f(to)27201 33916 y(formulate)291 b(a)f(g)-5
+b(ame)292 b(in)e(which)h(the)f(ISPs)g(were)h(una)-15
+b(w)-10 b(are)291 b(of)f(each)i(other')-55 b(s)27201
+35079 y(utility)249 b(functions.)27201 37348 y(In)301
+b(our)g(initial)g(approach)h(to)f(this)g(problem,)314
+b(we)301 b(considered)h(a)f(construc-)27201 38510 y(tion)372
+b(where)g(tw)-10 b(o)371 b(ISPs)f(e)-15 b(xchange)373
+b(preference)g(lists)d(at)h(the)h(same)f(time.)27201
+39673 y(Our)229 b(hope)g(w)-10 b(as)229 b(that)g(it)f(will)h(be)g
+(easier)g(to)g(design)f(a)h(strate)-15 b(gy-proof)229
+b(mech-)27201 40835 y(anism)295 b(when)g(neither)g(ISP)g(can)g(bias)f
+(the)h(g)-5 b(ame)296 b(by)f(choosing)g(its)e(prefer)-20
+b(-)27201 41997 y(ences)250 b(in)f(light)g(of)g(those)h(of)e(the)i
+(other)-55 b(.)27201 44266 y(Ho)-25 b(we)g(v)-15 b(er)-40
+b(,)280 b(while)272 b(the)h(assumption)f(that)g(some)g(information)h
+(is)e(pri)-25 b(v)g(ate)273 b(is)27201 45429 y(an)299
+b(attracti)-25 b(v)-15 b(e)300 b(w)-10 b(ay)300 b(to)e(de\002ne)i(the)f
+(g)-5 b(ame,)312 b(and)299 b(may)h(be)f(justi\002able)f(when)27201
+46591 y(considering)393 b(only)g(a)g(single)g(instance)g(of)f(it,)429
+b(it)392 b(misrepresents)g(the)h(ac-)27201 47753 y(tual)261
+b(situation)f(in)f(w)-10 b(ays)261 b(that)f(undermine)h(the)f(results.)
+341 b(F)-15 b(or)259 b(instance,)264 b(ISP)27201 48916
+y(ne)-15 b(gotiation)341 b(is)f(an)g(ongoing)g(process,)362
+b(and)341 b(so)e(history)h(is)f(an)h(important)27201
+50078 y(channel)324 b(that)g(leaks)f(utility)g(information:)456
+b(an)323 b(ISP')-55 b(s)322 b(utility)h(for)f(a)i(gi)-25
+b(v)-15 b(en)27201 51240 y(path)330 b(is)f(not)g(lik)-10
+b(ely)330 b(to)f(change)i(drastically)e(with)h(time,)349
+b(and)330 b(so)f(past)g(ac-)27201 52403 y(tions)241 b(are)h(lik)-10
+b(ely)241 b(to)h(be)f(good)h(predictors)f(of)g(future)g(beha)-20
+b(vior)-55 b(.)308 b(While)242 b(this)27201 53565 y(in)-40
+b(vites)231 b(modeling)g(the)g(situation)f(as)g(a)h(repeated)g(g)-5
+b(ame,)235 b(e)-15 b(xactly)232 b(what)f(can)27201 54727
+y(be)246 b(gleaned)h(from)f(past)f(actions)h(and)h(other)f(side)f
+(channels)i(is)e(lik)-10 b(ely)246 b(to)g(be)27201 55889
+y(situation)298 b(dependent)g(and)g(hard)g(to)f(characterize.)456
+b(F)-15 b(or)297 b(instance,)310 b(it)297 b(may)27201
+57052 y(be)353 b(possible)f(be)h(glean)g(some)g(information)g(about)g
+(an)g(ISP)f(utility)g(for)g(a)27201 58214 y(gi)-25 b(v)-15
+b(en)237 b(path)g(by)g(measuring)g(the)f(latenc)-15 b(y)238
+b(of)e(pack)-10 b(ets)237 b(along)g(that)g(path.)305
+b(W)-80 b(e)27201 59376 y(therefore)213 b(felt)f(it)g(w)-10
+b(as)212 b(ill)g(advised)g(to)g(model)h(the)f(problem)h(this)f(w)-10
+b(ay)-65 b(,)220 b(since)27201 60539 y(potential)342
+b(inaccuracies)g(in)e(the)h(assumptions)f(about)h(what)g(information)
+27201 61701 y(could)250 b(be)g(indirectly)f(inferred)h(w)-10
+b(ould)249 b(mak)-10 b(e)250 b(the)g(results)e(suspect.)27201
+63970 y(Our)209 b(e)-15 b(xpectation)210 b(is)e(that)h(v)-15
+b(ersions)208 b(of)g(the)h(situation)f(abo)-15 b(v)g(e)210
+b(arise)e(in)h(man)-15 b(y)27201 65133 y(systems)224
+b(applications,)230 b(as)224 b(information)h(about)g(the)g(other)g
+(player')-55 b(s)224 b(utility)27201 66295 y(might)280
+b(be)g(inferred)g(through)g(side)g(channels.)402 b(A)279
+b(g)-5 b(ame)281 b(formulation)f(that)27201 67457 y(in)-40
+b(v)-20 b(olv)-15 b(es)258 b(players)f(ha)-20 b(ving)258
+b(limiting)f(kno)-25 b(wledge)258 b(of)f(each)h(others')f(pri)-25
+b(v)g(ate)p 27201 68545 10627 45 v 27312 69285 a Fd(5)27699
+69709 y Fk(Note)387 b(that)f(the)h(utilities)e(of)h(tw)-10
+b(o)387 b(ISPs)e(are)h(not)g(directly)h(comparable,)27201
+70705 y(which)348 b(means)f(that)g(certain)g(social)g(goals,)371
+b(such)346 b(as)h(f)-10 b(airness)346 b(measured)27201
+71701 y(using)249 b(true)h(costs,)e(are)i(not)f(achie)-25
+b(v)g(able.)p eop
+%%Page: 6 6
+6 5 bop -2022 -915 a Fk(information)313 b(w)-10 b(ould)313
+b(rely)g(on)g(un)-40 b(v)-15 b(eri\002able)314 b(assumptions)f(about)g
+(the)g(na-)-2022 247 y(ture)249 b(of)g(this)f(information.)-1718
+3540 y Fc(3.2.3)1218 b(F)-55 b(ixed)304 b(vs.)439 b(Fle)-24
+b(xible)305 b(Objectives)-2022 7193 y Fk(In)280 b(reaction)h(to)f(the)h
+(abo)-15 b(v)g(e)281 b(observ)-25 b(ation,)289 b(we)281
+b(w)-10 b(anted)281 b(a)g(mechanism)g(that)-2022 8355
+y(an)f(ISP)f(cannot)i(bias)f(in)g(its)f(f)-10 b(a)-20
+b(v)g(or)280 b(e)-25 b(v)-15 b(en)281 b(if)f(it)g(had)g(complete)h
+(information)-2022 9518 y(about)204 b(the)h(other')-55
+b(s)203 b(utilities.)294 b(Thus,)213 b(we)204 b(w)-10
+b(anted)205 b(an)g(incenti)-25 b(v)-15 b(e)205 b(compatible)-2022
+10680 y(mechanism)227 b(in)g(which)g(an)g(ISP')-55 b(s)226
+b(best)g(strate)-15 b(gy)227 b(is)f(to)g(truthfully)h(re)-25
+b(v)-15 b(eal)227 b(its)-2022 11842 y(utilities)248 b(irrespecti)-25
+b(v)-15 b(e)250 b(of)f(the)h(other)f(ISP')-55 b(s)248
+b(utilities.)-2022 14112 y(Ho)-25 b(we)g(v)-15 b(er)-40
+b(,)226 b(we)220 b(could)g(not)g(design)f(a)g(strate)-15
+b(gy-proof)219 b(mechanism)h(because)-2022 15274 y(we)239
+b(w)-10 b(anted)239 b(to)g(lea)-20 b(v)-15 b(e)240 b(maximum)f(\003e)
+-15 b(xibility)239 b(to)g(the)g(ISPs)e(in)i(determining)-2022
+16436 y(the)396 b(outcomes)h(the)-15 b(y)397 b(w)-10
+b(anted)397 b(to)g(achie)-25 b(v)-15 b(e.)752 b(Allo)-25
+b(wing)397 b(them)g(to)f(adv)-15 b(er)-20 b(-)-2022 17598
+y(tise)254 b(\(essentially\))h(arbitrary)g(utilities)g(w)-10
+b(as)255 b(one)g(aspect)h(of)f(that.)327 b(De\002ning)-2022
+18761 y(the)316 b(goal)g(of)g(the)g(ne)-15 b(gotiation)317
+b(w)-10 b(as)316 b(a)g(second.)510 b(It)316 b(w)-10 b(as)316
+b(not)g(clear)g(ho)-25 b(w)317 b(to)-2022 19923 y(e)-15
+b(xpress)262 b(\223an)-15 b(y)263 b(outcome)h(mutually)f(agreeable)h
+(and)e(bene\002cial)i(to)f(the)f(ne-)-2022 21085 y(gotiators\224)303
+b(as)f(the)i(objecti)-25 b(v)-15 b(e)304 b(of)f(the)g(mechanism.)471
+b(Such)304 b(problems)e(will)-2022 22248 y(arise)263
+b(in)g(other)g(systems)f(where)i(the)g(designer)f(does)h(not)f(w)-10
+b(ant)264 b(to)f(enforce)-2022 23410 y(a)298 b(particular)h(objecti)-25
+b(v)-15 b(e,)312 b(b)-20 b(ut)298 b(w)-10 b(ants)298
+b(to)h(lea)-20 b(v)-15 b(e)299 b(it)f(open)h(to)f(the)h(interaction)
+-2022 24572 y(between)250 b(the)g(players)f([7].)-2022
+26842 y(In)281 b(f)-10 b(act,)289 b(it)281 b(is)g(kno)-25
+b(wn)282 b(that)f(in)g(some)h(cases)f(it)g(is)f(impossible)h(to)g
+(reconcile)-2022 28004 y(\003e)-15 b(xibility)296 b(and)h(incenti)-25
+b(v)-15 b(e)297 b(compatibility)-65 b(.)451 b(Myerson)296
+b(and)g(Satterthw)-10 b(aite)-2022 29166 y(pro)-15 b(v)g(ed)350
+b(that)f(for)g(the)h(simple)f(ne)-15 b(gotiating)351
+b(scenario)e(of)h(a)f(single)h(seller)-40 b(,)-2022 30328
+y(an)268 b(object,)273 b(and)268 b(a)g(b)-20 b(uyer)-40
+b(,)273 b(in)268 b(the)g(absence)h(of)e(a)h(disinterested)g(third)f
+(party)-2022 31491 y(acting)292 b(as)f(a)h(subsidizer)-40
+b(,)302 b(appraiser)292 b(or)f(arbitrator)h(no)g(mechanism)g(e)-15
+b(xists)-2022 32653 y(that)237 b(is)f(both)h(incenti)-25
+b(v)-15 b(e)238 b(compatible)g(and)f(able)h(to)f(implement)g(all)g
+(feasible)-2022 33815 y(solutions)253 b(in)h(which)h(both)f(seller)g
+(and)h(b)-20 b(uyer)255 b(pro\002t)f([14].)323 b(Man)-15
+b(y)255 b(systems)-2022 34978 y(do)222 b(not)g(ha)-20
+b(v)-15 b(e)223 b(a)g(natural)f(third-party)-65 b(.)301
+b(W)-80 b(e)223 b(belie)-25 b(v)-15 b(e)223 b(that)g(a)f(similar)g
+(impossi-)-2022 36140 y(bility)275 b(result)h(w)-10 b(ould)276
+b(hold)g(for)f(them,)283 b(and)276 b(the)g(designers)g(w)-10
+b(ould)276 b(then)g(be)-2022 37302 y(forced)249 b(to)g(choose)h
+(between)g(\003e)-15 b(xibility)250 b(and)g(incenti)-25
+b(v)-15 b(e)250 b(compatibility)-65 b(.)-2022 41343 y
+Fl(4.)1328 b(SYSTEM)331 b(IMPLEMENT)-120 b(A)-126 b(TION)333
+b(ISSUES)-2022 44996 y Fk(Lik)-10 b(e)395 b(an)-15 b(y)396
+b(modeling)h(tool,)432 b(g)-5 b(ame)397 b(theory)f(in)-40
+b(v)-20 b(olv)-15 b(es)396 b(abstraction.)749 b(P)-15
+b(art)-2022 46158 y(of)334 b(its)g(po)-25 b(wer)335 b(is)f(that)h(a)f
+(set)h(of)f(cleanly)i(de\002ned)f(concepts)g(can)h(be)e(used)-2022
+47320 y(to)432 b(reason)h(about)h(complicated)g(systems,)478
+b(reaching)434 b(conclusions)f(that)-2022 48483 y(might)256
+b(otherwise)g(be)g(obscured)h(by)f(the)g(details.)330
+b(Ho)-25 b(we)g(v)-15 b(er)-40 b(,)259 b(our)d(ultimate)-2022
+49645 y(goal)216 b(w)-10 b(as)215 b(to)h(b)-20 b(uild)215
+b(w)-10 b(orkable)217 b(implementations)f(of)f(solutions)g(to)h(our)f
+(tw)-10 b(o)-2022 50807 y(systems)311 b(problems.)498
+b(W)-80 b(e)313 b(encountered)h(se)-25 b(v)-15 b(eral)312
+b(dif)-25 b(\002culties)312 b(translating)-2022 51970
+y(from)407 b(the)h(abstract)g(solutions)f(to)g(real)h(implementations.)
+786 b(Unlik)-10 b(e)408 b(the)-2022 53132 y(problems)351
+b(in)g(the)h(last)f(section,)377 b(these)351 b(problems)g(are)h(not)f
+(fundamental)-2022 54294 y(and)301 b(can)g(lik)-10 b(ely)301
+b(be)g(resolv)-15 b(ed)301 b(with)g(some)f(amount)h(of)g(ef)-25
+b(fort.)463 b(But)300 b(tak)-10 b(en)-2022 55456 y(together)299
+b(the)-15 b(y)298 b(tend)h(to)g(mak)-10 b(e)299 b(the)g(g)-5
+b(ame)299 b(theoretic)g(models)f(comple)-15 b(x)300 b(or)-2022
+56619 y(costly)-65 b(,)219 b(which)212 b(reduces)g(their)g(v)-25
+b(alue)213 b(in)e(practice.)298 b(Most)210 b(of)i(the)g(issues)e(that)
+-2022 57781 y(we)249 b(discuss)g(here)g(are)h(rele)-25
+b(v)g(ant)250 b(to)f(the)g(wireless)g(netw)-10 b(ork)250
+b(problem.)-2022 61074 y Fl(4.1)1328 b(Identity)-2022
+64727 y Fk(Man)-15 b(y)215 b(g)-5 b(ame)216 b(theoretic)g(formulations)
+f(assume)g(that)g(players)g(ha)-20 b(v)-15 b(e)217 b(persis-)-2022
+65890 y(tent,)331 b(global)315 b(identities,)331 b(perhaps)315
+b(because)h(of)e(its)g(roots)g(in)h(social)g(inter)-20
+b(-)-2022 67052 y(action.)379 b(F)-15 b(or)272 b(e)-15
+b(xample,)280 b(in)272 b(the)h(pack)-10 b(et)273 b(forw)-10
+b(arding)273 b(problem,)279 b(reputation)-2022 68214
+y(based)331 b(systems)e(such)i(as)g(CONFID)-40 b(ANT)331
+b([5])f(require)h(global)g(identities)-2022 69377 y(to)270
+b(be)g(ef)-25 b(fecti)g(v)-15 b(e:)352 b(the)270 b(idea)h(of)f
+(reputation)h(implies)f(that)g(multiple)g(players)-2022
+70539 y(contrib)-20 b(ute)258 b(to)f(the)h(assessment)f(a)h(of)f(node,)
+j(implying)e(that)g(the)-15 b(y)258 b(share)f(an)-2022
+71701 y(understanding)346 b(of)f(the)g(node)h(the)-15
+b(y)346 b(are)g(talking)f(about)h(\(and)g(hence)g(that)27201
+-915 y(a)359 b(global)g(identity)g(e)-15 b(xists)357
+b(for)h(that)h(node\).)637 b(Similarly)-65 b(,)386 b(currenc)-15
+b(y)359 b(based)27201 247 y(systems,)333 b(such)316 b(as)h(Sprite)f
+([23],)334 b(require)316 b(strong)h(identities)f(because)i(the)27201
+1409 y(currenc)-15 b(y)349 b(must)e(be)i(unfor)-18 b(geable.)606
+b(This)347 b(in)g(turn)h(ultimately)g(requires)g(a)27201
+2571 y(trusted)321 b(mechanism)i(that)e(v)-20 b(ouches)322
+b(that)g(some)f(nameable)i(node)f(indeed)27201 3734 y(le)-15
+b(gitimately)251 b(possesses)c(the)j(of)-25 b(fered)249
+b(currenc)-15 b(y)-65 b(.)27201 6003 y(While)345 b(man)-15
+b(y)345 b(g)-5 b(ame)346 b(theoretic)f(approaches)g(require)g
+(persistent,)368 b(global)27201 7165 y(identities,)277
+b(in)270 b(man)-15 b(y)272 b(computer)f(systems)f(agents)h(may)g(ha)-20
+b(v)-15 b(e)272 b(no)f(identity)-65 b(,)27201 8328 y(or)302
+b(an)g(identity)h(whose)f(meaningfulness)g(is)g(limited)g(in)g(time)g
+(and)h(space.)27201 9490 y(F)-15 b(or)281 b(e)-15 b(xample,)290
+b(nodes)281 b(in)g(our)g(wireless)f(netw)-10 b(ork)282
+b(do)f(not)g(ha)-20 b(v)-15 b(e)282 b(a)f(reliable)27201
+10652 y(global)239 b(identity)-65 b(.)306 b(\(Strong)238
+b(identities)h(are)g(present)f(in)h(the)f(ISP)g(ne)-15
+b(gotiation)27201 11815 y(scenario,)319 b(though.\))475
+b(The)304 b(closest)g(thing)h(to)f(an)h(identity)g(the)-15
+b(y)305 b(possess)e(is)27201 12977 y(the)216 b(hardw)-10
+b(are)216 b(address)f(of)g(their)g(wireless)g(interf)-10
+b(ace,)223 b(which)216 b(is)e(not)i(global)27201 14139
+y(because)299 b(nodes)f(not)g(in)f(direct)h(transmission)f(range)h
+(cannot)h(v)-15 b(erify)297 b(each)27201 15302 y(other)-55
+b(.)524 b(In)320 b(f)-10 b(act,)339 b(it)320 b(is)g(also)h(not)g
+(persistent)f(or)g(unique)h(if)f(nodes)h(can)g(eas-)27201
+16464 y(ily)371 b(send)f(pack)-10 b(ets)371 b(using)f(arbitrary)h
+(hardw)-10 b(are)371 b(addresses.)672 b(As)371 b(another)27201
+17626 y(e)-15 b(xample,)432 b(Lai)394 b Fg(et)g(al.)744
+b Fk(ha)-20 b(v)-15 b(e)395 b(look)-10 b(ed)395 b(at)f(the)h(problem)f
+(of)g(constructing)27201 18788 y(reputation-based)242
+b(systems)e(for)h(a)g(peer)-20 b(-to-peer)242 b(\002le)f(sharing)g
+(application)27201 19951 y(where)292 b(identities)e(are)h(globally)h
+(unique)f(b)-20 b(ut)291 b(users)e(can)j(freely)f(acquire)g(a)27201
+21113 y(ne)-25 b(w)277 b(identity)g([10].)390 b(One)277
+b(w)-10 b(ay)277 b(to)g(interpret)f(their)g(results)g(is)f(that,)284
+b(gener)-20 b(-)27201 22275 y(ally)250 b(speaking,)g(the)f(situation)g
+(is)g(hopeless.)27201 24545 y(This)318 b(mismatch)i(between)g(the)f
+(assumptions)f(of)h(the)g(theoretical)h(frame-)27201
+25707 y(w)-10 b(ork)349 b(and)g(what)g(is)f(realistically)h(feasible)g
+(in)f(actual)i(systems)d(is)h(a)h(sig-)27201 26869 y(ni\002cant)250
+b(stumbling)f(block)h(to)f(deplo)-10 b(ying)250 b(solutions)f(deri)-25
+b(v)-15 b(ed)250 b(from)e(g)-5 b(ame)27201 28032 y(theoretic)255
+b(approaches.)325 b(As)254 b(one)g(e)-15 b(xample,)257
+b(in)d(our)g(wireless)f(netw)-10 b(ork)255 b(the)27201
+29194 y(additional)204 b(cost)f(of)g(implementing)i(strong)d
+(identities,)213 b(for)203 b(instance)g(using)27201 30356
+y(public)250 b(k)-10 b(e)-15 b(ys,)249 b(made)h(some)f(incenti)-25
+b(v)-15 b(e-based)251 b(solutions)e(unattracti)-25 b(v)-15
+b(e.)27201 34507 y Fl(4.2)1329 b(Cost\255Effecti)-13
+b(v)g(eness)27201 38160 y Fk(In)233 b(man)-15 b(y)234
+b(systems)f(getting)h(the)f(players)h(to)f(cooperate)h(with)g(each)g
+(other)g(is)27201 39323 y(not)317 b(the)g(only)g(goal.)513
+b(In)316 b(f)-10 b(act,)334 b(it)317 b(may)g(not)g(e)-25
+b(v)-15 b(en)318 b(be)f(a)g(k)-10 b(e)-15 b(y)318 b(goal.)512
+b(F)-15 b(or)317 b(in-)27201 40485 y(stance,)274 b(in)268
+b(a)g(multi-hop)g(wireless)g(netw)-10 b(ork,)273 b(functions)268
+b(such)g(as)g(routing,)27201 41647 y(po)-25 b(wer)283
+b(management)h(and)e(media)h(access)f(w)-10 b(ould)283
+b(probably)g(rank)f(higher)27201 42809 y(than)277 b(inducing)g
+(cooperation.)391 b(Thus,)282 b(the)276 b(cost)g(of)g(cooperation)h
+(inducing)27201 43972 y(mechanisms)250 b(must)f(be)g(lo)-25
+b(w)250 b(and)f(commensurate)i(with)e(its)f(bene\002ts.)27201
+46241 y(The)304 b(identity)g(issue)f(in)h(Section)g(4.1)g(can)h(be)f
+(thought)g(of)f(as)h(an)g(e)-15 b(xample)27201 47403
+y(of)324 b(this)g(issue.)534 b(While)325 b(one)g(could)g(imagine)g(the)
+f(deplo)-10 b(yment)326 b(of,)343 b(say)-65 b(,)343 b(a)27201
+48566 y(netw)-10 b(ork-wide)294 b(public)f(k)-10 b(e)-15
+b(y)293 b(infrastructure)g(\(PKI\))e(to)i(pro)-15 b(vide)293
+b(identities)27201 49728 y(and)299 b(lar)-18 b(gely)298
+b(solv)-15 b(e)298 b(the)g(problem,)310 b(the)298 b(cost)g(to)g(do)g
+(so)f(w)-10 b(ould)299 b(v)-25 b(astly)297 b(out-)27201
+50890 y(weigh)250 b(the)g(bene\002t.)27201 53160 y(As)298
+b(another)i(e)-15 b(xample,)312 b(consider)298 b(a)h(currenc)-15
+b(y-based)299 b(solution)g(to)f(pack)-10 b(et)27201 54322
+y(forw)g(arding)311 b(problem.)493 b(A)311 b(straightforw)-10
+b(ard)310 b(implementation)i(of)e(virtual)27201 55484
+y(currenc)-15 b(y)266 b(requires)f Fb(i)p Fa(\))h Fk(a)f(trusted,)k
+(central)d(authority)-65 b(,)270 b(such)265 b(as)g(an)h(almost-)27201
+56646 y(al)-10 b(w)g(ays-accessible)262 b(softw)-10 b(are)261
+b(service)g(that)g(enables)h(virtual)f(currenc)-15 b(y)261
+b(or)27201 57809 y(per)-20 b(-node,)237 b(tamper)-20
+b(-proof)232 b(hardw)-10 b(are)233 b(for)f(correct)h(accounting;)239
+b Fb(ii)p Fa(\))233 b Fk(an)g(im-)27201 58971 y(plementation)253
+b(of)e(strong)g(identities;)h(and)g Fb(iii)p Fa(\))h
+Fk(the)e(insertion)g(of)g(account-)27201 60133 y(ing)218
+b(information)f(into)g(e)-25 b(v)-15 b(ery)218 b(pack)-10
+b(et,)225 b(which)218 b(represents)f(added)h(through-)27201
+61296 y(put)360 b(and)h(ener)-18 b(gy)361 b(cost.)641
+b(Additionally)-65 b(,)389 b(if)359 b(the)h(price)h(of)e(carrying)i
+(pack-)27201 62458 y(ets)210 b(changes)i(dynamically)-65
+b(,)219 b(additional)212 b(mechanisms)e(for)g(estimating)h(and)27201
+63620 y(disseminating)250 b(pricing)f(information)g(are)h(required.)
+27201 65890 y(Contrast)282 b(the)h(abo)-15 b(v)g(e)283
+b(with)g(the)f(implementation)i(cost)e(of)h Fe(Catch)q
+Fk(.)408 b(It)282 b(does)27201 67052 y(not)248 b(require)g(an)-15
+b(y)248 b(trusted)f(central)i(authority)f(or)f(global)h(identities.)309
+b(Local,)27201 68214 y(b)-20 b(ut)337 b(persistent,)357
+b(identity)337 b(such)g(as)f(the)g(hardw)-10 b(are)338
+b(address)d(is)h(suf)-25 b(\002cient.)27201 69377 y(No)309
+b(e)-15 b(xtra)310 b(information)f(is)f(added)h(to)g(data)g(pack)-10
+b(ets,)325 b(and)309 b(the)g(bandwidth)27201 70539 y(o)-15
+b(v)g(erhead)248 b(of)f(control)g(pack)-10 b(ets)248
+b(is)e(ne)-15 b(gligible)248 b([11].)308 b(Finally)-65
+b(,)248 b(all)e(informa-)27201 71701 y(tion)k(sharing)f(among)g(nodes)h
+(is)e(limited)i(to)f(tw)-10 b(o-hop)250 b(neighborhoods.)p
+eop
+%%Page: 7 7
+7 6 bop -2022 -915 a Fl(4.3)1328 b(Uncertainty)-2022
+2738 y Fk(In)262 b(real)i(systems,)h(the)e(outcome)h(of)f(an)g(e)-25
+b(v)-15 b(ent)264 b(of)f(interest)g(can)h(sometimes)-2022
+3900 y(be)298 b(uncertain,)311 b(complicating)300 b(the)e(application)h
+(of)f(g)-5 b(ame)299 b(theory)f(to)g(such)-2022 5062
+y(situations.)496 b(Belo)-25 b(w)312 b(we)h(describe)f(tw)-10
+b(o)312 b(e)-15 b(xamples)313 b(from)e(the)h(pack)-10
+b(et)313 b(for)-20 b(-)-2022 6224 y(w)-10 b(arding)249
+b(problem)h(and)g(a)f(potential)h(issue)f(with)g(ISP)g(ne)-15
+b(gotiation.)-2022 8494 y(First,)427 b(transmissions)390
+b(in)i(a)h(wireless)f(netw)-10 b(ork)393 b(ha)-20 b(v)-15
+b(e)393 b(a)f(non-zero)h(error)-2022 9656 y(rate,)414
+b(and)382 b(so)f(a)h(pack)-10 b(et)382 b(may)g(ha)-20
+b(v)-15 b(e)383 b(to)e(be)h(transmitted)f(multiple)h(times)-2022
+10818 y(before)268 b(it)g(correctly)g(reaches)h(the)f(recei)-25
+b(v)-15 b(er)-55 b(.)366 b(Whether)269 b(a)f(pack)-10
+b(et)270 b(w)-10 b(as)268 b(cor)-20 b(-)-2022 11981 y(rectly)236
+b(recei)-25 b(v)-15 b(ed)237 b(is)e(kno)-25 b(wn)237
+b(only)f(to)g(the)g(recei)-25 b(v)-15 b(er;)241 b(the)236
+b(sender)g(has)g(to)g(tak)-10 b(e)-2022 13143 y(the)330
+b(recei)-25 b(v)-15 b(er')-55 b(s)330 b(w)-10 b(ord)330
+b(for)g(it.)551 b(The)330 b(number)g(of)g(retransmissions,)349
+b(which)-2022 14305 y(represents)h(the)i(forw)-10 b(arding)352
+b(cost)f(for)f(the)i(sender)-40 b(,)377 b(depends)352
+b(on)f(the)h(er)-20 b(-)-2022 15468 y(ror)323 b(rate)h(and)g(is)f(hard)
+h(to)g(accurately)h(predict)f(in)g(adv)-25 b(ance.)534
+b(This)323 b(unpre-)-2022 16630 y(dictability)265 b(in)f(the)h(forw)-10
+b(arding)264 b(cost)g(complicates)i(the)e(use)h(of)f(incenti)-25
+b(v)-15 b(es)-2022 17792 y(because)199 b(the)g(de)-15
+b(gree)199 b(of)f(incenti)-25 b(v)-15 b(e)200 b(e)-15
+b(xpected)200 b(by)f(a)g(player)g(depends)g(on)f(the)-2022
+18954 y(incurred)229 b(cost.)302 b(A)230 b(number)f(of)g(authors)g(ha)
+-20 b(v)-15 b(e)231 b(discussed)d(this)h(problem)h([6,)-2022
+20117 y(23].)-2022 22386 y(Second,)274 b(we)269 b(used)g(a)g
+(detect-and-punish)g(strate)-15 b(gy)269 b(to)g(discourage)g(cheat-)
+-2022 23548 y(ing,)259 b(and)f(a)g(tit-for)-20 b(-tat)256
+b(mechanism)j(to)e(discourage)h(f)-10 b(alse)258 b(implications:)325
+b(a)-2022 24711 y(node)277 b(punishes)g(the)h(implicating)g(node)g
+(when)f(it)g(is)g(wrongly)h(accused)g(of)-2022 25873
+y(cheating.)400 b(But)278 b(due)i(to)f(some)g(fundamental)i
+(limitations)e(of)f(the)i(wireless)-2022 27035 y(domain,)350
+b(our)330 b(detection)h(mechanism)f(is)f(not)h(foolproof)g(\226)g(it)f
+(can)h(incor)-20 b(-)-2022 28198 y(rectly)330 b(conclude)h(that)f(an)g
+(honest)f(node)i(is)e(cheating.)552 b(This)328 b(uncertainty)-2022
+29360 y(does)249 b(not)g(play)h(well)f(with)h(tit-for)-20
+b(-tat.)-2022 31629 y(Complications)305 b(concerning)h(uncertainty)g
+(are)f(not)g(limited)g(to)g(the)h(wire-)-2022 32791 y(less)g(problem.)
+483 b(Our)307 b(discussion)f(is)h(limited)g(to)g(it)g(because)h(we)f
+(ha)-20 b(v)-15 b(e)308 b(not)-2022 33954 y(yet)287 b(look)-10
+b(ed)288 b(at)f(implementations)h(of)f(the)h(ne)-15 b(gotiated)288
+b(settlement)g(among)-2022 35116 y(ISPs,)310 b(b)-20
+b(ut)299 b(we)g(can)h(foresee)f(at)f(least)h(one)h(potential)f
+(problem.)458 b(After)299 b(the)-2022 36278 y(ne)-15
+b(gotiation)380 b(ends,)411 b(ISPs)379 b(are)g(e)-15
+b(xpected)381 b(to)e(implement)h(the)f(ne)-15 b(gotiated)-2022
+37441 y(paths.)490 b(Assume)310 b(that)g(one)g(of)f(the)h(ISPs)f(does)h
+(not)g(implement)g(a)g(ne)-15 b(goti-)-2022 38603 y(ated)304
+b(path)g(that)g(w)-10 b(as)304 b(b)-20 b(urdensome)304
+b(for)f(it.)473 b(In)303 b(this)g(scenario,)318 b(the)304
+b(second)-2022 39765 y(ISP)216 b(w)-10 b(ould)218 b(be)g(uncertain)g
+(whether)h(this)e(happened)h(because)h(the)f(\002rst)e(ISP)-2022
+40928 y(is)264 b(cheating)i(or)f(because)h(there)g(w)-10
+b(as)265 b(a)g(f)-10 b(ailure)266 b(inside)f(the)g(\002rst)f(ISP')-55
+b(s)264 b(net-)-2022 42090 y(w)-10 b(ork)249 b(after)g(the)h(ne)-15
+b(gotiation)250 b(ended.)-2022 44359 y(Modeling)271 b(these)h
+(situations)f(w)-10 b(as)272 b(challenging)h(because)g(of)e(the)h
+(simulta-)-2022 45522 y(neous)d(presence)i(of)e(v)-25
+b(arious)269 b(f)-10 b(actors.)370 b(First,)274 b(a)c(formulation)f
+(using)h(trem-)-2022 46684 y(bling)243 b(hand)g(equilibria)h(\226)f(a)g
+(common)g(w)-10 b(ay)244 b(to)f(account)h(for)f(uncertainty)g(\226)
+-2022 47846 y(may)272 b(not)h(be)g(enough)g(by)f(itself)g(because)h(we)
+g(are)g(not)f(\(e)-15 b(xclusi)-25 b(v)-15 b(ely\))273
+b(con-)-2022 49008 y(cerned)192 b(with)f(players')g(mistak)-10
+b(es.)290 b(Second,)203 b(the)192 b(frequenc)-15 b(y)192
+b(of)f(occurrence)-2022 50171 y(of)232 b(uncertain)h(e)-25
+b(v)-15 b(ents)233 b(such)g(as)f(pack)-10 b(et)234 b(losses)d(in)i(the)
+f(wireless)h(netw)-10 b(ork)233 b(or)-2022 51333 y(f)-10
+b(ailures)331 b(in)g(an)g(ISP)g(netw)-10 b(ork)332 b(is)f(not)g(kno)-25
+b(wn)332 b(in)f(adv)-25 b(ance)333 b(and)f(can)g(v)-25
+b(ary)-2022 52495 y(widely)-65 b(.)324 b(Third,)255 b(information)f
+(about)h(certain)g(e)-25 b(v)-15 b(ents)254 b(can)h(be)f(asymmetric)
+-2022 53658 y(\(kno)-25 b(wn)230 b(only)f(to)h(some)f(of)h(the)f
+(players\))h(which)g(opens)g(up)f(g)-5 b(aming)231 b(possi-)-2022
+54820 y(bilities.)425 b(F)-15 b(or)287 b(instance,)299
+b(whether)288 b(a)h(pack)-10 b(et)289 b(w)-10 b(as)288
+b(lost)f(in)h(transmission)f(is)-2022 55982 y(kno)-25
+b(wn)250 b(only)f(to)g(the)h(recei)-25 b(v)-15 b(er)-55
+b(.)-2022 58252 y(As)191 b(an)h(aside,)203 b(we)192 b(deal)g(with)g
+(uncertainty)h(in)e Fe(Catch)i Fk(using)e(statistical)g(tests.)-2022
+59414 y(T)-80 b(o)247 b(a)-20 b(v)g(oid)249 b(penalizing)g(honest)e
+(nodes)h(that)g(might)g(appear)h(to)e(be)h(cheating,)-2022
+60576 y(due)398 b(to)g(uncertainty)h(in)f(pack)-10 b(et)399
+b(losses,)435 b(the)398 b(tests)f(are)i(designed)f(to)g(be)-2022
+61738 y(liberal.)609 b(As)349 b(a)h(result,)374 b Fe(Catch)350
+b Fk(may)f(not)h(punish)f(nodes)g(that)h(cheat)g(v)-15
+b(ery)-2022 62901 y(little.)309 b(But)248 b(e)-15 b(gre)g(gious)250
+b(cheaters)g(are)f(al)-10 b(w)g(ays)250 b(detected)g(reliably)-65
+b(.)-2022 66886 y Fl(5.)1328 b(CONCLUDING)333 b(REMARKS)-2022
+70539 y Fk(The)252 b(multi-hop)h(wireless)f(netw)-10
+b(orks)253 b(ISP)f(ne)-15 b(gotiation)254 b(problems)f(are)g(our)-2022
+71701 y(\002rst)278 b(attempt)i(to)f(apply)h(g)-5 b(ame)281
+b(theory)e(to)h(systems)e(problems.)400 b(When)280 b(we)27201
+-915 y(be)-15 b(g)-5 b(an)378 b(our)e(w)-10 b(ork,)409
+b(we)377 b(hoped)h(that)f(g)-5 b(ame)377 b(theory)g(w)-10
+b(ould)377 b(help)g(us)f(bet-)27201 247 y(ter)305 b(understand)g(the)h
+(problems,)318 b(suggest)305 b(solutions,)318 b(and)305
+b(aid)h(in)e(analyz-)27201 1409 y(ing)291 b(the)g(properties)f(of)h
+(the)f(solutions)g(we)h(arri)-25 b(v)-15 b(ed)291 b(at.)434
+b(Game)291 b(theory)g(did)27201 2571 y(help)284 b(us)f(to)g(some)g(e)
+-15 b(xtent)284 b(and)f(certain)h(aspects)f(of)g(our)g(solutions)g(are)
+g(de-)27201 3734 y(ri)-25 b(v)-15 b(ed)352 b(from)f(common)h(g)-5
+b(ame)352 b(theoretic)g(concepts.)617 b(But)350 b(for)h(most)g(part,)
+27201 4896 y(we)295 b(ha)-20 b(v)-15 b(e)295 b(not)g(yet)f(succeeded.)
+446 b(and)295 b(the)f(pre)-25 b(vious)295 b(tw)-10 b(o)294
+b(sections)g(discuss)27201 6058 y(se)-25 b(v)-15 b(eral)323
+b(contrib)-20 b(uting)323 b(f)-10 b(actors.)528 b(Despite)323
+b(these)f(dif)-25 b(\002culties,)341 b(we)323 b(remain)27201
+7221 y(optimistic)253 b(that)g(the)h(application)g(of)e(g)-5
+b(ame)254 b(theory)f(to)g(systems)f(problems)27201 8383
+y(will)h(be)g(of)g(great)g(bene\002t)h(in)f(the)g(future.)320
+b(W)-80 b(e)254 b(hope)f(that)h(identi\002cation)f(of)27201
+9545 y(these)258 b(issues)e(will)h(lead)g(to)g(formulations)g(of)g(the)
+g(theory)h(that)f(place)h(more)27201 10708 y(emphasis)253
+b(on)g(systems)e(f)-10 b(actors)253 b(such)f(as)h(highly)f(sk)-10
+b(e)-25 b(wed)254 b(w)-10 b(orkloads)253 b(and)27201
+11870 y(abilities)327 b(of)f(players,)346 b(uncertainty)-65
+b(,)347 b(implementation)328 b(cost,)346 b(competiti)-25
+b(v)-15 b(e)27201 13032 y(concerns)347 b(and)f(so)g(forth.)599
+b(W)-80 b(e)347 b(hope)g(that)f(our)g(e)-15 b(xperience)348
+b(will)e(also)g(be)27201 14195 y(useful)308 b(to)g(systems)e(designers)
+i(looking)g(to)g(use)f(g)-5 b(ame)309 b(theory)f(as)g(part)f(of)27201
+15357 y(their)250 b(design.)27201 17626 y(W)-80 b(e)366
+b(conclude)h(this)d(paper)i(with)f(a)h(higher)f(le)-25
+b(v)-15 b(el)366 b(re\003ection)g(on)f(our)g(e)-15 b(x-)27201
+18788 y(periences)292 b(and)f(their)g(implications.)434
+b(Perhaps)291 b(we)g(made)h(a)f(fundamental)27201 19951
+y(mistak)-10 b(e)288 b(in)g(approach.)425 b(W)-80 b(e)289
+b(had)f(in)f(mind)h(a)g(set)f(of)h(goals)f(and)h(set)g(out)f(to)27201
+21113 y(b)-20 b(uild)308 b(something)f(to)g(achie)-25
+b(v)-15 b(e)308 b(them.)483 b(W)-80 b(e)308 b(also)f(had)g(in)g(mind)g
+(that)g(g)-5 b(ame)27201 22275 y(theory)252 b(w)-10 b(ould)252
+b(help)g(with)g(this)f(in)h(a)g(constructi)-25 b(v)-15
+b(e)252 b(sense,)g(ideally)g(leading)27201 23438 y(us)259
+b(to)g(cle)-25 b(v)-15 b(er)260 b(solutions,)h(and)f(at)f(least)h(pro)
+-15 b(viding)259 b(prior)g(results)f(on)i(which)27201
+24600 y(to)230 b(b)-20 b(uild.)302 b(In)229 b(retrospect,)234
+b(ho)-25 b(we)g(v)-15 b(er)-40 b(,)234 b(it)229 b(seems)g(more)h(lik)
+-10 b(ely)229 b(that)h(our)f(origi-)27201 25762 y(nal)d(goals)f(were)h
+(pro)-15 b(v)-25 b(ably)226 b(unrealizable)g(than)g(b)-20
+b(uildable,)231 b(and)226 b(we)f(should)27201 26925 y(ha)-20
+b(v)-15 b(e)248 b(look)-10 b(ed)247 b(to)f(g)-5 b(ame)247
+b(theory)g(to)g(sho)-25 b(w)246 b(that,)h(and)g(\(if)f(indeed)h
+(necessary\))27201 28087 y(to)268 b(na)-20 b(vig)-5 b(ate)269
+b(to)-25 b(w)-10 b(ards)268 b(achie)-25 b(v)g(able)269
+b(ones.)364 b(F)-15 b(or)268 b(instance,)273 b(our)267
+b(ISP)g(routing)27201 29249 y(problem)390 b(required)h(a)f(ne)-15
+b(gotiation)390 b(that)g(re)-25 b(v)-15 b(ealed)391 b(no)f
+(information,)425 b(ar)-20 b(-)27201 30412 y(ri)-25 b(v)-15
+b(ed)278 b(at)f(a)g(pro)-15 b(v)-25 b(ably)278 b(optimal)f(result,)284
+b(and)277 b(w)-10 b(as)277 b(ef)-25 b(\002ciently)278
+b(computable.)27201 31574 y(Our)339 b(pack)-10 b(et)339
+b(forw)-10 b(arding)339 b(problem)g(required)g(a)f(strate)-15
+b(gy-proof)338 b(mecha-)27201 32736 y(nism)224 b(that)g(w)-10
+b(ould)225 b(induce)f(a)h(node)f(to)g(forw)-10 b(ard)224
+b(unboundedly)i(more)e(pack-)27201 33898 y(ets)350 b(than)g(it)f
+(itself)g(sent,)375 b(and)350 b(to)g(achie)-25 b(v)-15
+b(e)351 b(this)e(without)i(a)f(node)g(trusting)27201
+35061 y(an)-15 b(ything)250 b(b)-20 b(ut)250 b(itself.)27201
+37330 y(A)e(lesson)e(for)h(systems)f(b)-20 b(uilders)247
+b(that)g(is)f(not)i(no)-15 b(v)g(el,)248 b(b)-20 b(ut)247
+b(our)g(e)-15 b(xperiences)27201 38492 y(indicate)278
+b(bears)e(repeating,)285 b(is)275 b(that)i(formal)g(techniques)g(may)g
+(be)g(as)f(v)-25 b(alu-)27201 39655 y(able)370 b(in)e(eliminating)i
+(design)e(goals)h(as)f(in)h(achie)-25 b(ving)370 b(them.)668
+b(A)369 b(lesson)27201 40817 y(for)272 b(theorists)f(is)g(that)h(this)f
+(idea)i(is)e(usually)h(counter)-20 b(-intuiti)-25 b(v)-15
+b(e)272 b(to)g(systems)27201 41979 y(b)-20 b(uilders.)429
+b(Ne)-25 b(w)290 b(results,)298 b(or)289 b(the)h(application)g(of)f(e)
+-15 b(xisting)289 b(ones)g(in)g(a)g(sys-)27201 43142
+y(tems)330 b(conte)-15 b(xt,)350 b(succinctly)330 b(identifying)g(the)g
+(impossible)f(w)-10 b(ould)330 b(be)g(sig-)27201 44304
+y(ni\002cant)297 b(contrib)-20 b(utions.)448 b(W)-80
+b(e)297 b(appreciate)g(that)f(it)f(may)h(be)g(more)g(dif)-25
+b(\002cult)27201 45466 y(to)249 b(pro)-15 b(v)g(e)250
+b(these)g(\223lo)-25 b(wer)249 b(bound\224)i(results)d(than)h
+(constructi)-25 b(v)-15 b(e)250 b(ones.)27201 47735 y(In)285
+b(the)h(end,)295 b(we)286 b(did)g(construct)f(solutions)g(to)g(both)h
+(our)f(problems,)294 b(using)27201 48898 y(a)274 b(some)-25
+b(what)274 b(ad)f(hoc)h(approach.)381 b(It)273 b(is)g(instructi)-25
+b(v)-15 b(e)273 b(to)g(consider)g(ho)-25 b(w)274 b(this)27201
+50060 y(w)-10 b(as)231 b(possible,)j(gi)-25 b(v)-15 b(en)232
+b(that)f(we)h(were)f(thw)-10 b(arted)232 b(in)f(applying)g(g)-5
+b(ame)232 b(theory)27201 51222 y(to)334 b(them.)563 b(Fundamentally)-65
+b(,)357 b(system)333 b(b)-20 b(uilding)334 b(in)-40 b(v)-20
+b(olv)-15 b(es)334 b(tradeof)-25 b(fs.)563 b(Re-)27201
+52385 y(searchers)268 b(may)h(disagree)f(on)h(the)f(e)-25
+b(v)g(aluation)270 b(of)e(a)g(tradeof)-25 b(f,)273 b(b)-20
+b(ut)268 b(there)h(is)27201 53547 y(little)286 b(quibbling)g(about)g
+(the)g(process.)418 b(This)284 b(allo)-25 b(ws)286 b(us)f(to)h
+(construct)f(sys-)27201 54709 y(tems)291 b(that,)301
+b(in)290 b(some)h(sense,)300 b(are)291 b(\003a)-15 b(wed)291
+b(in)g(e)-25 b(v)-15 b(ery)291 b(dimension)g(\226)f(the)-15
+b(y)291 b(do)27201 55872 y(not)285 b(attain)g(some)g(pure)g(goal)g(in)g
+(an)-15 b(y)285 b(of)g(them,)294 b(b)-20 b(ut)285 b(o)-15
+b(v)g(erall)285 b(the)g(\003a)-15 b(ws)285 b(are)27201
+57034 y(outweighed)251 b(by)e(what)h(those)f(systems)f(manage)j(to)e
+(achie)-25 b(v)-15 b(e.)27201 59303 y(What)266 b(were)g(the)f(tradeof)
+-25 b(fs)265 b(in)g(our)g(systems,)j(not)d(lik)-10 b(ely)265
+b(sensibly)g(arri)-25 b(v)-15 b(ed)27201 60465 y(at)290
+b(by)g(a)g(g)-5 b(ame)291 b(theoretic)g(approach?)432
+b(Surprisingly)-65 b(,)300 b(the)290 b(common)g(high-)27201
+61628 y(le)-25 b(v)-15 b(el)324 b(feature)g(of)f(both)h(solutions)f(is)
+f(that)i(the)-15 b(y)324 b(tak)-10 b(e)324 b(a)f(mostly)g(coopera-)
+27201 62790 y(ti)-25 b(v)-15 b(e)240 b(beha)-20 b(vior)241
+b(as)e(gi)-25 b(v)-15 b(en,)243 b(rather)d(than)g(trying)f(to)h(induce)
+g(it)g(using)f(e)-15 b(xternal)27201 63952 y(mechanisms.)405
+b(F)-15 b(or)281 b(instance,)289 b(in)281 b Fe(Catch)q
+Fk(,)289 b(we)281 b(e)-15 b(xpect)282 b(a)g(node)f(to)g(isolate)g(a)
+27201 65115 y(cheating)251 b(neighbor)f(e)-25 b(v)-15
+b(en)250 b(when)g(that)g(neighbor)f(is)g(correctly)h(forw)-10
+b(arding)27201 66277 y(the)293 b(node')-55 b(s)292 b(o)-25
+b(wn)293 b(traf)-25 b(\002c.)437 b(W)-80 b(e)293 b(assume)f(a)h(priori)
+e(that)i(the)f(neighbors)g(of)g(a)27201 67439 y(cheating)277
+b(node)e(are)h(cooperati)-25 b(v)-15 b(e)276 b(and)g(will)f(punish)g
+(it,)281 b(rather)275 b(than)h(arri)-25 b(v-)27201 68602
+y(ing)272 b(at)h(this)e(result)h(via)g(g)-5 b(ame)273
+b(theory)-65 b(.)378 b(This)271 b(in)h(turn)g(results)f(in)h(a)g
+(solution)27201 69764 y(with)226 b(lo)-25 b(w)225 b(implementation)i
+(cost.)301 b(Similarly)-65 b(,)230 b(the)225 b(ne)-15
+b(gotiation)226 b(procedure)27201 70926 y(assumes)221
+b(that)h(ISPs)f(will)h(mostly)f(cooperate)i(in)f(the)g(interest)f(of)h
+(maintain-)p eop
+%%Page: 8 8
+8 7 bop -2022 -915 a Fk(ing)224 b(good,)229 b(long-term,)g(b)-20
+b(usiness)224 b(relationships,)k(e)-25 b(v)-15 b(en)225
+b(when)g(cheating)g(by)-2022 247 y(lying)249 b(about)h(their)f
+(utilities)g(might)g(bene\002t)h(them)f(in)h(the)f(short-term.)-2022
+2516 y(A)383 b(k)-10 b(e)-15 b(y)385 b(question)e(looking)i(forw)-10
+b(ard)383 b(is)g(ho)-25 b(w)385 b(to)e(best)h(apply)g(g)-5
+b(ame)384 b(the-)-2022 3678 y(oretic)394 b(analyses)f(and)h(models)g
+(in)g(this)f(situation.)742 b(T)-35 b(raditionally)-65
+b(,)430 b(non-)-2022 4841 y(cooperati)-25 b(v)-15 b(e)215
+b(g)-5 b(ame)215 b(theoretic)g(formulations)f(assume)g(that)g(all)g
+(players)g(are)-2022 6003 y(both)203 b(sel\002sh)g(and)g(rational,)213
+b(that)204 b(is,)211 b(that)204 b(their)f(utility)g(functions)g
+(represent)-2022 7165 y(their)294 b(pri)-25 b(v)g(ate)295
+b(g)-5 b(ain)295 b(and)g(that)g(the)-15 b(y)294 b(operate)i(in)e(w)-10
+b(ays)295 b(that)f(serv)-15 b(e)295 b(to)f(max-)-2022
+8328 y(imize)305 b(those)f(functions.)475 b(Introducing)304
+b(mechanisms)h(that)g(moderate)g(the)-2022 9490 y(sel\002sh)310
+b(beha)-20 b(vior)312 b(to)f(achie)-25 b(v)-15 b(e)312
+b(some)f(common)h(goal)f(as)g(an)g(outcome)h(of-)-2022
+10652 y(ten)325 b(leads)h(to)g(a)g(solution)f(that)h(incurs)f(a)h(high)
+g(implementation)h(cost.)538 b(In)-2022 11815 y(reality)-65
+b(,)262 b(most)d(players)h(may)f(be)h(willing)g(to)f(operate)i(some)-25
+b(what)260 b(coopera-)-2022 12977 y(ti)-25 b(v)-15 b(ely)-65
+b(,)222 b(because)217 b(the)-15 b(y)215 b(realize)i(that)e(their)g
+(long)h(term)f(goal)h(of)f(being)g(part)h(of)-2022 14139
+y(the)242 b(system)g(will)h(ne)-25 b(v)-15 b(er)243 b(be)f(ful\002lled)
+h(if)f(e)-25 b(v)-15 b(eryone)243 b(is)f(sel\002sh)g(in)g(each)i(real-)
+-2022 15302 y(ization)235 b(of)f(the)h(g)-5 b(ame.)5841
+14878 y Fd(6)6534 15302 y Fk(This)233 b(suggests)h(a)h(cooperati)-25
+b(v)-15 b(e)236 b(formulation)f(from)-2022 16464 y(the)274
+b(outset,)280 b(in)275 b(which)f(the)h(focus)f(is)f(on)i(preserving)f
+(cooperation)h(by)f(suf-)-2022 17626 y(\002ciently)268
+b(\223raising)h(the)f(bar\224)h(on)f(cheating.)367 b
+Fe(Catch)270 b Fk(is)d(an)i(e)-15 b(xample)269 b(of)f(this)-2022
+18788 y(approach:)367 b(it)278 b(punishes)f(the)h(cheaters)h(rather)f
+(than)g(re)-25 b(w)-10 b(arding)279 b(the)f(coop-)-2022
+19951 y(erators.)404 b(The)281 b(challenge)h(for)f(the)g(theory)g(then)
+h(is)e(to)h(sho)-25 b(w)281 b(that)g(cheating)-2022 21113
+y(will)249 b(ne)-25 b(v)-15 b(er)250 b(become)g(widespread)g(in)f(this)
+g(setting.)-2022 23382 y(W)-80 b(e)257 b(belie)-25 b(v)-15
+b(e)258 b(that)e(g)-5 b(ame)257 b(theoretic)g(formulations)g(tar)-18
+b(geted)257 b(at)f(mostly)g(co-)-2022 24545 y(operati)-25
+b(v)-15 b(e)218 b(settings)e(w)-10 b(ould)217 b(be)g(useful)g(for)f
+(man)-15 b(y)218 b(other)f(applications)g(such)-2022
+25707 y(as)250 b(peer)-20 b(-to-peer)251 b(systems.)312
+b(Properly)251 b(quantifying)g(the)g(desire)f(to)h(cooper)-20
+b(-)-2022 26869 y(ate)366 b(is)f(challenging,)397 b(though,)f(and)366
+b(depends)h(on)f(the)g(problem)h(domain.)-2022 28032
+y(But)228 b(if)g(achie)-25 b(v)-15 b(ed)230 b(successfully)-65
+b(,)232 b(we)d(belie)-25 b(v)-15 b(e)230 b(that)f(it)f(will)h(mak)-10
+b(e)229 b(g)-5 b(ame)229 b(the-)-2022 29194 y(oretic)381
+b(analyses)g(applicable)h(to)f(a)g(lar)-18 b(ger)381
+b(class)g(of)g(systems)f(problems.)-2022 30356 y(From)254
+b(a)i(systems)e(perspecti)-25 b(v)-15 b(e,)258 b(the)d(bene\002ts)g(of)
+g(gi)-25 b(ving)256 b(up)f(the)g(notion)h(of)-2022 31518
+y(perfect)189 b(sel\002shness)g(in)g(problems)g(that)h(in)-40
+b(v)-20 b(olv)-15 b(e)190 b(interacting,)203 b(autonomous)-2022
+32681 y(agents)359 b(is)g(analogous)h(to)g(the)g(bene\002ts)f(of)h
+(relaxing)g(the)g(notion)f(of)h(per)-20 b(-)-2022 33843
+y(fect)229 b(a)-20 b(v)-25 b(ailability)229 b(when)h(b)-20
+b(uilding)229 b(distrib)-20 b(uted)229 b(systems.)301
+b(In)228 b(both)h(cases,)k(a)-2022 35005 y(slight)261
+b(relaxation)h(of)g(the)g(requirement)g(can)h(result)e(in)h
+(dramatically)g(lo)-25 b(w-)-2022 36168 y(ered)249 b(implementation)i
+(costs.)-2022 39826 y Fl(6.)1328 b(A)-73 b(CKNO)-66 b(WLEDGEMENTS)-2022
+43479 y Fk(W)-80 b(e)312 b(thank)h(T)-80 b(om)312 b(Anderson,)328
+b(Ste)-25 b(v)-15 b(e)313 b(Gribble,)328 b(Anna)312 b(Karlin,)328
+b(and)313 b(Da)-20 b(vid)-2022 44642 y(K)-25 b(empe)322
+b(for)e(useful)h(discussions)f(during)h(the)h(course)f(of)g(our)g(w)-10
+b(ork.)525 b(W)-80 b(e)-2022 45804 y(also)371 b(thank)i(the)f(anon)-15
+b(ymous)373 b(re)-25 b(vie)g(wers)372 b(for)g(their)g(helpful)g
+(comments.)-2022 46966 y(This)188 b(w)-10 b(ork)190 b(w)-10
+b(as)189 b(supported)h(in)f(part)h(by)f(Microsoft)g(Research)g(and)h(D)
+-40 b(ARP)-92 b(A)-2022 48129 y(grant)249 b(F30602-00-2-0565.)-2022
+51787 y Fl(7.)1328 b(REFERENCES)-1524 55200 y Fk([1])497
+b(A.)395 b(Adya,)430 b(P)-111 b(.)394 b(Bahl,)430 b(J.)393
+b(P)-15 b(adh)-5 b(ye,)431 b(A.)394 b(W)-80 b(olman,)432
+b(and)394 b(L.)f(Zhou.)h(A)135 56362 y(multi-radio)211
+b(uni\002cation)g(protocol)f(for)g(IEEE)f(802.11)i(wireless)e(net-)135
+57525 y(w)-10 b(orks.)429 b(T)-70 b(echnical)430 b(Report)e
+(MSR-TR-2003-41,)471 b(Microsoft)428 b(Re-)135 58687
+y(search,)250 b(June)f(2003.)-1524 59960 y([2])497 b(D.)450
+b(Aguayo,)500 b(J.)449 b(Bick)-10 b(et,)500 b(S.)449
+b(Bisw)-10 b(as,)498 b(D.)450 b(S.)f(J.)f(D.)i(Couto,)499
+b(and)135 61122 y(R.)224 b(Morris.)e(MIT)h(roofnet)g(implementation.)j
+(http://www)-65 b(.pdos.lcs.)135 62285 y(mit.edu/roofnet/design/,)251
+b(Aug.)e(2003.)-1524 63558 y([3])497 b(A.)647 b(Ak)-10
+b(ella,)745 b(R.)646 b(Karp,)745 b(C.)645 b(P)-15 b(apadimitrou,)746
+b(S.)646 b(Seshan,)745 b(and)135 64720 y(S.)338 b(Shenk)-10
+b(er)-55 b(.)339 b(Sel\002sh)e(beha)-20 b(vior)339 b(and)f(stability)g
+(of)f(the)h(Internet:)486 b(A)135 65882 y(g)-5 b(ame-theoretic)375
+b(analysis)f(of)f(TCP.)f(In)h Fg(A)-30 b(CM)373 b(SIGCOMM)p
+Fk(,)g(Aug.)135 67044 y(2002.)p -2022 67548 10627 45
+v -1911 68289 a Fd(6)-1524 68712 y Fk(As)390 b(one)g(data)h(point,)426
+b(Saroiu)390 b Fg(et)h(al.)732 b Fk(found)391 b(that)f(a)h(lar)-18
+b(ge)390 b(fraction)h(of)-2022 69709 y(users)343 b(in)h(a)g(peer)-20
+b(-to-peer)345 b(\002le)f(sharing)g(system)g(were)h(cooperati)-25
+b(v)-15 b(e)346 b(e)-25 b(v)-15 b(en)-2022 70705 y(in)248
+b(the)h(absence)h(of)e(an)-15 b(y)250 b(incenti)-25 b(v)-15
+b(e)250 b(to)e(cooperate)i(or)f(disincenti)-25 b(v)-15
+b(e)249 b(ag)-5 b(ainst)-2022 71701 y(cheating)250 b([19].)27699
+-915 y([4])498 b(S.)386 b(J.)f(Brams.)f Fg(Ne)-40 b(gotiation)386
+b(Games:)582 b(Applying)386 b(game)g(theory)g(to)29359
+247 y(bar)-37 b(gaining)250 b(and)f(arbitr)-15 b(ation)p
+Fk(.)249 b(Routeledge,)h(1990.)27699 1520 y([5])498 b(S.)348
+b(Buche)-15 b(gger)348 b(and)g(J.-Y)-129 b(.)347 b(L.)g(Boudec.)h
+(Performance)g(analysis)f(of)29359 2682 y(the)236 b(CONFID)-40
+b(ANT)236 b(protocol:)302 b(Cooperation)236 b(of)g(nodes)f(\227)h(f)-10
+b(airness)29359 3844 y(in)249 b(dynamic)i(ad-hoc)e(netw)-10
+b(orks.)250 b(In)f Fg(MobiHOC)p Fk(,)g(June)g(2002.)27699
+5117 y([6])498 b(L.)377 b(Buttyan)h(and)g(J.)f(Hubaux.)h(Stimulating)g
+(cooperation)h(in)e(self-)29359 6280 y(or)-18 b(g)-5
+b(anizing)506 b(mobile)f(ad)g(hoc)g(netw)-10 b(orks.)504
+b Fg(A)-30 b(CM/Kluwer)503 b(Mobile)29359 7442 y(Networks)248
+b(and)i(Applications)p Fk(,)f(8\(5\),)g(Oct.)g(2003.)27699
+8715 y([7])498 b(D.)355 b(Clark,)381 b(J.)355 b(Wrocla)-15
+b(wski,)382 b(K.)355 b(Sollins,)381 b(and)356 b(R.)e(Braden.)h(T)-45
+b(ussle)29359 9877 y(in)369 b(c)-15 b(yberspace:)549
+b(De\002ning)370 b(tomorro)-25 b(w')-55 b(s)368 b(Internet.)h(In)g
+Fg(A)-30 b(CM)367 b(SIG-)29359 11040 y(COMM)p Fk(,)249
+b(Aug.)h(2002.)27699 12313 y([8])498 b(J.)249 b(Cro)-25
+b(wcroft,)249 b(R.)g(Gibbens,)h(F)-80 b(.)249 b(K)-25
+b(elly)-65 b(,)251 b(and)f(S.)f(Ostring.)g(Modelling)29359
+13475 y(incenti)-25 b(v)-15 b(es)420 b(for)e(collaboration)h(in)g
+(mobile)g(ad)g(hoc)g(netw)-10 b(orks.)418 b(In)29359
+14637 y Fg(W)-55 b(iOpt)p Fk(,)250 b(Mar)-55 b(.)249
+b(2003.)27699 15910 y([9])498 b(J.)242 b(Feigenbaum,)j(C.)d(P)-15
+b(apadimitriou,)244 b(R.)e(Sami,)i(and)f(S.)f(Shenk)-10
+b(er)-55 b(.)243 b(A)29359 17073 y(BGP-based)218 b(mechanism)h(for)e
+(lo)-25 b(west-cost)218 b(routing.)g(In)g Fg(A)-30 b(CM)217
+b(Prin-)29359 18235 y(ciples)250 b(of)f(Distrib)-20 b(uted)249
+b(Computing)p Fk(,)g(July)g(2002.)27201 19508 y([10])498
+b(K.)300 b(Lai,)312 b(M.)299 b(Feldman,)313 b(I.)300
+b(Stoica,)312 b(and)301 b(J.)e(Chuang.)h(Incenti)-25
+b(v)-15 b(es)300 b(for)29359 20670 y(cooperation)364
+b(in)e(peer)-20 b(-to-peer)363 b(netw)-10 b(orks.)363
+b(In)f Fg(W)-92 b(orkshop)363 b(on)f(Eco-)29359 21833
+y(nomics)250 b(of)f(P)-80 b(eer)-20 b(-to-P)-80 b(eer)249
+b(Systems)p Fk(,)g(June)g(2003.)27201 23106 y([11])498
+b(R.)346 b(Mahajan,)370 b(M.)346 b(Rodrig,)369 b(D.)346
+b(W)-80 b(etherall,)372 b(and)346 b(J.)g(Zahorjan.)g(En-)29359
+24268 y(couraging)269 b(cooperation)g(in)f(multi-hop)g(wireless)g(netw)
+-10 b(orks.)268 b(T)-70 b(ech-)29359 25430 y(nical)311
+b(Report)g(CSE-04-06-01,)325 b(Uni)-25 b(v)-15 b(ersity)311
+b(of)f(W)-80 b(ashington,)327 b(June)29359 26593 y(2004.)27201
+27866 y([12])498 b(R.)190 b(Mahajan,)202 b(D.)191 b(W)-80
+b(etherall,)203 b(and)191 b(T)-74 b(.)190 b(Anderson.)g(Interdomain)h
+(rout-)29359 29028 y(ing)361 b(with)g(ne)-15 b(gotiation.)361
+b(T)-70 b(echnical)362 b(Report)f(CSE-04-06-02,)387 b(Uni-)29359
+30190 y(v)-15 b(ersity)249 b(of)g(W)-80 b(ashington,)250
+b(June)g(2004.)27201 31463 y([13])498 b(S.)285 b(Marti,)294
+b(T)-74 b(.)285 b(J.)g(Giuli,)294 b(K.)285 b(Lai,)294
+b(and)286 b(M.)f(Bak)-10 b(er)-55 b(.)285 b(Mitig)-5
+b(ating)285 b(router)29359 32625 y(misbeha)-20 b(vior)318
+b(in)g(mobile)g(ad-hoc)g(netw)-10 b(orks.)317 b(In)h
+Fg(A)-30 b(CM)316 b(MobiCom)p Fk(,)29359 33788 y(Aug.)250
+b(2000.)27201 35061 y([14])498 b(R.)209 b(B.)f(Myerson)h(and)g(M.)g(A.)
+g(Satterthw)-10 b(aite.)210 b(Ef)-25 b(\002cient)209
+b(mechanisms)29359 36223 y(for)231 b(bilateral)h(trading.)f
+Fg(J)-25 b(ournal)232 b(of)f(Economic)h(Theory)p Fk(,)j(29\(2\),)g(Apr)
+-55 b(.)29359 37385 y(1983.)250 b(Cited)f(in)g(Brams)f([4].)27201
+38658 y([15])498 b(M.)314 b(J.)g(Osborne)g(and)h(A.)f(Rubenstein.)h
+Fg(A)f(cour)-10 b(se)314 b(in)g(game)h(theory)p Fk(.)29359
+39821 y(MIT)248 b(Press,)h(1994.)27201 41094 y([16])498
+b(B.)210 b(Ragha)-20 b(v)-25 b(an)212 b(and)g(A.)f(C.)f(Snoeren.)h
+(Priority)g(forw)-10 b(arding)211 b(in)g(ad)g(hoc)29359
+42256 y(netw)-10 b(orks)399 b(with)g(self-interested)g(parties.)g(In)f
+Fg(W)-92 b(orkshop)399 b(on)g(Eco-)29359 43418 y(nomics)250
+b(of)f(P)-80 b(eer)-20 b(-to-P)-80 b(eer)249 b(Systems)p
+Fk(,)g(June)g(2003.)27201 44691 y([17])498 b(H.)341 b(Raif)-25
+b(f)-10 b(a.)341 b Fg(The)g(art)f(and)h(science)g(of)g(ne)-40
+b(gotiation)p Fk(.)342 b(Harv)-25 b(ard)341 b(Uni-)29359
+45854 y(v)-15 b(ersity)249 b(Press,)f(1982.)27201 47127
+y([18])498 b(T)-74 b(.)350 b(Roughg)-5 b(arden)351 b(and)f(E.)g(T)-80
+b(ardos.)349 b(Ho)-25 b(w)351 b(bad)f(is)g(sel\002sh)f(routing?)29359
+48289 y Fg(J)-25 b(ournal)250 b(of)f(the)g(A)-30 b(CM)p
+Fk(,)249 b(49\(2\),)g(Mar)-55 b(.)249 b(2002.)27201 49562
+y([19])498 b(S.)331 b(Saroiu,)352 b(K.)331 b(Gummadi,)353
+b(and)331 b(S.)g(D.)h(Gribble.)f(A)g(measurement)29359
+50724 y(study)506 b(of)f(peer)-20 b(-to-peer)506 b(\002le)g(sharing)g
+(systems.)e(In)i Fg(Multimedia)29359 51887 y(Computing)250
+b(and)f(Networking)p Fk(,)g(Jan.)g(2002.)27201 53160
+y([20])498 b(S.)567 b(Shenk)-10 b(er)-55 b(.)567 b(Making)g(greed)h(w)
+-10 b(ork)566 b(in)h(netw)-10 b(orks:)944 b(A)567 b(g)-5
+b(ame-)29359 54322 y(theoretic)408 b(analysis)f(of)g(switch)g(service)g
+(disciplines.)g Fg(IEEE/A)-30 b(CM)29359 55484 y(T)-55
+b(r)-15 b(ansactions)249 b(on)g(Networking)p Fk(,)g(3\(6\):819\226831,)
+h(Dec.)g(2003.)27201 56757 y([21])498 b(V)-129 b(.)447
+b(Srini)-25 b(v)g(asan,)495 b(P)-111 b(.)447 b(Nuggehalli,)496
+b(C.)446 b(F)-80 b(.)446 b(Chiasserini,)494 b(and)446
+b(R.)g(R.)29359 57919 y(Rao.)334 b(Cooperation)g(in)g(wireless)g(ad)g
+(hoc)g(netw)-10 b(orks.)334 b(In)g Fg(IEEE)e(IN-)29359
+59082 y(FOCOM)p Fk(,)249 b(Mar)-55 b(.)249 b(2003.)27201
+60355 y([22])498 b(A.)367 b(Urpi,)396 b(M.)367 b(Bonuccelli,)397
+b(and)367 b(S.)f(Giordano.)i(Modelling)f(coop-)29359
+61517 y(eration)337 b(in)f(mobile)g(ad)g(hoc)h(netw)-10
+b(orks:)482 b(A)336 b(formal)g(description)g(of)29359
+62679 y(sel\002shness.)257 b(In)h Fg(W)-55 b(iOpt'03)258
+b(W)-92 b(orkshop:)327 b(Modeling)258 b(and)g(Optimiza-)29359
+63842 y(tion)249 b(in)h(Mobile)-10 b(,)249 b(Ad)g(Hoc)h(and)f(W)-55
+b(ir)-37 b(eless)249 b(Networks)p Fk(,)f(Mar)-55 b(.)249
+b(2003.)27201 65115 y([23])498 b(S.)194 b(Zhong,)205
+b(Y)-129 b(.)195 b(Y)-100 b(ang,)206 b(and)194 b(J.)g(Chen.)g(Sprite:)
+281 b(A)194 b(simple,)205 b(cheat-proof,)29359 66277
+y(credit-based)252 b(system)e(for)h(mobile)g(ad)g(hoc)h(netw)-10
+b(orks.)251 b(In)g Fg(IEEE)e(IN-)29359 67439 y(FOCOM)p
+Fk(,)g(Mar)-55 b(.)249 b(2003.)p eop
+%%Trailer
+end
+userdict /end-hook known{end-hook}if
+%%EOF

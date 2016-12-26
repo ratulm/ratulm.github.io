@@ -1,0 +1,195 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 9">
+<link id=Main-File rel=Main-File href="../talk.html">
+<link rel=Preview href=preview.wmf>
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+p\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+v\:textbox {display:none;}
+</style>
+<![endif]-->
+<title>RED-PD</title>
+<meta name=Description content="14-Apr-01: Tuning Identification">
+<link rel=next href="v3_slide0032.htm">
+<![if !ppt]>
+<script>
+<!--
+function Update()
+{
+  if( window.name == "PPTSld" )
+    parent.SlideUpdated('v3_slide0012.htm');   
+  else
+    parent.location.href = "v3_document.htm";
+}
+
+function NoHref() {}
+//-->
+</script>
+<![endif]>
+</head>
+
+<body background="v3_master06_background.gif" bgcolor=white alink="#b2b2b2"
+link="#6f89f7" vlink="#cfdbfd" text="#40458c" topmargin=0 leftmargin=0
+onload="Update()">
+
+<table border=0 valign=top width=475 height=356 cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=36 height=0 nowrap><img src="v3_space.gif" border=0></td>
+  <td width=12 height=0 nowrap><img src="v3_space.gif" border=0></td>
+  <td width=216 height=0 nowrap><img src="v3_space.gif" border=0></td>
+  <td width=160 height=0 nowrap><img src="v3_space.gif" border=0></td>
+  <td width=11 height=0 nowrap><img src="v3_space.gif" border=0></td>
+  <td width=5 height=0 nowrap><img src="v3_space.gif" border=0></td>
+ </tr>
+ <tr>
+  <td width=475 height=44 colspan=7></td>
+ </tr>
+ <tr>
+  <td width=36 height=30></td>
+  <td width=228 height=30 colspan=2>
+  <table border=0 valign=top cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=228 height=30><font face=Tahoma color="#660066" size=4>Tuning
+    Identification</font><br>
+    </td>
+   </tr>
+  </table>
+  </td>
+  <td width=211 height=30 colspan=4></td>
+ </tr>
+ <tr>
+  <td width=475 height=38 colspan=7></td>
+ </tr>
+ <tr>
+  <td width=48 height=188 colspan=2></td>
+  <td width=392 height=188 colspan=4>
+  <table border=0 valign=top cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=24 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=20 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=1 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=3 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=24 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=1 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=29 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=198 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=34 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=17 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=7 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=12 height=0 nowrap><img src="v3_space.gif" border=0></td>
+    <td width=12 height=0 nowrap><img src="v3_space.gif" border=0></td>
+   </tr>
+   <tr>
+    <td width=351 height=20 colspan=10><font face=Tahoma size=2>1.<span
+    style='mso-tab-count:1'>   </span>Issue: all flows suffer a drop once in a
+    while</font><br>
+    </td>
+    <td width=42 height=20 colspan=4></td>
+   </tr>
+   <tr>
+    <td width=393 height=2 colspan=14></td>
+   </tr>
+   <tr>
+    <td width=24 height=17></td>
+    <td width=20 height=17><font face=Wingdings color="#40458c" size=1>§</font></td>
+    <td width=338 height=17 colspan=11><font face=Tahoma size=1>keep the drop
+    history of <i>K.CELength(R,p)<span style="mso-spacerun: yes">  </span></i>seconds
+    and</font><br>
+    </td>
+    <td width=11 height=17></td>
+   </tr>
+   <tr>
+    <td width=44 height=16 colspan=2></td>
+    <td width=256 height=16 colspan=6><font face=Tahoma size=1>identify flows
+    with K or more drops (K&gt;1)</font><br>
+    </td>
+    <td width=93 height=16 colspan=6></td>
+   </tr>
+   <tr>
+    <td width=393 height=25 colspan=14></td>
+   </tr>
+   <tr>
+    <td width=334 height=20 colspan=9><font face=Tahoma size=2>2.<span
+    style='mso-tab-count:1'>   </span>Issue: multiple losses in a window of
+    data</font><br>
+    </td>
+    <td width=59 height=20 colspan=5></td>
+   </tr>
+   <tr>
+    <td width=393 height=2 colspan=14></td>
+   </tr>
+   <tr>
+    <td width=24 height=17></td>
+    <td width=20 height=17><font face=Wingdings color="#40458c" size=1>§</font></td>
+    <td width=349 height=17 colspan=12><font face=Tahoma size=1>maintain the
+    drop history as M separate lists instead of a</font><br>
+    </td>
+   </tr>
+   <tr>
+    <td width=44 height=16 colspan=2></td>
+    <td width=58 height=16 colspan=5><font face=Tahoma size=1>single list</font><br>
+    </td>
+    <td width=291 height=16 colspan=7></td>
+   </tr>
+   <tr>
+    <td width=393 height=2 colspan=14></td>
+   </tr>
+   <tr>
+    <td width=48 height=15 colspan=4></td>
+    <td width=24 height=15><font face=Tahoma color="#6f89f7" size=1>o</font></td>
+    <td width=286 height=15 colspan=6><font face=Tahoma size=1>length of each
+    list is <i>(K/M) .CELength(R,p)</i><span style="mso-spacerun: yes"> 
+    </span>seconds</font><br>
+    </td>
+    <td width=35 height=15 colspan=3></td>
+   </tr>
+   <tr>
+    <td width=393 height=2 colspan=14></td>
+   </tr>
+   <tr>
+    <td width=24 height=17></td>
+    <td width=20 height=17><font face=Wingdings color="#40458c" size=1>§</font></td>
+    <td width=314 height=17 colspan=9><font face=Tahoma size=1>identify flows
+    with drops in <i>K</i> or more of the <i>M</i> lists</font><br>
+    </td>
+    <td width=35 height=17 colspan=3></td>
+   </tr>
+   <tr>
+    <td width=393 height=2 colspan=14></td>
+   </tr>
+   <tr>
+    <td width=48 height=15 colspan=4></td>
+    <td width=24 height=15><font face=Tahoma color="#6f89f7" size=1>o</font></td>
+    <td width=298 height=15 colspan=7><font face=Tahoma size=1>lets go flows
+    with more than K drops in a short period</font><br>
+    </td>
+    <td width=23 height=15 colspan=2></td>
+   </tr>
+  </table>
+  </td>
+  <td width=35 height=188></td>
+ </tr>
+ <tr>
+  <td width=475 height=35 colspan=7></td>
+ </tr>
+ <tr>
+  <td width=424 height=12 colspan=4></td>
+  <td width=11 height=12><img src="v3_master06_image018.gif" border=0 width=11
+  height=12></td>
+  <td width=40 height=12 colspan=2></td>
+ </tr>
+ <tr>
+  <td width=475 height=9 colspan=7></td>
+ </tr>
+</table>
+
+</body>
+
+</html>

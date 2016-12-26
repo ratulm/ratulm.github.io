@@ -1,0 +1,315 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.77 [en] (X11; U; Linux 2.4.7-UP i686) [Netscape]">
+   <title>How Akamai Works</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EF" vlink="#51188E" alink="#FF0000">
+&nbsp;
+<br>Here are my conjectures on how Akamai works. These are based on some
+experiments done on April 4th, 2000 using mainly "dig". These were conducted
+from some machines at UW and one at MIT.
+<h3>
+1. What an Akamaized page looks like?</h3>
+Suppose you enter www.cnn.com in your browser. This fetches the index.html
+file from the cnn server. In that file there will be images which will
+be pointing to the Akamai servers. Those URLs look like
+<p><a href="http://a388.g.akamaitech.net/7/388/21/fc35ed7f236388/cnn.com/images/hub2000/ad.info.gif">http://a388.g.akamaitech.net/7/388/21/fc35ed7f236388/cnn.com/images/hub2000/ad.info.gif</a>
+<br><a href="http://a1380.g.akamaitech.net/7/1380/175/03202000/www1.jcpenney.com/images/homepagev4/homepage/catalog.gif">http://a1380.g.akamaitech.net/7/1380/175/03202000/www1.jcpenney.com/images/homepagev4/homepage/catalog.gif</a>
+<br><a href="http://a620.g.akamai.net/7/620/16/259fdbf4ed29de/www.computer.com/images/learn_more_off.gif">http://a620.g.akamai.net/7/620/16/259fdbf4ed29de/www.computer.com/images/learn_more_off.gif</a>
+<br>&nbsp;
+<ul>
+<li>
+The number after "a", I think, identifies the customer. So 388 is cnn,
+1380 is jcpenny and 620 is computer.com. Note that it is crucial to have
+different machine name for each customer as will become clear later.</li>
+
+<li>
+I am not sure what 7 stands for but it was present in almost of the Akamaized
+URLs I saw.</li>
+
+<li>
+Next is again the customer identifier.</li>
+
+<li>
+What the following&nbsp; two identifiers (21 and&nbsp; fade2068e7503e for
+cnn) represent is not fully clear. A plausible explanation (courtesy <a href="mailto:cardwell@cs.washington.edu">Neal
+Cardwell</a>) is&nbsp; that the 14 digit hex strings are checksums of the
+content that path refers to. That way the name always changes if the content
+changes so the akamai caches at the edge don't have to worry about consistency
+or freshness.</li>
+
+<br><b>* update </b>(courtesy <a href="mailto:jsjacob@iamnota.com">John
+Jacob</a>): The hex string is created using "md5sum [file_name] |&nbsp;
+cut -c3-16". It can also be replaced by a cache time-to -live value like
+"1d" for one day,&nbsp; and "15m" for 15 mins.
+<li>
+Next is the customer url itself. The path after that is identical to the
+path on the customer machine. So the above jcpenny URL and "<a href="http://www1.jcpenney.com/images/homepagev4/homepage/catalog.gif">www1.jcpenney.com/images/homepagev4/homepage/catalog.gif</a>"
+lead to the same gif.</li>
+</ul>
+Getting a web site in the above form is not too tough either. Akamai has
+a simple tool, Free Flow Launcher, for its customers that they use to Akamaize
+their pages. The users will specify what content they want to be served
+through Akamai and the tool will go ahead and Akamaize the URLs. This way
+the customers still have complete control of what gets served through Akamai
+and what they still are in charge of. Typicall all the dynamic content
+and stuff like transactions and cookies are taken by of by the customer's
+server only. Now the customer is responsible only for the content he choses
+to server himself and first few hits of other content till the Akamai caches
+warm up.
+<h3>
+2. DNS Black Magic</h3>
+I do not know the DNS system inside out, so the information here could
+be incomplete or simply wrong. Believe it at your own risk. Below is the
+chronology of steps that happen when an object from an Akamai server is
+to be fetched.
+<h4>
+Step 1</h4>
+From the top level domain you first get the name server of akamaitech.net
+domain. Interesting things happen here itself. There are 8 name servers
+reported z[A-H].akamaitech.net&nbsp; This information obtained is good
+on the scale of days.
+<p>Below is part of "dig" output.
+<br>The columns are &lt;Machine-Name> &lt;Lifetime of cached information>
+&lt;IN (for query-type)> &lt;A (for query-class)> &lt;IP Address.
+<br>(There is no need to worry about the query type and query class here.)
+<p>@MIT
+<br>ZA.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3h30m6s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IN A&nbsp;&nbsp;&nbsp; 216.200.14.134
+<br>ZB.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3h30m6s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IN A&nbsp;&nbsp;&nbsp; 204.178.107.226
+<br>ZC.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3h30m6s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IN A&nbsp;&nbsp;&nbsp; 209.189.112.38
+<br>ZD.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3h30m2s&nbsp;&nbsp;&nbsp;&nbsp;
+IN A&nbsp;&nbsp;&nbsp; 216.200.119.8
+<br>ZE.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3h30m2s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IN A&nbsp;&nbsp;&nbsp; 216.32.65.14
+<br>ZF.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d44m5s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IN A&nbsp;&nbsp;&nbsp; 128.11.47.240
+<br>ZG.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23h24m25s IN A&nbsp;&nbsp;
+209.185.188.14
+<br>ZH.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23h24m25s IN A&nbsp;&nbsp;
+204.178.110.73
+<p>@UW
+<br>zA.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+204.178.107.226
+<br>ZB.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+128.11.47.240
+<br>ZC.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+216.32.65.14
+<br>ZD.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+38.202.25.166
+<br>ZE.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+216.200.14.134
+<br>ZF.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+204.178.110.73
+<br>ZG.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+209.185.188.14
+<br>ZH.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1d16m48s IN A&nbsp;&nbsp;
+216.200.119.8
+<p>A couple of points are of interest here.
+<ul>
+<li>
+The machines at MIT and UW see different information. This could be because
+they access different NET name servers.</li>
+
+<li>
+Another interesting observation here is that IP addresses in the two outputs
+are more or less (one exception) permutation of each other. What is achieved
+by having a different IP address for different names is not clear to me.
+But having the IP addresses returned in different order might achieve load
+balancing.</li>
+</ul>
+
+<h4>
+Step 2</h4>
+From one of the name servers above you go and get the name servers for
+domain g.akamaitech.net. Now this step is where most of the stuff happens.
+A few observations about the information returned at this step.
+<ul>
+<li>
+&nbsp;The name servers are n[0-9]g.akamaitech.net.</li>
+
+<li>
+This information can be cached from 30mins to 1hour.</li>
+
+<li>
+The IP addresses of name servers returned are different for different client
+locations (IP addresses).</li>
+
+<li>
+The set of name server IPs returned to a particular client changes with
+time.&nbsp; So if you access cnn.com at different times (separated by DNS
+cache expiry) you could be contacting different name servers and thus downloading
+objects from different servers.</li>
+</ul>
+Below is a part of dig output from MIT and one of the machines UW (the
+format of the output explained above)
+<p>@MIT
+<br>n1g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 27m48s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.7
+<br>n2g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m45s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.8
+<br>n7g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 31m44s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+64.26.141.69
+<br>n3g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 18m14s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.6
+<br>n4g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 18m14s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.6
+<br>n8g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 18m14s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.6
+<br>n5g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 18m14s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.6
+<br>n0g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 18m14s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+18.7.0.6
+<br>n6g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 18m14s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+204.212.232.17
+<p>@UW
+<br>n2g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 46m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.126
+<br>n3g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.141
+<br>n8g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n4g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n5g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n6g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n0g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.118
+<br>n1g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 31m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.119
+<br>n7g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 31m13s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.172.39
+<p>Note that all the IP addresses are not unique in a set. My take is that
+this makes future expansions easier with changed restricted to lesser places.
+<p>My belief is that this is THE step where all the Akamai DNS magic is.
+It will hand out different set of name server IPs to client contacting
+from different IP addresses. How it determines the nearest set of servers
+from IP addresses is anybody's guess (proprietary, but allegedly, they
+use&nbsp;BGP peering with ISPs that host the Akamai cluster, thus giving
+them a rough estimate of the distance of requesting user from that site
+- courtesy <a href="mailto:tommy@almestien.com">Tommy Larsen</a>). Apart
+from wire latency other factors they claim to consider are load on their
+servers and Internet congestion. They also claim to be able to monitor
+their servers in real time (once per second). This means that gives out
+different sets of name server IPs at different times, which explains the
+short lifetime (30mins - 1hour) of this information. For instance following
+is part of dig output from the same UW machine at different times (or even
+different machines at same time - see below).
+<p>@UW1
+<br>n2g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 46m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.126
+<br>n3g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.141
+<br>n8g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n4g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n5g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n6g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.60.167
+<br>n0g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 16m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.118
+<br>n1g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 31m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+192.215.32.119
+<br>n7g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 31m11s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.32.172.39
+<p>@UW2 (same machine at a different time)
+<br>n3g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+199.239.1.133
+<br>n4g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+199.239.1.133
+<br>n6g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+199.239.1.133
+<br>n5g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.52.232.129
+<br>n0g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.52.232.129
+<br>n7g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 36m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+204.137.152.17
+<br>n1g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 36m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+216.52.232.130
+<br>n2g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+199.239.1.133
+<br>n8g.akamaitech.NET.&nbsp;&nbsp;&nbsp;&nbsp; 21m28s IN A&nbsp;&nbsp;&nbsp;&nbsp;
+199.239.1.133
+<p>This has another nice (for Akamai load balancing), or not so nice (for
+things like organization wide caches) side effect. Different machines could
+be downloading the same object from different Akamai servers at the same
+time, if&nbsp; those machines connect to different primary name servers
+within in the department (like our setup at UW-CSE).
+<h4>
+Step 3</h4>
+In the final step you go to one of the n[09]g.akamaitech.net name server
+and get the IP address of the machine you are looking for (e.g.:&nbsp;
+a388.g.akamaitech.net). The server will return two IP addresses for each
+machine name. For instance, see the partial dig output below
+<p>a1388.g.akamaitech.net.&nbsp; 20S IN A&nbsp; 216.52.232.134
+<br>a1388.g.akamaitech.net.&nbsp; 20S IN A&nbsp; 216.52.232.149
+<p>Observe that the lifetime of this information is a mere 20 seconds (which
+corresponds to one or two web pages viewed) . So after this time period
+you will go back to the Akamai name server to get the IP addresses.&nbsp;
+What this means is that even if both the machines go down, it is highly
+unlikely that this will be seen by the client.&nbsp; (assuming that the
+Akamai name servers find this out and return a different IP in a failure
+scenario).
+<p>It is likely that all the machines don't host the content of all the
+customers. Suppose that there are three servers (three different machines)
+- A,B and C at a particular site (a site will typically have multiple machines).
+And the customers are X, Y and Z. So A will host X,Y, B will host Y,Z and
+C will host Z,X. This kind of an arrangement has a two-fold advantage
+<br>1) No server has to host all the customers' content. Easing the load
+on it and also making the content serving faster.
+<br>2) If any one server goes down, no customer is fully disconnected as
+there is another server (potentially more) with its tree.
+<p>A customer's content could be present at more than two servers at a
+site, but it makes sense to return the same two machines (till they are
+up) because of file caching, the object does not have to retrieved from
+the disk most of the times.
+<p>Another observed feature is that all the name servers in the set (n[0-9]g.akamaitech.net)
+returned in above step, give the same two IP addresses for a queried server
+(like a1388.g.akamaitech.net). This could mean that the configuration of
+all the servers in a set is identical and multiple servers are there just
+for sharing the load.
+<p>
+<hr WIDTH="100%">
+<br><u>Akamai caches</u> (courtesy <a href="mailto:cardwell@cs.washington.edu">Neal
+Cardwell</a>)
+<br>The akamai machines at the edge are PCs running Linux and a slightly
+modified version of the squid cache. They are doing on-demand caching rather
+than push-based replication.
+<p><u>Name server differences</u>
+<br>An artifact of the above exploration is the observation that different
+versions of named&nbsp; might be running in the department (@UW-CSE).
+<br>While 128.95.4.1 (bs4) always returns the two IP addresses in different
+order (to get some sort of load balancing), 128.95.1.6 (bs1) does no such
+thing.
+<br>And the one at MIT (18.26.0.36) seems to be returning the IP addresses
+in a random order.<a href="http://attendeeassistant.com/new/site/3/FF_White_Paper-non%20NDA_4_20003.pdf"></a>
+<p>
+<hr WIDTH="100%">
+<br>Akamai Documents (courtesy <a href="mailto:wjbivens@digitalme.com">Jay
+Bivens</a>,&nbsp; <a href="mailto:rdevine@xlnetworks.net">Bob Devine</a>)
+<ol>
+<li>
+Free Flow (<a href="akamai/freeflow.pdf">pdf</a>)</li>
+
+<li>
+Technical FAQ (<a href="akamai/technical_faq.ps">ps</a>)</li>
+
+<li>
+General FAQ (<a href="akamai/general_faq.ps">ps</a>)</li>
+</ol>
+
+<hr WIDTH="100%">
+<br>As stated above, these are just conjectures. Corrections/Comments welcome.
+<br>Last Modified : 9/03/01
+<br>&nbsp;<a href="mailto:ratul@cs.washington.edu">ratul@cs.washington.edu</a>
+</body>
+</html>

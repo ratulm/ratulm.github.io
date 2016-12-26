@@ -1,0 +1,211 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+   <head>
+      <title>VanLAN testbed</title>
+      <!-- SDK is at http://dev.live.com/virtualearth/sdk/ -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script src="http://dev.virtualearth.net/mapcontrol/v4/mapcontrol.js"></script>
+      <script>
+         var map = null;
+         var pinID = 1;
+         function GetMap()
+         {
+            map = new VEMap('myMap');
+            map.LoadMap(new VELatLong(47.6411476269696, -122.125589847565), 16 ,'r' ,false);
+         }
+         function AddPin(lat,long,title,main)
+         {
+            var pin = new VEPushpin(
+               pinID,
+               (new VELatLong(lat,long)),
+               null,
+               title,
+               main
+               );
+            map.AddPushpin(pin);
+            pinID++;
+         }
+         function AddPinId(idpin, lat,long,title,main)
+         {
+            var pin = new VEPushpin(
+               idpin,
+               (new VELatLong(lat,long)),
+               null,
+               title,
+               main
+               );
+            try {
+              map.AddPushpin(pin);
+            } catch (err) {
+              DeletePin(idpin);
+            }
+         }
+         function DeletePin(id)
+         {
+            try
+            {
+                 if (id!=null)
+                 {
+                 map.DeletePushpin(id);
+                 }
+                 else 
+               {
+                map.DeleteAllPushpins();
+                }
+            }
+            catch (err)
+            {
+                alert(err.message);
+            }
+         }
+         function DeletePoly(id)
+         {
+            try
+            {
+                if (id!=null)
+                {
+                map.DeletePolyline(id);
+                }
+                else
+                {
+                map.DeleteAllPolylines();
+                }
+            }
+            catch (err)
+            {
+                <!-- alert(err.message); -->
+                <!-- ignore this so we can support the clear all function -->
+            }
+         }
+         function DrawPoly(id,points,width,color)
+         {
+          try {
+            poly = new VEPolyline(id,points);
+            poly.SetWidth(width);
+            poly.SetColor(color);
+            map.AddPolyline(poly);
+            <!--map.SetMapView(points);-->
+          }
+          catch (err) 
+          {
+             <!-- alert(err.message); -->
+             <!-- we assume that the exception will arise only when the line is already present; so we delete instead -->
+             DeletePoly(id);
+          }
+         }
+        function DrawPolyByVar(poly) 
+        {
+          try {
+             map.AddPolyline(poly);
+          } 
+          catch (err) 
+          {
+             DeletePoly(poly.id);
+          }
+        } 
+
+     </script>
+     </head>
+     <body onload="GetMap();
+    AddPinId('bs_1_1', 47.6411476269696, -122.125589847565, 'bs_1_1', null);
+    AddPinId('bs_1_2', 47.6406705247778, -122.125589847565, 'bs_1_2', null);
+    AddPinId('bs_3_1', 47.6405584774192, -122.125096321106, 'bs_3_1', null);
+    AddPinId('bs_3_2', 47.6400777553792, -122.125096321106, 'bs_3_2', null);
+    AddPinId('bs_4_1', 47.6399729357003, -122.125563025475, 'bs_4_1', null);
+    AddPinId('bs_4_2', 47.6394922082725, -122.125563025475, 'bs_4_2', null);
+    AddPinId('bs_5_1', 47.6394054599949, -122.125074863434, 'bs_5_1', null);
+    AddPinId('bs_5_2', 47.6389138837009, -122.125096321106, 'bs_5_2', null);
+    AddPinId('bs_5_3', 47.6389138837009, -122.125836610794, 'bs_5_3', null);
+    AddPinId('bs_6_1', 47.6388921964049, -122.126222848892, 'bs_6_1', null);
+    AddPinId('bs_6_2', 47.6389066546033, -122.126973867416, 'bs_6_2', null);
+">
+  <div id='myMap' style="position:relative; top:50px; left:50px; width:500px; height:500px;"></div>
+
+<p>
+<br>
+<br>
+<br>
+
+
+The map shows the rough locations of our basestations which are spread
+across five office buildings. In addition to the roads visible on the
+map, there are some smaller streets on which the vans travel. 
+
+<p>
+Both BSs and clients are small form factor desktops with two WiFi
+radios. BSs are placed on top floors of the buildings, with their
+antennae are mounted on the roofs. Low-loss coaxial cables (LMR-900
+and LMR-240) connect the radios (inside the desktops) and
+antennae. 
+
+<p>
+<img width=200 src="images/bs-computer.jpg" border=0>
+<img width=200 src="images/bs-antenna.jpg" border=0>
+
+<p>
+Similarly, the clients are placed inside the vans and their
+antennae are mounted on the roof. The computers in the van are powered
+by a dedicated deep cycle battery which powers the computers for about
+four hours after the van is switched off. This time is used for
+software updates through a wireless connection with another computer
+located near the van's overnight parking space.
+
+<p>
+<img width=200 src="images/van-battery.jpg" border=0>
+<img width=200 src="images/van-computer.jpg" border=0>
+<img width=200 src="images/van-antenna.jpg" border=0>
+
+
+<p>
+<br>
+<p>
+<h2>Hardware</h2> 
+
+<ul> 
+
+<li>EnGenius' <a
+href="http://www.engeniustech.com/datacom/products/details.aspx?id=176">EMP-8602</a>
+mini PCI modules, which are based on the Atheros 5213 chipset, are
+used as radios. Their output power is 400 mWat 1Mbps and lower at
+higher transmission rates. The modules are inserted into the desktop
+using a mini-PCI to PCI adapter and connected to a U.FL to N Female
+pigtail.
+
+<p>
+<img width=200 src="images/emp-8602.jpg" border=0>
+<img width=200 src="images/PCI-mPCI.png" border=0>
+<img width=100 src="images/PIG-UFL-N.jpg" border=0>
+
+
+<li>HyperLink's <a
+href="http://www.hyperlinktech.com/web/hg2403mgu.php">HG2403MGU</a>
+antennae are used for the vans and <a
+href="http://www.hyperlinktech.com/web/hgv-2404u.php">HGV-2404U</a>
+antennae are used for the basestations. Both types are omnidirectional
+in the horizontal plane but radiate less energy directly above and
+below.
+
+<p>
+<img width=100 src="images/hg2403mgu.jpg" border=0>
+<img width=200 src="images/pattern_hg2403u-nmo.gif" border=0>
+&nbsp;&nbsp;&nbsp;
+<img width=100 src="images/hgv-2404u.jpg" border=0>
+<img width=200 src="images/pattern_hgv-2404u.gif" border=0>
+
+
+<li>The vans also have GlobalSat's <a
+href=http://www.usglobalsat.com/item.asp?itemid=60&catid=17>BU-353</a>
+GPS unit which is based on the SiRF Star III chipset and outputs data
+once per second. The uncertainty in the location estimate of this
+chipset is considered to be under three meters 95% of the time.
+
+<p>
+<img width=100 src="images/BU-353.jpg" border=0>
+
+<li>All basestations are connected to <a href="http://www.dataprobe.com/products/power/iboot/ibootac/index.html">Dataprobe's iBoot</a> which is used to kickstart stuck up machines
+
+<p>
+<img width=100 src="images/ibootphoto100px.jpg" border=0>
+
+</ul>
+
+</body></html>

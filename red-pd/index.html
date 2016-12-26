@@ -1,0 +1,49 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.7-UP.26 i686) [Netscape]">
+   <title> RED-PD </title>
+</head>
+<body bgcolor="#FFFFFF">
+&nbsp;
+<center>
+<h2>
+RED-PD: RED with Preferential Dropping</h2></center>
+
+<p><b><i>Abstract</i></b>
+<br>FIFO queueing is simple but does not protect traffic from flows that
+send more than their share or flows that fail to use end-to-end congestion
+control. At the other extreme, per-flow scheduling mechanisms provide max-min
+fairness but are more complex, keeping state for all flows going through
+the router. This paper proposes RED-PD (RED with Preferential Dropping),
+a flow-based mechanism that combines simplicity and protection by keeping
+state for just the high-bandwidth flows. RED-PD uses the packet drop history
+at the router to detect high-bandwidth flows in times of congestion and
+preferentially drop packets from these flows. This paper discusses the
+design decisions underlying RED-PD, and presents simulations evaluating
+RED-PD in a range of environments.
+<p><b>Controlling High-Bandwidth Flows at the Congested Router </b>(<a href="http://www.cs.washington.edu/homes/ratul/red-pd/paper_icnp.ps">ps</a>,
+<a href="http://www.cs.washington.edu/homes/ratul/red-pd/paper_icnp.pdf">pdf</a>)
+<br>Ratul Mahajan, Sally Floyd, and David Wetherall
+<br>9th International Conference on Network Protocols (ICNP), November&nbsp;
+2001
+<p><b>Controlling High Bandwidth Flows at the Congested Router </b>(<a href="http://www.aciri.org/floyd/papers/red-pd.TR.ps">ps</a>,
+<a href="http://www.aciri.org/floyd/papers/red-pd.TR.pdf">pdf</a>)
+<br>Ratul Mahajan and Sally Floyd
+<br><a href="http://www.icsi.berkeley.edu">ICSI</a> Tech Report TR-01-001,
+April 2001
+
+<p><b>Talk @ ICNP:</b> (<a href="http://www.cs.washington.edu/homes/ratul/red-pd/icnp-01.ps">ps</a>,
+<a href="http://www.cs.washington.edu/homes/ratul/red-pd/icnp-01.pdf">pdf</a>)
+
+<p><b>Simulation Scripts (<a href="http://www.isi.edu/nsnam">ns</a>)</b>
+<br>The&nbsp; simulation scripts of RED-PD can be found in the ns distribution
+in the directory ~ns/tcl/ex/red-pd. The <a href="README.txt">README</a>
+file in that directory contains the instruction for running the simulations.
+The validation tests for red-pd are in ~ns/tcl/test/test-suite-red-pd.tcl.
+<p>
+<hr WIDTH="100%"><font size=-1>Last Modified: August, 2003</font>
+<br><font size=-1>&lt;ratul@cs.washington.edu></font>
+</body>
+</html>

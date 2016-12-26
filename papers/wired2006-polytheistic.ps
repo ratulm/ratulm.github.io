@@ -1,0 +1,492 @@
+%!PS-Adobe-2.0
+%%Creator: dvips(k) 5.95a Copyright 2005 Radical Eye Software
+%%Title: master.dvi
+%%Pages: 2
+%%PageOrder: Ascend
+%%BoundingBox: 0 0 612 792
+%%DocumentFonts: Times-Roman Times-Italic Helvetica
+%%DocumentPaperSizes: Letter
+%%EndComments
+%DVIPSWebPage: (www.radicaleye.com)
+%DVIPSCommandLine: dvips -Ppdf -G0 -t letter master.dvi -o wired2006.ps
+%DVIPSParameters: dpi=8000
+%DVIPSSource:  TeX output 2006.10.04:2256
+%%BeginProcSet: tex.pro 0 0
+%!
+/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
+N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72
+mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0
+0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{
+landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize
+mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[
+matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round
+exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{
+statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]
+N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin
+/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array
+/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2
+array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N
+df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A
+definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get
+}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}
+B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr
+1 add N}if}B/CharBuilder{save 3 1 roll S A/base get 2 index get S
+/BitMaps get S get/Cd X pop/ctr 0 N Cdx 0 Cx Cy Ch sub Cx Cw add Cy
+setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx sub Cy .1 sub]{Ci}imagemask
+restore}B/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn
+/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put
+}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{
+bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A
+mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{
+SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{
+userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X
+1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4
+index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N
+/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{
+/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)
+(LaserWriter 16/600)]{A length product length le{A length product exch 0
+exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse
+end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask
+grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}
+imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round
+exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto
+fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p
+delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}
+B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{
+p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S
+rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: alt-rule.pro 0 0
+%!
+% Patch by TVZ
+% Makes dvips files draw rules with stroke rather than fill.
+% Makes narrow rules more predictable at low resolutions
+% after distilling to PDF.
+% May have unknown consequences for very thick rules.
+% Tested only with dvips 5.85(k).
+TeXDict begin
+/QV {
+  gsave newpath /ruleY X /ruleX X
+  Rx Ry gt
+  { ruleX ruleY Ry 2 div sub moveto Rx 0 rlineto Ry }
+  { ruleX Rx 2 div add ruleY moveto 0 Ry neg rlineto Rx }
+  ifelse
+  setlinewidth 0 setlinecap stroke grestore
+} bind def
+end
+
+%%EndProcSet
+%%BeginProcSet: 8r.enc 0 0
+% File 8r.enc  TeX Base 1 Encoding  Revision 2.0  2002-10-30
+%
+% @@psencodingfile@{
+%   author    = "S. Rahtz, P. MacKay, Alan Jeffrey, B. Horn, K. Berry,
+%                W. Schmidt, P. Lehman",
+%   version   = "2.0",
+%   date      = "30 October 2002",
+%   filename  = "8r.enc",
+%   email     = "tex-fonts@@tug.org",
+%   docstring = "This is the encoding vector for Type1 and TrueType
+%                fonts to be used with TeX.  This file is part of the
+%                PSNFSS bundle, version 9"
+% @}
+% 
+% The idea is to have all the characters normally included in Type 1 fonts
+% available for typesetting. This is effectively the characters in Adobe
+% Standard encoding, ISO Latin 1, Windows ANSI including the euro symbol,
+% MacRoman, and some extra characters from Lucida.
+% 
+% Character code assignments were made as follows:
+% 
+% (1) the Windows ANSI characters are almost all in their Windows ANSI
+% positions, because some Windows users cannot easily reencode the
+% fonts, and it makes no difference on other systems. The only Windows
+% ANSI characters not available are those that make no sense for
+% typesetting -- rubout (127 decimal), nobreakspace (160), softhyphen
+% (173). quotesingle and grave are moved just because it's such an
+% irritation not having them in TeX positions.
+% 
+% (2) Remaining characters are assigned arbitrarily to the lower part
+% of the range, avoiding 0, 10 and 13 in case we meet dumb software.
+% 
+% (3) Y&Y Lucida Bright includes some extra text characters; in the
+% hopes that other PostScript fonts, perhaps created for public
+% consumption, will include them, they are included starting at 0x12.
+% These are /dotlessj /ff /ffi /ffl.
+% 
+% (4) hyphen appears twice for compatibility with both ASCII and Windows.
+%
+% (5) /Euro was assigned to 128, as in Windows ANSI
+%
+% (6) Missing characters from MacRoman encoding incorporated as follows:
+%
+%     PostScript      MacRoman        TeXBase1
+%     --------------  --------------  --------------
+%     /notequal       173             0x16
+%     /infinity       176             0x17
+%     /lessequal      178             0x18
+%     /greaterequal   179             0x19
+%     /partialdiff    182             0x1A
+%     /summation      183             0x1B
+%     /product        184             0x1C
+%     /pi             185             0x1D
+%     /integral       186             0x81
+%     /Omega          189             0x8D
+%     /radical        195             0x8E
+%     /approxequal    197             0x8F
+%     /Delta          198             0x9D
+%     /lozenge        215             0x9E
+%
+/TeXBase1Encoding [
+% 0x00
+ /.notdef /dotaccent /fi /fl
+ /fraction /hungarumlaut /Lslash /lslash
+ /ogonek /ring /.notdef /breve
+ /minus /.notdef /Zcaron /zcaron
+% 0x10
+ /caron /dotlessi /dotlessj /ff
+ /ffi /ffl /notequal /infinity
+ /lessequal /greaterequal /partialdiff /summation
+ /product /pi /grave /quotesingle
+% 0x20
+ /space /exclam /quotedbl /numbersign
+ /dollar /percent /ampersand /quoteright
+ /parenleft /parenright /asterisk /plus
+ /comma /hyphen /period /slash
+% 0x30
+ /zero /one /two /three
+ /four /five /six /seven
+ /eight /nine /colon /semicolon
+ /less /equal /greater /question
+% 0x40
+ /at /A /B /C
+ /D /E /F /G
+ /H /I /J /K
+ /L /M /N /O
+% 0x50
+ /P /Q /R /S
+ /T /U /V /W
+ /X /Y /Z /bracketleft
+ /backslash /bracketright /asciicircum /underscore
+% 0x60
+ /quoteleft /a /b /c
+ /d /e /f /g
+ /h /i /j /k
+ /l /m /n /o
+% 0x70
+ /p /q /r /s
+ /t /u /v /w
+ /x /y /z /braceleft
+ /bar /braceright /asciitilde /.notdef
+% 0x80
+ /Euro /integral /quotesinglbase /florin
+ /quotedblbase /ellipsis /dagger /daggerdbl
+ /circumflex /perthousand /Scaron /guilsinglleft
+ /OE /Omega /radical /approxequal
+% 0x90
+ /.notdef /.notdef /.notdef /quotedblleft
+ /quotedblright /bullet /endash /emdash
+ /tilde /trademark /scaron /guilsinglright
+ /oe /Delta /lozenge /Ydieresis
+% 0xA0
+ /.notdef /exclamdown /cent /sterling
+ /currency /yen /brokenbar /section
+ /dieresis /copyright /ordfeminine /guillemotleft
+ /logicalnot /hyphen /registered /macron
+% 0xD0
+ /degree /plusminus /twosuperior /threesuperior
+ /acute /mu /paragraph /periodcentered
+ /cedilla /onesuperior /ordmasculine /guillemotright
+ /onequarter /onehalf /threequarters /questiondown
+% 0xC0
+ /Agrave /Aacute /Acircumflex /Atilde
+ /Adieresis /Aring /AE /Ccedilla
+ /Egrave /Eacute /Ecircumflex /Edieresis
+ /Igrave /Iacute /Icircumflex /Idieresis
+% 0xD0
+ /Eth /Ntilde /Ograve /Oacute
+ /Ocircumflex /Otilde /Odieresis /multiply
+ /Oslash /Ugrave /Uacute /Ucircumflex
+ /Udieresis /Yacute /Thorn /germandbls
+% 0xE0
+ /agrave /aacute /acircumflex /atilde
+ /adieresis /aring /ae /ccedilla
+ /egrave /eacute /ecircumflex /edieresis
+ /igrave /iacute /icircumflex /idieresis
+% 0xF0
+ /eth /ntilde /ograve /oacute
+ /ocircumflex /otilde /odieresis /divide
+ /oslash /ugrave /uacute /ucircumflex
+ /udieresis /yacute /thorn /ydieresis
+] def
+
+
+%%EndProcSet
+%%BeginProcSet: texps.pro 0 0
+%!
+TeXDict begin/rf{findfont dup length 1 add dict begin{1 index/FID ne 2
+index/UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]FontType 0
+ne{/Metrics exch def dict begin Encoding{exch dup type/integertype ne{
+pop pop 1 sub dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get
+div def}ifelse}forall Metrics/Metrics currentdict end def}{{1 index type
+/nametype eq{exit}if exch pop}loop}ifelse[2 index currentdict end
+definefont 3 -1 roll makefont/setfont cvx]cvx def}def/ObliqueSlant{dup
+sin S cos div neg}B/SlantFont{4 index mul add}def/ExtendFont{3 -1 roll
+mul exch}def/ReEncodeFont{CharStrings rcheck{/Encoding false def dup[
+exch{dup CharStrings exch known not{pop/.notdef/Encoding true def}if}
+forall Encoding{]exch pop}{cleartomark}ifelse}if/Encoding exch def}def
+end
+
+%%EndProcSet
+TeXDict begin 40258431 52099146 1000 8000 8000 (master.dvi)
+@start /Fa 133[393 443 1[639 443 443 246 344 295 1[443
+443 443 689 246 2[246 443 443 295 393 443 393 443 393
+13[492 2[492 6[295 1[639 492 3[591 19[221 295 221 44[{
+TeXBase1Encoding ReEncodeFont}31 885.568 /Times-Roman
+rf /Fb 206[332 49[{TeXBase1Encoding ReEncodeFont}1 664.176
+/Times-Roman rf /Fc 134[491 2[491 1[308 431 4[553 1[308
+2[308 3[491 553 491 553 553 38[369 55[553 2[{
+TeXBase1Encoding ReEncodeFont}14 1106.96 /Times-Italic
+rf /Fd 206[387 49[{TeXBase1Encoding ReEncodeFont}1 774.872
+/Times-Roman rf /Fe 105[553 1[491 491 24[491 553 553
+799 553 553 308 431 369 553 553 553 553 861 308 553 308
+308 553 553 369 491 553 491 553 491 9[1045 799 1[676
+615 738 1[615 799 799 984 676 2[369 799 1[615 676 799
+1[738 799 1[491 3[308 308 7[553 553 2[277 369 277 2[369
+369 37[615 2[{TeXBase1Encoding ReEncodeFont}57 1106.96
+/Times-Roman rf /Ff 137[664 739 369 664 442 1[739 739
+739 1[295 664 1[295 739 739 1[739 739 2[739 9[1254 4[959
+8[369 3[886 959 13[739 3[739 1[739 6[442 442 40[{
+TeXBase1Encoding ReEncodeFont}26 1328.35 /Helvetica rf
+/Fg 139[369 517 517 2[664 5[369 664 1[369 590 1[590 1[664
+14[812 4[1107 77[{TeXBase1Encoding ReEncodeFont}12 1328.35
+/Times-Italic rf /Fh 138[664 369 5[664 1[369 1[369 1[664
+6[590 14[886 4[1181 77[{TeXBase1Encoding ReEncodeFont}9
+1328.35 /Times-Roman rf /Fi 134[956 3[956 532 744 637
+1[956 956 956 1488 532 2[532 956 956 1[849 956 849 1[849
+13[1064 1276 1[1064 6[637 7[1381 65[{TeXBase1Encoding ReEncodeFont}22
+1912.83 /Times-Roman rf end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 8000dpi
+TeXDict begin
+%%BeginPaperSize: Letter
+letter
+%%EndPaperSize
+ end
+%%EndSetup
+%%Page: 1 1
+TeXDict begin 1 0 bop 4483 5756 a Fi(A)478 b(Polytheistic)g(Approach)j
+(to)d(Secure)h(Interdomain)h(Routing)22071 9920 y Fh(Ratul)332
+b(Mahajan)20844 11469 y Fg(Micr)-60 b(osoft)332 b(Resear)-49
+b(c)-20 b(h)8623 15075 y Ff(W)-40 b(or)20 b(kshop)368
+b(on)g(Inter)33 b(net)369 b(Routing)f(Ev)-33 b(olution)367
+b(and)h(Design)g(\(2006\))2000 20124 y Fe(The)336 b(lar)-20
+b(ge)336 b(body)h(of)e(research)i(on)f(interdomain)g(routing)g
+(security)g(has)g(had)g(little)e(real-w)-11 b(orld)336
+b(impact)g(despite)g(the)f(im-)2000 21453 y(mense)244
+b(importance)g(of)f(the)g(subject.)16465 21051 y Fd(1)17240
+21453 y Fe(I)f(observ)-17 b(e)244 b(that)f(the)g(community)i(seems)d
+(to)h(be)g(in)g(search)g(of)g(\223the)g(one\224)h(\226)f(a)g(perfect)
+2000 22781 y(solution)309 b(in)f(terms)g(of)g(security)-72
+b(,)316 b(deplo)-11 b(yment)311 b(costs,)316 b(deplo)-11
+b(yment)311 b(incenti)-28 b(v)-17 b(es,)318 b(and)310
+b(transition)e(comple)-17 b(xity)-72 b(.)440 b(This)308
+b(per)-22 b(-)2000 24109 y(fect)314 b(solution)h(is)f(e)-17
+b(xpected)317 b(to)e(be)g(attracti)-28 b(v)-17 b(e)316
+b(to)e(all)g(ISPs)g(and)i(\002t)e(the)h(needs)h(of)e(all)g(ISPs.)455
+b(Man)-17 b(y)316 b(such)f(\223monotheistic\224)2000
+25438 y(solutions)267 b(ha)-22 b(v)-17 b(e)268 b(been)g(proposed)g(by)g
+(v)-28 b(arious)267 b(researchers,)i(and)f(ne)-28 b(w)267
+b(ones)h(continue)g(to)f(e)-17 b(xhaust)268 b(the)f(remaining)h(design)
+2000 26766 y(possibilities.)2000 29048 y(I)300 b(ar)-20
+b(gue)302 b(that)e(no)h(such)h(perfect)f(solution)g(e)-17
+b(xists.)413 b(The)301 b(security)g(mechanisms)h(required)g(at)e(lar)
+-20 b(ge)301 b(tier)-22 b(-1)300 b(ISPs)g(are)h(inher)-22
+b(-)2000 30376 y(ently)362 b(dif)-28 b(ferent)361 b(from)g(those)h
+(required)g(at)f(small)g(stub)g(netw)-11 b(orks,)383
+b(which)363 b(are)e(in)g(turn)h(dif)-28 b(ferent)361
+b(from)g(those)h(required)2000 31704 y(at)342 b(medium-sized)h(ISPs.)
+538 b(If)341 b(we)h(\223stay)h(the)f(course,)-77 b(\224)359
+b(interdomain)344 b(routing)e(is)f(lik)-11 b(ely)342
+b(to)g(stay)g(insecure.)539 b(My)342 b(position)2000
+33033 y(is)365 b(that,)388 b(instead)366 b(of)f(looking)j(for)d(one)i
+(solution)f(for)f(the)h(entire)g(Internet,)388 b(we)366
+b(should)h(in)-44 b(v)-17 b(ent)367 b(a)f(broad)h(range)g(of)e(solu-)
+2000 34361 y(tions.)423 b(While)304 b(some)h(solutions)e(should)i(be)g
+(meant)g(for)e(independent)k(deplo)-11 b(yment)307 b(by)d(indi)-28
+b(vidual)306 b(ISPs,)k(others)304 b(should)2000 35690
+y(be)316 b(meant)g(for)f(joint)g(deplo)-11 b(yment)317
+b(by)f(groups)g(of)f(ISPs.)457 b(Indi)-28 b(vidual)317
+b(ISPs)e(will)g(be)g(free)g(to)g(select)h(from)f(this)f(set)h(one)h(or)
+2000 37018 y(more)278 b(solutions)f(that)g(suit)f(them)i(best.)343
+b(Some)278 b(ISPs)f(may)h(choose)h(none)f(of)f(them)h(and)g(continue)h
+(to)e(operate)h(lik)-11 b(e)278 b(today)-72 b(.)2000
+39299 y(Ho)-28 b(w)272 b(can)h(this)e(\223polytheistic\224)i(approach)h
+(to)d(security)-72 b(,)273 b(which)g(is)d(composed)k(of)d(independent)k
+(solutions)d(and)g(uncoordi-)2000 40628 y(nated)308 b(deplo)-11
+b(yment,)316 b(be)307 b(secure)g(as)g(a)f(whole?)434
+b(Solution)307 b(to)g(this)e(dilemma)j(can)g(be)f(had)g(from)f
+(observing)i(ho)-28 b(w)308 b(the)f(road)2000 41956 y(netw)-11
+b(ork)236 b(operates)g(today)-72 b(.)331 b(Dri)-28 b(v)-17
+b(ers)235 b(on)g(the)h(road)g(ha)-22 b(v)-17 b(e)236
+b(dif)-28 b(ferent)236 b(cars,)243 b(dri)-28 b(ving)236
+b(styles)e(and)i(skill)e(le)-28 b(v)-17 b(els,)244 b(yet)235
+b(the)h(netw)-11 b(ork)2000 43285 y(seems)318 b(reasonably)i(secure)f
+(\(at)f(least)g(in)g(much)h(of)f(the)h(de)-28 b(v)-17
+b(eloped)322 b(w)-11 b(orld\).)466 b(The)319 b(security)g(of)f(the)g
+(road)h(netw)-11 b(ork)319 b(stems)2000 44613 y(from)300
+b(tw)-11 b(o)300 b(f)-11 b(actors.)411 b(The)302 b(\002rst)d(is)g
+Fc(visibility:)388 b Fe(for)299 b(most)h(accidents,)307
+b(it)299 b(is)g(clear)i(who)g(\226)f(which)h(car)f(and)i(which)f(dri)
+-28 b(v)-17 b(er)300 b(\226)h(is)2000 45941 y(responsible.)465
+b(The)318 b(second)h(is)e Fc(\002nancial)i(disincentive:)425
+b Fe(being)319 b(responsible)f(for)f(causing)i(accidents)g(leads)e(to)h
+(\002nancial)2000 47270 y(losses)348 b(in)i(the)f(form)g(of)g(\002nes)h
+(and)g(higher)g(insurance)h(premiums.)560 b(These)351
+b(f)-11 b(actors)349 b(lead)h(to)f(manuf)-11 b(acturers)350
+b(producing)2000 48598 y(safe)277 b(cars)g(and)h(dri)-28
+b(v)-17 b(ers)277 b(dri)-28 b(ving)279 b(safely)e(and)h(maintaining)h
+(their)d(cars)h(in)g(good)i(condition.)2000 50879 y(The)i(security)f
+(of)g(interdomain)i(routing)f(can)g(be)g(boosted)g(by)g(engineering)i
+(these)d(tw)-11 b(o)281 b(f)-11 b(actors)279 b(into)h(it.)352
+b(V)-66 b(isibility)278 b(in)i(this)2000 52208 y(conte)-17
+b(xt)227 b(implies)e(that)g(we)h(be)g(able)g(to)f(identify)h(the)f
+(sources)h(and)g(propag)-6 b(ators)228 b(of)d(bad)h(routing)g(updates.)
+327 b(This)225 b(should)h(not)2000 53536 y(be)313 b(hard)h(to)f
+(engineer)h(in)f(the)g(Internet.)451 b(Ev)-17 b(en)315
+b(today)-72 b(,)323 b(the)313 b(culprit)g(of)f(most)h(routing)g
+(incidents)h(is)e(well-kno)-28 b(wn.)452 b(Recent)2000
+54865 y(w)-11 b(ork)396 b(has)g(e)-17 b(xplored)398 b(systematically)e
+(pro)-17 b(viding)398 b(this)d(capability)i(based)g(on)f(routing)h
+(updates)g(observ)-17 b(ed)398 b(at)d(multiple)2000 56193
+y(v)-28 b(antage)358 b(points.)577 b(While)356 b(this)e(research)i(has)
+f(focused)i(on)f(mechanisms)g(that)f(do)h(not)g(rely)f(on)h(netw)-11
+b(ork)356 b(support,)375 b(with)2000 57521 y(netw)-11
+b(ork)278 b(support)g(this)e(task)h(should)h(be)g(e)-28
+b(v)-17 b(en)279 b(easier)e(and)h(pro)-17 b(vide)279
+b(precise)f(answers.)p 2000 58469 19200 45 v 3207 59210
+a Fb(1)3594 59523 y Fa(F)-13 b(or)265 b(the)h(purposes)g(of)f(this)i
+(note,)277 b(interdomain)265 b(routing)g(is)i(considered)e(secure)i
+(when)f(it)g(is)g(not)f(threatened)h(by)f(ISPs)i(sourcing)f(or)f
+(propag)l(ating)2000 60574 y(unauthorized)221 b(routing)g(updates.)275
+b(Protocols)222 b(such)g(as)g(S-BGP)g(aim)f(for)g(this)h(le)-22
+b(v)-13 b(el)222 b(of)f(security)-58 b(.)25723 67600
+y Fe(1)p eop end
+%%Page: 2 2
+TeXDict begin 2 1 bop 2000 1107 a Fe(Financial)332 b(disincenti)-28
+b(v)-17 b(es)331 b(should)g(be)f(created)i(for)d(those)h(who)h(source)g
+(or)e(propag)-6 b(ate)333 b(bad)e(routing)f(updates.)503
+b(One)331 b(w)-11 b(ay)2000 2435 y(to)299 b(do)i(so)e(is)g(by)h(b)-22
+b(uilding)301 b(on)f(bilateral)g(ISP)g(contracts.)411
+b(ISPs)300 b(should)g(demand)i(in)d(their)h(contracts)g(that)g(their)f
+(neighbors)2000 3764 y(not)268 b(send)h(them)g(bad)g(routing)f
+(updates.)342 b(F)-17 b(ailure)269 b(to)f(comply)h(carries)f
+(\002nancial)i(penalties.)341 b(F)-17 b(or)269 b(instance,)h(customers)
+f(can)2000 5092 y(withhold)317 b(part)g(of)f(the)h(transit)f(fee)g(if)g
+(their)g(pro)-17 b(viders)318 b(send)f(bad)h(routing)f(updates)h(and)f
+(pro)-17 b(viders)318 b(can)f(char)-20 b(ge)319 b(more)e(if)2000
+6420 y(a)347 b(customer)g(sends)g(a)g(bad)h(update.)554
+b(Similarly)-72 b(,)363 b(a)347 b(peer)h(ISP)e(w)-11
+b(ould)348 b(need)g(to)f(compensate)i(the)e(other)g(for)f(sending)j
+(bad)2000 7749 y(updates.)417 b(Lik)-11 b(e)302 b(the)f(road)h(netw)-11
+b(ork,)308 b(there)302 b(is)e(a)i(possible)f(role)g(for)g(insurance)h
+(companies)i(here)e(to)f(help)h(ISPs)f(deal)h(with)2000
+9077 y(the)277 b(\002nancial)i(uncertainty)g(associated)g(with)e
+(security)g(incidents)h(the)-17 b(y)278 b(may)g(accidentally)h(cause)g
+(or)e(suf)-28 b(fer)-61 b(.)2000 11359 y(In)235 b(creating)h
+(\002nancial)h(disincenti)-28 b(v)-17 b(es,)245 b(an)236
+b(important)g(dif)-28 b(ference)236 b(between)h(the)f(road)f(netw)-11
+b(ork)237 b(and)f(the)f(proposed)i(frame-)2000 12687
+y(w)-11 b(ork)293 b(concerns)h(the)f(need)h(for)e(go)-17
+b(v)g(ernment)296 b(re)-17 b(gulation.)391 b(The)294
+b(road)f(netw)-11 b(ork)294 b(relies)e(on)h(re)-17 b(gulation)294
+b(to)e(create)i(ef)-28 b(fecti)g(v)-17 b(e)2000 14015
+y(\002nancial)386 b(disincenti)-28 b(v)-17 b(es,)413
+b(b)-22 b(ut)384 b(re)-17 b(gulation)386 b(is)d(not)h(necessary)i(in)e
+(the)g(Internet)g(routing)h(conte)-17 b(xt)386 b(because)g(the)-17
+b(y)386 b(can)f(be)2000 15344 y(created)342 b(using)f(ISP)f(contracts.)
+534 b(Re)-17 b(gulation)343 b(in)d(the)h(road)g(netw)-11
+b(ork)341 b(protects)g(the)g(a)-22 b(v)-17 b(erage)343
+b(dri)-28 b(v)-17 b(er)341 b(who)g(does)g(not)g(ha)-22
+b(v)-17 b(e)2000 16672 y(contracts)230 b(with)f(other)g(dri)-28
+b(v)-17 b(ers)230 b(on)f(the)h(road.)328 b(Not)229 b(requiring)h(re)-17
+b(gulation)231 b(to)e(secure)h(interdomain)g(routing)g(is)e(a)h
+(signi\002cant)2000 18000 y(blessing)277 b(because)j(national)e
+(autonomy)h(issues)e(mak)-11 b(e)278 b(Internet-wide)g(re)-17
+b(gulation)279 b(a)e(highly)h(dif)-28 b(\002cult)278
+b(issue.)2000 20282 y(W)-44 b(ith)401 b(appropriate)j(visibility)d
+(mechanisms)j(and)f(\002nancial)h(disincenti)-28 b(v)-17
+b(es)404 b(in)e(place,)434 b(ISPs)402 b(ha)-22 b(v)-17
+b(e)404 b(direct)f(and)g(e)-17 b(xplicit)2000 21610 y(incenti)-28
+b(v)-17 b(es)401 b(to)f(secure)g(their)f(netw)-11 b(orks.)711
+b(There)401 b(is)d(an)i(incenti)-28 b(v)-17 b(e)402 b(to)d(guard)i(ag)
+-6 b(ainst)400 b(the)g(generation)i(of)d(bad)h(updates)2000
+22939 y(because)378 b(that)e(leads)g(to)g(compensating)i(the)f
+(neighbors)g(\(or)e(paying)j(higher)f(insurance)g(premiums\).)639
+b(ISPs)376 b(also)g(ha)-22 b(v)-17 b(e)2000 24267 y(an)379
+b(incenti)-28 b(v)-17 b(e)381 b(to)d(guard)i(ag)-6 b(ainst)379
+b(propag)-6 b(ating)382 b(a)c(bad)i(update)g(from)e(a)g(neighbor)-44
+b(,)406 b(especially)379 b(if)f(the)g(compensation)k(it)2000
+25595 y(recei)-28 b(v)-17 b(es)342 b(from)d(that)h(neighbor)i(is)d(lo)
+-28 b(wer)341 b(than)g(what)f(it)f(w)-11 b(ould)341 b(ha)-22
+b(v)-17 b(e)342 b(to)e(gi)-28 b(v)-17 b(e)342 b(to)e(its)e(other)j
+(neighbors)g(for)f(propag)-6 b(ating)2000 26924 y(that)334
+b(route.)513 b(In)334 b(such)g(a)g(setting,)348 b(the)334
+b(cost)g(of)f(interconnecting)k(to)c(an)i(insecure)g(netw)-11
+b(ork)334 b(may)h(outweigh)g(the)g(bene\002ts,)2000 28252
+y(leading)237 b(to)e(the)h(isolation)g(of)f(netw)-11
+b(orks)236 b(with)f(persistent)g(security)h(problems.)330
+b(This)235 b(is)f(akin)j(to)e(the)h(re)-28 b(v)-22 b(ocation)238
+b(of)d(dri)-28 b(ving)2000 29580 y(pri)g(vile)-17 b(ges.)2000
+31862 y(There)369 b(is)e(no)-28 b(w)370 b(no)e(need)i(for)e(ISPs)g(to)g
+(adhere)i(to)e(a)g(common)i(security)e(solution.)617
+b(Instead,)391 b(ISPs)368 b(will)g(select)g(what)h(is)2000
+33190 y(best)267 b(for)f(them.)341 b(While)267 b(a)g(lar)-20
+b(ge)268 b(tier)-22 b(-1)266 b(ISP)h(will)g(use)g(appropriate)i
+(mechanisms)f(to)f(guard)h(ag)-6 b(ainst)268 b(both)g(generating)i(and)
+2000 34519 y(propag)-6 b(ating)350 b(bad)d(updates,)365
+b(a)347 b(small,)363 b(simple)346 b(stub)h(netw)-11 b(ork)347
+b(\(that)g(is)e(con\002dent)350 b(of)c(ne)-28 b(v)-17
+b(er)348 b(generating)h(a)e(bad)g(update\))2000 35847
+y(may)281 b(chose)h(to)e(not)h(deplo)-11 b(y)282 b(an)-17
+b(y)282 b(security)f(solution)g(at)f(all.)353 b(In)280
+b(my)h(opinion,)h(this)e(polytheistic)h(approach)i(is)d(more)g(lik)-11
+b(ely)2000 37175 y(to)279 b(succeed)i(at)e(boosting)h(the)f(security)h
+(of)e(interdomain)j(routing,)f(a)f(task)g(where)h(monotheistic)g
+(approaches)i(ha)-22 b(v)-17 b(e)281 b(f)-11 b(ailed)2000
+38504 y(in)277 b(the)g(past.)2000 40785 y(Before)271
+b(I)e(conclude,)274 b(I)269 b(point)h(out)h(that,)g(by)f(being)h
+(inspired)g(by)f(the)g(road)h(netw)-11 b(ork,)272 b(the)e(proposed)i
+(frame)-28 b(w)-11 b(ork)271 b(shares)f(its)2000 42114
+y(security)314 b(properties.)455 b(It)314 b(does)g(not)h(pro)-17
+b(vide)316 b(guaranteed)h(protection)e(to)g(e)-28 b(v)-17
+b(en)316 b(ISPs)e(that)g(do)h(their)f(best)g(to)g(run)h(a)f(secure)2000
+43442 y(netw)-11 b(ork.)327 b(Such)227 b(ISPs)f(can)h(still)d(be)i
+(hurt)g(\(and)g(then)h(compensated\))h(by)e(the)h(mistak)-11
+b(es)225 b(of)h(other)g(ISPs,)235 b(for)225 b(instance,)237
+b(traf)-28 b(\002c)2000 44770 y(intended)247 b(for)d(them)h(may)g(be)h
+(hijack)-11 b(ed.)334 b(This)245 b(dependence)k(e)-17
+b(xists)244 b(in)h(the)g(road)g(netw)-11 b(ork)246 b(as)e(well,)251
+b(where)245 b(e)-28 b(v)-17 b(en)247 b(the)f(safest)2000
+46099 y(of)338 b(dri)-28 b(v)-17 b(ers)338 b(can)i(be)e(hurt)g(by)h
+(other)g(careless)f(dri)-28 b(v)-17 b(ers.)527 b(As)337
+b(another)j(similarity)-72 b(,)352 b(the)338 b(proposed)i(frame)-28
+b(w)-11 b(ork)339 b(pro)-17 b(vides)340 b(to)2000 47427
+y(ISPs)335 b(an)g(incenti)-28 b(v)-17 b(e)337 b(to)e(only)g(secure)h
+(ag)-6 b(ainst)336 b(incidents)f(that)g(are)g(lik)-11
+b(ely)335 b(to)f(be)i(detected)h(and)e(reported;)365
+b(man)-17 b(y)336 b(smaller)2000 48755 y(incidents)375
+b(may)h(go)f(unnoticed.)638 b(Man)-17 b(y)376 b(minor)f(violations)g
+(go)g(unnoticed)j(and)d(unpunished)j(in)c(the)h(road)g(netw)-11
+b(ork)376 b(as)2000 50084 y(well.)565 b(This)351 b(is)f(in)h(f)-11
+b(act)351 b(not)h(undesirable)h(from)e(an)g(economic)j(perspecti)-28
+b(v)-17 b(e:)494 b(resource)352 b(should)g(be)g(spent)f(primarily)g(on)
+2000 51412 y(pre)-28 b(v)-17 b(enting)280 b(incidents)e(that)f(matter)
+-61 b(.)25723 67600 y(2)p eop end
+%%Trailer
+
+userdict /end-hook known{end-hook}if
+%%EOF

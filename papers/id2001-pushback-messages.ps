@@ -1,0 +1,1524 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 24 24 588 768
+%%Title: Enscript Output
+%%For: Sally Floyd
+%%Creator: GNU enscript 1.6.1
+%%CreationDate: Fri Jul 13 11:04:49 2001
+%%Orientation: Portrait
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 1
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 1
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 10 10 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+/d_page_w 564 def
+/d_page_h 744 def
+/d_header_x 0 def
+/d_header_y 744 def
+/d_header_w 564 def
+/d_header_h 0 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 564 def
+/d_footer_h 0 def
+/d_output_w 564 def
+/d_output_h 744 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 1 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 665 M
+(Internet Engineering Task Force                        Sally Floyd/ACIRI) s
+5 654 M
+(INTERNET DRAFT                                       Steve Bellovin/AT&T) s
+5 643 M
+(draft-floyd-pushback-messages-00.txt                 John Ioannidis/AT&T) s
+5 632 M
+(                                                Kireeti Kompella/Juniper) s
+5 621 M
+(                                                        Ratul Mahajan/UW) s
+5 610 M
+(                                                       Vern Paxson/ACIRI) s
+5 599 M
+(                                                              July, 2001) s
+5 588 M
+(                                                  Expires: January, 2002) s
+5 544 M
+(      Pushback Messages for Controlling Aggregates in the Network) s
+5 500 M
+(                          Status of this Memo) s
+5 467 M
+(   This document is an Internet-Draft and is in full conformance with) s
+5 456 M
+(   all provisions of Section 10 of RFC2026.) s
+5 434 M
+(   Internet-Drafts are working documents of the Internet Engineering) s
+5 423 M
+(   Task Force \(IETF\), its areas, and its working groups.  Note that) s
+5 412 M
+(   other groups may also distribute working documents as Internet-) s
+5 401 M
+(   Drafts.) s
+5 379 M
+(   Internet-Drafts are draft documents valid for a maximum of six months) s
+5 368 M
+(   and may be updated, replaced, or obsoleted by other documents at any) s
+5 357 M
+(   time.  It is inappropriate to use Internet- Drafts as reference) s
+5 346 M
+(   material or to cite them other than as "work in progress.") s
+5 324 M
+(   The list of current Internet-Drafts can be accessed at) s
+5 313 M
+(   http://www.ietf.org/ietf/1id-abstracts.txt) s
+5 291 M
+(   The list of Internet-Draft Shadow Directories can be accessed at) s
+5 280 M
+(   http://www.ietf.org/shadow.html.) s
+5 192 M
+(Abstract) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 1]) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 2 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(1.  Introduction) s
+5 643 M
+(   Pushback [MB01] is designed to detect and control high bandwidth) s
+5 632 M
+(   aggregates in the network. An aggregate is a collection of packets) s
+5 621 M
+(   with a common property. For instance, with the destination prefix as) s
+5 610 M
+(   the common property, all packets with a matching prefix define an) s
+5 599 M
+(   aggregate.  During a time of severe congestion from a flash crowd or) s
+5 588 M
+(   from a denial of service \(DoS\) attack, a router might enforce a rate-) s
+5 577 M
+(   limit on the traffic aggregate responsible for the congestion.  In) s
+5 566 M
+(   addition, the congested router could ask adjacent upstream routers to) s
+5 555 M
+(   limit the amount of traffic they send for that aggregate.  This) s
+5 544 M
+(   upstream rate-limiting is called pushback and can be recursively) s
+5 533 M
+(   propagated to routers further upstream.  It serves to spatially) s
+5 522 M
+(   isolate the traffic aggregate so that other traffic sharing the same) s
+5 511 M
+(   downstream links is not impaired by the aggregate.) s
+5 489 M
+(   By imposing only a rate limit, rather than a complete blockage, of) s
+5 478 M
+(   the aggregate, pushback aims to minimize "collateral damage" suffered) s
+5 467 M
+(   by the non-hostile traffic matching the aggregate during a DoS) s
+5 456 M
+(   attack.  In general, the hope is that during a DoS attack, pushback) s
+5 445 M
+(   will propagate sufficiently far in the network so that non-hostile) s
+5 434 M
+(   traffic fits within the rate limit imposed on its specific path to) s
+5 423 M
+(   the destination, and accordingly does not have its performance) s
+5 412 M
+(   limited.) s
+5 390 M
+(   This document specifies messages passed between cooperating routers.) s
+5 379 M
+(   It does not address procedures in routers for identifying aggregates) s
+5 368 M
+(   to be rate-limited, or for determining the rate-limits for those) s
+5 357 M
+(   identified aggregates.  The goal is to specify an experimental) s
+5 346 M
+(   standard for pushback messages so that we can learn from the) s
+5 335 M
+(   experimental use of pushback.  We expect that the specifications for) s
+5 324 M
+(   pushback messages will evolve over time, as we gain more experience) s
+5 313 M
+(   with their use.) s
+5 291 M
+(   There are two main pushback messages - REQUEST and STATUS.  Pushback) s
+5 280 M
+(   REQUEST messages are sent to upstream routers asking them to rate-) s
+5 269 M
+(   limit the aggregate.  Such a request for rate-limiting is only) s
+5 258 M
+(   advisory; the upstream router is not compelled to follow the request.) s
+5 247 M
+(   As part of rate-limiting on behalf of the downstream router, the) s
+5 236 M
+(   upstream router sends periodic STATUS messages to the downstream) s
+5 225 M
+(   router. The STATUS messages report the arrival rate for that) s
+5 214 M
+(   aggregate at the upstream router, and enable the congested router to) s
+5 203 M
+(   take decisions regarding the continuance of pushback.  In addition to) s
+5 192 M
+(   REQUEST and STATUS messages, REFRESH messages reinforce the soft-) s
+5 181 M
+(   state rate-limiting, and CANCEL messages terminate it.) s
+5 159 M
+(   Pushback messages can be used in two ways.  In one pushback type,) s
+5 148 M
+(   pushback messages are used to request upstream rate-limiting for the) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 2]) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 3 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   specified aggregate.  In a second pushback type \(DUMMY_PROP\),) s
+5 654 M
+(   pushback messages are used simply to get information about the) s
+5 643 M
+(   arrival rates of an aggregate at upstream routers.) s
+5 621 M
+(   A pushback in progress can be visualized as a tree \(or, with) s
+5 610 M
+(   multipath routing, possibly a graph\), where the congested router) s
+5 599 M
+(   initiating the pushback is the root. The parent of a router in the) s
+5 588 M
+(   tree is the downstream router from which it got the pushback REQUEST.) s
+5 577 M
+(   Routers that do not propagate pushback further are leaves of the) s
+5 566 M
+(   tree.) s
+5 544 M
+(   The following sections specify the format for pushback messages and) s
+5 533 M
+(   the timing of REFRESH and STATUS messages.  This document also) s
+5 522 M
+(   specifies the procedures for propagating pushback REQUEST and REFRESH) s
+5 511 M
+(   messages further upstream, and for merging the resulting STATUS) s
+5 500 M
+(   messages from upstream routers.) s
+5 478 M
+(2.  The Common Header) s
+5 456 M
+(   All pushback messages have the following fields prepended in the) s
+5 445 M
+(   header.) s
+5 423 M
+(     0                   1                   2                   3) s
+5 412 M
+(     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1) s
+5 401 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 390 M
+(    |  Version  |AdF|    Msg Type   |   Rate-Limiting Session ID    |) s
+5 379 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 368 M
+(    |            Pushback Initiating Router's IP Address            |) s
+5 357 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 346 M
+(    |                      Sender's IP Address                      |) s
+5 335 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 313 M
+(   The first field specifies the version of the pushback protocol the) s
+5 302 M
+(   sender speaks.  The protocol described in this document is Version=0.) s
+5 280 M
+(   "AdF" specifies the type of address family used.  Currently defined) s
+5 269 M
+(   values are IPv4=0 and IPv6=1.  Other values are reserved for future) s
+5 258 M
+(   definition.) s
+5 236 M
+(   The message type is one of REQUEST \(= 0\), REFRESH \(= 1\), STATUS \(=) s
+5 225 M
+(   2\), or CANCEL \(= 3\).  The fields following the common header are) s
+5 214 M
+(   dependent on the type of the message.) s
+5 192 M
+(   The Rate-limiting Session ID \(RLSID\) is generated by the congested) s
+5 181 M
+(   router initiating pushback. It MUST be unique among all current rate-) s
+5 170 M
+(   limiting sessions initiated by this router.  The RLSID combined with) s
+5 159 M
+(   the IP address of the congested router defines a pushback session) s
+5 148 M
+(   over the whole network.  A router receives both these fields from the) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 3]) s
+_R
+S
+%%Page: (4) 4
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 4 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   downstream router requesting pushback. These fields enable the) s
+5 654 M
+(   routers to map incoming messages to the appropriate rate-limiting) s
+5 643 M
+(   session.  A router MAY use its different addresses when initiating) s
+5 632 M
+(   different pushback sessions.) s
+5 610 M
+(   Note that if the router's address reflects a private addressing) s
+5 599 M
+(   realm, then it MUST be altered upon crossing into a different) s
+5 588 M
+(   addressing realm.  Ideally this transformation uses a new address) s
+5 577 M
+(   unique to the router; if not available, then the address of the) s
+5 566 M
+(   router propagating pushback \(by sending the message\) into the) s
+5 555 M
+(   different realm is used.) s
+5 533 M
+(   The sender's IP address has been included in the pushback message,) s
+5 522 M
+(   making message interpretation independent of the IP source address) s
+5 511 M
+(   field.  This eliminates any confusion regarding which interface's) s
+5 500 M
+(   address is included in that field \(that is, whether it is the IP) s
+5 489 M
+(   address of the message-sending interface, or of some other interface) s
+5 478 M
+(   at the router\).  It also helps when pushback messages traverse) s
+5 467 M
+(   between routers that are not directly connected.  If a sender sends) s
+5 456 M
+(   pushback messages to two peers in two different addressing realms, so) s
+5 445 M
+(   that the sender doesn't have a unique address to send to both peers,) s
+5 434 M
+(   then the sender will use different values for the sender's IP address) s
+5 423 M
+(   in the two messages.) s
+5 401 M
+(   Both the IP addresses will be 128 bit fields for IPv6.) s
+5 379 M
+(2.  The Pushback REQUEST Message) s
+5 357 M
+(   Pushback requests \(type REQUEST=0\) are sent upstream when a router) s
+5 346 M
+(   wants the aggregate to be rate-limited upstream. The fields in a) s
+5 335 M
+(   pushback REQUEST, in addition to the common header, are shown below.) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 4]) s
+_R
+S
+%%Page: (5) 5
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 5 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(     0                   1                   2                   3) s
+5 654 M
+(     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1) s
+5 643 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 632 M
+(    | PType |SRMode |   Max Depth   | Depth in Tree |   Reserved    |) s
+5 621 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 610 M
+(    |                      Bandwidth Limit                          |) s
+5 599 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 588 M
+(    |                      Expiration Time                          |) s
+5 577 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 566 M
+(    |                     Status Frequency                          |) s
+5 555 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 544 M
+(    |                                                               |) s
+5 533 M
+(    |                    Congestion Signature                       |) s
+5 522 M
+(             ...............................................) s
+5 511 M
+(             ...............................................) s
+5 500 M
+(    |                                                               |) s
+5 489 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 456 M
+(   "PType" denotes the type of pushback and determines the upstream) s
+5 445 M
+(   router's behavior in various ways.  PType=0 \(HI_DROP_PROP\) requests) s
+5 434 M
+(   the upstream router to propagate pushback if the restricted aggregate) s
+5 423 M
+(   suffers a high drop rate due to the restriction.  \(This is the usual) s
+5 412 M
+(   mode of pushback.\)) s
+5 390 M
+(   PType=1 \(ALWAYS_PROP\) requests that the upstream router propagate) s
+5 379 M
+(   pushback irrespective of the drop rate experienced by the aggregate.) s
+5 368 M
+(   It would typically be used when the aggregate is known with high) s
+5 357 M
+(   confidence to be malicious.) s
+5 335 M
+(   PType=2 \(DUMMY_PROP\) indicates no actual rate-limiting should take) s
+5 324 M
+(   place---the downstream router is just interested in the arrival rate) s
+5 313 M
+(   estimate of this aggregate.  The extent of propagation of these) s
+5 302 M
+(   pushback messages is controlled by the congested router using "Max) s
+5 291 M
+(   Depth" \(explained below\) to determine the arrival rate of an) s
+5 280 M
+(   aggregate several hops upstream.) s
+5 258 M
+(   Other values of PType are reserved for future definition.) s
+5 236 M
+(   The pushback requester can specify the mode in which it wants) s
+5 225 M
+(   feedback with the "SRMode" \(Status Reporting Mode\) field.  SRMode=0) s
+5 214 M
+(   \(COMPACT\) specifies the feedback should be just the total arrival-) s
+5 203 M
+(   rate estimate of the aggregate.  SRMode=1 \(CLOSEST\) specifies the) s
+5 192 M
+(   feedback should include per-router feedback for upstream routers, and) s
+5 181 M
+(   if there is not room for all of them, then those closest \(lowest hop) s
+5 170 M
+(   count\) should be preferred.  SRMode=2 \(FURTHEST\) is similar to) s
+5 159 M
+(   CLOSEST, but prefers routers further away from the congested router.) s
+5 148 M
+(   SRMode=3 \(SAMPLE\) specifies that instead a pseudo-random subset of) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 5]) s
+_R
+S
+%%Page: (6) 6
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 6 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   the upstream routers should be included.  These last two modes) s
+5 654 M
+(   facilitate different forms of mapping to aid with tracing back the) s
+5 643 M
+(   attack sources.  Other values are reserved for future definition.) s
+5 621 M
+(   Using "Max Depth" the congested router can control the maximum number) s
+5 610 M
+(   of hops pushback will propagate to.  The special value of 255) s
+5 599 M
+(   indicates unrestricted propagation; 254 indicates that pushback) s
+5 588 M
+(   should be propagated up to, but not across, the AS boundary.) s
+5 566 M
+(   The depth in the tree is the distance of the requesting node from the) s
+5 555 M
+(   root of the pushback tree. The depth of the root is zero, and a) s
+5 544 M
+(   child's depth is one more than the depth of its parent.  Depth) s
+5 533 M
+(   information is useful in setting timers for sending feedback.  If a) s
+5 522 M
+(   router receives overlapping pushback requests from multiple peers,) s
+5 511 M
+(   its depth is one more than the minimum depth of its parents.) s
+5 489 M
+(   The bandwidth limit is a single precision \(32-bit\) floating point) s
+5 478 M
+(   number in IEEE format, as described in [SPG97].  It expresses the) s
+5 467 M
+(   rate in bytes per second.  It is only a requested upper bound for the) s
+5 456 M
+(   bandwidth to be given to the aggregate.  If congested, the upstream) s
+5 445 M
+(   router could send less than that upper bound.  In addition, the) s
+5 434 M
+(   upstream router is not *required* to observe the requested bound.) s
+5 412 M
+(   The expiration time is the time period after which the pushback) s
+5 401 M
+(   request expires if no REFRESH messages arrive.  The status frequency) s
+5 390 M
+(   gives the time after which the upstream routers should send STATUS) s
+5 379 M
+(   messages downstream.  Both the times are specified in milliseconds,) s
+5 368 M
+(   and represented using 32-bit integers in network byte order.) s
+5 346 M
+(2.0.1 The Congestion Signature) s
+5 324 M
+(   The congestion signature is the description of the aggregate that is) s
+5 313 M
+(   to be rate-limited. Its specification is a major open question.  As) s
+5 302 M
+(   an example, the attack signature might consist of the destination) s
+5 291 M
+(   prefix\(es\) characterizing the aggregate.  At the other extreme, we) s
+5 280 M
+(   could allow arbitrary ACLs of fields in the packet header.  For this) s
+5 269 M
+(   first experimental use of pushback, we will limit the congestion) s
+5 258 M
+(   signature to depend only on the source and destination IP addresses) s
+5 247 M
+(   in the packet header.  This excludes the use of aggregates defined by) s
+5 236 M
+(   the protocol field in the IP header and the port numbers in the) s
+5 225 M
+(   transport header; an example is an aggregate consisting of all DNS) s
+5 214 M
+(   traffic.) s
+5 192 M
+(   Congestion signatures are specified as TLVs \(type-length-value\):) s
+5 170 M
+(     0                   1                   2                   3) s
+5 159 M
+(     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1) s
+5 148 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 6]) s
+_R
+S
+%%Page: (7) 7
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 7 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(    |      Type      |    Length    |          Value ....           |) s
+5 654 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 643 M
+(             ...............................................) s
+5 632 M
+(             .....................Value.....................) s
+5 621 M
+(             ...............................................) s
+5 610 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 599 M
+(    |              .... Value and final Padding ....                |) s
+5 588 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 566 M
+(   The Length field includes the Type and Length fields, as well as the) s
+5 555 M
+(   length of the Value and any Padding.) s
+5 533 M
+(   Values are padded up to 32-bit alignment.  If, after doing so, more) s
+5 522 M
+(   data remains in the datagram, then it's interpreted as another TLV.) s
+5 500 M
+(   Type=0 \(SRC_PREFIX\) indicates a source address prefix.  Its Length is) s
+5 489 M
+(   4 bytes plus the length of an address in the format specified by AdF) s
+5 478 M
+(   above.  The first octet of Value \(bits 16 through 23 in the first) s
+5 467 M
+(   line of the above figure\) are reserved.  The second octet gives the) s
+5 456 M
+(   prefix length, in the range 1-32 \(IPv4\) or 1-128 \(IPv6\).  Other) s
+5 445 M
+(   values are reserved.) s
+5 423 M
+(   Type=1 \(DST_PREFIX\) is the same but for destination address prefix.) s
+5 401 M
+(   When all prefixes in the list are of the same type, the congestion) s
+5 390 M
+(   signature describes packets that have the corresponding field \(source) s
+5 379 M
+(   or destination\) matching one of the prefixes in the list.  In) s
+5 368 M
+(   presence of both source and destination prefixes, packets belonging) s
+5 357 M
+(   to the aggregate are those destined for one of the destination) s
+5 346 M
+(   prefixes *and* coming from one of the source prefixes.) s
+5 324 M
+(2.1 Propagating a Pushback REQUEST Message) s
+5 302 M
+(   When propagating a pushback request upstream, the router MUST insert) s
+5 291 M
+(   the correct depth information, which is one more than the depth of) s
+5 280 M
+(   its parent\(s\).) s
+5 258 M
+(   In addition, the destination prefixes in the congestion signature) s
+5 247 M
+(   MUST be checked to see whether they have to be *narrowed*, to) s
+5 236 M
+(   restrict the rate-limiting only to traffic headed for the downstream) s
+5 225 M
+(   router that requested pushback, as follows.  Suppose the congested) s
+5 214 M
+(   router X identifies a certain aggregate A with destination prefix) s
+5 203 M
+(   128.95/16. X will ask its upstream router Y \(among others\) to rate-) s
+5 192 M
+(   limit traffic from aggregate A \(128.95/16\).  However, Y cannot use) s
+5 181 M
+(   the same specification directly because while Y could be forwarding) s
+5 170 M
+(   128.95.1/24 to X, it might not be forwarding the rest of 128.95/16 to) s
+5 159 M
+(   X. If Y \(and routers upstream of Y\) started rate-limiting all of) s
+5 148 M
+(   128.95/16, the network would drop traffic which would not have) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 7]) s
+_R
+S
+%%Page: (8) 8
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 8 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   reached the congested router X.) s
+5 643 M
+(   To avoid this unnecessary packet-dropping, it is important that Y) s
+5 632 M
+(   look at its routing table to find prefixes within 128.95/16 that are) s
+5 621 M
+(   forwarded to X. Y has to check all extensions of the given prefix in) s
+5 610 M
+(   the routing table.) s
+5 588 M
+(   The issue of narrowing the congestion signature occurs when a) s
+5 577 M
+(   pushback request is propagated upstream by a router \(thus becoming a) s
+5 566 M
+(   non-leaf in the tree\), or when the pushback request is passed from) s
+5 555 M
+(   the output interface to an input interface at a router.  The above) s
+5 544 M
+(   algorithm for narrowing the congestion signature works only for) s
+5 533 M
+(   congestion signatures with a destination address component in them.) s
+5 522 M
+(   It cannot be applied to other signatures, pure source-based ones, for) s
+5 511 M
+(   instance.  We do not deal with the issue of narrowing non-) s
+5 500 M
+(   destination-based signatures in this document except noting that it) s
+5 489 M
+(   can be done given the right routing information at the upstream) s
+5 478 M
+(   router.) s
+5 456 M
+(   A router could receive requests from different downstream routers) s
+5 445 M
+(   with overlapping congestion signatures.  Future work might address) s
+5 434 M
+(   the possibility of merging two different rate-limiting sessions in) s
+5 423 M
+(   this case.) s
+5 401 M
+(2.2 Pushback REFRESH Messages) s
+5 379 M
+(   Pushback REFRESH messages are initiated by the congested router that) s
+5 368 M
+(   started the pushback, if it wants the pushback to continue.  For) s
+5 357 M
+(   uninterrupted rate-limiting, these messages should be generated) s
+5 346 M
+(   before the rate-limiting expires at the upstream routers) s
+5 324 M
+(   The REFRESH message is identical to the REQUEST message, so that if) s
+5 313 M
+(   the upstream router has crashed in the meanwhile, the state can be) s
+5 302 M
+(   reestablished.  However, the message type is set to REFRESH so that,) s
+5 291 M
+(   if state already exists, it is matched against the RLSID and router) s
+5 280 M
+(   address fields so that the receiving router does not have to go) s
+5 269 M
+(   through the process of setting up state from scratch.) s
+5 247 M
+(   REFRESH messages can change any field specified earlier in the) s
+5 236 M
+(   pushback REQUEST.  On receiving the pushback REFRESH message the) s
+5 225 M
+(   upstream routers update the expiration time for the rate-limit) s
+5 214 M
+(   session and the limit imposed on the aggregate, and set the timer for) s
+5 203 M
+(   the STATUS message.  Non-leaf routers in the pushback tree SHOULD) s
+5 192 M
+(   send REFRESH messages further upstream after dividing the rate limit) s
+5 181 M
+(   among upstream neighbors.  If the aggregate specification has) s
+5 170 M
+(   changed, the router MUST check if the new aggregate needs to be) s
+5 159 M
+(   narrowed, using the process described above, before propagating the) s
+5 148 M
+(   pushback REFRESH.) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 8]) s
+_R
+S
+%%Page: (9) 9
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 9 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(2.3 Pushback CANCEL Messages) s
+5 643 M
+(   The pushback CANCEL message is sent upstream to stop rate-limiting) s
+5 632 M
+(   the aggregate.  It SHOULD be propagated upstream by routers that have) s
+5 621 M
+(   propagated pushback requests \(non-leaf routers in the pushback tree\).) s
+5 599 M
+(   The CANCEL message has no fields beyond those present in the common) s
+5 588 M
+(   header.) s
+5 566 M
+(3.  Pushback STATUS Messages) s
+5 544 M
+(   Upstream routers that receive a pushback REQUEST send pushback STATUS) s
+5 533 M
+(   messages to the router from whom they got their REQUEST. The) s
+5 522 M
+(   additional fields in the STATUS message are:) s
+5 489 M
+(     0                   1                   2                   3) s
+5 478 M
+(     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1) s
+5 467 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 456 M
+(    |                   Arrival Rate Estimate                       |) s
+5 445 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 434 M
+(    | SRMode| Rsrvd |     Height    |            NumElem            |) s
+5 423 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 412 M
+(    |                          <Router ID>                          |) s
+5 401 M
+(    |                         <Router Info>                         |) s
+5 390 M
+(    |                    <Arrival Rate at Router>                   |) s
+5 379 M
+(             ...............................................) s
+5 368 M
+(             ................................................) s
+5 357 M
+(    |                                                               |) s
+5 346 M
+(    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 313 M
+(   The arrival rate estimate is a single precision floating-point number) s
+5 302 M
+(   in IEEE format, as described in [SPG97].  It expresses the arrival) s
+5 291 M
+(   rate of the aggregate in bytes per second if there was no rate-) s
+5 280 M
+(   limiting upstream of the STATUS sender.  The arrival rate for the) s
+5 269 M
+(   first STATUS message is computed over the interval since the receipt) s
+5 258 M
+(   of the pushback REQUEST.  For the subsequent messages, it is computed) s
+5 247 M
+(   over the interval since the last STATUS message.) s
+5 225 M
+(   The SRMode field specifies the mode in which status is reported.  It) s
+5 214 M
+(   is the same as that in the pushback REQUEST message. The supported) s
+5 203 M
+(   modes and their semantics are described in Section 2.) s
+5 181 M
+(   "Height" denotes the height of the sender in the pushback tree. It is) s
+5 170 M
+(   zero for leaf nodes, and one more than the maximum height among) s
+5 159 M
+(   children for non-leaf nodes. This field tells the receiver how far) s
+5 148 M
+(   pushback has propagated upstream of it.) s
+5 104 M
+(Floyd et al.                 Standards Track                    [Page 9]) s
+_R
+S
+%%Page: (10) 10
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 10 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   For status modes that return a list of routers, NumElem gives the) s
+5 654 M
+(   number of listed routers.  Then, for each router) s
+5 632 M
+(       * Router ID gives an address identifying the router) s
+5 621 M
+(       * Router Info gives information associated with the router.) s
+5 610 M
+(         Currently, this consists of:) s
+5 588 M
+(        0                   1                   2                   3) s
+5 577 M
+(        0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1) s
+5 566 M
+(       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 555 M
+(       |S|              Reserved                   |   Depth in Tree   |) s
+5 544 M
+(       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+) s
+5 522 M
+(   S is a bit that if set means that the entry is Stale, meaning that no) s
+5 511 M
+(   new STATUS message has been received from the router since the last) s
+5 500 M
+(   time the sending router sent a STATUS message.) s
+5 478 M
+(   Depth in Tree reflects the depth of the router in the pushback tree.) s
+5 456 M
+(3.1 Aggregating STATUS Messages) s
+5 434 M
+(   A parent node uses the STATUS messages from its children to construct) s
+5 423 M
+(   the STATUS message it sends downstream. The merger technique used) s
+5 412 M
+(   depends on the mode of the STATUS message. In COMPACT mode, the) s
+5 401 M
+(   parent node adds the arrival rate estimates received from the) s
+5 390 M
+(   children and its estimate from upstream routers that were not sent) s
+5 379 M
+(   pushback messages. In other modes, the lists obtained from the) s
+5 368 M
+(   various children are merged, and appended with the parent node's own) s
+5 357 M
+(   estimate, as indicated in the previous section. The height is one) s
+5 346 M
+(   more than the maximum height recieved from the children.) s
+5 324 M
+(3.2 Timing of STATUS Messages) s
+5 302 M
+(   The status frequency specified in the pushback REQUEST and REFRESH) s
+5 291 M
+(   messages is the rate at which the originating router would like to) s
+5 280 M
+(   receive status reports. Since the upstream routers are at different) s
+5 269 M
+(   distances from the root, the timer values they set have to be) s
+5 258 M
+(   different.  In particular, routers further away from the root should) s
+5 247 M
+(   set smaller timer values because they get messages late and their) s
+5 236 M
+(   STATUS messages take time getting to the root node.) s
+5 214 M
+(   On receiving a REQUEST or REFRESH message, the routers set a timer to) s
+5 203 M
+(   send the STATUS message. The value of this timer is the status) s
+5 192 M
+(   frequency minus the _depth_ * _k_, where _depth_ is the router's) s
+5 181 M
+(   depth in the pushback tree, and _k_ is a constant that signifies the) s
+5 170 M
+(   maximum round trip time for a message over a pushback tree edge) s
+5 159 M
+(   \(including message processing time\).  _k_ should be configured to) s
+5 148 M
+(   some comfortable upper bound like 100 ms \(it is same for all the) s
+5 104 M
+(Floyd et al.                 Standards Track                   [Page 10]) s
+_R
+S
+%%Page: (11) 11
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 11 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   routers in the pushback tree\).  For satellite hops or other links) s
+5 654 M
+(   with round-trip times greater than the configured value _k_, the) s
+5 643 M
+(   consequences will simply be stale STATUS messages.) s
+5 621 M
+(   Setting timers in this fashion means that parents are likely to) s
+5 610 M
+(   obtain fresh STATUS messages from their children before their own) s
+5 599 M
+(   STATUS message timer goes off. This in turn means that fresh STATUS) s
+5 588 M
+(   messages are sent further downstream after aggregation.  If a parent) s
+5 577 M
+(   router's timer fires before it has received STATUS message from one) s
+5 566 M
+(   of its children, it MUST send its own STATUS message downstream using) s
+5 555 M
+(   the last value received from this child or its own estimate, and, if) s
+5 544 M
+(   including an individual rate report for this child, marking it with) s
+5 533 M
+(   S=1 to indicate it is Stale.) s
+5 511 M
+(   The status timer is set again immediately after sending the STATUS) s
+5 500 M
+(   messages downstream. The value of the timer is the same for all the) s
+5 489 M
+(   routers in this case, and is equal to the status frequency, since the) s
+5 478 M
+(   required offset has already been achieved.  If a router receives a) s
+5 467 M
+(   REFRESH message before its status timer expires, new timers are set) s
+5 456 M
+(   as described above.) s
+5 434 M
+(   A small jitter can be applied to status timers so that the downstream) s
+5 423 M
+(   router recieves STATUS messages from its children at different times.) s
+5 401 M
+(   In some cases, the original sender of the pushback REQUEST might want) s
+5 390 M
+(   some variation in the status timers to provide some degree of) s
+5 379 M
+(   protection against gaming adversaries that try to time their bursts) s
+5 368 M
+(   to avoid detection.  This variation could be achieved by the original) s
+5 357 M
+(   sender by making changes to the Status Frequency specified in the) s
+5 346 M
+(   pushback REFRESH messages.) s
+5 313 M
+(4.  Authentication for Pushback Messages) s
+5 291 M
+(   Pushback messages require some form of authentication, even if the) s
+5 280 M
+(   pushback messages are between adjacent routers.  However, this) s
+5 269 M
+(   document currently does not specify the form of authentication to be) s
+5 258 M
+(   used.) s
+5 236 M
+(5.  Messages between Routers and Local Agents) s
+5 214 M
+(   Some routers might send packet headers from a sample of the traffic) s
+5 203 M
+(   to an agent for outboard processing, and receive control messages) s
+5 192 M
+(   back from the agent about identified aggregates to be rate-limited.) s
+5 181 M
+(   The router and local agent will also exchange control messages, for) s
+5 170 M
+(   example, to control the sampling at the router.  The formats for) s
+5 159 M
+(   these messages will probably be addressed in a separate document.) s
+5 104 M
+(Floyd et al.                 Standards Track                   [Page 11]) s
+_R
+S
+%%Page: (12) 12
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 12 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(   Because this is a purely local conversation between a router and an) s
+5 654 M
+(   attached local agent, it is not necessary that a router and its) s
+5 643 M
+(   attached local agent follow the protocol suggested in that document.) s
+5 621 M
+(6.  Messages exchanged with the NOC) s
+5 599 M
+(   In some cases the NOC \(Network Operations Center\) will want to have) s
+5 588 M
+(   final approval before an aggregate is rate-limited.  Thus, one) s
+5 577 M
+(   category of pushback messages will be the messages exchanged with the) s
+5 566 M
+(   NOC.  This draft currently does not specify these messages.) s
+5 544 M
+(Conclusions) s
+5 522 M
+(Acknowledgements) s
+5 500 M
+(   There is a list of people who can be either co-authors, or can be) s
+5 489 M
+(   acknowledged in this section.  So far, this list includes the) s
+5 478 M
+(   following.  The pushback authors:  Ratul Mahajan, Steven M. Bellovin,) s
+5 467 M
+(   Sally Floyd, John Ioannidis, Vern Paxson, and Scott Shenker.  From) s
+5 456 M
+(   Juniper: Kireeti Kompella.  From Cisco: Barbara Fraser, David Meyer.) s
+5 445 M
+(   Other: Randy Bush.) s
+5 423 M
+(References) s
+5 401 M
+(   [MB01] Ratul Mahajan, Steven M. Bellovin, Sally Floyd, John) s
+5 390 M
+(   Ioannidis, Vern Paxson, and Scott Shenker, Controlling High Bandwidth) s
+5 379 M
+(   Aggregates in the Network, February 2001.  URL:) s
+5 368 M
+(   "http://www.aciri.org/pushback/".) s
+5 346 M
+(   [SPG97] S. Shenker, C. Partridge, R. Guerin.  Specification of) s
+5 335 M
+(   Guaranteed Quality of Service.  RFC 2212.  September 1997.) s
+5 313 M
+(Security Considerations) s
+5 291 M
+(   We will eventually address the potential DoS features and security) s
+5 280 M
+(   vulnerabilities of pushback in detail here.) s
+5 258 M
+(IANA Considerations) s
+5 236 M
+(   AUTHORS' ADDRESSES) s
+5 203 M
+(      Sally Floyd) s
+5 192 M
+(      Phone: +1 510 666 2989) s
+5 181 M
+(      ACIRI) s
+5 170 M
+(      Email: floyd@aciri.org) s
+5 159 M
+(      URL: http://www.aciri.org/floyd/) s
+5 104 M
+(Floyd et al.                 Standards Track                   [Page 12]) s
+_R
+S
+%%Page: (13) 13
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 13 def
+/fname (pushback.txt) def
+/fdir () def
+/ftail (pushback.txt) def
+/user_header_p false def
+%%EndPageSetup
+5 698 M
+(Internet Draft              Pushback Messages                  July 2001) s
+5 665 M
+(      Steve Bellovin) s
+5 654 M
+(      Phone: +1.973.360.8656) s
+5 643 M
+(      AT&T Labs - Research) s
+5 632 M
+(      Email:  smb@research.att.com) s
+5 610 M
+(      John Ioannidis) s
+5 599 M
+(      Phone: +1.973.360.7012) s
+5 588 M
+(      AT&T Labs - Research) s
+5 577 M
+(      Email: ji@research.att.com) s
+5 555 M
+(      Kireeti Kompella) s
+5 544 M
+(      Juniper Networks) s
+5 533 M
+(      1994 N. Mathilda Ave) s
+5 522 M
+(      Sunnyvale, CA 94089) s
+5 511 M
+(      Email: kireeti@juniper.net) s
+5 489 M
+(      Ratul Mahajan) s
+5 478 M
+(      Phone: +1 206 616 1853) s
+5 467 M
+(      Univerity of Washington) s
+5 456 M
+(      Email: ratul@cs.washington.edu) s
+5 445 M
+(      URL: http://www.cs.washington.edu/homes/ratul/) s
+5 423 M
+(      Vern Paxson) s
+5 412 M
+(      Phone: +1 510 666 2882) s
+5 401 M
+(      ACIRI) s
+5 390 M
+(      Email: vern@aciri.org) s
+5 379 M
+(      URL: http://www.aciri.org/vern/) s
+5 357 M
+(      This draft was created in July 2001.) s
+5 346 M
+(      It expires January 2002.) s
+5 104 M
+(Floyd et al.                 Standards Track                   [Page 13]) s
+_R
+S
+%%Trailer
+%%Pages: 13
+%%DocumentNeededResources: font Courier-Bold Courier 
+%%EOF
