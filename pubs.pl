@@ -158,8 +158,11 @@ sub PrintPaper() {
 	die "Could not find venue for $allEntries[$paperId]{title}\n";
     }
 
+    my $title = $allEntries[$paperId]{title};
+    $title =~ s/(\{|\})//g;
+
     print "
-<a href=$allEntries[$paperId]{URL}><b>$allEntries[$paperId]{title}</b></a><br>
+<a href=$allEntries[$paperId]{URL}><b>$title</b></a><br>
 $author<br>
 $venue, $allEntries[$paperId]{year}<br>
 ";
