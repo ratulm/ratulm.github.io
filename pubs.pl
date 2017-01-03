@@ -20,7 +20,7 @@ sub usage {
   print STDERR "\n usage: $0 [options] <list of files>
   --help: this message
   --verbose: debug mode [off]
-  --mode <mode>: one of {time, topic, selected} 
+  --mode <mode>: one of {time, topic, selected, cv} 
 \n";
 }
 
@@ -138,6 +138,75 @@ sub PrintSelected() {
     die "print selected not yet implemented\n";
 }
 
+sub PrintCv()  {
+
+for (my $i=0; $i < @topicOrder; $i++) {
+    
+	next if ($topicOrder[$i] =~ m/selected/ ||
+		 $topicOrder[$i] =~ m/ignore/);
+
+	print "\\item \{\\bf $topics{$topicOrder[$i]}\}\n";
+	print "\\begin\{innerlist\}\n";
+
+	for (my $paperId=0; $paperId<@allEntries; $paperId++) {
+
+		if ($allEntries[$paperId]{topics} =~ m/$topicOrder[$i]/) {
+
+			#lets ignore papers marked as ignore or 
+			next if ($allEntries[$paperId]{topics} =~ m/ignore/);
+			#lets ignore papers of type misc
+			next if ($allEntries[$paperId]{paperType} =~ m/misc/);
+
+			my $author = $allEntries[$paperId]{author};
+	        $author =~ s/ and /, /g;
+
+	        my $venue = "unknown";
+	        if (defined($allEntries[$paperId]{booktitle})) {
+		        $venue = $allEntries[$paperId]{booktitle};
+	        }
+	        elsif (defined($allEntries[$paperId]{journal})) {
+		        $venue = $allEntries[$paperId]{journal};
+	        }
+	        elsif (defined($allEntries[$paperId]{howpublished})) {
+		        $venue = $allEntries[$paperId]{howpublished};
+	        }
+	        else {
+		       die "Could not find venue for $allEntries[$paperId]{title}\n";
+	        }
+
+	        my $title = $allEntries[$paperId]{title};
+	        $title =~ s/(\{|\})//g;
+
+	        print "\\item\n";
+
+	        if (defined $allEntries[$paperId]{impact}) {
+	        	print "\\hspace{-0.15in} * ";
+	        }
+
+	        print "    $author,\n";
+	        print "    \`\`$title,\"\n";
+	        print "     \{\\em $venue,\}\n";
+
+	        if ($allEntries[$paperId]{paperType} =~ m/article/) {
+	        	print "    $allEntries[$paperId]{volume}($allEntries[$paperId]{number},\n";
+	        }
+
+	        print "    $allEntries[$paperId]{month} $allEntries[$paperId]{year}.\n";
+
+	        if (defined $allEntries[$paperId]{acceptancerate}) {
+		      print "    ($allEntries[$paperId]{acceptancerate}\\\% acceptance rate)\n";
+	        }	
+
+	        if (defined $allEntries[$paperId]{note}) {
+		      print "    \{\\bf $allEntries[$paperId]{note}\}\n";
+	        }	
+
+		}
+    }
+    print "\\end\{innerlist\}\n";
+}
+}
+
 sub PrintPaper() {
     my ($paperId) = @_;
 
@@ -178,6 +247,7 @@ $venue, $allEntries[$paperId]{year}<br>
     print "<br>\n";
 }
 
+
 ################ main #############
 
 foreach my $file (@files) {
@@ -198,18 +268,19 @@ foreach my $file (@files) {
 	    push @topicOrder, $topicKey;
 
 	}
-        #start of a new entry
-        elsif (m/^@[a-z]+/) {
-
-            $count++;
-        }
+    #start of a new entry
+    elsif (m/^@([a-z]+)\{(.+)\,/) {
+    	my ($paperType, $paperKey) = ($1, $2);    	
+        $count++;
+        $allEntries[$count]{paperType}=$paperType;
+        $allEntries[$count]{paperKey}=$paperKey;
+    }
 	elsif (m/\s+([a-zA-Z]+)=\{(.+)\}/) {
 	    my ($key, $value) = ($1, $2);
 
 	    if (defined($allEntries[$count]) && 
-		defined($allEntries[$count]{$key})) {
-		
-		die "duplicate $count or $count/$key";
+		    defined($allEntries[$count]{$key})) {		
+   		   die "duplicate $count or $count/$key";
 	    }
 	    
 	    $allEntries[$count]{$key} = $value;
@@ -217,20 +288,27 @@ foreach my $file (@files) {
     }
 }
 
-PrintHeader();
 
 if ($MODE eq "time") {
+    PrintHeader();
     PrintByTime();
+    PrintFooter();
 }
 elsif ($MODE eq "topic") {
+    PrintHeader();
     PrintByTopic();
+    PrintFooter();
 }
 elsif ($MODE eq "selected") {
+    PrintHeader();
     PrintSelected();
+    PrintFooter();
+}
+elsif ($MODE eq "cv") {
+	PrintCv();
 }
 else {
     die "unknown mode: $MODE\n";
 }
-PrintFooter();
 
 
