@@ -1,3 +1,5 @@
+all: pubs.html pubs-bytopic.html
+
 pubs.html: pubs.bib pubs.pl
 	./pubs.pl pubs.bib > $@
 
