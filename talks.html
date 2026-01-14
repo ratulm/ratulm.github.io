@@ -1,121 +1,310 @@
-<ul>
+<!DOCTYPE html>
+<html lang="en">
 
-<li>
-    <a href=talks/future-net-aug2017.pptx>Network Engineers Can Uncross their Fingers by Emulating Hardware and Software Engineers</a> [<a href=https://www.youtube.com/watch?v=LfoCK7Au6to>Watch</a>]
-    <br>
-    Keynote at <a href=https://www.vmware.com/futurenet>Future:Net</a> 2017<br>
-</li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratul Mahajan - Talks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<li>
-    <a href=talks/sosr-apr2017.pptx>Network programming for the cloud ERA</a>
-    <br>
-    Keynote at <a href=http://conferences.sigcomm.org/sosr/2017/>ACM SOSR 2017</a> <br>
-</li>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 20px;
+        }
 
-<li>
-<a href=talks/network-programming-jun2016.pptx>Maslow's hierarchy of network programming and the unmet needs</a>
-<br>
-Keynote at <a href=http://network-programming.org/>Center for Network Programming</a> Retreat, Jun 2016 <br>
-</li>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-<li>
-<a href=talks/propane-dimacs-jun2016.pptx>Bridging centralized programming and distributed control planes</a> [<a href=https://www.youtube.com/watch?v=AXrhbM2BWGQ>Watch</a>]
-<br>
-NSF <a href=http://dimacs.rutgers.edu/Workshops/SDNAlgorithms/>Algorithms in the Field Workshop</a>, Jun 2016 <br>
-</li>
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 15px;
+        }
 
+        ul {
+            list-style: none;
+        }
 
-<li>
-<a href=talks/batfish-dagstuhl-feb2015.pptx>Configuration verification: A missing link toward fully verified networks</a>
-<br>
-Dagstuhl seminar on Formal Foundations of Networking, Feb 2015 <br>
-</li>
+        li {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
 
-<li>
-<a href=talks/swan-stanford-may2014.pptx>Software-defined networking: Change is hard</a> [<a href=https://www.youtube.com/watch?v=YgqHTsd247M>Watch</a>]
-<br>
-Stanford, May 2014
-</li>
+        li:last-child {
+            border-bottom: none;
+        }
 
-<li>
-<a href=talks/swan-ucsd-nov2013.pptx>Software-driven wide area network</a>
-<br>
-Distinguished Lecture Series, UCSD, Nov 2013
+        .talk-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
 
-<li>
-<a href=talks/homeos-hups-jul2013.pptx>Accelerating innovation in home technology</a>
-<br>
-Keynote at HUPS, July 2013
+        .talk-title a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-<li>
-<a href=talks/swan-msrc-jul2013.pptx>SWAN: Software-driven wide area network</a>
-<br>
-MSR Cambridge, July 2013
+        .talk-title a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
 
+        .talk-meta {
+            color: #666;
+            margin-top: 4px;
+        }
 
-<li>
-<a href=talks/delorean-summerschool-jun13.pptx>Systematically exploring control programs</a>
-<br>
-Summer School on Formal Methods in Networking, Cornell, June 2013
-<br> <a href=talks/delorean-ucl-jul2013.pptx> Shorter version </a> UCL, July 2013
+        .talk-meta a {
+            color: #0066cc;
+            text-decoration: none;
+        }
 
-<li>
-<a href=talks/homeos-duke-nov2011.pptx>Towards commodity smarthomes</a>
-<br>
-Duke University, Nov 2011
-<br>
-ETH, Zurich, Nov 2011
-<br>
-MPI-SWS, Saarbrucken, Germany, Nov 2011
+        .talk-meta a:hover {
+            text-decoration: underline;
+        }
 
-<li>
-<a href=talks/ccw-2011-home.pptx>View the home as a computer</a>
-<br>
-Panel at IEEE CCW, Oct 2011
+        .back-link {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
 
-<li>
-<a href=talks/dub2011-hni.pptx>HNI: Human network interaction</a>
-<br>
-dub seminar, University of Washington, Aug 2011
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-<li>
-<a href=talks/homenets2010-panel.pptx>Beyond the super-rich and the super-geeks: Smart homes for the rest of us</a>
-<br>
-Panel at SIGCOMM workshop on Home Networks (HomeNets), Sep 2010
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-<li>
-<a href=talks/browser-energy-upcrc2010.pptx>Smartphone energy considerations for browser design</a>
-<br>
-Invited talk at Universal Parallel Computing Research Center (UPCRC) summit, Aug 2010
+<body>
+    <div class="container">
+        <h1>Talks</h1>
+    <ul>
+    <li>
+        <div class="talk-title">
+            <a href="talks/fmano2024-keynote.pdf">The bane of network operations: Networks are evolved, not (intelligently)
+                designed</a>
+        </div>
+        <div class="talk-meta">Keynote at <a href="https://conferences.sigcomm.org/sigcomm/2024/workshop/fmano/">1st ACM
+                SIGCOMM Workshop on Formal Methods Aided Network Operation (FMANO)</a>, Aug 2024</div>
+    </li>
 
-<li>
-<a href=talks/human-2020summit-2010.pptx>Pushing networking research to layer human</a>
-<br>
-2020 Networking Summit, June 2010
+    <li>
+        <div class="talk-title">
+            <a href="talks/apnet2024-keynote.pdf">A decade of network verification: Lessons learned and open challenges</a>
+        </div>
+        <div class="talk-meta">Keynote at <a href="https://conferences.sigcomm.org/events/apnet2024/">8th Asia-Pacific Workshop
+                on Networking (APNet'24)</a>, Aug 2024</div>
+        </li>
 
-<li>
-<a href=talks/wiffler-uw-2010.pptx>Augmenting Mobile 3G using WiFi</a>
-<br>
-University of Washington, May 2010
+    <li>
+        <div class="talk-title">
+            <a href="talks/acm-fsn2023-adn.pdf">Application-defined networking</a>
+        </div>
+        <div class="talk-meta">Invited talk at <a href="https://www.iiitd.ac.in/fsn/">ACM India Winter School on Full Stack
+                Networking</a>, Dec 2023</div>
+        </li>
 
-<li>
-<a href=talks/keynote-conext-2009.pptx>How to build research network systems in your spare time</a>
-<br>
-Keynote at <i>CoNext 2009</i>, December 2009
+    <li>
+        <div class="talk-title">
+            <a href="talks/cnsm2023-keynote.pdf">Network verification: Lessons learned and outlook</a>
+        </div>
+        <div class="talk-meta">Keynote at <a href="http://www.cnsm-conf.org/2023/">IEEE CNSM</a>, Nov 2023</div>
+        </li>
 
-<li>
-<a href=talks/netmedic-netclinic-2009.pptx>Detailed and understandable network diagnosis</a>
-<br>
-U Wisconsin, Nov 2009; and Georgia Tech, Oct 2009
+    <li>
+        <div class="talk-title">
+            <a href="talks/cisco-netcov-apr23.pdf">NetCov: Test coverage for network configurations</a>
+        </div>
+        <div class="talk-meta">Invited talk at Cisco Research, Apr 2023</div>
+        </li>
 
-<li>
-<a href=talks/vanlan-redundancy-2009.pptx>Using redundancy to enable interactive connectivity for moving vehicles</a>
-<br>
-Keynote at <i>WinMee 2009</i>; KAIST [Daejeon, South Korea]; MPI-SWS [Saarbrucken, Germany]
+    <li>
+        <div class="talk-title">
+            <a href="talks/future-net-aug2017.pptx">Network Engineers Can Uncross their Fingers by Emulating Hardware and
+                Software Engineers</a>
+            [<a href="https://www.youtube.com/watch?v=LfoCK7Au6to">Watch</a>]
+        </div>
+        <div class="talk-meta">Keynote at <a href="https://www.vmware.com/futurenet">Future:Net</a> 2017</div>
+    </li>
 
-<li>
-<a href=talks/usc2008-clean.pptx>What constitutes a useful experimental result?</a>
-<br>
-Panel at <i>USC Invited Workshop on Theory & Practice in Wireless Networks 2008</i>
+    <li>
+        <div class="talk-title">
+            <a href="talks/sosr-apr2017.pptx">Network programming for the cloud ERA</a>
+        </div>
+        <div class="talk-meta">Keynote at <a href="http://conferences.sigcomm.org/sosr/2017/">ACM SOSR 2017</a></div>
+        </li>
 
-</ul>
+    <li>
+        <div class="talk-title">
+            <a href="talks/network-programming-jun2016.pptx">Maslow's hierarchy of network programming and the unmet needs</a>
+        </div>
+        <div class="talk-meta">Keynote at <a href="http://network-programming.org/">Center for Network Programming</a> Retreat,
+            Jun 2016</div>
+        </li>
+        
+        <li>
+            <div class="talk-title">
+                <a href="talks/propane-dimacs-jun2016.pptx">Bridging centralized programming and distributed control planes</a>
+                [<a href="https://www.youtube.com/watch?v=AXrhbM2BWGQ">Watch</a>]
+            </div>
+            <div class="talk-meta">NSF <a href="http://dimacs.rutgers.edu/Workshops/SDNAlgorithms/">Algorithms in the Field
+                    Workshop</a>, Jun 2016</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/batfish-dagstuhl-feb2015.pptx">Configuration verification: A missing link toward fully verified
+                networks</a>
+        </div>
+        <div class="talk-meta">Dagstuhl seminar on Formal Foundations of Networking, Feb 2015</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/swan-stanford-may2014.pptx">Software-defined networking: Change is hard</a>
+            [<a href="https://www.youtube.com/watch?v=YgqHTsd247M">Watch</a>]
+        </div>
+        <div class="talk-meta">Stanford, May 2014</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/swan-ucsd-nov2013.pptx">Software-driven wide area network</a>
+        </div>
+        <div class="talk-meta">Distinguished Lecture Series, UCSD, Nov 2013</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/homeos-hups-jul2013.pptx">Accelerating innovation in home technology</a>
+        </div>
+        <div class="talk-meta">Keynote at HUPS, July 2013</div>
+    </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/swan-msrc-jul2013.pptx">SWAN: Software-driven wide area network</a>
+        </div>
+        <div class="talk-meta">MSR Cambridge, July 2013</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/delorean-summerschool-jun13.pptx">Systematically exploring control programs</a>
+        </div>
+        <div class="talk-meta">Summer School on Formal Methods in Networking, Cornell, June 2013<br>
+            <a href="talks/delorean-ucl-jul2013.pptx">Shorter version</a> UCL, July 2013
+        </div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/homeos-duke-nov2011.pptx">Towards commodity smarthomes</a>
+        </div>
+        <div class="talk-meta">Duke University, Nov 2011<br>
+            ETH, Zurich, Nov 2011<br>
+            MPI-SWS, Saarbrucken, Germany, Nov 2011</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/ccw-2011-home.pptx">View the home as a computer</a>
+        </div>
+        <div class="talk-meta">Panel at IEEE CCW, Oct 2011</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/dub2011-hni.pptx">HNI: Human network interaction</a>
+        </div>
+        <div class="talk-meta">dub seminar, University of Washington, Aug 2011</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/homenets2010-panel.pptx">Beyond the super-rich and the super-geeks: Smart homes for the rest of
+                us</a>
+        </div>
+        <div class="talk-meta">Panel at SIGCOMM workshop on Home Networks (HomeNets), Sep 2010</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/browser-energy-upcrc2010.pptx">Smartphone energy considerations for browser design</a>
+        </div>
+        <div class="talk-meta">Invited talk at Universal Parallel Computing Research Center (UPCRC) summit, Aug 2010</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/human-2020summit-2010.pptx">Pushing networking research to layer human</a>
+        </div>
+        <div class="talk-meta">2020 Networking Summit, June 2010</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/wiffler-uw-2010.pptx">Augmenting Mobile 3G using WiFi</a>
+        </div>
+        <div class="talk-meta">University of Washington, May 2010</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/keynote-conext-2009.pptx">How to build research network systems in your spare time</a>
+        </div>
+        <div class="talk-meta">Keynote at CoNext 2009, December 2009</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/netmedic-netclinic-2009.pptx">Detailed and understandable network diagnosis</a>
+        </div>
+        <div class="talk-meta">U Wisconsin, Nov 2009; and Georgia Tech, Oct 2009</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/vanlan-redundancy-2009.pptx">Using redundancy to enable interactive connectivity for moving
+                vehicles</a>
+        </div>
+        <div class="talk-meta">Keynote at WinMee 2009; KAIST [Daejeon, South Korea]; MPI-SWS [Saarbrucken, Germany]</div>
+        </li>
+
+    <li>
+        <div class="talk-title">
+            <a href="talks/usc2008-clean.pptx">What constitutes a useful experimental result?</a>
+        </div>
+        <div class="talk-meta">Panel at USC Invited Workshop on Theory & Practice in Wireless Networks 2008</div>
+    </li>
+    </ul>
+    <div class="back-link">
+        <a href="index.html">← Back to home</a>
+    </div>
+    </div>
+    </body>
+    
+    </html>

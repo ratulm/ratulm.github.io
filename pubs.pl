@@ -41,11 +41,173 @@ my @allEntries;
 sub PrintHeader() {
 
     print '
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>ratul\'s publications</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratul Mahajan - Publications</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      font-weight: 300;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 15px;
+    }
+    
+    h2 {
+      font-size: 1.8em;
+      font-weight: 400;
+      margin: 40px 0 20px 0;
+      color: #1a1a1a;
+    }
+    
+    .nav-links {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .nav-links li:before {
+      content: "→";
+      margin-right: 8px;
+      color: #0066cc;
+    }
+    
+    .nav-links a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    
+    td {
+      padding: 15px 0;
+      vertical-align: top;
+    }
+    
+    td:first-child {
+      width: 10px;
+    }
+    
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    a:hover {
+      color: #004499;
+      text-decoration: underline;
+    }
+    
+    b {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    
+    .year-header {
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #0066cc;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .paper-entry {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .paper-entry:last-child {
+      border-bottom: none;
+    }
+    
+    .paper-title {
+      font-size: 1.05em;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    
+    .paper-authors {
+      color: #666;
+      margin: 4px 0;
+    }
+    
+    .paper-venue {
+      color: #888;
+      font-style: italic;
+      margin: 4px 0;
+    }
+    
+    .paper-note {
+      color: #0066cc;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    
+    .paper-resource {
+      margin-top: 6px;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      
+      .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
-<body bgcolor="#ffffff">
+<body>
+  <div class="container">
+    <h1>Publications</h1>
 ';
 }
 
@@ -53,6 +215,7 @@ sub PrintHeader() {
 sub PrintFooter() {
 
     print "
+  </div>
 </body>
 </html>
 ";
@@ -61,40 +224,38 @@ sub PrintFooter() {
 
 sub PrintByTopic()  {
 
-    print "<ul>\n";
+    print "<div class=\"nav-links\">\n<ul>\n";
 
     for (my $i=0; $i < @topicOrder; $i++) {
     
 	next if ($topicOrder[$i] =~ m/selected/ ||
 		 $topicOrder[$i] =~ m/ignore/);
 
-	print "<li><a href=\"\#$topicOrder[$i]\">$topics{$topicOrder[$i]}</a>\n";
+	print "<li><a href=\"\#$topicOrder[$i]\">$topics{$topicOrder[$i]}</a></li>\n";
 
     }
 
-    print "</ul>\n";
+    print "</ul>\n</div>\n";
 
     for (my $i=0; $i < @topicOrder; $i++) {
     
 	next if ($topicOrder[$i] =~ m/selected/ ||
 		 $topicOrder[$i] =~ m/ignore/);
 
-	print "<p><a name=$topicOrder[$i]></a>\n
-               <b>$topics{$topicOrder[$i]}</b>\n";
-	print '
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
+	print "<h2 id=\"$topicOrder[$i]\">$topics{$topicOrder[$i]}</h2>\n";
+	print '<table>
 ';
 
 	for (my $paperId=0; $paperId<@allEntries; $paperId++) {
 
 	    if ($allEntries[$paperId]{topics} =~ m/$topicOrder[$i]/) {
-		print "<tr><td><td>";
 
 		#lets ignore papers marked as ignore
 		next if ($allEntries[$paperId]{topics} =~ m/ignore/);
 	
+		print "<tr><td></td><td class=\"paper-entry\">";
 		PrintPaper($paperId);
+		print "</td></tr>";
 	    }	
 	}
 
@@ -111,12 +272,10 @@ sub PrintByTime() {
 	if ($year != $lastPrintedYear) {
 
 	    #end the previous table
-	    print "</table>\n";
+	    print "</table>\n" if ($lastPrintedYear != -1);
 
-	    print "<p><b>$year</b>\n";
-	    print '
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
+	    print "<div class=\"year-header\">$year</div>\n";
+	    print '<table>
 ';
 	    
 	    $lastPrintedYear = $year;
@@ -126,8 +285,9 @@ sub PrintByTime() {
 	##print STDERR $allEntries[$i]{URL};
 	next if ($allEntries[$i]{topics} =~ m/ignore/);
 	
-	print "<tr><td><td>";
+	print "<tr><td></td><td class=\"paper-entry\">";
 	PrintPaper($i);
+	print "</td></tr>";
     }
     
 }
@@ -230,21 +390,17 @@ sub PrintPaper() {
     my $title = $allEntries[$paperId]{title};
     $title =~ s/(\{|\})//g;
 
-    print "
-<a href=$allEntries[$paperId]{URL}><b>$title</b></a><br>
-$author<br>
-$venue, $allEntries[$paperId]{year}<br>
-";
+    print "<div class=\"paper-title\"><a href=\"$allEntries[$paperId]{URL}\">$title</a></div>\n";
+    print "<div class=\"paper-authors\">$author</div>\n";
+    print "<div class=\"paper-venue\">$venue, $allEntries[$paperId]{year}</div>\n";
 
     if (defined $allEntries[$paperId]{note}) {
-	print "<b>$allEntries[$paperId]{note}</b><br>";
+	print "<div class=\"paper-note\">$allEntries[$paperId]{note}</div>\n";
     }
 
     if (defined $allEntries[$paperId]{resource}) {
-	print "$allEntries[$paperId]{resource}<br>";
+	print "<div class=\"paper-resource\">$allEntries[$paperId]{resource}</div>\n";
     }
-
-    print "<br>\n";
 }
 
 

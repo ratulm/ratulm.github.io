@@ -1,305 +1,373 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ratul Mahajan</title>
-
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-53592483-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-</head>
-
-<body bgcolor=white lang=EN-US link=blue vlink=blue style='tab-interval:.5in'>
-
-  <div class=Section1>
-
-    <h1><span style='font-size:36.0pt'>&nbsp;</span>
-      <o:p></o:p>
-    </h1>
-
-    <table border=0 cellspacing=0 cellpadding=0 width=531 style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'
-      nosave="" cols=2>
-      <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes' nosave="">
-        <td style='padding:0in 0in 0in 0in' nosave="">
-          <p><img height=180 id="_x0000_i1025" src=ratul2.jpg border=0></p>
-        </td>
-        <td width=320 style='padding:0in 0in 0in 0in'>
-          <p>Ratul Mahajan
-            <br>Professor, <a href=https://www.cs.washington.edu />UW-CSE</a>
-            <br>Co-director, <a href=https://foci.uw.edu />UW FOCI</a>
-            <br>Amazon Scholar, AWS</a>
-            <br>&lt;ratul@ratul.org&gt;
-            <br><a href=https://twitter.com/ratulm>@ratulm</a>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+      padding: 20px;
+    }
+  
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+  
+    header {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header-info h1 {
+      font-size: 2.5em;
+      font-weight: 300;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+  
+    .header-info p {
+      font-size: 1.1em;
+      color: #666;
+      margin: 5px 0;
+    }
+  
+    .header-info a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+  
+    .header-info a:hover {
+      color: #004499;
+    }
+  
+    .contact-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+  
+    .contact-icons a {
+      display: inline-flex;
+      align-items: center;
+      color: #666;
+      transition: color 0.2s;
+    }
+  
+    .contact-icons a:hover {
+      color: #0066cc;
+    }
+  
+    .contact-icons svg {
+      display: block;
+    }
+  
+    section {
+      margin-bottom: 50px;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  
+    h2 .more-link {
+      font-size: 0.6em;
+      font-weight: 500;
+      color: #0066cc;
+      text-decoration: none;
+    }
+  
+    h2 .more-link:hover {
+      text-decoration: underline;
+    }
+  
+    ul {
+      list-style: none;
+    }
+  
+    li {
+      margin-bottom: 20px;
+      padding-left: 20px;
+      position: relative;
+    }
+  
+    li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+    }
+  
+    li a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  
+    li a:hover {
+      text-decoration: underline;
+    }
+  
+    .paper-meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-top: 4px;
+    }
+    
+    .venue {
+      font-style: italic;
+      color: #888;
+    }
+    
+    .bio {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 8px;
+      line-height: 1.8;
+    }
+    
+    .bio p {
+      margin-bottom: 15px;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .header-info h1 {
+        font-size: 2em;
+      }
+      
+      h2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
+      h2 .more-link {
+        font-size: 0.7em;
+      }
+    }
+  </style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <header>
+        <img src="ratul2.jpg" alt="Ratul Mahajan" class="profile-img">
+        <div class="header-info">
+          <h1>Ratul Mahajan</h1>
+          <p>Professor, <a href="https://www.cs.washington.edu">UW-CSE</a> | Co-director, <a href="https://foci.uw.edu">UW
+              FOCI</a> | Amazon Scholar, AWS</p>
+          <p class="contact-icons">
+            <a href="mailto:ratul@ratul.org" title="Email" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+            <a href="https://x.com/ratulm" title="Twitter/X" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ratulratul/" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                </path>
+              </svg>
+            </a>
           </p>
-        </td>
-      </tr>
-    </table>
-
-    <p><br>
-
-    <p><b>Current projects [<a href=projects.html>some past projects</a>]</b>
-    <ul>
-      <li> <a href=papers/whitepaper2025-sds.pdf>Self-defining systems</a>
-      <li> <a href=https://foci.uw.edu/projects.html>Application networking</a>
-      <li> <a href=pubs-bytopic.html#protocols>Network verification</a>
-    </ul>
-
-    <p><b>Recent papers</b> [<a href="pubs.html">Complete list</a>
-      | <a href="pubs-bytopic.html">Organized by topic</a>
-      | <a href="https://scholar.google.com/citations?user=Sh1yq5QAAAAJ">Google Scholar</a>
-      ]
-
-    <ul>
-      <li>
-        <a href=papers/popl2026-relationalnetkat.pdf>Network Change Validation with Relational NetKAT</a>
-        <br> Han Xu, Zachary Kincaid, Ratul Mahajan, and David Walker
-        <br>
-        <i>POPL, 2026</i>
-        </li>
-        <li>
-        <a href=papers/whitepaper2025-sds.pdf>Self-Defining Systems</a>
-        <br> Thomas Anderson, Ratul Mahajan, Simon Peter, and Luke Zettlemoyer
-        <br>
-        <i>White paper, 2025</i>
-        </li>
-        <li>
-        <a href=papers/hotnets2025-scheduling.pdf>Programmable and Adaptive Scheduling for Distributed Systems</a>
-        <br> Yuyao Wang, Xiangfeng Zhu, Ratul Mahajan, and Stephanie Wang
-        <br>
-        <i>HotNets, 2025</i>
-        </li>
-        <li>
-        <a href=papers/ebpf2025-simplebpf.pdf>Offloading the Tedious Task of Writing eBPF Programs</a>
-        <br> Xiangyu Gao, Xiangfeng Zhu, Bhavana Vannarth Shobhana, Yiwei Yang, Arvind Krishnamurthy, Ratul Mahajan
-        <br>
-        <i>3rd Workshop on eBPF and Kernel Extensions (eBPF), 2025</i>
-        </li>
-        <li>
-        <a href=papers/hotos2025-rpcs.pdf>Rethinking RPC Communication for Microservices-based Applications</a>
-        <br> Xiangfeng Zhu, Yang Zhou, Yuyao Wang, Xiangyu Gao, Arvind Krishnamurthy, Sam Kumar, Ratul Mahajan, and Danyang Zhuo
-        <br>
-        <i>HotOS, 2025</i>
-      </li>
-      <li>
-        <a href=papers/nsdi2025-appnet.pdf>High-level Programming for Application Networks</a>
-        <br> Xiangfeng Zhu, Yuyao Wang, Banruo Liu, Yongtong Wu, Nikola Bojanic, Jingrong Chen, Gilbert Louis Bernstein, Arvind Krishnamurthy, Sam Kumar, Ratul Mahajan, and Danyang Zhuo
-        <br>
-        <i>NSDI, 2025</i>
-      </li>
-    </ul>
-
-    <p>
-      <b>Recent talks</b> [<a href="talks.html">More talks</a>]
-    <ul>
-
-      <li>
-        <a href=talks/fmano2024-keynote.pdf>The bane of network operations: Networks are evolved, not (intelligently) designed</a>
-        <br>
-        Keynote at <a href="https://conferences.sigcomm.org/sigcomm/2024/workshop/fmano/">1st ACM SIGCOMM Workshop on Formal Methods Aided Network Operation (FMANO)</a>, Aug
-        2024<br>
-      </li>
-
-      <li>
-        <a href=talks/apnet2024-keynote.pdf>A decade of network verification: Lessons learned and open challenges</a>
-        <br>
-        Keynote at <a href="https://conferences.sigcomm.org/events/apnet2024/">8th Asia-Pacific Workshop on Networking (APNet'24)</a>, Aug
-        2024<br>
-      </li>
-
-      <li>
-        <a href=talks/acm-fsn2023-adn.pdf>Application-defined networking</a>
-        <br>
-        Invited talk at <a href="https://www.iiitd.ac.in/fsn/">ACM India Winter School on Full Stack Networking</a>, Dec
-        2023<br>
-      </li>
-
-      <li>
-        <a href=talks/cnsm2023-keynote.pdf>Network verification: Lessons learned and outlook</a>
-        <br>
-        Keynote at <a href="http://www.cnsm-conf.org/2023/">IEEE CNSM</a>, Nov 2023<br>
-
-      <li>
-        <a href=talks/cisco-netcov-apr23.pdf>NetCov: Test coverage for network configurations</a>
-        <br>
-        Invited talk at Cisco Research, Apr 2023<br>
-
-    </ul>
-
-    <p>
-      <b>Professional activities</b>
-    <ul>
-      <li>
-        <b>PC chair:</b>
-        <a href=https://conferences.sigcomm.org/sigcomm/2020 />SIGCOMM 2020</a>,
-        <a href=https://www.usenix.org/conference/nsdi14>NSDI 2014</a>,
-        <a href=http://conferences.sigcomm.org/imc/2012 />IMC 2012</a>,
-        <a href="http://mobiarch11.cs.ucl.ac.uk/">MobiArch 2011</a>,
-        <a href="http://conferences.sigcomm.org/hotnets/2009/">HotNets 2009 </a>,
-        <a href="http://netecon-ibc.si.umich.edu/">NetEcon+IBC 2007</a>
-
-      <li>
-        <b>PC member:</b>
+          <p style="margin-top: 20px; line-height: 1.7;">
+            I work on computer systems and networks. I've done research in
+            academia and industry, and engineering at hyperscalers and startups.
+            So, if you’re looking for career advice, I can definitely tell you what
+            <i>not</i> to do.
+            <a href="bio.html">Bio</a> |
+            <a href="https://en.wikipedia.org/wiki/Ratul_Mahajan"
+              style="display: inline-flex; align-items: center; gap: 4px;">
+              <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg" width="16" height="16"
+                alt="Wikipedia" style="vertical-align: middle;">
+            </a>
+          </p>
+        </div>
+      </header>
+      <section>
+        <h2>
+          <span>Current projects</span>
+          <a href="projects.html" class="more-link">More projects →</a>
+        </h2>
         <ul>
-          <li> 2026:
-            <a href="https://www.usenix.org/conference/nsdi26">NSDI</a>
+          <li><a href="papers/whitepaper2025-sds.pdf">Self-defining systems</a></li>
+          <li><a href="https://foci.uw.edu/projects.html">Application networking</a></li>
+          <li><a href="pubs-bytopic.html#protocols">Network verification</a></li>
+          </ul>
+      </section>
+      
+      <section>
+        <h2>
+          <span>Recent papers</span>
+          <span class="more-link">
+            <a href="pubs.html">Complete list</a> |
+            <a href="pubs-bytopic.html">By topic</a> |
+            <a href="https://scholar.google.com/citations?user=Sh1yq5QAAAAJ">Google Scholar</a>
+          </span>
+        </h2>
+        <ul>
+          <li>
+            <a href="papers/popl2026-relationalnetkat.pdf">Network Change Validation with Relational NetKAT</a>
+            <div class="paper-meta">Han Xu, Zachary Kincaid, Ratul Mahajan, and David Walker</div>
+            <div class="venue">POPL, 2026</div>
+            </li>
+            <li>
+            <a href="papers/whitepaper2025-sds.pdf">Self-Defining Systems</a>
+            <div class="paper-meta">Thomas Anderson, Ratul Mahajan, Simon Peter, and Luke Zettlemoyer</div>
+            <div class="venue">White paper, 2025</div>
+            </li>
+            <li>
+          <a href="papers/hotnets2025-scheduling.pdf">Programmable and Adaptive Scheduling for Distributed Systems</a>
+          <div class="paper-meta">Yuyao Wang, Xiangfeng Zhu, Ratul Mahajan, and Stephanie Wang</div>
+          <div class="venue">HotNets, 2025</div>
           </li>
-          <li> 2025:
-            <a href=https://www.usenix.org/conference/osdi25>OSDI</a>
+          </ul>
+          </section>
+          
+          <section>
+            <h2>
+              <span>Current students</span>
+              <a href="students.html" class="more-link">More students →</a>
+            </h2>
+            <ul>
+              <li>Tapan Chugh</li>
+              <li>Xiangyu Gao (postdoc) </li>
+              <li>Wei Shen</li>
+              <li>Yuyao Wang </li>
+              <li>Dan Wang (visiting from Xi'an Jiaotong)</li>
+              <li>Xiangfeng Zhu </li>
+              </ul>
+              </section>
+
+    <section>
+      <h2>
+        <span>Recent teaching</span>
+        <a href="teaching.html" class="more-link">More teacihng →</a>
+      </h2>
+      <ul>
+        <li>
+          <div style="font-weight: 600; margin-bottom: 4px;">CSE 461: Introduction to Computer Networks</div>
+          <div class="paper-meta">Spring 2023</div>
+          <div class="course-description">Senior-level undergraduate course on computer networking</div>
           </li>
-          <li> 2024:
-            <a href="https://conferences.sigcomm.org/sigcomm/2024/">SIGCOMM</a>
+        <li>
+          <div style="font-weight: 600; margin-bottom: 4px;">CSE 550: Systems for All</div>
+          <div class="paper-meta">Autumn 2022</div>
+          <div class="course-description">Graduate-level breadth course on foundations of computer systems</div>
           </li>
-          <li> 2023:
-            <a href=https://www.usenix.org/conference/osdi23>OSDI</a>
+        <li>
+          <div style="font-weight: 600; margin-bottom: 4px;">CSE 561: Computer Communication and Networks</div>
+          <div class="paper-meta">Winter 2021</div>
+          <div class="course-description">Graduate-level course on recent research in computer networks</div>
           </li>
-          <li> 2022:
-            <a href=https://www.usenix.org/conference/osdi22>OSDI</a>
+      </ul>
+    </section>
+
+    <section>
+      <h2>
+        <span>Recent talks</span>
+        <a href="talks.html" class="more-link">More talks →</a>
+      </h2>
+      <ul>
+        <li>
+          <a href="talks/fmano2024-keynote.pdf">The bane of network operations: Networks are evolved, not (intelligently)
+            designed</a>
+          <div class="paper-meta">Keynote at <a href="https://conferences.sigcomm.org/sigcomm/2024/workshop/fmano/">1st ACM
+              SIGCOMM Workshop on Formal Methods Aided Network Operation (FMANO)</a>, Aug 2024</div>
           </li>
-          <li> 2021:
-            <a href="https://conferences.sigcomm.org/sigcomm/2021/">SIGCOMM</a>,
-            <a href="http://conferences.sigcomm.org/hotnets/2021/">HotNets</a>
+          <li>
+            <a href="talks/apnet2024-keynote.pdf">A decade of network verification: Lessons learned and open challenges</a>
+            <div class="paper-meta">Keynote at <a href="https://conferences.sigcomm.org/events/apnet2024/">8th Asia-Pacific
+                Workshop
+                on Networking (APNet'24)</a>, Aug 2024</div>
           </li>
+          <li>
+            <a href="talks/acm-fsn2023-adn.pdf">Application-defined networking</a>
+            <div class="paper-meta">Invited talk at <a href="https://www.iiitd.ac.in/fsn/">ACM India Winter School on Full Stack
+                Networking</a>, Dec 2023</div>
+          </li>
+          <li>
+            <a href="talks/cnsm2023-keynote.pdf">Network verification: Lessons learned and outlook</a>
+            <div class="paper-meta">Keynote at <a href="http://www.cnsm-conf.org/2023/">IEEE CNSM</a>, Nov 2023</div>
+          </li>
+          <li>
+            <a href="talks/cisco-netcov-apr23.pdf">NetCov: Test coverage for network configurations</a>
+            <div class="paper-meta">Invited talk at Cisco Research, Apr 2023</div>
+          </li>
+          </ul>
+    </section>
 
-          <li> 2017:
-            <a href="https://www.usenix.org/conference/nsdi17">NSDI</a>,
-            <a href="http://conferences.sigcomm.org/sigcomm/2017/">SIGCOMM</a>
-
-          <li> 2016:
-            <a href="https://www.usenix.org/conference/nsdi16">NSDI</a>,
-            <a href="http://conferences.sigcomm.org/sigcomm/2016/">SIGCOMM</a>,
-            <a href="http://conferences.sigcomm.org/hotnets/2016/">HotNets</a>
-
-          <li> 2015:
-            <a href="http://icdcs-2015.cse.ohio-state.edu/">ICDCS</a>,
-            <a href="http://conferences.sigcomm.org/imc/2015/">IMC</a>,
-            <a href="http://conferences.sigcomm.org/hotnets/2015/">HotNets</a>,
-            <a href="http://opennetsummit.org/sosr/">SOSR</a>,
-            <a href="http://conferences.sigcomm.org/sigcomm/2015/c2bid.php">C2BID</a>
-
-          <li> 2014:
-            <a href="https://www.usenix.org/conference/nsdi14">NSDI</a>,
-            <a href="http://conferences.sigcomm.org/sigcomm/2014/">SIGCOMM</a>,
-            <a href="http://conferences.sigcomm.org/co-next/2014/">CoNext</a>,
-            <a href="https://sites.google.com/site/2014socc/">SoCC</a>,
-            <a href="http://appanalysis.org/upside/">UPSIDE</a>,
-            <a href="https://www.usenix.org/conference/ons2014">ONS</a>
-          <li> 2013:
-            <a href="https://www.usenix.org/conference/nsdi13">NSDI</a>,
-            <a href="http://conferences.sigcomm.org/hotnets/2013/">HotNets</a>
-          <li> 2012:
-            <a href="http://conferences.sigcomm.org/sigcomm/2012/">SIGCOMM</a>,
-            <a href="http://conferences.sigcomm.org/imc/2012/">IMC</a>
-          <li> 2011:
-            <a href="http://conferences.sigcomm.org/sigcomm/2011/">SIGCOMM</a>,
-            <a href="http://www.usenix.org/events/nsdi11/index.html">NSDI</a>,
-            <a href="http://conferences.sigcomm.org/imc/2011/">IMC</a>,
-            <a href="href=http://mobiarch11.cs.ucl.ac.uk">MobiArch</a>
-            <a href="http://conferences.sigcomm.org/sigcomm/2011/workshops/HomeNets/">HomeNets</a>
-          <li> 2010:
-            <a href="http://www.sigmetrics.org/sigmetrics2010/">SIGMETRICS</a>,
-            <a href="http://conferences.sigcomm.org/imc/2010/">IMC</a>,
-            <a href="http://conferences.sigcomm.org/co-next/2010/">CoNext</a>,
-            <a href="http://conferences.sigcomm.org/hotnets/2010/">HotNets</a>,
-            <a href="http://conferences.sigcomm.org/sigcomm/2010/HomeNets.php">HomeNets</a>,
-            <a href="http://sites.google.com/site/mobiarch10/">MobiArch</a>
-
-          <li> 2009:
-            <a href="http://www.acm.org/sigs/sigcomm/sigcomm2009/">SIGCOMM</a>,
-            <a href="http://www.imconf.net/imc-2009/">IMC</a>,
-            <a href="http://www.ieee-icnp.org/2009/">ICNP</a>,
-            <a href="http://conferences.sigcomm.org/hotnets/2009/">HotNets-VIII </a>,
-            <a href="http://www.comsnets.org/">COMSNETS</a>,
-            <a href="http://netecon.seas.harvard.edu/NetEcon09/index09.html">NetEcon</a>,
-            <a href="http://netdb09.cis.upenn.edu/">NetDB</a>,
-            <a href="http://www.aqualab.cs.northwestern.edu/HotACIV/">HotAC</a>,
-            <a href="http://cmclab.rice.edu/~winmee/">WinMee</a>
-
-          <li> 2008:
-            <a href="http://www.acm.org/sigs/sigcomm/sigcomm2008/">SIGCOMM</a>,
-            <a href="http://www.comsoc.org/confs/infocom/2008/">INFOCOM</a>,
-            <a href="http://www.sigcomm.org/sigcomm2008/workshops/netecon/">NetEcon</a>,
-            <a href="http://conferences.sigcomm.org/co-next/2008/roads.html">ROADS</a>,
-            <a href="http://www.netsec.colostate.edu/gi08/">Global Internet</a>
-
-          <li> 2007:
-            <a href="http://pam2007.intel-research.net/">PAM</a>,
-            <a href="http://netecon-ibc.si.umich.edu/">NetEcon</a>,
-            <a href="http://www.acm.org/sigs/sigcomm/sigcomm2007/">SIGCOMM posters</a>
-
-          <li> 2006:
-            <a href="http://www.acm.org/sigs/sigcomm/sigcomm2006/">SIGCOMM</a>,
-            <a href="http://www.acm.org/sigs/sigcomm/HotNets-V/">HotNets-V</a>,
-            <a href="http://www.cs.duke.edu/nicl/netecon06/">NetEcon</a>
-
-        </ul>
-      <li>
-        <b>Steering committee</b> <a href="http://www.sigcomm.org/events/imc-conference">IMC</a> [2014-2018]
-
-      <li>
-        <b>Workshops Chair:</b> <a href="http://www.acm.org/sigs/sigcomm/sigcomm2013/">SIGCOMM 2013</a>
-
-      <li>
-        <b>Associate editor:</b> <a href="http://www.ton.seas.upenn.edu/">IEEE/ACM ToN</a> [2012-2014]
-
-      <li>
-        <b>Organizer:</b> <a href="http://www.cs.washington.edu/mssi/2009/index.html">UW MSR Summer Institute 2009</a>
-        on "Unraveling the technological knot in homes"
-
-      <li>
-        <b>Area editor:</b> <a href="http://www.sigmobile.org/pubs/mc2r/">MC2R</a> [2008-2011]
-
-      <li>
-        <b>Local chair:</b> <a href="http://www.acm.org/sigs/sigcomm/sigcomm2008/">SIGCOMM 2008</a>
-
-    </ul>
-
-    <!-- <p>
-<b>Selected press coverage</b>
-<ul>
-<li> <a href=http://business-standard.com/413018/> Marrying 3G with WiFi makes sense</a> [Business Standard]
-<li> <a href=http://mobile.slashdot.org/story/10/10/13/1342221/Researchers-Test-WiFi-Access-From-Moving-Vehicles>Researchers test WiFi access from moving vehicles</a> [Slashdot]
-<li> <a href=http://research.microsoft.com/en-us/news/features/smartphonetraffic-103110.aspx>Tuning Smartphone Performance</a> [MSR]
-<li> <a href=http://www.networkworld.com/community/blog/microsoft-wiffler-lets-smartphones-use-free-w?t51hb=>Microsoft Wiffler lets smartphones use free WiFi from moving vehicles</a> [Network World]
-<li> <a href=http://www.technologyreview.com/communications/26524/page1/>Improving phones through surveillance</a> [Technology Review]
-<li> <a href=http://www.zdnet.com/blog/microsoft/microsofts-homestore-home-automation-with-an-iphone-inspired-twist/7596>Microsoft's HomeStore: Home automation, with an iPhone-inspired twist</a> [ZDNet]
-<li> <a href=http://research.microsoft.com/en-us/news/features/wiffler-091610.aspx>Using Wi-Fi to Boost 3G Capacity</a> [MSR]
-<li><a href=http://seattlepi.nwsource.com/business/376308_software25.html>Software Notebook: Microsoft test-driving Wi-Fi use in vehicles</a> [Seattle PI]
-<li> <a href=http://www.networkworld.com/news/2008/090408-wi-fi-vehicle-networks.html>Plan rolling to improve vehicle-based Wi-Fi nets</a> [Network World]
-<li><a href=http://discovermagazine.com/2009/feb/28-prepare-for-truly-mobile-wifi>Prepare for truly mobile WiFi</a> [Discover Magazine]
-</ul> -->
-
-    <p>
-      <b>Bio</b>
-      <br>
-      Ratul Mahajan is a Professor at the <a href=https://www.cs.washington.edu />University of
-      Washington</a> (Paul G. Allen School of Computer Science). He is also the co-director of <a
-        href=https://foci.uw.edu>UW FOCI</a> (Future of Cloud Infrastructure) and an Amazon Scholar. Prior to that, he
-      was a Co-founder and CEO of Intentionet, a company that pioneered
-      intent-based networking and network verification, and a Principal Researcher at <a
-        href=https://www.microsoft.com/en-us/research />Microsoft Research</a>. He got his PhD at the <a
-        href=https://www.cs.washington.edu />University of Washington</a> and B.Tech at <a
-        href=http://www.iitd.ac.in />Indian Institute of Technology, Delhi</a>, both in Computer Science and
-      Engineering.
-    <p>
-      Ratul is a computer systems researcher with a networking focus and has worked on a broad set of topics, including
-      network verification, connected homes, network programming, optical networks, Internet routing and measurements,
-      and mobile systems. He has published over fifty papers in top venues such as SIGCOMM, SOSP, MobiCom, CHI, and
-      PLDI, and many of the technologies that he has helped develop are part of real-world systems at Microsoft and
-      other companies.
-    <p>
-      Ratul has been recognized as an ACM Distinguished Scientist, an ACM SIGCOMM Rising Star, and a Microsoft Research
-      Graduate Fellow. His papers have won the ACM SIGCOMM Test-of-Time Award, the IEEE William R. Bennett Prize, the
-      ACM SIGCOMM Best Paper Awards (twice), and the HVC Best Paper Award.
+    <section>
+      <h2>
+        <span>Selected professional service</span>
+        <a href="service.html" class="more-link">More service →</a>
+      </h2>
+      <ul>
+        <li>
+          <strong>PC chair:</strong>
+          <a href="https://conferences.sigcomm.org/sigcomm/2020">SIGCOMM 2020</a>,
+          <a href="https://www.usenix.org/conference/nsdi14">NSDI 2014</a>,
+          <a href="http://conferences.sigcomm.org/imc/2012">IMC 2012</a>,
+          <a href="http://conferences.sigcomm.org/hotnets/2009/">HotNets 2009</a>
+          </li>
+          <li>
+          <strong>PC member:</strong>
+          <a href="https://conferences.sigcomm.org/sigcomm/2026/">SIGCOMM 2026</a>,
+          <a href="https://www.usenix.org/conference/nsdi26">NSDI 2026</a>,
+          <a href="https://www.usenix.org/conference/osdi25">OSDI 2025</a>,
+          <a href="https://conferences.sigcomm.org/sigcomm/2024/">SIGCOMM 2024</a>
+          </li>
+          <li>
+          <strong>Steering committee:</strong> <a href="http://www.sigcomm.org/events/imc-conference">IMC</a> [2014-2018]
+          </li>
+          </ul>
+        </section>
   </div>
-
 </body>
-
 </html>

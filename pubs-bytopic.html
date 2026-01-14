@@ -1,664 +1,611 @@
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>ratul's publications</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratul Mahajan - Publications</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      font-weight: 300;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 15px;
+    }
+    
+    h2 {
+      font-size: 1.8em;
+      font-weight: 400;
+      margin: 40px 0 20px 0;
+      color: #1a1a1a;
+    }
+    
+    .nav-links {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .nav-links li:before {
+      content: "→";
+      margin-right: 8px;
+      color: #0066cc;
+    }
+    
+    .nav-links a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    
+    td {
+      padding: 15px 0;
+      vertical-align: top;
+    }
+    
+    td:first-child {
+      width: 10px;
+    }
+    
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    a:hover {
+      color: #004499;
+      text-decoration: underline;
+    }
+    
+    b {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    
+    .year-header {
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #0066cc;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .paper-entry {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .paper-entry:last-child {
+      border-bottom: none;
+    }
+    
+    .paper-title {
+      font-size: 1.05em;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    
+    .paper-authors {
+      color: #666;
+      margin: 4px 0;
+    }
+    
+    .paper-venue {
+      color: #888;
+      font-style: italic;
+      margin: 4px 0;
+    }
+    
+    .paper-note {
+      color: #0066cc;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    
+    .paper-resource {
+      margin-top: 6px;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      
+      .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
-<body bgcolor="#ffffff">
+<body>
+  <div class="container">
+    <h1>Publications</h1>
+<div class="nav-links">
 <ul>
-<li><a href="#appnets">Application networking</a>
-<li><a href="#protocols">Network verification and high-level programming</a>
-<li><a href="#optical">Optical networking</a>
-<li><a href="#sdn">Software-defined networking</a>
-<li><a href="#home">Connected homes</a>
-<li><a href="#mobile">Mobile systems</a>
-<li><a href="#diagnosis">Network monitoring and diagnosis</a>
-<li><a href="#wireless">Wireless networks</a>
-<li><a href="#astronomy">Internet measurements</a>
-<li><a href="#incentives">Incentives in networked systems</a>
-<li><a href="#misc">Miscellaneous</a>
+<li><a href="#appnets">Application networking</a></li>
+<li><a href="#protocols">Network verification and high-level programming</a></li>
+<li><a href="#optical">Optical networking</a></li>
+<li><a href="#sdn">Software-defined networking</a></li>
+<li><a href="#sds">Self-defining systems</a></li>
+<li><a href="#home">Connected homes</a></li>
+<li><a href="#mobile">Mobile systems</a></li>
+<li><a href="#diagnosis">Network monitoring and diagnosis</a></li>
+<li><a href="#wireless">Wireless networks</a></li>
+<li><a href="#astronomy">Internet measurements</a></li>
+<li><a href="#incentives">Incentives in networked systems</a></li>
+<li><a href="#misc">Miscellaneous</a></li>
 </ul>
-<p><a name=appnets></a>
+</div>
+<h2 id="appnets">Application networking</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2025-scheduling.pdf">Programmable and Adaptive Scheduling for Distributed Systems</a></div>
+<div class="paper-authors">Yuyao Wang, Xiangfeng Zhu, Ratul Mahajan, Stephanie Wang</div>
+<div class="paper-venue">ACM HotNets, 2025</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ebpf2025-simplebpf.pdf">Offloading the Tedious Task of Writing eBPF Programs</a></div>
+<div class="paper-authors">Xiangyu Gao, Xiangfeng Zhu, Bhavana Vannarth Shobhana, Yiwei Yang, Arvind Krishnamurthy, Ratul Mahajan</div>
+<div class="paper-venue">3rd Workshop on eBPF and Kernel Extensions (eBPF), 2025</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotos2025-rpcs.pdf">Rethinking RPC Communication for Microservices-based Applications</a></div>
+<div class="paper-authors">Xiangfeng Zhu, Yang Zhou, Yuyao Wang, Xiangyu Gao, Arvind Krishnamurthy, Sam Kumar, Ratul Mahajan, Danyang Zhuo</div>
+<div class="paper-venue">ACM HotOS, 2025</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2025-appnet.pdf">High-level Programming for Application Networks</a></div>
+<div class="paper-authors">Xiangfeng Zhu, Yuyao Wang, Banruo Liu, Yongtong Wu, Nikola Bojanic, Jingrong Chen, Gilbert Louis Bernstein, Arvind Krishnamurthy, Sam Kumar, Ratul Mahajan, Danyang Zhuo</div>
+<div class="paper-venue">USENIX NSDI, 2025</div>
+<div class="paper-resource"><a href=https://appnet.wiki/>Code and documentation</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2023-adn.pdf">Application Defined Networking</a></div>
+<div class="paper-authors">Xiangfeng Zhu, Weixin Deng, Banruo Liu, Jingrong Chen, Yongji Wu, Tom Anderson, Arvind Krishnamurthy, Ratul Mahajan, Danyang Zhuo</div>
+<div class="paper-venue">ACM HotNets, 2023</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/socc2023-meshinsight.pdf">Dissecting Overheads of Service Mesh Sidecars</a></div>
+<div class="paper-authors">Xiangfeng Zhu, Guozhen She, Bowen Xue, Yu Zhang, Yongsu Zhang, Xuan Kelvin Zou, XiongChun Duan, Peng He, Arvind Krishnamurthy, Matthew Lentz, Danyang Zhuo, Ratul Mahajan</div>
+<div class="paper-venue">ACM SoCC, 2023</div>
+<div class="paper-resource"><a href=https://github.com/UWNetworksLab/meshinsight>Code and documentation</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/socc2023-sia.pdf">Anticipatory Resource Allocation for ML Training</a></div>
+<div class="paper-authors">Tapan Chugh, Srikanth Kandula, Arvind Krishnamurthy, Ratul Mahajan, Ishai Menache</div>
+<div class="paper-venue">ACM SoCC, 2023</div>
+</td></tr></table>
+<h2 id="protocols">Network verification and high-level programming</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/popl2026-relationalnetkat.pdf">Network Change Validation with Relational NetKAT</a></div>
+<div class="paper-authors">Han Xu, Zachary Kincaid, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">ACM POPL, 2026</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2024-rela.pdf">Relational Network Verification</a></div>
+<div class="paper-authors">Xieyang Xu, Yifei Yuan, Zachary Kincaid, Arvind Krishnamurthy, Ratul Mahajan, David Walker, Ennan Zhai</div>
+<div class="paper-venue">ACM SIGCOMM, 2024</div>
+<div class="paper-resource"><a href=https://github.com/alibaba/rela>Code</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2024-flm.pdf">Sequence Abstractions for Flexible, Line-Rate Network Monitoring</a></div>
+<div class="paper-authors">Andrew Johnson, Ryan Beckett, Xiaoqi Chen, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">USENIX NSDI, 2024</div>
+<div class="paper-resource"><a href=https://github.com/PrincetonUniversity/lucid/tree/SpecRegex>Code</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2023-batfish-lessons.pdf">Lessons from the evolution of the Batfish configuration analysis tool</a></div>
+<div class="paper-authors">Matt Brown, Ari Fogel, Daniel Halperin, Victor Heohiardi, Ratul Mahajan, Todd Millstein</div>
+<div class="paper-venue">ACM SIGCOMM, 2023</div>
+<div class="paper-note">ACM SIGCOMM Networking Systems Award</div>
+<div class="paper-resource"><a href=https://github.com/batfish>Code and documentation</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2023-netcov.pdf">Test coverage metrics for network configurations</a></div>
+<div class="paper-authors">Xieyang Xu, Weixin Deng, Ryan Beckett, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">USENIX NSDI, 2023</div>
+<div class="paper-resource"><a href=https://github.com/UWNetworksLab/netcov>Code and documentation</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2021-yardstick.pdf">Test coverage metrics for the network</a></div>
+<div class="paper-authors">Xieyang Xu, Ryan Beckett, Karthick Jayaraman, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">ACM SIGCOMM, 2021</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/popl2020-shapeshifter.pdf">Abstract interpretation of distributed network control planes</a></div>
+<div class="paper-authors">Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">ACM POPL, 2020</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2020-zen.pdf">A general framework for compositional network modeling</a></div>
+<div class="paper-authors">Ryan Beckett, Ratul Mahajan</div>
+<div class="paper-venue">ACM HotNets, 2020</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2019-putting.pdf">Putting network verification to good use</a></div>
+<div class="paper-authors">Ryan Beckett, Ratul Mahajan</div>
+<div class="paper-venue">ACM HotNets, 2019</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/cav2019-origami.pdf">Efficient verification of network fault tolerance via counterexample-guided refinement</a></div>
+<div class="paper-authors">Nick Giannarakis, Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">International Conference on Computer Aided Verification (CAV), 2019</div>
+<div class="paper-resource"><a href=papers/cav2019-origami-full.pdf>Extended version with proofs</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2018-bonsai.pdf">Control Plane Compression</a></div>
+<div class="paper-authors">Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">ACM SIGCOMM, 2018</div>
+<div class="paper-resource"><a href=https://arxiv.org/pdf/1806.08744.pdf>Extended version with proofs</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sosp2017-cpr.pdf">Automatically Repairing Network Control Planes Using an Abstract Representation</a></div>
+<div class="paper-authors">Aaron Gember-Jacobson, Aditya Akella, Ratul Mahajan, Hongqiang Liu</div>
+<div class="paper-venue">ACM SOSP, 2017</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2017-minesweeper.pdf">A General Approach to Network Configuration Verification</a></div>
+<div class="paper-authors">Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker</div>
+<div class="paper-venue">ACM SIGCOMM, 2017</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/pldi2017-propaneat.pdf">Network Configuration Synthesis with Abstract Topologies</a></div>
+<div class="paper-authors">Ryan Beckett, Ratul Mahajan, Jitu Padhye, Todd Millstein, David Walker</div>
+<div class="paper-venue">ACM PLDI, 2017</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/osdi2016-era.pdf">Efficient network reachability analysis using a succinct control plane representation</a></div>
+<div class="paper-authors">Seyed K. Fayaz, Tushar Sharma, Ari Fogel, Ratul Mahajan, Todd Millstein, Vyas Sekar, George Varghese</div>
+<div class="paper-venue">USENIX OSDI, 2016</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hvc2016-ddnf.pdf">ddNF: An efficient data structure for header spaces</a></div>
+<div class="paper-authors">Nikolaj Bjørner, Garvit Juniwal, Ratul Mahajan, Sanjit A. Seshia, George Varghese</div>
+<div class="paper-venue">Haifa Verification Conference (HVC), 2016</div>
+<div class="paper-note">Best Paper Award</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2016-propane.pdf">Don't mind the gap: Bridging network-wide objectives and device-level configurations</a></div>
+<div class="paper-authors">Ryan Beckett, Ratul Mahajan, Jitu Padhye, Todd Millstein, David Walker</div>
+<div class="paper-venue">ACM SIGCOMM, 2016</div>
+<div class="paper-note">Best Paper Award</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2016-arc.pdf">Fast control plane analysis using an abstract representation</a></div>
+<div class="paper-authors">Aaron Gember-Jacobson, Raajay Viswanathan, Aditya Akella, Ratul Mahajan</div>
+<div class="paper-venue">ACM SIGCOMM, 2016</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/atc2015-delorean.pdf">Systematically exploring the behavior of control programs</a></div>
+<div class="paper-authors">Jason Croft, Ratul Mahajan, Matt Caeser, Madan Musuvathi</div>
+<div class="paper-venue">USENIX ATC, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2015-batfish.pdf">A general approach to network configuration analysis</a></div>
+<div class="paper-authors">Ari Fogel, Stanley Fung, Luis Pedrosa, Meg Walraed-Sullivan, Ramesh Govindan, Ratul Mahajan, Todd Millstein</div>
+<div class="paper-venue">USENIX NSDI, 2015</div>
+<div class="paper-note">ACM SIGCOMM Networking Systems Award</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2015-pic.pdf">Analyzing protocols implementations for interoperability</a></div>
+<div class="paper-authors">Luis Pedrosa, Ari Fogel, Nupur Kothari, Ramesh Govindan, Ratul Mahajan, Todd Millstein</div>
+<div class="paper-venue">USENIX NSDI, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2011-max.pdf">Finding protocol manipulation attacks</a></div>
+<div class="paper-authors">Nupur Kothari, Ratul Mahajan, Todd Millstein, Ramesh Govindan, Madan Musuvathi</div>
+<div class="paper-venue">ACM SIGCOMM, 2011</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2008-gullibility.pdf">Can you fool me? towards automatically checking protocol gullibility</a></div>
+<div class="paper-authors">Milan Stanojevic, Ratul Mahajan, Todd Millstein, Madan Musuvathi</div>
+<div class="paper-venue">ACM HotNets, 2008</div>
+<div class="paper-resource"><a href=talks/hotnets2008-gullibility.pptx>HotNets talk</a></div>
+</td></tr></table>
+<h2 id="optical">Optical networking</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2017-corropt.pdf">Understanding and mitigating packet corruption in data center networks</a></div>
+<div class="paper-authors">Danyang Zhuo, Monia Ghobadi, Ratul Mahajan, Klaus-Tycho Förster, Arvind Krishnamurthy, Thomas Anderson</div>
+<div class="paper-venue">ACM SIGCOMM, 2017</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2017-rail.pdf">RAIL: A case for redundant arrays of inexpensive links in data center networks</a></div>
+<div class="paper-authors">Danyang Zhuo, Monia Ghobadi, Ratul Mahajan, Amar Phanishayee, Xuan Kelvin Zou, Hang Guan, Arvind Krishnamurthy, Thomas Anderson</div>
+<div class="paper-venue">USENIX NSDI, 2017</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2016-opticalfailures.pdf">Optical layer failures in a large backbone</a></div>
+<div class="paper-authors">Monia Ghobadi, Ratul Mahajan</div>
+<div class="paper-venue">ACM IMC, 2016</div>
+<div class="paper-note">Best Dataset Award</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2016-projector.pdf">ProjecToR: Agile reconfigurable datacenter interconnect</a></div>
+<div class="paper-authors">Monia Ghobadi, Ratul Mahajan, Amar Phanishayee, Houman Rastegarfar, Pierre-Alexandre Blanche, Madeleine Glick, Daniel Kilper, Janardhan Kulkarni, Gireeja Ranade, Nikhil Devanur</div>
+<div class="paper-venue">ACM SIGCOMM, 2016</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/jocn2016-elastic-optical-networks.pdf">Elastic optical networking in the Microsoft cloud</a></div>
+<div class="paper-authors">Mark Filer, Jamie Gaudette, Monia Ghobadi, Ratul Mahajan, Tom Issenhuth, Buddy Klinkers, Jeff Cox</div>
+<div class="paper-venue">Journal of Optical Communications and Networking (JOCN), 2016</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ofc2016-bvt.pdf">Evaluation of elastic modulation gains in Microsoft's optical backbone in North America</a></div>
+<div class="paper-authors">Monia Ghobadi, Jamie Gaudette, Ratul Mahajan, Amar Phanishayee, Buddy Klinkers, Daniel Kilper</div>
+<div class="paper-venue">The Optical Fiber Communication Conference and Exhibition (OFC), 2016</div>
+</td></tr></table>
+<h2 id="sdn">Software-defined networking</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/networking2016-consistentupdates.pdf">Consistent updates in software-defined networks: On dependencies, loop freedom, and blackholes</a></div>
+<div class="paper-authors">Klaus-Tycho Forster, Ratul Mahajan, Roger Wattenhofer</div>
+<div class="paper-venue">IFIP Networking, 2016</div>
+<div class="paper-note">Selected for forwarding to the IFIP TC6 journal Open Transactions on Communication Systems</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2016-footprint.pdf">Efficiently delivering online services over integrated infrastructure</a></div>
+<div class="paper-authors">Hongqiang Liu, Raajay Viswanathan, Matt Calder, Aditya Akella, Ratul Mahajan, Jitendra Padhye, Ming Zhang</div>
+<div class="paper-venue">USENIX NSDI, 2016</div>
+<div class="paper-resource"><a href=papers/tr2016-footprint.pdf>Technical report</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2014-ffc.pdf">Traffic engineering with forward fault correction</a></div>
+<div class="paper-authors">Hongqiang Liu, Srikanth Kandula, Ratul Mahajan, Ming Zhang, David Gelernter</div>
+<div class="paper-venue">ACM SIGCOMM, 2014</div>
+<div class="paper-resource"><a href=papers/tr2014-ffc-appendix.pdf>Appendix</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2014-dionysus.pdf">Dynamic scheduling of network updates</a></div>
+<div class="paper-authors">Xin Jin, Hongqiang Liu, Rohan Gandhi, Srikanth Kandula, Ratul Mahajan, Ming Zhang, Jennifer Rexford, Roger Wattenhofer</div>
+<div class="paper-venue">ACM SIGCOMM, 2014</div>
+<div class="paper-resource"><a href=papers/tr2014-dionysus.pdf>Extended version</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2014-statesman.pdf">A network-state management service</a></div>
+<div class="paper-authors">Peng Sun, Ratul Mahajan, Jennifer Rexford, Lihua Yuan, Ming Zhang, Ahsan Arefin</div>
+<div class="paper-venue">ACM SIGCOMM, 2014</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2013-sdnupdates.pdf">On consistent updates in software-defined networks</a></div>
+<div class="paper-authors">Ratul Mahajan, Roger Wattenhofer</div>
+<div class="paper-venue">ACM HotNets, 2013</div>
+<div class="paper-resource"><a href=papers/tr2013-sdnupdates.pdf>Extended version</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2013-swan.pdf">Achieving high utilization with software-driven WAN</a></div>
+<div class="paper-authors">Chi-Yao Hong, Srikanth Kandula, Ratul Mahajan, Ming Zhang, Vijay Gill, Mohan Nanduri, Roger Wattenhofer</div>
+<div class="paper-venue">ACM SIGCOMM, 2013</div>
+<div class="paper-resource"><a href=papers/tr2013-swan.pdf>Extended version</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2010-entact.pdf">Optimizing cost and performance in online service provider networks</a></div>
+<div class="paper-authors">Zheng Zhang, Ming Zhang, Albert Greenberg, Y. Charlie Hu, Ratul Mahajan, Blaine Christian</div>
+<div class="paper-venue">USENIX NSDI, 2010</div>
+</td></tr></table>
+<h2 id="sds">Self-defining systems</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/whitepaper2025-sds.pdf">Self-Defining Systems</a></div>
+<div class="paper-authors">Thomas Anderson, Ratul Mahajan, Simon Peter, Luke Zettlemoyer</div>
+<div class="paper-venue">White paper, 2025</div>
+</td></tr></table>
+<h2 id="home">Connected homes</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/atc2016-beam.pdf">Beam: Ending monolithic applications for connected devices</a></div>
+<div class="paper-authors">Chenguang Shen, Rayman Preet Singh, Amar Phanishayee, Aman Kansal, Ratul Mahajan</div>
+<div class="paper-venue">USENIX ATC, 2016</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotos2015-beam.pdf">A Case for ending monolithic apps for connected devices</a></div>
+<div class="paper-authors">Rayman Preet Singh, Chenguang Shen, Amar Phanishayee, Aman Kansal, Ratul Mahajan</div>
+<div class="paper-venue">HotOS, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/mm2014-strack.pdf">sTrack: Secure tracking in community surveillance</a></div>
+<div class="paper-authors">Chun-Te Chu, Jaeyeon Jung, Zicheng Liu, Ratul Mahajan</div>
+<div class="paper-venue">ACM Multimedia, 2014</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2014-bolt.pdf">Bolt: Data management for connected homes</a></div>
+<div class="paper-authors">Trinabh Gupta, Rayman Preet Singh, Amar Phanishayee, Jaeyeon Jung, Ratul Mahajan</div>
+<div class="paper-venue">USENIX NSDI, 2014</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ladis2013-bolt.pdf">Towards a storage system for connected homes</a></div>
+<div class="paper-authors">Trinabh Gupta, Amar Phanishayee, Jaeyeon Jung, Ratul Mahajan</div>
+<div class="paper-venue">Workshop on Large-Scale Distributed Systems and Middleware (LADIS), 2013</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/cscw2013-dnw.pdf">Digital neighborhood watch: Investigating the sharing of camera data amongst neighbors</a></div>
+<div class="paper-authors">AJ Brush, Jaeyeon Jung, Ratul Mahajan, Frank Martinez</div>
+<div class="paper-venue">Computer Supported Collaborative Work (CSCW), 2013</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/homesys2012-homelab.pdf">HomeLab: Shared infrastructure for home technology field studied</a></div>
+<div class="paper-authors">AJ Brush, Jaeyeon Jung, Ratul Mahajan, James Scott</div>
+<div class="paper-venue">Workshop on Systems and Infrastructure for the Digital Home (HomeSys), 2012</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2012-homeos.pdf">An operating system for the home</a></div>
+<div class="paper-authors">Colin Dixon, Ratul Mahajan, Sharad Agarwal, AJ Brush, Bongshin Lee, Stefan Saroiu, Paramvir Bahl</div>
+<div class="paper-venue">USENIX NSDI, 2012</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/cacm2011-advancing-home.pdf">Advancing the state of home networking</a></div>
+<div class="paper-authors">W. Keith Edwards, Rebecca Grinter, Ratul Mahajan, David Wetherall</div>
+<div class="paper-venue">Communications of the ACM (CACM), 2011</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/chi2011-homeos.pdf">Home automation in the wild: Challenges and opportunities</a></div>
+<div class="paper-authors">AJ Brush, Bongshin Lee, Ratul Mahajan, Sharad Agarwal, Stefan Saroiu, Colin Dixon</div>
+<div class="paper-venue">ACM CHI, 2011</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2010-homeos.pdf">The home needs an operating system (and an app store)</a></div>
+<div class="paper-authors">Colin Dixon, Ratul Mahajan, Sharad Agarwal, AJ Brush, Bongshin Lee, Stefan Saroiu, Paramvir Bahl</div>
+<div class="paper-venue">ACM HotNets, 2010</div>
+</td></tr></table>
+<h2 id="mobile">Mobile systems</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sosp2013-timecard.pdf">Timecard: Controlling user-perceived delays in server-based mobile applications</a></div>
+<div class="paper-authors">Lenin Ravindranath, Jitendra Padhye, Ratul Mahajan, Hari Balakrishnan</div>
+<div class="paper-venue">ACM SOSP, 2013</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotmobile2013-psycomp.pdf">The case for psychological computing</a></div>
+<div class="paper-authors">Xuan Bao, Mahanth Gowda, Ratul Mahajan, Romit Roy Choudhury</div>
+<div class="paper-venue">International Workshop on Mobile Computing Systems and Applications (HotMobile), 2013</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/osdi2012-appinsight.pdf">AppInsight: Mobile app performance monitoring in the wild</a></div>
+<div class="paper-authors"> Lenin Ravindranath, Jitendra Padhye, Sharad Agarwal, Ratul Mahajan, Ian Obermiller, Shahin Shayandeh</div>
+<div class="paper-venue">USENIX OSDI, 2012</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/usenix2012-pluribus.pdf">High performance vehicular connectivity using opportunistic erasure coding</a></div>
+<div class="paper-authors">Ratul Mahajan, Jitendra Padhye, Sharad Agarwal, Brian Zill</div>
+<div class="paper-venue">USENIX ATC, 2012</div>
+<div class="paper-resource"><a href=papers/tr2009-pluribus.pdf>Extended version</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/mobiarch2011-systemsens.pdf">SystemSens: a tool for monitoring usage in smartphone research deployments</a></div>
+<div class="paper-authors">Hossein Falaki, Ratul Mahajan, Deborah Estrin</div>
+<div class="paper-venue">MobiArch workshop, 2011</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2010-mobibug.pdf">There's an app for that, but it doesn't work. Diagnosing mobile applications in the wild</a></div>
+<div class="paper-authors">Sharad Agarwal, Ratul Mahajan, Alice Zheng, Paramvir Bahl</div>
+<div class="paper-venue">ACM HotNets, 2010</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2010-smartphone-traffic.pdf">A first look at traffic on smartphones</a></div>
+<div class="paper-authors">Hossein Falaki, Dimitrios Lymberopoulos, Ratul Mahajan, Srikanth Kandula, Deborah Estrin</div>
+<div class="paper-venue">ACM IMC, 2010</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/mobisys2010-wiffler.pdf">Augmenting mobile 3G using WiFi</a></div>
+<div class="paper-authors">Aruna Balasubramanian, Ratul Mahajan, Arun Venkataramani</div>
+<div class="paper-venue">ACM MobiSys, 2010</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/mobisys2010-diversity.pdf">Diversity in smartphone usage</a></div>
+<div class="paper-authors">Hossein Falaki, Ratul Mahajan, Srikanth Kandula, Dimitrios Lymberopoulos, Ramesh Govindan, Deborah Estrin</div>
+<div class="paper-venue">ACM MobiSys, 2010</div>
+</td></tr></table>
+<h2 id="diagnosis">Network monitoring and diagnosis</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2015-everflow.pdf">Packet-Level telemetry in large datacenter networks</a></div>
+<div class="paper-authors">Yibo Zhu, Nanxi Kang, Jiaxin Cao, Albert Greenberg, Guohan Lu, Ratul Mahajan, Dave Maltz, Lihua Yuan, Ming Zhang, Ben Y. Zhao, Haitao Zheng</div>
+<div class="paper-venue">ACM SIGCOMM, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/tr2015-netsonar.pdf">Measuring and troubleshooting large operational multipath networks with gray box testing</a></div>
+<div class="paper-authors">Hongyi Zeng, Ratul Mahajan,  Nick McKeown, George Varghese, Lihua Yuan, Ming Zhang</div>
+<div class="paper-venue">MSR technical report MSR-TR-2015-55, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/atc2014-gestalt.pdf">Gestalt: Fast, unified fault localization for networked systems</a></div>
+<div class="paper-authors">Radhika Niranjan Mysore, Ratul Mahajan, Amin Vahdat, George Varghese</div>
+<div class="paper-venue">USENIX ATC, 2014</div>
+<div class="paper-resource"><a href=papers/tr2013-gestalt.pdf>Technical report</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2013-srt.pdf">A provider-side view of Web search response time</a></div>
+<div class="paper-authors">Yingying Chen, Ratul Mahajan, Baskar Sridharan, Zhi-Li Zhang</div>
+<div class="paper-venue">ACM SIGCOMM, 2013</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2011-mpls-latency.pdf">Latency inflation with MPLS-based traffic engineering</a></div>
+<div class="paper-authors">Abhinav Pathak, Ming Zhang, Y. Charlie Hu, Ratul Mahajan, Dave Maltz</div>
+<div class="paper-venue">ACM IMC, 2011</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ijcai2011-cuet.pdf">Human-guided machine learning for fast and accurate network alarm triage</a></div>
+<div class="paper-authors">Saleema Amershi, Bongshin Lee, Ashish Kapoor, Ratul Mahajan, Blaine Christian</div>
+<div class="paper-venue">International Joint Conference on Artificial Intelligence (IJCAI), 2011</div>
+<div class="paper-note">Selected for the Best Papers Track</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/chi2011-cuet.pdf">CueT: Human-guided fast and accurate network alarm triage</a></div>
+<div class="paper-authors">Saleema Amershi, Bongshin Lee, Ashish Kapoor, Ratul Mahajan, Blaine Christian</div>
+<div class="paper-venue">ACM CHI, 2011</div>
+<div class="paper-note">Honorable Mention Award</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/vast2010-netclinic.pdf">NetClinic: Interactive visualization to enhance automated fault diagnosis in enterprise networks</a></div>
+<div class="paper-authors">Zhicheng Liu, Bongshin Lee, Srikanth Kandula, Ratul Mahajan</div>
+<div class="paper-venue">IEEE Symposium on Visual Analytics Science and Technology (VAST), 2010</div>
+<div class="paper-note">Selected for forwarding to Information Visualization journal</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2009-netmedic.pdf">Detailed diagnosis in enterprise networks</a></div>
+<div class="paper-authors">Srikanth Kandula, Ratul Mahajan, Patrick Verkaik, Sharad Agarwal, Jitendra Padhye, Paramvir Bahl</div>
+<div class="paper-venue">ACM SIGCOMM, 2009</div>
+<div class="paper-resource"><a href=talks/sigcomm2009-netmedic.pptx>SIGCOMM talk</a></div>
+</td></tr></table>
+<h2 id="wireless">Wireless networks</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/tr2009-wifi-underutilized.pdf">Wi-Fi networks are underutilized</a></div>
+<div class="paper-authors">Raghavendra, R., Jitendra Padhye, Ratul Mahajan, Belding, E.</div>
+<div class="paper-venue">MSR technical report MSR-2009-108, 2009</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2008-vifi.pdf">Interactive WiFi connectivity for moving vehicles</a></div>
+<div class="paper-authors">Aruna Balasubramanian, Ratul Mahajan, Arun Venkataramani, Brian N. Levine, John Zahorjan</div>
+<div class="paper-venue">ACM SIGCOMM, 2008</div>
+<div class="paper-resource"><a href=papers/tr2008-vifi.pdf>Extended version</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2008-cwidth.pdf">A case for adapting channel width in wireless networks</a></div>
+<div class="paper-authors">Ranveer Chandra, Ratul Mahajan, Thomas Moscibroda, Ramya Raghavendra, Paramvir Bahl</div>
+<div class="paper-venue">ACM SIGCOMM, 2008</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2008-predopt.pdf">Predictable performance optimization for wireless networks</a></div>
+<div class="paper-authors">Yi Li, Lili Qiu, Yin Zhang, Ratul Mahajan, Eric Rozner</div>
+<div class="paper-venue">ACM SIGCOMM, 2008</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2007-interference-routing.pdf">Effects of interference on wireless mesh networks: Pathologies and a preliminary solution</a></div>
+<div class="paper-authors">Yi Li, Lili Qiu, Yin Zhang, Ratul Mahajan, Zifei Zhong, Gaurav Deshpande, Eric Rozner</div>
+<div class="paper-venue">ACM HotNets, 2007</div>
+<div class="paper-resource"><a href=talks/hotnets2007-interference.pptx>HotNets talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2007-vanlan.pdf">Understanding WiFi-based connectivity from moving vehicles</a></div>
+<div class="paper-authors">Ratul Mahajan, John Zahorjan, Brian Zill</div>
+<div class="paper-venue">ACM IMC, 2007</div>
+<div class="paper-resource"><a href=talks/imc2007-vanlan.pptx>IMC talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/mobicom2007-interference-model.pdf">A general model of wireless interference</a></div>
+<div class="paper-authors">Lili Qiu, Yin Zhang, Feng Wang, Mi Kyung Han, Ratul Mahajan</div>
+<div class="paper-venue">ACM MobiCom, 2007</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2006-wit.pdf">Analyzing the MAC-level behavior of wireless networks in the wild</a></div>
+<div class="paper-authors">Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan</div>
+<div class="paper-venue">ACM SIGCOMM, 2006</div>
+<div class="paper-resource"><a href=talks/sigcomm2006-wit.ppt>SIGCOMM talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2006-interference.pdf">Measurement-based models of delivery and interference in static wireless networks</a></div>
+<div class="paper-authors">Charles Reis, Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan</div>
+<div class="paper-venue">ACM SIGCOMM, 2006</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ewind2005-hotspot.pdf">Measurement-based characterization of 802.11 in a hotspot setting</a></div>
+<div class="paper-authors">Maya Rodrig, Charles Reis, Ratul Mahajan, David Wetherall, John Zahorjan</div>
+<div class="paper-venue">Workshop on Experimental approaches to wireless network design and analysis (E-WIND), 2005</div>
+</td></tr></table>
+<h2 id="astronomy">Internet measurements</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2018-odin.pdf">Odin: Microsoft's Scalable Fault-Tolerant CDN Measurement System</a></div>
+<div class="paper-authors">Matt Calder, Manuel Schroder, Ryan Gao, Ryan Stewart, Jitendra Padhye, Ratul Mahajan, Ganesh Ananthanarayanan, Ethan Katz-Bassett</div>
+<div class="paper-venue">USENIX NSDI, 2018</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2015-anycast.pdf">Analyzing the performance of an anycast CDN</a></div>
+<div class="paper-authors">Matt Calder, Ethan Katz-Bassett, Ratul Mahajan, Jitu Padhye</div>
+<div class="paper-venue">ACM IMC, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2010-glasnost.pdf">Glasnost: Enabling end users to detect traffic differentiation</a></div>
+<div class="paper-authors">Marcel Dischinger, Max Marcon, Saikat Guha, Krishna Gummadi, Ratul Mahajan, Stefan Saroiu</div>
+<div class="paper-venue">USENIX NSDI, 2010</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2009-broom.pdf">Sampling biases in network path measurements and what to do about it</a></div>
+<div class="paper-authors">Srikanth Kandula, Ratul Mahajan</div>
+<div class="paper-venue">ACM IMC, 2009</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2008-netdiff.pdf">Uncovering performance differences among backbone ISPs with NetDiff</a></div>
+<div class="paper-authors">Ratul Mahajan, Ming Zhang, Lindsey Poole, Vivek Pai</div>
+<div class="paper-venue">USENIX NSDI, 2008</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ton2004-rocketfuel.pdf">Measuring ISP topologies with Rocketfuel</a></div>
+<div class="paper-authors">Neil Spring, Ratul Mahajan, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">IEEE/ACM Transactions on Networking (ToN), 2004</div>
+<div class="paper-note">William R. Bennett Prize</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sosp2003-tulip.pdf">User-level Internet path diagnosis</a></div>
+<div class="paper-authors">Ratul Mahajan, Neil Spring, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">ACM SOSP, 2003</div>
+<div class="paper-resource"><a href=talks/sosp2003-tulip.pdf>SOSP talk</a> | <a href=talks/nanog2004-tulip.pdf>NANOG 31 talk<a/></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2003-inflation.pdf">Quantifying the causes of path inflation</a></div>
+<div class="paper-authors">Neil Spring, Ratul Mahajan, Tom Anderson</div>
+<div class="paper-venue">ACM SIGCOMM, 2003</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imw2002-weights.pdf">Inferring link weights using end-to-end measurements</a></div>
+<div class="paper-authors">Ratul Mahajan, Neil Spring, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">Workshop on Internet measurement (IMW), 2002</div>
+<div class="paper-resource"><a href=talks/imw2002-weights.pdf>IMW talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2002-rocketfuel.pdf">Measuring ISP topologies with Rocketfuel</a></div>
+<div class="paper-authors">Neil Spring, Ratul Mahajan, David Wetherall</div>
+<div class="paper-venue">ACM SIGCOMM, 2002</div>
+<div class="paper-note">Best Student Paper Award. Test of Time Award.</div>
+<div class="paper-resource"><a href=talks/ipam02-rocketfuel.pdf>IPAM talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2002-misconfigs.pdf">Understanding BGP misconfiguration</a></div>
+<div class="paper-authors">Ratul Mahajan, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">ACM SIGCOMM, 2002</div>
+<div class="paper-resource"><a href=talks/sigcomm2002-misconfigs.pdf>SIGCOMM talk</a></div>
+</td></tr></table>
+<h2 id="incentives">Incentives in networked systems</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2007-wiser.pdf">Mutually controlled routing with independent ISPs</a></div>
+<div class="paper-authors">Ratul Mahajan, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">USENIX NSDI, 2007</div>
+<div class="paper-resource"><a href=talks/nsdi2007-wiser.ppt>NSDI talk</a> | <a href=talks/nanog2006-wiser.ppt>NANOG 37 talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/wired2006-polytheistic.pdf">A polytheistic approach to securing interdomain routing</a></div>
+<div class="paper-authors">Ratul Mahajan</div>
+<div class="paper-venue">WIRED workshop (invited position paper), 2006</div>
+<div class="paper-resource"><a href=talks/wired2006-poly.ppt>WIRED talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/thesis.pdf">Practical and efficient internet routing with competing interests</a></div>
+<div class="paper-authors">Ratul Mahajan</div>
+<div class="paper-venue">PhD Thesis, 2005</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2005-catch.pdf">Sustaining cooperation in multi-hop wireless networks</a></div>
+<div class="paper-authors">Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan</div>
+<div class="paper-venue">USENIX NSDI, 2005</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/nsdi2005-nexit.pdf">Negotiation-based routing between neighboring ISPs</a></div>
+<div class="paper-authors">Ratul Mahajan, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">USENIX NSDI, 2005</div>
+<div class="paper-resource"><a href=talks/nanog2004-nexit.pdf>NANOG 31 talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2004-tearch.pdf">Towards coordinated interdomain traffic engineering</a></div>
+<div class="paper-authors">Ratul Mahajan, David Wetherall, Tom Anderson</div>
+<div class="paper-venue">ACM HotNets, 2004</div>
+<div class="paper-resource"><a href=talks/hotnets2004-tearch.pdf>HotNets talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/pins2004-gt.pdf">Experiences applying game theory to system design</a></div>
+<div class="paper-authors">Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan</div>
+<div class="paper-venue">Workshop on Practice and theory of incentives in networked systems (PINS), 2004</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/wired2003-negotiation.pdf">Negotiation-based routing</a></div>
+<div class="paper-authors">Ratul Mahajan</div>
+<div class="paper-venue">WIRED workshop (invited position paper), 2003</div>
+<div class="paper-resource"><a href=talks/wired2003-negotiation.pdf>WIRED talk</a></div>
+</td></tr></table>
+<h2 id="misc">Miscellaneous</h2>
+<table>
+<tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/imc2015-mpa.pdf">Management plane analytics</a></div>
+<div class="paper-authors">Aaron Gember-Jacobson, Wenfei Wu, Xiujun Liu, Aditya Akella, Ratul Mahajan</div>
+<div class="paper-venue">ACM IMC, 2015</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2014-mgmtanalytics.pdf">A call to arms for management plane analytics</a></div>
+<div class="paper-authors">Aditya Akella, Ratul Mahajan</div>
+<div class="paper-venue">ACM HotNets, 2014</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/sigcomm2010-privacy.pdf">Differentially-private network trace analysis</a></div>
+<div class="paper-authors">Frank McSherry, Ratul Mahajan</div>
+<div class="paper-venue">ACM SIGCOMM, 2010</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ccr2010-howto.pdf">How to build a research system in your spare time</a></div>
+<div class="paper-authors">Ratul Mahajan</div>
+<div class="paper-venue">Computer communication review (CCR), 2010</div>
+<div class="paper-resource"><a href=talks/keynote-conext-2009.pptx>CoNext keynote</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/hotnets2008-buffet.pdf">Eat all you can in an all-you-can-eat buffet: A case for aggressive resource usage</a></div>
+<div class="paper-authors">Ratul Mahajan, Jitendra Padhye, Ramya Raghavendra, Brian Zill</div>
+<div class="paper-venue">ACM HotNets, 2008</div>
+<div class="paper-resource"><a href=talks/hotnets2008-buffet.pptx>HotNets talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/usits2003-dhts.pdf">A study of the performance potential of DHT-based overlays</a></div>
+<div class="paper-authors">Sushant Jain, Ratul Mahajan, David Wetherall</div>
+<div class="paper-venue">USENIX Symposium on Internet Technologies and Systems (USITS), 2003</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/iptps03-reliability.pdf">Controlling the cost of reliability in peer-to-peer overlays</a></div>
+<div class="paper-authors">Ratul Mahajan, Miguel Castro, Ant Rowstron</div>
+<div class="paper-venue">International Workshop on Peer-to-Peer Systems (IPTPS), 2003</div>
+<div class="paper-resource"><a href=talks/iptps03-reliability.pdf>IPTPS talk</a></div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/ccr2002-pushback.pdf">Controlling high bandwidth aggregates in the network</a></div>
+<div class="paper-authors">Ratul Mahajan, Steve Bellovin, Sally Floyd, John Ioannidis, Vern Paxson, Scott Shenker</div>
+<div class="paper-venue">Computer Communication Review (CCR), 2002</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/www2002-xslt.pdf">Translating XSLT programs to efficient SQL queries</a></div>
+<div class="paper-authors">Sushant Jain, Ratul Mahajan, Dan Suciu</div>
+<div class="paper-venue">World Wide Web (WWW), 2002</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/tr2002-kudos.pdf">Scalable self-organizing overlays</a></div>
+<div class="paper-authors">Sushant Jain, Ratul Mahajan, David Wetherall, Gaetano Borriello, Steve Gribble</div>
+<div class="paper-venue">UW-CSE Technical report, 2002</div>
+</td></tr><tr><td></td><td class="paper-entry"><div class="paper-title"><a href="papers/icnp2001-red-pd.pdf">Controlling high-bandwidth flows at the congested router</a></div>
+<div class="paper-authors">Ratul Mahajan, Sally Floyd, David Wetherall</div>
+<div class="paper-venue">International Conference on Network Protocols (ICNP), 2001</div>
+<div class="paper-resource"><a href=talks/icnp2001-red-pd.pdf>ICNP talk</a></div>
+</td></tr></table>
 
-               <b>Application networking</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/hotnets2025-scheduling.pdf><b>Programmable and Adaptive Scheduling for Distributed Systems</b></a><br>
-Yuyao Wang, Xiangfeng Zhu, Ratul Mahajan, Stephanie Wang<br>
-ACM HotNets, 2025<br>
-<br>
-<tr><td><td>
-<a href=papers/ebpf2025-simplebpf.pdf><b>Offloading the Tedious Task of Writing eBPF Programs</b></a><br>
-Xiangyu Gao, Xiangfeng Zhu, Bhavana Vannarth Shobhana, Yiwei Yang, Arvind Krishnamurthy, Ratul Mahajan<br>
-3rd Workshop on eBPF and Kernel Extensions (eBPF), 2025<br>
-<br>
-<tr><td><td>
-<a href=papers/hotos2025-rpcs.pdf><b>Rethinking RPC Communication for Microservices-based Applications</b></a><br>
-Xiangfeng Zhu, Yang Zhou, Yuyao Wang, Xiangyu Gao, Arvind Krishnamurthy, Sam Kumar, Ratul Mahajan, Danyang Zhuo<br>
-ACM HotOS, 2025<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2025-appnet.pdf><b>High-level Programming for Application Networks</b></a><br>
-Xiangfeng Zhu, Yuyao Wang, Banruo Liu, Yongtong Wu, Nikola Bojanic, Jingrong Chen, Gilbert Louis Bernstein, Arvind Krishnamurthy, Sam Kumar, Ratul Mahajan, Danyang Zhuo<br>
-USENIX NSDI, 2025<br>
-<a href=https://appnet.wiki/>Code and documentation</a><br><br>
-<tr><td><td>
-<a href=papers/hotnets2023-adn.pdf><b>Application Defined Networking</b></a><br>
-Xiangfeng Zhu, Weixin Deng, Banruo Liu, Jingrong Chen, Yongji Wu, Tom Anderson, Arvind Krishnamurthy, Ratul Mahajan, Danyang Zhuo<br>
-ACM HotNets, 2023<br>
-<br>
-<tr><td><td>
-<a href=papers/socc2023-meshinsight.pdf><b>Dissecting Overheads of Service Mesh Sidecars</b></a><br>
-Xiangfeng Zhu, Guozhen She, Bowen Xue, Yu Zhang, Yongsu Zhang, Xuan Kelvin Zou, XiongChun Duan, Peng He, Arvind Krishnamurthy, Matthew Lentz, Danyang Zhuo, Ratul Mahajan<br>
-ACM SoCC, 2023<br>
-<a href=https://github.com/UWNetworksLab/meshinsight>Code and documentation</a><br><br>
-<tr><td><td>
-<a href=papers/socc2023-sia.pdf><b>Anticipatory Resource Allocation for ML Training</b></a><br>
-Tapan Chugh, Srikanth Kandula, Arvind Krishnamurthy, Ratul Mahajan, Ishai Menache<br>
-ACM SoCC, 2023<br>
-<br>
-</table>
-<p><a name=protocols></a>
-
-               <b>Network verification and high-level programming</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/popl2026-relationalnetkat.pdf><b>Network Change Validation with Relational NetKAT</b></a><br>
-Han Xu, Zachary Kincaid, Ratul Mahajan, David Walker<br>
-ACM POPL, 2026<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2024-rela.pdf><b>Relational Network Verification</b></a><br>
-Xieyang Xu, Yifei Yuan, Zachary Kincaid, Arvind Krishnamurthy, Ratul Mahajan, David Walker, Ennan Zhai<br>
-ACM SIGCOMM, 2024<br>
-<a href=https://github.com/alibaba/rela>Code</a><br><br>
-<tr><td><td>
-<a href=papers/nsdi2024-flm.pdf><b>Sequence Abstractions for Flexible, Line-Rate Network Monitoring</b></a><br>
-Andrew Johnson, Ryan Beckett, Xiaoqi Chen, Ratul Mahajan, David Walker<br>
-USENIX NSDI, 2024<br>
-<a href=https://github.com/PrincetonUniversity/lucid/tree/SpecRegex>Code</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2023-batfish-lessons.pdf><b>Lessons from the evolution of the Batfish configuration analysis tool</b></a><br>
-Matt Brown, Ari Fogel, Daniel Halperin, Victor Heohiardi, Ratul Mahajan, Todd Millstein<br>
-ACM SIGCOMM, 2023<br>
-<b>ACM SIGCOMM Networking Systems Award</b><br><a href=https://github.com/batfish>Code and documentation</a><br><br>
-<tr><td><td>
-<a href=papers/nsdi2023-netcov.pdf><b>Test coverage metrics for network configurations</b></a><br>
-Xieyang Xu, Weixin Deng, Ryan Beckett, Ratul Mahajan, David Walker<br>
-USENIX NSDI, 2023<br>
-<a href=https://github.com/UWNetworksLab/netcov>Code and documentation</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2021-yardstick.pdf><b>Test coverage metrics for the network</b></a><br>
-Xieyang Xu, Ryan Beckett, Karthick Jayaraman, Ratul Mahajan, David Walker<br>
-ACM SIGCOMM, 2021<br>
-<br>
-<tr><td><td>
-<a href=papers/popl2020-shapeshifter.pdf><b>Abstract interpretation of distributed network control planes</b></a><br>
-Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker<br>
-ACM POPL, 2020<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2020-zen.pdf><b>A general framework for compositional network modeling</b></a><br>
-Ryan Beckett, Ratul Mahajan<br>
-ACM HotNets, 2020<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2019-putting.pdf><b>Putting network verification to good use</b></a><br>
-Ryan Beckett, Ratul Mahajan<br>
-ACM HotNets, 2019<br>
-<br>
-<tr><td><td>
-<a href=papers/cav2019-origami.pdf><b>Efficient verification of network fault tolerance via counterexample-guided refinement</b></a><br>
-Nick Giannarakis, Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker<br>
-International Conference on Computer Aided Verification (CAV), 2019<br>
-<a href=papers/cav2019-origami-full.pdf>Extended version with proofs</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2018-bonsai.pdf><b>Control Plane Compression</b></a><br>
-Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker<br>
-ACM SIGCOMM, 2018<br>
-<a href=https://arxiv.org/pdf/1806.08744.pdf>Extended version with proofs</a><br><br>
-<tr><td><td>
-<a href=papers/sosp2017-cpr.pdf><b>Automatically Repairing Network Control Planes Using an Abstract Representation</b></a><br>
-Aaron Gember-Jacobson, Aditya Akella, Ratul Mahajan, Hongqiang Liu<br>
-ACM SOSP, 2017<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2017-minesweeper.pdf><b>A General Approach to Network Configuration Verification</b></a><br>
-Ryan Beckett, Aarti Gupta, Ratul Mahajan, David Walker<br>
-ACM SIGCOMM, 2017<br>
-<br>
-<tr><td><td>
-<a href=papers/pldi2017-propaneat.pdf><b>Network Configuration Synthesis with Abstract Topologies</b></a><br>
-Ryan Beckett, Ratul Mahajan, Jitu Padhye, Todd Millstein, David Walker<br>
-ACM PLDI, 2017<br>
-<br>
-<tr><td><td>
-<a href=papers/osdi2016-era.pdf><b>Efficient network reachability analysis using a succinct control plane representation</b></a><br>
-Seyed K. Fayaz, Tushar Sharma, Ari Fogel, Ratul Mahajan, Todd Millstein, Vyas Sekar, George Varghese<br>
-USENIX OSDI, 2016<br>
-<br>
-<tr><td><td>
-<a href=papers/hvc2016-ddnf.pdf><b>ddNF: An efficient data structure for header spaces</b></a><br>
-Nikolaj Bjørner, Garvit Juniwal, Ratul Mahajan, Sanjit A. Seshia, George Varghese<br>
-Haifa Verification Conference (HVC), 2016<br>
-<b>Best Paper Award</b><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2016-propane.pdf><b>Don't mind the gap: Bridging network-wide objectives and device-level configurations</b></a><br>
-Ryan Beckett, Ratul Mahajan, Jitu Padhye, Todd Millstein, David Walker<br>
-ACM SIGCOMM, 2016<br>
-<b>Best Paper Award</b><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2016-arc.pdf><b>Fast control plane analysis using an abstract representation</b></a><br>
-Aaron Gember-Jacobson, Raajay Viswanathan, Aditya Akella, Ratul Mahajan<br>
-ACM SIGCOMM, 2016<br>
-<br>
-<tr><td><td>
-<a href=papers/atc2015-delorean.pdf><b>Systematically exploring the behavior of control programs</b></a><br>
-Jason Croft, Ratul Mahajan, Matt Caeser, Madan Musuvathi<br>
-USENIX ATC, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2015-batfish.pdf><b>A general approach to network configuration analysis</b></a><br>
-Ari Fogel, Stanley Fung, Luis Pedrosa, Meg Walraed-Sullivan, Ramesh Govindan, Ratul Mahajan, Todd Millstein<br>
-USENIX NSDI, 2015<br>
-<b>ACM SIGCOMM Networking Systems Award</b><br><br>
-<tr><td><td>
-<a href=papers/nsdi2015-pic.pdf><b>Analyzing protocols implementations for interoperability</b></a><br>
-Luis Pedrosa, Ari Fogel, Nupur Kothari, Ramesh Govindan, Ratul Mahajan, Todd Millstein<br>
-USENIX NSDI, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2011-max.pdf><b>Finding protocol manipulation attacks</b></a><br>
-Nupur Kothari, Ratul Mahajan, Todd Millstein, Ramesh Govindan, Madan Musuvathi<br>
-ACM SIGCOMM, 2011<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2008-gullibility.pdf><b>Can you fool me? towards automatically checking protocol gullibility</b></a><br>
-Milan Stanojevic, Ratul Mahajan, Todd Millstein, Madan Musuvathi<br>
-ACM HotNets, 2008<br>
-<a href=talks/hotnets2008-gullibility.pptx>HotNets talk</a><br><br>
-</table>
-<p><a name=optical></a>
-
-               <b>Optical networking</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/sigcomm2017-corropt.pdf><b>Understanding and mitigating packet corruption in data center networks</b></a><br>
-Danyang Zhuo, Monia Ghobadi, Ratul Mahajan, Klaus-Tycho Förster, Arvind Krishnamurthy, Thomas Anderson<br>
-ACM SIGCOMM, 2017<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2017-rail.pdf><b>RAIL: A case for redundant arrays of inexpensive links in data center networks</b></a><br>
-Danyang Zhuo, Monia Ghobadi, Ratul Mahajan, Amar Phanishayee, Xuan Kelvin Zou, Hang Guan, Arvind Krishnamurthy, Thomas Anderson<br>
-USENIX NSDI, 2017<br>
-<br>
-<tr><td><td>
-<a href=papers/imc2016-opticalfailures.pdf><b>Optical layer failures in a large backbone</b></a><br>
-Monia Ghobadi, Ratul Mahajan<br>
-ACM IMC, 2016<br>
-<b>Best Dataset Award</b><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2016-projector.pdf><b>ProjecToR: Agile reconfigurable datacenter interconnect</b></a><br>
-Monia Ghobadi, Ratul Mahajan, Amar Phanishayee, Houman Rastegarfar, Pierre-Alexandre Blanche, Madeleine Glick, Daniel Kilper, Janardhan Kulkarni, Gireeja Ranade, Nikhil Devanur<br>
-ACM SIGCOMM, 2016<br>
-<br>
-<tr><td><td>
-<a href=papers/jocn2016-elastic-optical-networks.pdf><b>Elastic optical networking in the Microsoft cloud</b></a><br>
-Mark Filer, Jamie Gaudette, Monia Ghobadi, Ratul Mahajan, Tom Issenhuth, Buddy Klinkers, Jeff Cox<br>
-Journal of Optical Communications and Networking (JOCN), 2016<br>
-<br>
-<tr><td><td>
-<a href=papers/ofc2016-bvt.pdf><b>Evaluation of elastic modulation gains in Microsoft's optical backbone in North America</b></a><br>
-Monia Ghobadi, Jamie Gaudette, Ratul Mahajan, Amar Phanishayee, Buddy Klinkers, Daniel Kilper<br>
-The Optical Fiber Communication Conference and Exhibition (OFC), 2016<br>
-<br>
-</table>
-<p><a name=sdn></a>
-
-               <b>Software-defined networking</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/networking2016-consistentupdates.pdf><b>Consistent updates in software-defined networks: On dependencies, loop freedom, and blackholes</b></a><br>
-Klaus-Tycho Forster, Ratul Mahajan, Roger Wattenhofer<br>
-IFIP Networking, 2016<br>
-<b>Selected for forwarding to the IFIP TC6 journal Open Transactions on Communication Systems</b><br><br>
-<tr><td><td>
-<a href=papers/nsdi2016-footprint.pdf><b>Efficiently delivering online services over integrated infrastructure</b></a><br>
-Hongqiang Liu, Raajay Viswanathan, Matt Calder, Aditya Akella, Ratul Mahajan, Jitendra Padhye, Ming Zhang<br>
-USENIX NSDI, 2016<br>
-<a href=papers/tr2016-footprint.pdf>Technical report</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2014-ffc.pdf><b>Traffic engineering with forward fault correction</b></a><br>
-Hongqiang Liu, Srikanth Kandula, Ratul Mahajan, Ming Zhang, David Gelernter<br>
-ACM SIGCOMM, 2014<br>
-<a href=papers/tr2014-ffc-appendix.pdf>Appendix</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2014-dionysus.pdf><b>Dynamic scheduling of network updates</b></a><br>
-Xin Jin, Hongqiang Liu, Rohan Gandhi, Srikanth Kandula, Ratul Mahajan, Ming Zhang, Jennifer Rexford, Roger Wattenhofer<br>
-ACM SIGCOMM, 2014<br>
-<a href=papers/tr2014-dionysus.pdf>Extended version</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2014-statesman.pdf><b>A network-state management service</b></a><br>
-Peng Sun, Ratul Mahajan, Jennifer Rexford, Lihua Yuan, Ming Zhang, Ahsan Arefin<br>
-ACM SIGCOMM, 2014<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2013-sdnupdates.pdf><b>On consistent updates in software-defined networks</b></a><br>
-Ratul Mahajan, Roger Wattenhofer<br>
-ACM HotNets, 2013<br>
-<a href=papers/tr2013-sdnupdates.pdf>Extended version</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2013-swan.pdf><b>Achieving high utilization with software-driven WAN</b></a><br>
-Chi-Yao Hong, Srikanth Kandula, Ratul Mahajan, Ming Zhang, Vijay Gill, Mohan Nanduri, Roger Wattenhofer<br>
-ACM SIGCOMM, 2013<br>
-<a href=papers/tr2013-swan.pdf>Extended version</a><br><br>
-<tr><td><td>
-<a href=papers/nsdi2010-entact.pdf><b>Optimizing cost and performance in online service provider networks</b></a><br>
-Zheng Zhang, Ming Zhang, Albert Greenberg, Y. Charlie Hu, Ratul Mahajan, Blaine Christian<br>
-USENIX NSDI, 2010<br>
-<br>
-</table>
-<p><a name=home></a>
-
-               <b>Connected homes</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/atc2016-beam.pdf><b>Beam: Ending monolithic applications for connected devices</b></a><br>
-Chenguang Shen, Rayman Preet Singh, Amar Phanishayee, Aman Kansal, Ratul Mahajan<br>
-USENIX ATC, 2016<br>
-<br>
-<tr><td><td>
-<a href=papers/hotos2015-beam.pdf><b>A Case for ending monolithic apps for connected devices</b></a><br>
-Rayman Preet Singh, Chenguang Shen, Amar Phanishayee, Aman Kansal, Ratul Mahajan<br>
-HotOS, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/mm2014-strack.pdf><b>sTrack: Secure tracking in community surveillance</b></a><br>
-Chun-Te Chu, Jaeyeon Jung, Zicheng Liu, Ratul Mahajan<br>
-ACM Multimedia, 2014<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2014-bolt.pdf><b>Bolt: Data management for connected homes</b></a><br>
-Trinabh Gupta, Rayman Preet Singh, Amar Phanishayee, Jaeyeon Jung, Ratul Mahajan<br>
-USENIX NSDI, 2014<br>
-<br>
-<tr><td><td>
-<a href=papers/ladis2013-bolt.pdf><b>Towards a storage system for connected homes</b></a><br>
-Trinabh Gupta, Amar Phanishayee, Jaeyeon Jung, Ratul Mahajan<br>
-Workshop on Large-Scale Distributed Systems and Middleware (LADIS), 2013<br>
-<br>
-<tr><td><td>
-<a href=papers/cscw2013-dnw.pdf><b>Digital neighborhood watch: Investigating the sharing of camera data amongst neighbors</b></a><br>
-AJ Brush, Jaeyeon Jung, Ratul Mahajan, Frank Martinez<br>
-Computer Supported Collaborative Work (CSCW), 2013<br>
-<br>
-<tr><td><td>
-<a href=papers/homesys2012-homelab.pdf><b>HomeLab: Shared infrastructure for home technology field studied</b></a><br>
-AJ Brush, Jaeyeon Jung, Ratul Mahajan, James Scott<br>
-Workshop on Systems and Infrastructure for the Digital Home (HomeSys), 2012<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2012-homeos.pdf><b>An operating system for the home</b></a><br>
-Colin Dixon, Ratul Mahajan, Sharad Agarwal, AJ Brush, Bongshin Lee, Stefan Saroiu, Paramvir Bahl<br>
-USENIX NSDI, 2012<br>
-<br>
-<tr><td><td>
-<a href=papers/cacm2011-advancing-home.pdf><b>Advancing the state of home networking</b></a><br>
-W. Keith Edwards, Rebecca Grinter, Ratul Mahajan, David Wetherall<br>
-Communications of the ACM (CACM), 2011<br>
-<br>
-<tr><td><td>
-<a href=papers/chi2011-homeos.pdf><b>Home automation in the wild: Challenges and opportunities</b></a><br>
-AJ Brush, Bongshin Lee, Ratul Mahajan, Sharad Agarwal, Stefan Saroiu, Colin Dixon<br>
-ACM CHI, 2011<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2010-homeos.pdf><b>The home needs an operating system (and an app store)</b></a><br>
-Colin Dixon, Ratul Mahajan, Sharad Agarwal, AJ Brush, Bongshin Lee, Stefan Saroiu, Paramvir Bahl<br>
-ACM HotNets, 2010<br>
-<br>
-</table>
-<p><a name=mobile></a>
-
-               <b>Mobile systems</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/sosp2013-timecard.pdf><b>Timecard: Controlling user-perceived delays in server-based mobile applications</b></a><br>
-Lenin Ravindranath, Jitendra Padhye, Ratul Mahajan, Hari Balakrishnan<br>
-ACM SOSP, 2013<br>
-<br>
-<tr><td><td>
-<a href=papers/hotmobile2013-psycomp.pdf><b>The case for psychological computing</b></a><br>
-Xuan Bao, Mahanth Gowda, Ratul Mahajan, Romit Roy Choudhury<br>
-International Workshop on Mobile Computing Systems and Applications (HotMobile), 2013<br>
-<br>
-<tr><td><td>
-<a href=papers/osdi2012-appinsight.pdf><b>AppInsight: Mobile app performance monitoring in the wild</b></a><br>
- Lenin Ravindranath, Jitendra Padhye, Sharad Agarwal, Ratul Mahajan, Ian Obermiller, Shahin Shayandeh<br>
-USENIX OSDI, 2012<br>
-<br>
-<tr><td><td>
-<a href=papers/usenix2012-pluribus.pdf><b>High performance vehicular connectivity using opportunistic erasure coding</b></a><br>
-Ratul Mahajan, Jitendra Padhye, Sharad Agarwal, Brian Zill<br>
-USENIX ATC, 2012<br>
-<a href=papers/tr2009-pluribus.pdf>Extended version</a><br><br>
-<tr><td><td>
-<a href=papers/mobiarch2011-systemsens.pdf><b>SystemSens: a tool for monitoring usage in smartphone research deployments</b></a><br>
-Hossein Falaki, Ratul Mahajan, Deborah Estrin<br>
-MobiArch workshop, 2011<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2010-mobibug.pdf><b>There's an app for that, but it doesn't work. Diagnosing mobile applications in the wild</b></a><br>
-Sharad Agarwal, Ratul Mahajan, Alice Zheng, Paramvir Bahl<br>
-ACM HotNets, 2010<br>
-<br>
-<tr><td><td>
-<a href=papers/imc2010-smartphone-traffic.pdf><b>A first look at traffic on smartphones</b></a><br>
-Hossein Falaki, Dimitrios Lymberopoulos, Ratul Mahajan, Srikanth Kandula, Deborah Estrin<br>
-ACM IMC, 2010<br>
-<br>
-<tr><td><td>
-<a href=papers/mobisys2010-wiffler.pdf><b>Augmenting mobile 3G using WiFi</b></a><br>
-Aruna Balasubramanian, Ratul Mahajan, Arun Venkataramani<br>
-ACM MobiSys, 2010<br>
-<br>
-<tr><td><td>
-<a href=papers/mobisys2010-diversity.pdf><b>Diversity in smartphone usage</b></a><br>
-Hossein Falaki, Ratul Mahajan, Srikanth Kandula, Dimitrios Lymberopoulos, Ramesh Govindan, Deborah Estrin<br>
-ACM MobiSys, 2010<br>
-<br>
-</table>
-<p><a name=diagnosis></a>
-
-               <b>Network monitoring and diagnosis</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/sigcomm2015-everflow.pdf><b>Packet-Level telemetry in large datacenter networks</b></a><br>
-Yibo Zhu, Nanxi Kang, Jiaxin Cao, Albert Greenberg, Guohan Lu, Ratul Mahajan, Dave Maltz, Lihua Yuan, Ming Zhang, Ben Y. Zhao, Haitao Zheng<br>
-ACM SIGCOMM, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/tr2015-netsonar.pdf><b>Measuring and troubleshooting large operational multipath networks with gray box testing</b></a><br>
-Hongyi Zeng, Ratul Mahajan,  Nick McKeown, George Varghese, Lihua Yuan, Ming Zhang<br>
-MSR technical report MSR-TR-2015-55, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/atc2014-gestalt.pdf><b>Gestalt: Fast, unified fault localization for networked systems</b></a><br>
-Radhika Niranjan Mysore, Ratul Mahajan, Amin Vahdat, George Varghese<br>
-USENIX ATC, 2014<br>
-<a href=papers/tr2013-gestalt.pdf>Technical report</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2013-srt.pdf><b>A provider-side view of Web search response time</b></a><br>
-Yingying Chen, Ratul Mahajan, Baskar Sridharan, Zhi-Li Zhang<br>
-ACM SIGCOMM, 2013<br>
-<br>
-<tr><td><td>
-<a href=papers/imc2011-mpls-latency.pdf><b>Latency inflation with MPLS-based traffic engineering</b></a><br>
-Abhinav Pathak, Ming Zhang, Y. Charlie Hu, Ratul Mahajan, Dave Maltz<br>
-ACM IMC, 2011<br>
-<br>
-<tr><td><td>
-<a href=papers/ijcai2011-cuet.pdf><b>Human-guided machine learning for fast and accurate network alarm triage</b></a><br>
-Saleema Amershi, Bongshin Lee, Ashish Kapoor, Ratul Mahajan, Blaine Christian<br>
-International Joint Conference on Artificial Intelligence (IJCAI), 2011<br>
-<b>Selected for the Best Papers Track</b><br><br>
-<tr><td><td>
-<a href=papers/chi2011-cuet.pdf><b>CueT: Human-guided fast and accurate network alarm triage</b></a><br>
-Saleema Amershi, Bongshin Lee, Ashish Kapoor, Ratul Mahajan, Blaine Christian<br>
-ACM CHI, 2011<br>
-<b>Honorable Mention Award</b><br><br>
-<tr><td><td>
-<a href=papers/vast2010-netclinic.pdf><b>NetClinic: Interactive visualization to enhance automated fault diagnosis in enterprise networks</b></a><br>
-Zhicheng Liu, Bongshin Lee, Srikanth Kandula, Ratul Mahajan<br>
-IEEE Symposium on Visual Analytics Science and Technology (VAST), 2010<br>
-<b>Selected for forwarding to Information Visualization journal</b><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2009-netmedic.pdf><b>Detailed diagnosis in enterprise networks</b></a><br>
-Srikanth Kandula, Ratul Mahajan, Patrick Verkaik, Sharad Agarwal, Jitendra Padhye, Paramvir Bahl<br>
-ACM SIGCOMM, 2009<br>
-<a href=talks/sigcomm2009-netmedic.pptx>SIGCOMM talk</a><br><br>
-</table>
-<p><a name=wireless></a>
-
-               <b>Wireless networks</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/tr2009-wifi-underutilized.pdf><b>Wi-Fi networks are underutilized</b></a><br>
-Raghavendra, R., Jitendra Padhye, Ratul Mahajan, Belding, E.<br>
-MSR technical report MSR-2009-108, 2009<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2008-vifi.pdf><b>Interactive WiFi connectivity for moving vehicles</b></a><br>
-Aruna Balasubramanian, Ratul Mahajan, Arun Venkataramani, Brian N. Levine, John Zahorjan<br>
-ACM SIGCOMM, 2008<br>
-<a href=papers/tr2008-vifi.pdf>Extended version</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2008-cwidth.pdf><b>A case for adapting channel width in wireless networks</b></a><br>
-Ranveer Chandra, Ratul Mahajan, Thomas Moscibroda, Ramya Raghavendra, Paramvir Bahl<br>
-ACM SIGCOMM, 2008<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2008-predopt.pdf><b>Predictable performance optimization for wireless networks</b></a><br>
-Yi Li, Lili Qiu, Yin Zhang, Ratul Mahajan, Eric Rozner<br>
-ACM SIGCOMM, 2008<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2007-interference-routing.pdf><b>Effects of interference on wireless mesh networks: Pathologies and a preliminary solution</b></a><br>
-Yi Li, Lili Qiu, Yin Zhang, Ratul Mahajan, Zifei Zhong, Gaurav Deshpande, Eric Rozner<br>
-ACM HotNets, 2007<br>
-<a href=talks/hotnets2007-interference.pptx>HotNets talk</a><br><br>
-<tr><td><td>
-<a href=papers/imc2007-vanlan.pdf><b>Understanding WiFi-based connectivity from moving vehicles</b></a><br>
-Ratul Mahajan, John Zahorjan, Brian Zill<br>
-ACM IMC, 2007<br>
-<a href=talks/imc2007-vanlan.pptx>IMC talk</a><br><br>
-<tr><td><td>
-<a href=papers/mobicom2007-interference-model.pdf><b>A general model of wireless interference</b></a><br>
-Lili Qiu, Yin Zhang, Feng Wang, Mi Kyung Han, Ratul Mahajan<br>
-ACM MobiCom, 2007<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2006-wit.pdf><b>Analyzing the MAC-level behavior of wireless networks in the wild</b></a><br>
-Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan<br>
-ACM SIGCOMM, 2006<br>
-<a href=talks/sigcomm2006-wit.ppt>SIGCOMM talk</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2006-interference.pdf><b>Measurement-based models of delivery and interference in static wireless networks</b></a><br>
-Charles Reis, Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan<br>
-ACM SIGCOMM, 2006<br>
-<br>
-<tr><td><td>
-<a href=papers/ewind2005-hotspot.pdf><b>Measurement-based characterization of 802.11 in a hotspot setting</b></a><br>
-Maya Rodrig, Charles Reis, Ratul Mahajan, David Wetherall, John Zahorjan<br>
-Workshop on Experimental approaches to wireless network design and analysis (E-WIND), 2005<br>
-<br>
-<tr><td><td></table>
-<p><a name=astronomy></a>
-
-               <b>Internet measurements</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/nsdi2018-odin.pdf><b>Odin: Microsoft's Scalable Fault-Tolerant CDN Measurement System</b></a><br>
-Matt Calder, Manuel Schroder, Ryan Gao, Ryan Stewart, Jitendra Padhye, Ratul Mahajan, Ganesh Ananthanarayanan, Ethan Katz-Bassett<br>
-USENIX NSDI, 2018<br>
-<br>
-<tr><td><td>
-<a href=papers/imc2015-anycast.pdf><b>Analyzing the performance of an anycast CDN</b></a><br>
-Matt Calder, Ethan Katz-Bassett, Ratul Mahajan, Jitu Padhye<br>
-ACM IMC, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2010-glasnost.pdf><b>Glasnost: Enabling end users to detect traffic differentiation</b></a><br>
-Marcel Dischinger, Max Marcon, Saikat Guha, Krishna Gummadi, Ratul Mahajan, Stefan Saroiu<br>
-USENIX NSDI, 2010<br>
-<br>
-<tr><td><td>
-<a href=papers/imc2009-broom.pdf><b>Sampling biases in network path measurements and what to do about it</b></a><br>
-Srikanth Kandula, Ratul Mahajan<br>
-ACM IMC, 2009<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2008-netdiff.pdf><b>Uncovering performance differences among backbone ISPs with NetDiff</b></a><br>
-Ratul Mahajan, Ming Zhang, Lindsey Poole, Vivek Pai<br>
-USENIX NSDI, 2008<br>
-<br>
-<tr><td><td>
-<a href=papers/ton2004-rocketfuel.pdf><b>Measuring ISP topologies with Rocketfuel</b></a><br>
-Neil Spring, Ratul Mahajan, David Wetherall, Tom Anderson<br>
-IEEE/ACM Transactions on Networking (ToN), 2004<br>
-<b>William R. Bennett Prize</b><br><br>
-<tr><td><td>
-<a href=papers/sosp2003-tulip.pdf><b>User-level Internet path diagnosis</b></a><br>
-Ratul Mahajan, Neil Spring, David Wetherall, Tom Anderson<br>
-ACM SOSP, 2003<br>
-<a href=talks/sosp2003-tulip.pdf>SOSP talk</a> | <a href=talks/nanog2004-tulip.pdf>NANOG 31 talk<a/><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2003-inflation.pdf><b>Quantifying the causes of path inflation</b></a><br>
-Neil Spring, Ratul Mahajan, Tom Anderson<br>
-ACM SIGCOMM, 2003<br>
-<br>
-<tr><td><td>
-<a href=papers/imw2002-weights.pdf><b>Inferring link weights using end-to-end measurements</b></a><br>
-Ratul Mahajan, Neil Spring, David Wetherall, Tom Anderson<br>
-Workshop on Internet measurement (IMW), 2002<br>
-<a href=talks/imw2002-weights.pdf>IMW talk</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2002-rocketfuel.pdf><b>Measuring ISP topologies with Rocketfuel</b></a><br>
-Neil Spring, Ratul Mahajan, David Wetherall<br>
-ACM SIGCOMM, 2002<br>
-<b>Best Student Paper Award. Test of Time Award.</b><br><a href=talks/ipam02-rocketfuel.pdf>IPAM talk</a><br><br>
-<tr><td><td>
-<a href=papers/sigcomm2002-misconfigs.pdf><b>Understanding BGP misconfiguration</b></a><br>
-Ratul Mahajan, David Wetherall, Tom Anderson<br>
-ACM SIGCOMM, 2002<br>
-<a href=talks/sigcomm2002-misconfigs.pdf>SIGCOMM talk</a><br><br>
-</table>
-<p><a name=incentives></a>
-
-               <b>Incentives in networked systems</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/nsdi2007-wiser.pdf><b>Mutually controlled routing with independent ISPs</b></a><br>
-Ratul Mahajan, David Wetherall, Tom Anderson<br>
-USENIX NSDI, 2007<br>
-<a href=talks/nsdi2007-wiser.ppt>NSDI talk</a> | <a href=talks/nanog2006-wiser.ppt>NANOG 37 talk</a><br><br>
-<tr><td><td>
-<a href=papers/wired2006-polytheistic.pdf><b>A polytheistic approach to securing interdomain routing</b></a><br>
-Ratul Mahajan<br>
-WIRED workshop (invited position paper), 2006<br>
-<a href=talks/wired2006-poly.ppt>WIRED talk</a><br><br>
-<tr><td><td>
-<a href=papers/thesis.pdf><b>Practical and efficient internet routing with competing interests</b></a><br>
-Ratul Mahajan<br>
-PhD Thesis, 2005<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2005-catch.pdf><b>Sustaining cooperation in multi-hop wireless networks</b></a><br>
-Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan<br>
-USENIX NSDI, 2005<br>
-<br>
-<tr><td><td>
-<a href=papers/nsdi2005-nexit.pdf><b>Negotiation-based routing between neighboring ISPs</b></a><br>
-Ratul Mahajan, David Wetherall, Tom Anderson<br>
-USENIX NSDI, 2005<br>
-<a href=talks/nanog2004-nexit.pdf>NANOG 31 talk</a><br><br>
-<tr><td><td>
-<a href=papers/hotnets2004-tearch.pdf><b>Towards coordinated interdomain traffic engineering</b></a><br>
-Ratul Mahajan, David Wetherall, Tom Anderson<br>
-ACM HotNets, 2004<br>
-<a href=talks/hotnets2004-tearch.pdf>HotNets talk</a><br><br>
-<tr><td><td>
-<a href=papers/pins2004-gt.pdf><b>Experiences applying game theory to system design</b></a><br>
-Ratul Mahajan, Maya Rodrig, David Wetherall, John Zahorjan<br>
-Workshop on Practice and theory of incentives in networked systems (PINS), 2004<br>
-<br>
-<tr><td><td>
-<a href=papers/wired2003-negotiation.pdf><b>Negotiation-based routing</b></a><br>
-Ratul Mahajan<br>
-WIRED workshop (invited position paper), 2003<br>
-<a href=talks/wired2003-negotiation.pdf>WIRED talk</a><br><br>
-</table>
-<p><a name=misc></a>
-
-               <b>Miscellaneous</b>
-
-<table style="width: 100%;" cellpadding="2" cellspacing="2">
-<tr><td width=10px><td></tr>
-<tr><td><td>
-<a href=papers/imc2015-mpa.pdf><b>Management plane analytics</b></a><br>
-Aaron Gember-Jacobson, Wenfei Wu, Xiujun Liu, Aditya Akella, Ratul Mahajan<br>
-ACM IMC, 2015<br>
-<br>
-<tr><td><td>
-<a href=papers/hotnets2014-mgmtanalytics.pdf><b>A call to arms for management plane analytics</b></a><br>
-Aditya Akella, Ratul Mahajan<br>
-ACM HotNets, 2014<br>
-<br>
-<tr><td><td>
-<a href=papers/sigcomm2010-privacy.pdf><b>Differentially-private network trace analysis</b></a><br>
-Frank McSherry, Ratul Mahajan<br>
-ACM SIGCOMM, 2010<br>
-<br>
-<tr><td><td>
-<a href=papers/ccr2010-howto.pdf><b>How to build a research system in your spare time</b></a><br>
-Ratul Mahajan<br>
-Computer communication review (CCR), 2010<br>
-<a href=talks/keynote-conext-2009.pptx>CoNext keynote</a><br><br>
-<tr><td><td>
-<a href=papers/hotnets2008-buffet.pdf><b>Eat all you can in an all-you-can-eat buffet: A case for aggressive resource usage</b></a><br>
-Ratul Mahajan, Jitendra Padhye, Ramya Raghavendra, Brian Zill<br>
-ACM HotNets, 2008<br>
-<a href=talks/hotnets2008-buffet.pptx>HotNets talk</a><br><br>
-<tr><td><td>
-<a href=papers/usits2003-dhts.pdf><b>A study of the performance potential of DHT-based overlays</b></a><br>
-Sushant Jain, Ratul Mahajan, David Wetherall<br>
-USENIX Symposium on Internet Technologies and Systems (USITS), 2003<br>
-<br>
-<tr><td><td>
-<a href=papers/iptps03-reliability.pdf><b>Controlling the cost of reliability in peer-to-peer overlays</b></a><br>
-Ratul Mahajan, Miguel Castro, Ant Rowstron<br>
-International Workshop on Peer-to-Peer Systems (IPTPS), 2003<br>
-<a href=talks/iptps03-reliability.pdf>IPTPS talk</a><br><br>
-<tr><td><td>
-<a href=papers/ccr2002-pushback.pdf><b>Controlling high bandwidth aggregates in the network</b></a><br>
-Ratul Mahajan, Steve Bellovin, Sally Floyd, John Ioannidis, Vern Paxson, Scott Shenker<br>
-Computer Communication Review (CCR), 2002<br>
-<br>
-<tr><td><td>
-<a href=papers/www2002-xslt.pdf><b>Translating XSLT programs to efficient SQL queries</b></a><br>
-Sushant Jain, Ratul Mahajan, Dan Suciu<br>
-World Wide Web (WWW), 2002<br>
-<br>
-<tr><td><td>
-<a href=papers/tr2002-kudos.pdf><b>Scalable self-organizing overlays</b></a><br>
-Sushant Jain, Ratul Mahajan, David Wetherall, Gaetano Borriello, Steve Gribble<br>
-UW-CSE Technical report, 2002<br>
-<br>
-<tr><td><td>
-<a href=papers/icnp2001-red-pd.pdf><b>Controlling high-bandwidth flows at the congested router</b></a><br>
-Ratul Mahajan, Sally Floyd, David Wetherall<br>
-International Conference on Network Protocols (ICNP), 2001<br>
-<a href=talks/icnp2001-red-pd.pdf>ICNP talk</a><br><br>
-<tr><td><td></table>
-
+  </div>
 </body>
 </html>
