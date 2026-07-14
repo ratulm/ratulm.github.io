@@ -305,6 +305,17 @@ for (my $i=0; $i < @topicOrder; $i++) {
 	next if ($topicOrder[$i] =~ m/selected/ ||
 		 $topicOrder[$i] =~ m/ignore/);
 
+	# skip categories that have no papers to avoid emitting an empty
+	# innerlist, which is a fatal LaTeX error
+	my $paperCount = 0;
+	for (my $paperId=0; $paperId<@allEntries; $paperId++) {
+		next unless ($allEntries[$paperId]{topics} =~ m/$topicOrder[$i]/);
+		next if ($allEntries[$paperId]{topics} =~ m/ignore/);
+		next if ($allEntries[$paperId]{paperType} =~ m/misc/);
+		$paperCount++;
+	}
+	next if ($paperCount == 0);
+
 	print "\\item \{\\bf $topics{$topicOrder[$i]}\}\n";
 	print "\\begin\{innerlist\}\n";
 
